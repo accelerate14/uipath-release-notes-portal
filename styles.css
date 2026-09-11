@@ -36,6 +36,7 @@ a { color: inherit; text-decoration: none; }
 .nav-icon { width: 16px; color: var(--coral); font-size: 17px; line-height: 1; }
 .nav-count { margin-left: auto; color: #9aa29d; font: 10px var(--mono); }
 .product-link { width: 100%; }
+.product-link.active { color: var(--ink); background: var(--soft); font-weight: 700; }
 .product-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }.product-dot.studio { background: var(--yellow); }.product-dot.orchestrator { background: var(--blue); }.product-dot.ai { background: var(--teal); }
 .sidebar-footer { margin-top: auto; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 10px; line-height: 1.6; }.sidebar-footer p { margin: 13px 0 16px; }.sidebar-footer a { color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px; font-weight: 700; }
 .status-indicator { color: var(--ink); font: 10px var(--mono); }.status-indicator span, .live-chip span, .pulse { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 0 3px rgba(79,166,154,.14); }
