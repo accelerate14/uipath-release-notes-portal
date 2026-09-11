@@ -32,7 +32,7 @@ function parseMonthPayload(payload, month) {
       previousProduct = product;
       previousStatus = statusCell;
       const link = row.querySelector("a")?.href || "https://docs.uipath.com/release-notes";
-      releases.push({ id: `${month.value}-${releases.length}-${product}`, month: month.label, monthValue: month.value, year: "2026", day: date.match(/\\b\\d{1,2}\\b/)?.[0] || "--", title: `${product} release notes`, description: date === "N/A" ? "No release-note entry was published during this timeframe." : `${deployment} release catalog entry published on ${date}.`, product, deployment, type: status, tag: status === "Available" ? "Published" : "None", link, sourceContent: body });
+        releases.push({ id: `${month.value}-${releases.length}-${product}`, month: month.label, monthValue: month.value, year: "2026", day: date.match(/\b\d{1,2}\b/)?.[0] || "--", title: `${product} release notes`, description: date === "N/A" ? "No release-note entry was published during this timeframe." : `${deployment} release catalog entry published on ${date}.`, product, deployment, type: status, tag: status === "Available" ? "Published" : "None", link, sourceContent: body });
     });
   });
   return { month, releases, content: body };
