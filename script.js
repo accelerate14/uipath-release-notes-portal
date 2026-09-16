@@ -3,7 +3,7 @@ const monthDefinitions = ["january", "february", "march", "april", "may", "june"
   label: month[0].toUpperCase() + month.slice(1),
   slug: `cloud-platform-${month}-2026`
 }));
-const apiBase = "https://docs.uipath.com/_next/data/docs-build-134/release-notes/other/latest/release-notes/";
+const apiBase = "https://docs.uipath.com/_next/data/docs-build-135/release-notes/other/latest/release-notes/";
 const state = { releases: [], filter: "All", product: "All", month: "All", deployment: "All", query: "", sort: "newest", showBookmarks: false, bookmarks: JSON.parse(localStorage.getItem("releaseBookmarks") || "[]") };
 const list = document.querySelector("#releaseList");
 const emptyState = document.querySelector("#emptyState");

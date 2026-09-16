@@ -5,7 +5,7 @@ const monthDefinitions = ["january", "february", "march", "april", "may", "june"
   label: month[0].toUpperCase() + month.slice(1),
   slug: `cloud-platform-${month}-2026`,
 }));
-const apiBase = "https://docs.uipath.com/_next/data/docs-build-134/release-notes/other/latest/release-notes/";
+const apiBase = "https://docs.uipath.com/_next/data/docs-build-135/release-notes/other/latest/release-notes/";
 
 function parseMonthPayload(payload, month) {
   const body = payload.pageProps?.page?.containerItems?.[0]?.rawContent?.data?.Component?.Fields?.topicBody?.Values?.[0] || "";
