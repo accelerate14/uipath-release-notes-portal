@@ -91,7 +91,7 @@ function App() {
   useEffect(() => { loadData(); }, []);
   useEffect(() => {
     if (releases.length && !releases.some((document) => document.month.value === selectedMonth)) {
-      setSelectedMonth(releases[0].month.value);
+      setSelectedMonth(releases[releases.length - 1].month.value);
     }
   }, [releases, selectedMonth]);
   useEffect(() => { if (toast) { const timer = setTimeout(() => setToast(""), 2200); return () => clearTimeout(timer); } }, [toast]);
