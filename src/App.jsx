@@ -60,9 +60,15 @@ async function fetchReleases() {
   return payloads.map(({ month, payload }) => parseMonthPayload(payload, month));
 }
 
+function getPreviousMonth() {
+  const date = new Date();
+  date.setMonth(date.getMonth() - 1);
+  return date.toLocaleString("en-US", { month: "long" }).toLowerCase();
+}
+
 function App() {
   const [releases, setReleases] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState("");
+  const [selectedMonth, setSelectedMonth] = useState(getPreviousMonth);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [lastUpdated, setLastUpdated] = useState("Updated moments ago");
