@@ -1,0 +1,1106 @@
+{
+  "id": "2026-08",
+  "cacheKey": "v1",
+  "sourceSha256": "6f6c14833e7dd3f48851902fecd6adb417309896578a173569b85268a0c128db",
+  "status": "complete",
+  "updatedAt": "2026-09-28T08:20:04.013Z",
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--late-august-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--late-august-2026",
+      "sha256": "bead20f5d891ca7dd263a3c49633fd1862f71f2b569320afae715e433bf948d9",
+      "chars": 3523,
+      "payloadChars": 3634,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Process Mining",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration updates limit in-app notification retention to 30 days in cloud environments and streamline AI and Agentic usage top-up management from the User usage dashboard.",
+            "overall_analysis": "These changes emphasize tighter operational controls and simpler administration for cloud tenants, with one change reducing long-term notification availability and the other making usage allocation easier to manage at scale.",
+            "changes": [
+              {
+                "name": "30-day in-app notification retention",
+                "summary": "In-app notifications are now retained for only 30 days, and older notifications are no longer available regardless of topic. The rollout is progressive across regions and applies only to cloud environments.",
+                "analysis": "This likely reduces storage or operational overhead and standardizes notification lifecycle management, but it also shortens the window for reviewing past notifications.",
+                "impact": "Cloud environment users and administrators who rely on historical in-app notifications are affected, especially in regions receiving the rollout.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk AI and Agentic usage top-ups in one action",
+                "summary": "Administrators can grant more than one AI and Agentic usage top-up to a user in a single action from the User usage dashboard, and each top-up is recorded as its own consumption event.",
+                "analysis": "This improves administrative efficiency for managing user entitlements while preserving granular consumption tracking for auditing or reporting.",
+                "impact": "Administrators managing AI and Agentic usage allocations for users are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center introduces an Outlook actionable notifications consent requirement, improves Validation Station compact view filtering, and adds Quick Form tasks in public preview for lightweight human-in-the-loop workflows.",
+            "overall_analysis": "The updates combine a required integration maintenance step with usability improvements and a broader push to simplify human-task orchestration across multiple UiPath process surfaces.",
+            "changes": [
+              {
+                "name": "Microsoft Entra admin consent required for Outlook actionable notifications",
+                "summary": "A one-time Microsoft Entra admin consent is required by August 26, 2026 for actionable notifications in Outlook to continue working, due to Microsoft's move away from legacy authentication for Actionable Messages.",
+                "analysis": "This is a time-sensitive dependency update needed to maintain an existing integration as Microsoft's authentication model changes.",
+                "impact": "Organizations using actionable notifications in Outlook, especially Microsoft Entra administrators and Action Center users, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Validation Station compact view filter bar",
+                "summary": "The Validation Station compact view now includes a filter bar that lets users search fields and hide fields by state, including confirmed, not extracted, and no flagged issues.",
+                "analysis": "This likely improves review efficiency by helping users focus on relevant fields during validation tasks.",
+                "impact": "Users working in Validation Station compact view are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Quick Form tasks public preview",
+                "summary": "Quick Form tasks are available in public preview, allowing human-in-the-loop tasks to be added to processes in Maestro BPMN, Case Management, Flow, or Agents without building or deploying an app. Inline debug support is included.",
+                "analysis": "This lowers the implementation barrier for adding human steps to workflows and may accelerate process design and testing.",
+                "impact": "Process designers and developers using Maestro BPMN, Case Management, Flow, or Agents are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents gain preview memory capabilities for retaining prior learning and escalation resolutions, and conversational agents now support personal connections in public preview.",
+            "overall_analysis": "These changes extend agent continuity and personalization, indicating a broader move toward more context-aware and user-specific agent behavior.",
+            "changes": [
+              {
+                "name": "Episodic and escalation memory in preview",
+                "summary": "Agents can retain and reuse what they learned from past executions through episodic memory and from past escalation resolutions through escalation memory. Both capabilities are available in preview.",
+                "analysis": "This likely improves agent effectiveness over time by allowing recurring context and prior resolutions to inform future behavior.",
+                "impact": "Users building or running agents, especially those with repeated workflows or escalations, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Personal connections for conversational agents",
+                "summary": "Conversational agents now support personal connections in public preview, enabling individual users to choose which of their own Integration Service connections an agent uses on their behalf.",
+                "analysis": "This increases flexibility and user-level control while enabling agents to act through personalized integrations rather than only shared connections.",
+                "impact": "Users of conversational agents and administrators managing Integration Service connection usage are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds new Snowflake Cortex authentication methods, introduces an Invoke Agent activity for Microsoft Azure AI Foundry, and makes the MCP connector generally available.",
+            "overall_analysis": "These changes expand connector maturity and interoperability, especially for AI-related integrations, while moving MCP connectivity from earlier availability stages into general use.",
+            "changes": [
+              {
+                "name": "Snowflake Cortex connector authentication expansion",
+                "summary": "The Snowflake Cortex connector now supports OAuth 2.0 Authorization code and Client credentials authentication methods in addition to the existing Programmatic Access Token.",
+                "analysis": "This broadens enterprise authentication options and may simplify compliance with different security and identity requirements.",
+                "impact": "Users and administrators configuring the Snowflake Cortex connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure AI Foundry Invoke Agent activity",
+                "summary": "The Microsoft Azure AI Foundry connector now includes an Invoke Agent activity for agents created in the Azure AI Foundry portal.",
+                "analysis": "This likely makes it easier to integrate Azure AI Foundry agents into UiPath automations and workflows.",
+                "impact": "Developers using the Microsoft Azure AI Foundry connector and Azure AI Foundry agents are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "MCP connector generally available",
+                "summary": "The MCP connector is now generally available.",
+                "analysis": "General availability indicates increased product maturity and readiness for broader production adoption.",
+                "impact": "Users evaluating or deploying the MCP connector in production are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro enhances Flow Autonomous Agent node MCP tool controls and adds two new BPMN activities for working with Orchestrator queues.",
+            "overall_analysis": "The updates strengthen both agent tooling visibility and queue-based orchestration patterns, suggesting a focus on more controllable and event-aware process design.",
+            "changes": [
+              {
+                "name": "Richer MCP tool controls in Maestro Flow Autonomous Agent nodes",
+                "summary": "Autonomous Agent nodes in Maestro Flow now support per-argument descriptions, full input and output schema view, and a Refresh tools action that can pull tools live from Agent Hub.",
+                "analysis": "These improvements likely make tool configuration easier to understand and maintain, while reducing friction when underlying tools change.",
+                "impact": "Designers using Maestro Flow Autonomous Agent nodes and Agent Hub-integrated tools are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New BPMN queue activities",
+                "summary": "Two new BPMN activities, Get queue items and Wait for queue event, now support read-only queries and blocking waits against Orchestrator queues.",
+                "analysis": "This expands native queue orchestration capabilities, making it easier to build BPMN flows that inspect or pause on queue state changes.",
+                "impact": "Process designers using Maestro BPMN with Orchestrator queues are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Process Mining": {
+            "summary": "Process Mining removes the UiPath data extractor data-loading option due to low adoption and directs users to other supported loading options.",
+            "overall_analysis": "This is a product simplification change that reduces available ingestion paths and may require affected users to adjust existing or planned data-loading approaches.",
+            "changes": [
+              {
+                "name": "Removal of UiPath data extractor loading option",
+                "summary": "The UiPath data extractor data-loading option has been removed because of low adoption. Users should use one of the other supported data-loading options instead.",
+                "analysis": "This reduces maintenance of underused functionality but may force affected users to migrate to alternative ingestion methods.",
+                "impact": "Process Mining users who used or planned to use the UiPath data extractor loading option are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds read-only solution access and makes Deploy the primary toolbar action for packaging and deployment, with Publish moved to a dropdown.",
+            "overall_analysis": "These changes improve collaboration and adjust the authoring workflow toward a more guided deployment experience.",
+            "changes": [
+              {
+                "name": "Read-only solution access and sharing",
+                "summary": "Users can now open a solution in read-only mode and share a solution with read-only access without granting edit permissions.",
+                "analysis": "This likely supports safer collaboration, reviews, and stakeholder access without risking unintended changes.",
+                "impact": "Studio Web users collaborating on solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Deploy becomes primary toolbar action",
+                "summary": "Deploy is now the primary toolbar action for packaging and deploying a solution in one guided flow, while Publish has been moved to the dropdown.",
+                "analysis": "This likely streamlines the most common release workflow and makes deployment more discoverable, though it changes familiar UI placement.",
+                "impact": "Studio Web users packaging, publishing, or deploying solutions are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager expands Performance Testing reporting features, adds explicit runtime targeting for autonomous runs, and removes the iText PDF dependency, which changes PDF attachment handling in the cloud.",
+            "overall_analysis": "The release improves test execution control and reporting depth while also introducing a clearly stated compatibility-impacting change to PDF processing behavior in cloud scenarios.",
+            "changes": [
+              {
+                "name": "Performance Testing reporting enhancements",
+                "summary": "Performance Testing now includes per-scenario report comparisons, dry-run probe timeline data in production, and asynchronous Excel export with per-custom-field columns.",
+                "analysis": "These additions likely improve analysis depth, production observability, and export scalability for performance test results.",
+                "impact": "Performance Testing users analyzing reports and exporting test data are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Configurable runtime targeting for autonomous runs",
+                "summary": "Autonomous Test Execution and Autonomous Exploration runs can now target a specific runtime, robot account, and machine template using a new Configure tab, instead of always auto-selecting an available runtime.",
+                "analysis": "This gives teams more execution control and predictability, which may be important for environment-specific validation or capacity planning.",
+                "impact": "Users running Autonomous Test Execution and Autonomous Exploration are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "iText PDF dependency removal changes PDF attachment handling",
+                "summary": "The iText PDF library dependency was removed. In the cloud, reading PDF attachments is now text-only, and image extraction from PDF attachments is no longer supported.",
+                "analysis": "This removes a library dependency but also narrows PDF-processing capabilities, which may require users to change workflows that depended on extracted images from PDFs.",
+                "impact": "Cloud users who read PDF attachments in Test Manager, especially those relying on image extraction, are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds a new Layout model intelligent pre-processing option in preview for Unstructured and Complex Documents projects.",
+            "overall_analysis": "This preview feature signals continued investment in document understanding preprocessing, potentially improving handling for more difficult document types.",
+            "changes": [
+              {
+                "name": "Layout model intelligent pre-processing option in preview",
+                "summary": "A new Layout model intelligent pre-processing option is available in preview for Unstructured and Complex Documents projects.",
+                "analysis": "This likely aims to improve document preparation or extraction quality for document types where layout understanding matters.",
+                "impact": "Users working with Unstructured and Complex Documents projects in IXP are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 42179
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-august-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--early-august-2026",
+      "sha256": "043caee041edf3dec58821d9d3096414f37c6c6d8ebc3a8a427083127983b4eb",
+      "chars": 6883,
+      "payloadChars": 7001,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "This release updates licensing, billing, identity sync, administration APIs, platform configuration guidance, and plan availability across Automation Cloud Administration and Test Cloud Administration. It also announces a model retirement and clarifies behavior around license allocations and downgraded organizations.",
+            "overall_analysis": "The changes broaden administrative control over licensing and access, add a new pricing model for agentic solutions, and improve enterprise identity and governance capabilities. They also require some customers to plan migrations and review licensing behavior, especially around GPT-4o retirement and downgraded free organizations.",
+            "changes": [
+              {
+                "name": "Unified monthly AI and Agentic user usage pool",
+                "summary": "User licenses now include a single monthly AI and Agentic usage pool shared across Autopilot, Agent Development, ScreenPlay Development, Conversational Agents, and Autopilot for Everyone, replacing separate per-product AI entitlements. Administrators can grant top-ups and monitor per-user usage from Admin > Licenses > Consumables > User usage.",
+                "analysis": "This simplifies entitlement management by consolidating usage across multiple products into one pool and gives administrators clearer control over consumption and top-ups.",
+                "impact": "Administrators and licensed users of Autopilot, Agent Development, ScreenPlay Development, Conversational Agents, and Autopilot for Everyone are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Transactional Billing for Maestro agentic solutions",
+                "summary": "Transactional Billing is introduced as a new charging model for agentic solutions orchestrated by Maestro. It prices a solution run as a single, tiered transaction based on an AI Step universal consumption unit, while component-based pricing remains available in parallel. A solution run uses one model or the other. This is available to organizations on Unified Pricing and is enabled per folder.",
+                "analysis": "This provides an alternative pricing approach for agentic solutions, which may make costs easier to reason about at the solution-run level while preserving the existing component-based option.",
+                "impact": "Organizations on Unified Pricing using Maestro-orchestrated agentic solutions, especially administrators configuring billing per folder, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "SCIM User Sync generally available",
+                "summary": "SCIM User Sync is now generally available for synchronizing user creation, updates, and deprovisioning between UiPath and Microsoft Entra ID or Okta.",
+                "analysis": "General availability indicates the feature is production-ready for identity lifecycle automation, reducing manual user administration.",
+                "impact": "Organizations using Microsoft Entra ID or Okta for identity management and administrators responsible for provisioning are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Community plan on Unified Pricing",
+                "summary": "The Community plan is now available for organizations on Unified Pricing, giving individual developers and builders free access to the UiPath agentic platform.",
+                "analysis": "This expands access to the platform for individual builders within the Unified Pricing model and may encourage adoption and experimentation.",
+                "impact": "Individual developers, builders, and organizations using Unified Pricing are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "GPT-4o model retirement notice",
+                "summary": "The GPT-4o model version `gpt-4o-2024-05-13` will be removed from the platform on October 1, 2026, following its retirement by Microsoft. Automations and Bring Your Own (BYO) configurations that use it must migrate to GPT-5.1 before the removal date.",
+                "analysis": "This is a time-bound compatibility and continuity issue that requires customers to identify dependencies and migrate before the model is removed.",
+                "impact": "Customers using `gpt-4o-2024-05-13` in automations or BYO configurations are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Check access API for effective access retrieval",
+                "summary": "Organization Administrators can now use the Check access API to retrieve effective access for a user, group, or external application across the organization, including tenant-level assignments from every active tenant.",
+                "analysis": "This improves visibility into permissions and supports governance, auditing, and troubleshooting of complex access setups.",
+                "impact": "Organization Administrators, security teams, and integrations needing access evaluation are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "License page allocation warning and hidden consumables API key",
+                "summary": "The Licenses page now warns when a host-level license update no longer includes a unit type previously allocated to an organization. Existing allocation remains until those no-longer-available unit types are de-allocated. The consumables API key is now hidden by default on the Consumables tab.",
+                "analysis": "These changes help administrators avoid accidental confusion during license updates and improve the default protection of a sensitive API key.",
+                "impact": "Administrators managing host-level licenses, allocations, and consumables are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Firewall configuration page audit",
+                "summary": "Firewall configuration pages were audited. Apps monitoring, Sentry, and SignalR domains were added, and obsolete or duplicate domains were removed from the Automation Cloud Portal, Action Center, Apps, Data Fabric, Document Understanding, Orchestrator, and Studio Web entries.",
+                "analysis": "This helps customers maintain accurate allowlists and network configurations, which can reduce connectivity or monitoring issues caused by outdated documentation.",
+                "impact": "Network administrators and customers maintaining firewall allowlists for the listed services are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic User License Management enablement after downgrade",
+                "summary": "Free organizations that had Legacy User License Management disabled before an Enterprise downgrade will now have User License Management enabled automatically 14 days after the downgrade, unless they upgrade back to Enterprise within that window.",
+                "analysis": "This defines post-downgrade behavior and a transition period, helping standardize license management after plan changes.",
+                "impact": "Organizations downgrading from Enterprise to free, especially those with Legacy User License Management disabled, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "This release updates due-date filtering and due-status visibility, changes how some timers appear, adds issue reporting in document actions, improves classic-to-compact view switching, and updates the document viewer with newer browser requirements. It also announces a future Due soon threshold change.",
+            "overall_analysis": "The release focuses on usability for action management and document review while also introducing a browser compatibility constraint through a security-related viewer update. Teams should prepare for both the announced future due-status logic change and the newer browser requirement.",
+            "changes": [
+              {
+                "name": "Due Status and Due Time filters for Actions list",
+                "summary": "The Actions list replaces the Timer Status filter with a multi-select Due Status filter covering Due later, Due soon, Overdue, No timer, and Completed in time on the Completed tab. It also adds a Due Time filter and sort, and each action row now shows its due status with the completion due date in a tooltip.",
+                "analysis": "This makes action tracking and filtering more precise, helping users prioritize work and review completion timeliness more effectively.",
+                "impact": "Action Center users managing and reviewing actions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Task assigned end-criteria timers hidden from interface",
+                "summary": "Timers configured with Task assigned as the end criteria no longer appear in the interface. They continue to run, and their configured outcome still triggers when they expire.",
+                "analysis": "This reduces visible timer clutter for a specific timer type without changing backend timer execution behavior.",
+                "impact": "Users viewing timers in Action Center, especially for actions configured with Task assigned end criteria, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Planned Due soon threshold change",
+                "summary": "A future release will change the Due soon threshold from 80% of the completion timer duration to a fixed 24 hours remaining. Completion timers shorter than 24 hours will then report Due soon for their entire duration.",
+                "analysis": "This advance notice gives users time to prepare for changed due-status behavior and reporting expectations.",
+                "impact": "Users and teams relying on Due soon timing semantics in Action Center are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Technical issue reporting in Document Validation and Document Classification",
+                "summary": "Document Validation and Document Classification actions now include a Report a technical issue button. Reports can include an anonymized copy of the taxonomy and the extraction or classification result, and never include the document or text values read from it.",
+                "analysis": "This should streamline support and troubleshooting while preserving document content privacy.",
+                "impact": "Reviewers and support workflows for Document Validation and Document Classification actions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Classic view prompt for compact view in Validation Station",
+                "summary": "When a Document Validation action opens in classic view, Validation Station now offers switching to the compact view and back. The choice is remembered per reviewer and browser.",
+                "analysis": "This improves reviewer ergonomics by making view selection easier and persistent at the user/browser level.",
+                "impact": "Document Validation reviewers using Validation Station are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Document viewer security update and newer browser requirement",
+                "summary": "The document viewer used by Document Validation and Document Classification actions was updated to incorporate upstream security fixes and now requires a more recent browser. In older browsers, the document does not load and an error is shown instead.",
+                "analysis": "This improves security posture but introduces a compatibility constraint for users on older browsers.",
+                "impact": "Users opening Document Validation or Document Classification actions, especially on older browsers, are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents gains preview support for coded function tools, adds client-side tools for conversational agents, and introduces the gemini-3.5-flash model. These changes expand how agents execute logic, access local capabilities, and choose models.",
+            "overall_analysis": "The release significantly broadens agent extensibility and execution patterns by combining deterministic code tools with client-side execution and an additional model option. This can enable richer agent experiences while requiring careful implementation choices around where tools run.",
+            "changes": [
+              {
+                "name": "Coded function tools in preview",
+                "summary": "Agents can now use coded functions as tools. The coded function tool is available in preview and runs custom Python code as a deterministic, process-based tool so an agent can reason over the structured result.",
+                "analysis": "This adds a programmable extension mechanism that can support deterministic computation and structured outputs within agent workflows.",
+                "impact": "Developers building agents that need custom logic or Python-based tooling are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Client-side tools for conversational agents",
+                "summary": "Conversational agents now support client-side tools that run on the user's browser or host application instead of the UiPath server. These tools can access client-local data, trigger UI actions, and use device capabilities.",
+                "analysis": "This expands what conversational agents can do in end-user environments by allowing local execution and direct interaction with client resources.",
+                "impact": "Developers of conversational agents and end users interacting with browser- or host-based agent experiences are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Gemini model availability",
+                "summary": "The `gemini-3.5-flash` model is now available for Agents.",
+                "analysis": "This gives agent builders another model choice that may suit different performance or capability needs, though the release notes do not detail selection criteria.",
+                "impact": "Developers configuring models for Agents are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub enhances Process Repository process models with more detailed step documentation and expands audit visibility in the History tab. The changes support richer process capture and clearer traceability of edits.",
+            "overall_analysis": "These updates improve process governance and documentation quality by making step-level details more structured and by recording who changed process models and when.",
+            "changes": [
+              {
+                "name": "Step Details panel for process models",
+                "summary": "Process Repository process models now include a Step Details panel for documenting individual tasks and steps, including files and links, applications, risks, controls, optimization notes, and the roles responsible for the work. Roles, Risks, and Controls can use existing list values or custom values.",
+                "analysis": "This enables more complete and structured process documentation at the step level, which can improve handoff, governance, and process understanding.",
+                "impact": "Users documenting and maintaining process models in Process Repository are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded History tab tracking",
+                "summary": "The History tab now records when a process model is created or updated and identifies the user who made the change.",
+                "analysis": "This strengthens traceability and accountability for process model lifecycle events.",
+                "impact": "Automation Hub users auditing or collaborating on process models are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops makes Azure Repos integration in Source Control generally available. Organizations can connect Azure DevOps and manage automation project source code stored in Azure Repos.",
+            "overall_analysis": "This promotes broader enterprise adoption of Azure-based source control workflows for automation projects by moving the integration to general availability.",
+            "changes": [
+              {
+                "name": "Azure Repos integration generally available",
+                "summary": "The Azure Repos integration in Source Control is now generally available. You can connect your Azure DevOps organization and manage the source code of automation projects stored in Azure Repos.",
+                "analysis": "General availability signals production readiness for teams standardizing on Azure DevOps and Azure Repos for source control.",
+                "impact": "Development teams and administrators using Automation Ops with Azure DevOps are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Document Understanding": {
+            "summary": "Document Understanding adds customer managed keys support for Helix Extractor 2.0 and Helix Classifier 1.0. This extends encryption-key control to these named capabilities.",
+            "overall_analysis": "The update strengthens enterprise control over encryption for specific Helix components, which can matter for compliance and security requirements.",
+            "changes": [
+              {
+                "name": "Customer managed keys for Helix components",
+                "summary": "Customer managed keys (CMK) are now available in Helix Extractor 2.0 and Helix Classifier 1.0.",
+                "analysis": "This gives customers more control over key management for supported Document Understanding components, which can help meet security and compliance expectations.",
+                "impact": "Organizations using Helix Extractor 2.0 or Helix Classifier 1.0, especially those with customer-managed encryption requirements, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds an Enter URL option for Microsoft OneDrive and SharePoint file or folder reference fields. Users can now paste a URL directly instead of browsing or writing an expression.",
+            "overall_analysis": "This is a workflow simplification change that can speed configuration when users already know the target OneDrive or SharePoint URL.",
+            "changes": [
+              {
+                "name": "Enter URL for OneDrive and SharePoint references",
+                "summary": "Fields that reference an existing file or folder in Microsoft OneDrive or SharePoint now provide an Enter URL option so users can paste a URL directly instead of browsing for the item or writing an expression.",
+                "analysis": "This reduces friction in connector configuration and may make automation setup faster and less error-prone for known resources.",
+                "impact": "Users configuring Integration Service flows or connections involving Microsoft OneDrive or SharePoint file or folder references are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP introduces a new project-creation role and tenant-level custom permissions, changes default project administration and permission requirements, adds audit logging for generative AI features in Communications Mining, and improves batch training continuity. The updates affect both Communications Mining and Unstructured and Complex Documents projects.",
+            "overall_analysis": "The release strengthens role-based access control and governance in IXP while making project administration defaults and training workflows more practical. It also adds audit visibility for generative AI usage and adjusts permission boundaries in Unstructured and Complex Documents projects.",
+            "changes": [
+              {
+                "name": "IXP Project Creator role",
+                "summary": "A new IXP Project Creator role grants the Project - Create permission, allowing a user to create IXP projects in the tenant without needing a service or organization administrator role. The project creator automatically becomes project admin of that project.",
+                "analysis": "This delegates project creation more flexibly while ensuring the creator immediately has administrative control over the new project.",
+                "impact": "Tenant administrators and users who need to create IXP projects are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level custom project permissions",
+                "summary": "Custom roles can now include four tenant-level project permissions: Project - Create, Project - Read, Project - Write, and Project - Delete. Each permission applies to every project in the tenant.",
+                "analysis": "This expands RBAC granularity for IXP at the tenant scope, enabling more tailored access models across projects.",
+                "impact": "Administrators designing custom roles and users governed by tenant-wide IXP permissions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Administrators group added as IXP Project Admin by default",
+                "summary": "New IXP projects, both Communications Mining and Unstructured and Complex Documents, now include the Administrators group as IXP Project Admin from the moment they are created.",
+                "analysis": "This ensures administrative oversight exists immediately for newly created projects and may reduce setup gaps.",
+                "impact": "Administrators and creators of new IXP projects are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Permission requirement changes for taxonomy import/export and model configuration",
+                "summary": "In Unstructured and Complex Documents projects, importing and exporting taxonomies now requires Dataset - Review instead of Dataset - Write. Dataset - Write now controls updating a project's Model configuration settings.",
+                "analysis": "This rebalances permission boundaries by separating taxonomy transfer tasks from model configuration changes.",
+                "impact": "Users working in Unstructured and Complex Documents projects, especially those assigned Dataset - Review or Dataset - Write permissions, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "AI Trust Layer audit logging for generative AI features",
+                "summary": "Generative AI features in Communications Mining are now recorded in the UiPath AI Trust Layer audit log.",
+                "analysis": "This improves governance and auditability for generative AI feature usage within Communications Mining.",
+                "impact": "Organizations using generative AI features in Communications Mining, especially compliance and audit teams, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Continue to next messages after training batch",
+                "summary": "At the end of a batch in Check label or Missed label training mode, users can now continue with the next messages in the sort order instead of returning to the Train page.",
+                "analysis": "This streamlines training workflows by reducing interruptions between batches.",
+                "impact": "Users training models in Communications Mining using Check label or Missed label modes are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 57328
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-august-2026#03",
+      "sectionId": "automation-cloud-and-test-cloud--early-august-2026",
+      "sha256": "45a2254f0c0f6a0c0be84d9b43dacd241c33a2ad6df7c79c1edbc000f08758f4",
+      "chars": 3441,
+      "payloadChars": 3531,
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Orchestrator": {
+            "summary": "Orchestrator adds new storage authentication options, updates the default API specification, expands the tenant-level Jobs view, changes side-panel behavior, adjusts Maestro queue trigger settings, and updates Automation Cloud Robots - Serverless networking details for the United States delayed update (GxP) and Japan regions.",
+            "overall_analysis": "These changes emphasize stronger security and standards alignment, a more capable and less disruptive UI, and clearer operational requirements for serverless robots across regions. They also signal upcoming API migration work because the previous V20 specification is deprecated and scheduled for removal in September 2026.",
+            "changes": [
+              {
+                "name": "Google Cloud Storage bucket provider support",
+                "summary": "Google Cloud Storage is available as a new storage bucket provider, authenticated with a service account key.",
+                "analysis": "This expands supported cloud storage options for customers using Google Cloud and provides a defined authentication method for integrating storage buckets.",
+                "impact": "Affects Orchestrator administrators and organizations that want to use Google Cloud Storage for bucket-based storage.",
+                "breaking_change": false
+              },
+              {
+                "name": "Azure Storage authentication via Integration Service service-principal connections",
+                "summary": "Azure Storage buckets can now be authenticated with Integration Service service-principal connections instead of storage-account access keys, enabling Entra-based identity and access management policies.",
+                "analysis": "This likely improves security and governance by allowing identity-based authentication instead of shared access keys.",
+                "impact": "Affects security teams, cloud administrators, and Orchestrator users configuring Azure Storage buckets.",
+                "breaking_change": false
+              },
+              {
+                "name": "OpenAPI 3.0 Public profile becomes default API specification",
+                "summary": "The default API specification is now the OpenAPI 3.0 Public profile. The previous V20 specification, based on Swagger 2.0, is deprecated as of this release and will be removed in September 2026.",
+                "analysis": "This moves the platform toward a newer API standard and gives users a limited migration window before the older specification is removed.",
+                "impact": "Affects developers, integrators, and teams consuming Orchestrator APIs or generated API clients.",
+                "breaking_change": true
+              },
+              {
+                "name": "Expanded tenant-level Jobs view columns",
+                "summary": "The tenant-level Jobs view now offers every column available in folder-level Jobs views, including Started/Ended, Creation Time, Source, Priority, Machine, Hostname, User interaction, and Healing Agent status. All added columns are hidden by default.",
+                "analysis": "This improves visibility and consistency between tenant-level and folder-level monitoring without forcing UI changes on users because the new columns start hidden.",
+                "impact": "Affects users monitoring jobs at tenant level, such as admins and operations teams.",
+                "breaking_change": false
+              },
+              {
+                "name": "Resizable overlay side panels",
+                "summary": "Side panels now render on top of primary content instead of pushing it aside. They are resizable, retain the chosen width for the session, and keep the underlying grid or list interactive.",
+                "analysis": "This likely improves usability and workflow efficiency by reducing layout disruption and supporting parallel interaction with panel content and the underlying page.",
+                "impact": "Affects all Orchestrator users interacting with pages that use side panels.",
+                "breaking_change": false
+              },
+              {
+                "name": "Fixed queue trigger values for Maestro processes",
+                "summary": "For queue triggers on Maestro processes, Minimum number of items to trigger the first job and Another job is triggered after each are now fixed to 1.",
+                "analysis": "This standardizes trigger behavior for Maestro processes and may simplify execution logic, though it also reduces configurability.",
+                "impact": "Affects users configuring queue triggers for Maestro processes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Static IP support for Serverless robots in United States delayed update (GxP)",
+                "summary": "Automation Cloud Robots - Serverless in the United States delayed update (GxP) region now support static IPs. Users must enable the option in the serverless robot template and add the corresponding IPs to their allowlist.",
+                "analysis": "This helps regulated or security-restricted environments adopt serverless robots by making outbound traffic more predictable and compatible with allowlist-based controls.",
+                "impact": "Affects administrators using Automation Cloud Robots - Serverless in the United States delayed update (GxP) region.",
+                "breaking_change": false
+              },
+              {
+                "name": "Redundant execution across Japan East and Japan West for Serverless robots",
+                "summary": "Automation Cloud Robots - Serverless in the Japan region now run redundantly across Japan East and Japan West. This adds outbound IP ranges that must be allowlisted if serverless robot traffic is restricted, while data residency remains unchanged.",
+                "analysis": "This likely improves resilience and availability in the Japan region, but it also requires networking updates for customers who restrict outbound traffic.",
+                "impact": "Affects administrators and network/security teams using Automation Cloud Robots - Serverless in the Japan region.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions updates the in-progress deployment abandonment experience by renaming the action from Delete draft to Cancel and clarifying that changes will be lost, while also offering an option to save progress as a draft.",
+            "overall_analysis": "This is primarily a usability and clarity improvement that reduces the chance of accidental data loss during deployment workflows.",
+            "changes": [
+              {
+                "name": "Deployment cancellation wording and flow update",
+                "summary": "The button for abandoning an in-progress deployment is renamed from Delete draft to Cancel. Its confirmation dialog now states that changes will be lost and offers to save progress as a draft instead of discarding it.",
+                "analysis": "This likely makes the deployment workflow clearer and safer by using more intuitive wording and by adding an explicit recovery option.",
+                "impact": "Affects users managing in-progress deployments in Solutions.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds multiple Performance Testing enhancements, including pre-run analysis, hardware-based capacity planning, elastic load generation from customer cloud infrastructure, communication fallbacks, integrated log viewing, and stakeholder-specific reports. It also announces the deprecation of GPT-4o in Autopilot, with support ending October 31, 2026.",
+            "overall_analysis": "These updates significantly strengthen performance testing maturity by improving readiness checks, scaling flexibility, observability, and reporting, while the GPT-4o deprecation requires planning to avoid disruption in Autopilot-dependent testing workflows.",
+            "changes": [
+              {
+                "name": "Workflow Analyzer for Performance Testing",
+                "summary": "Performance Testing adds a Workflow Analyzer that scans an automation before a run starts and flags unsupported activities and Studio version or activity-package mismatches.",
+                "analysis": "This helps teams catch compatibility and support issues before execution, reducing wasted robot minutes and failed runs.",
+                "impact": "Affects users preparing performance tests and teams responsible for automation compatibility.",
+                "breaking_change": false
+              },
+              {
+                "name": "Capacity Planner with safe load probes",
+                "summary": "Capacity Planner runs a short series of safe load probes against actual hardware and extrapolates a data-backed virtual-user recommendation, while keeping recommendations within limits already proven safe on the infrastructure.",
+                "analysis": "This gives teams a more evidence-based way to size tests and infrastructure usage while limiting the risk of overloading environments.",
+                "impact": "Affects performance engineers, infrastructure teams, and testers planning performance test scale.",
+                "breaking_change": false
+              },
+              {
+                "name": "Elastic Robot Pools using customer cloud capacity",
+                "summary": "Elastic Robot Pools generate load from the customer's own Azure, AWS, or Google Cloud capacity instead of shared multi-tenant infrastructure, scaling load injectors up and down as required by the test.",
+                "analysis": "This provides more control over performance test infrastructure and may better align testing with customer-specific cloud environments and scaling needs.",
+                "impact": "Affects organizations running performance tests that need dedicated or cloud-controlled load generation.",
+                "breaking_change": false
+              },
+              {
+                "name": "Port 443 and API fallback for Performance Testing metrics",
+                "summary": "When port 5671 is blocked, Performance Testing now falls back to WebSocket communication over port 443, and then to API-based metric delivery.",
+                "analysis": "This improves reliability in restricted network environments and reduces the need for new firewall rules to obtain metrics.",
+                "impact": "Affects users running Performance Testing in environments with stricter firewall settings.",
+                "breaking_change": false
+              },
+              {
+                "name": "Integrated robot log viewing in Performance Testing results",
+                "summary": "Robot logs can now be viewed and filtered by load group and severity directly inside the Performance Testing results screen, alongside application logs.",
+                "analysis": "This improves troubleshooting efficiency by centralizing key diagnostics within the results experience.",
+                "impact": "Affects developers, testers, and operations teams analyzing performance test outcomes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Stakeholder-specific performance test reports",
+                "summary": "Every performance test run now generates a dedicated report view for each stakeholder who acts on the result: Program Managers, Developers, InfraOps, and QA/Testers.",
+                "analysis": "This likely improves communication and decision-making by tailoring result views to different audiences and responsibilities.",
+                "impact": "Affects all teams that review performance test results across product, engineering, infrastructure, and QA functions.",
+                "breaking_change": false
+              },
+              {
+                "name": "GPT-4o deprecation in Autopilot",
+                "summary": "GPT-4o is deprecated in Autopilot, with support ending October 31, 2026. Users must switch to a supported alternative model in their AI Trust Layer policy before then to avoid disruption to test generation, quality checks, and other Autopilot capabilities.",
+                "analysis": "This requires proactive model migration planning to maintain continuity for AI-assisted testing features in Autopilot.",
+                "impact": "Affects users and administrators relying on Autopilot features governed by AI Trust Layer policies.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26525
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-august-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--late-august-2026",
+      "sha256": "4722645cc48a740352d0cfc7815ea3feee24ed107cee5dce8d2bf4d4ee59e6a9",
+      "chars": 1118,
+      "payloadChars": 1197,
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Task Mining",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Orchestrator": {
+            "summary": "Orchestrator introduces new Azure Storage bucket authentication through Integration Service service-principal connections, updates side panel behavior and resizing, and deprecates the previous V20/Swagger 2.0 API specification in favor of OpenAPI 3.0 Public profile.",
+            "overall_analysis": "These changes improve security and usability while signaling an API transition that customers should plan for before the deprecated specification is removed in September 2026.",
+            "changes": [
+              {
+                "name": "Azure Storage bucket authentication via service-principal connections",
+                "summary": "Azure Storage buckets can now be authenticated using Integration Service service-principal connections instead of storage-account access keys.",
+                "analysis": "This likely improves security and credential management by reducing reliance on storage-account access keys and enabling connection-based authentication.",
+                "impact": "Users configuring Azure Storage buckets in Orchestrator, especially administrators and integration teams managing authentication.",
+                "breaking_change": false
+              },
+              {
+                "name": "Side panels render as overlays and support persisted resizing",
+                "summary": "Side panels now render on top of primary content instead of pushing it aside, and they are resizable with a persisted width.",
+                "analysis": "This likely improves the user interface experience by preserving workspace context and allowing users to keep a preferred panel width across sessions.",
+                "impact": "All Orchestrator users interacting with side panels in the interface.",
+                "breaking_change": false
+              },
+              {
+                "name": "OpenAPI 3.0 Public profile becomes default; V20/Swagger 2.0 deprecated",
+                "summary": "The default API specification is now OpenAPI 3.0 Public profile. The previous V20/Swagger 2.0 specification is deprecated and will be removed in September 2026.",
+                "analysis": "This indicates a planned API modernization. Users and integrators relying on the older specification should prepare to migrate before its removal in September 2026.",
+                "impact": "Developers, API consumers, and integration teams using Orchestrator API specifications.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Task Mining": {
+            "summary": "Task Mining in Automation Cloud Public Sector is being retired effective September 1, 2026, with resources redirected toward Delegate - Cartographer.",
+            "overall_analysis": "This is a product retirement announcement that signals a strategic shift in investment. Customers using Task Mining in this environment will need to plan for discontinuation and evaluate Delegate - Cartographer.",
+            "changes": [
+              {
+                "name": "Task Mining retirement in Automation Cloud Public Sector",
+                "summary": "Task Mining in Automation Cloud Public Sector is being retired, effective September 1, 2026, to redirect resources toward Delegate - Cartographer.",
+                "analysis": "This reflects a product strategy change and likely means customers must transition away from Task Mining in this environment by the stated date.",
+                "impact": "Current and prospective Task Mining users in Automation Cloud Public Sector.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager updates the manual execution assistant layout, changes Excel exports for requirements and test cases to asynchronous processing with custom-field columns, and removes the iText PDF library dependency, which changes cloud PDF attachments to text-only.",
+            "overall_analysis": "These changes combine usability and export improvements with a notable compatibility change to PDF attachments in the cloud. Teams using document attachments or large exports may need to adjust their workflows.",
+            "changes": [
+              {
+                "name": "Manual execution assistant displays description above Precondition",
+                "summary": "The manual execution assistant now shows the test case description above Precondition.",
+                "analysis": "This likely improves readability and execution flow by surfacing descriptive context earlier during manual test execution.",
+                "impact": "Manual testers and users working with the manual execution assistant in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Asynchronous Excel export with custom-field columns",
+                "summary": "Excel export of requirements and test cases is now asynchronous, with one column per custom field.",
+                "analysis": "This likely improves export handling for larger datasets and makes exported data more structured and easier to analyze based on custom fields.",
+                "impact": "Users exporting requirements and test cases to Excel, especially teams managing custom fields or larger exports.",
+                "breaking_change": false
+              },
+              {
+                "name": "iText PDF library removed; cloud PDF attachments become text-only",
+                "summary": "The iText PDF library dependency was removed. As a result, PDF attachments are now text-only in the cloud.",
+                "analysis": "This is an explicit breaking change that alters how PDF attachments behave in the cloud, which may affect teams relying on previous PDF attachment capabilities or formatting.",
+                "impact": "Cloud Test Manager users who attach or consume PDF attachments.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 25843
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-august-2026#05",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-august-2026",
+      "sha256": "0e332f0c757f04c148f8d9d01e438576474e6994a1defb46235824742308466f",
+      "chars": 1734,
+      "payloadChars": 1816,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Administration updates add an API to check effective access across the organization and active tenants, and improve protection of consumable license API keys in the Licenses page. These changes expand administrative visibility while reducing accidental exposure of sensitive licensing information.",
+            "overall_analysis": "The broader significance is improved governance for public sector cloud organizations: administrators can audit access more comprehensively and handle consumable license credentials more securely from the existing administration experience.",
+            "changes": [
+              {
+                "name": "Check access API for organization-wide effective access",
+                "summary": "Organization Administrators can now use the Check access API to retrieve effective access for a user, group, or external application across the organization, including tenant-level assignments from every active tenant.",
+                "analysis": "This likely helps administrators audit permissions and troubleshoot access by providing a centralized view of effective access that includes tenant assignments.",
+                "impact": "Organization Administrators, and any users, groups, or external applications whose access must be reviewed across the organization and active tenants.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consumable license API key hidden by default",
+                "summary": "The API key for consumable license types, such as AI Units and Platform Units, is now hidden by default on the Consumables tab of the Licenses page. Organization Administrators, License Administrators, and License Viewers can unhide it.",
+                "analysis": "This likely reduces the risk of exposing sensitive license credentials during routine administration while still allowing authorized roles to reveal the key when needed.",
+                "impact": "Organization Administrators, License Administrators, and License Viewers managing consumable licenses such as AI Units and Platform Units.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds usability and security improvements across job navigation, trigger setup, machine-folder assignment, side-panel filtering, and webhook secret handling. The updates streamline common workflows and reduce manual setup or credential exposure.",
+            "overall_analysis": "Taken together, these changes suggest a focus on operator efficiency and safer defaults in Orchestrator. They make configuration and investigation easier while minimizing unnecessary manual steps and exposure of sensitive information.",
+            "changes": [
+              {
+                "name": "Job side panel links to parent process",
+                "summary": "The job side panel header now links to the parent process, displaying process details in place of the job side panel.",
+                "analysis": "This likely makes it easier to move from a job to its associated process context during troubleshooting or review, reducing navigation friction.",
+                "impact": "Orchestrator users reviewing jobs and needing quick access to parent process details.",
+                "breaking_change": false
+              },
+              {
+                "name": "Disabled-state trigger creation",
+                "summary": "Triggers can be created in a disabled state, so you can complete configuration and testing before activating them. This applies to queue, event, and time triggers.",
+                "analysis": "This likely supports safer rollout and validation of automation schedules and eventing by letting users prepare triggers without immediately enabling them.",
+                "impact": "Users configuring queue, event, and time triggers in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic default modern folder assignment for serverless machines",
+                "summary": "A serverless machine provisioned with a tenant is now assigned automatically to the default modern folder, instead of requiring manual assignment.",
+                "analysis": "This likely reduces setup effort and the chance of configuration omissions when provisioning serverless machines.",
+                "impact": "Administrators and users provisioning serverless machines within a tenant.",
+                "breaking_change": false
+              },
+              {
+                "name": "Job side-panel grid hides non-applicable filters",
+                "summary": "The job grid shown in a side panel hides the Type and User interaction filters, which do not apply in that context.",
+                "analysis": "This likely simplifies the interface and avoids confusion by removing filters that are irrelevant in the side-panel view.",
+                "impact": "Users working with the job grid in side panels.",
+                "breaking_change": false
+              },
+              {
+                "name": "Webhook secrets hidden by default",
+                "summary": "Webhook secrets are no longer displayed in plain text in the interface, and are now hidden by default like other sensitive credential fields.",
+                "analysis": "This likely improves security posture by reducing inadvertent exposure of webhook secrets in the user interface.",
+                "impact": "Users who create, view, or manage webhooks in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager announces the deprecation of GPT-4o in Autopilot, with support ending October 31, 2026, and advises moving to a supported model in AI Trust Layer policy. The change is important for continuity of AI-assisted testing capabilities.",
+            "overall_analysis": "The broader significance is a required model transition for organizations using Autopilot in Test Manager. Teams need to update AI Trust Layer policy choices before the deadline to avoid interruption in AI-driven test workflows.",
+            "changes": [
+              {
+                "name": "GPT-4o deprecated in Autopilot",
+                "summary": "GPT-4o is deprecated in Autopilot, with support ending October 31, 2026. Users should switch to a supported alternative model in their AI Trust Layer policy before then to avoid disruption to test generation, quality checks, and other Autopilot capabilities.",
+                "analysis": "This signals an upcoming dependency change for AI-backed testing features. Proactive migration is likely needed to maintain uninterrupted Autopilot functionality after the support end date.",
+                "impact": "Test Manager users and administrators relying on Autopilot, especially those responsible for AI Trust Layer policy configuration and AI-assisted test generation or quality checks.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26326
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--late-august-2026#06",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--late-august-2026",
+      "sha256": "a5aa7f4e6a409f7febb4d3ac6e93cb8f7b294ad514383114c183df023547f599",
+      "chars": 2247,
+      "payloadChars": 2352,
+      "products": [
+        {
+          "name": "Agents",
+          "releaseDate": "August 21, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "August 21, 2026"
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": "August 21, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "August 21, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "August 21, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "August 25, 2026"
+        },
+        {
+          "name": "Automation Cloud Dedicated Admin / Test Cloud Dedicated Admin",
+          "releaseDate": "August 26, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "August 26, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "August 26, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "August 26, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Agents": {
+            "summary": "Agents introduced new assignment criteria for agent escalations, expanding routing options. The update adds workload-based, group-wide, round-robin, and LLM-inferred routing methods.",
+            "overall_analysis": "This appears to improve how escalations are distributed, giving teams more flexibility to balance work and automate routing decisions.",
+            "changes": [
+              {
+                "name": "New assignment criteria for agent escalations",
+                "summary": "Agent escalations now support Workload, All users in group, Round Robin, and LLM inferred routing as assignment criteria.",
+                "analysis": "The change likely helps organizations route escalations more efficiently, either through deterministic distribution methods or AI-assisted inference.",
+                "impact": "Teams using Agents for escalation handling are affected, especially administrators or managers configuring assignment logic.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator added several usability and security-related improvements, including disabled-state trigger creation, automatic serverless machine assignment to the default modern folder, and hidden webhook secrets by default. The August 26 note states that the August 21 job side panel and API updates remain in effect, but no further details are provided in this section.",
+            "overall_analysis": "These changes suggest a focus on safer configuration defaults, simpler provisioning, and improved handling of sensitive information. The referenced continuation of earlier job side panel and API updates indicates ongoing refinement, but their significance cannot be fully assessed from this section alone.",
+            "changes": [
+              {
+                "name": "Create triggers in a disabled state",
+                "summary": "Triggers can now be created in a disabled state.",
+                "analysis": "This likely allows administrators to define automation schedules or event triggers before activating them, reducing the risk of accidental execution during setup.",
+                "impact": "Orchestrator users who create and manage triggers are affected, particularly administrators and automation operators.",
+                "breaking_change": false
+              },
+              {
+                "name": "Auto-assignment of serverless machines to default modern folder",
+                "summary": "Serverless machines are now automatically assigned to the default modern folder when provisioned.",
+                "analysis": "This likely streamlines initial setup and reduces manual configuration steps after provisioning serverless machines.",
+                "impact": "Users provisioning serverless machines in Orchestrator are affected, especially administrators setting up automation infrastructure.",
+                "breaking_change": false
+              },
+              {
+                "name": "Webhook secrets hidden by default",
+                "summary": "Webhook secrets are now hidden by default, similar to other sensitive credential fields.",
+                "analysis": "This likely improves security and reduces accidental exposure of sensitive secret values in the user interface.",
+                "impact": "Users configuring or viewing webhooks in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "August 21 job side panel and API updates continue to apply",
+                "summary": "The August 26 release notes state that job side panel and API updates published on August 21, 2026 continue to apply, and direct readers to that date's Orchestrator release notes for details.",
+                "analysis": "This indicates continuity of previously published changes, but this section does not provide enough detail to assess the exact functional impact.",
+                "impact": "Orchestrator users impacted by the August 21 job side panel and API updates remain affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions updated the resource explorer to expose more direct actions and clearer resource details per row. The enhancement improves visibility into component linking and resource context.",
+            "overall_analysis": "This seems aimed at making resource management more efficient and intuitive by reducing navigation overhead and surfacing relevant metadata directly in the explorer.",
+            "changes": [
+              {
+                "name": "Enhanced resource explorer actions and metadata",
+                "summary": "The resource explorer now shows link, change, and unlink actions directly for a component, along with a friendly type label, resource kind icon, and folder location for each row.",
+                "analysis": "This likely improves usability by making common resource-management actions faster and by giving users clearer context about each listed resource.",
+                "impact": "Users managing components and resources in Solutions are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web improved Git repository onboarding, expanded project editing rollout for local setup to Enterprise accounts with a grace period through February 1, 2027, introduced Maestro Case and Maestro Flow (Preview) project types, and added queue support and Base64 file-conversion activities for API workflows.",
+            "overall_analysis": "These changes reflect a broad expansion of Studio Web capabilities across onboarding, project-type coverage, enterprise rollout, and API workflow functionality. The release appears to strengthen Studio Web as a more complete web-based development environment.",
+            "changes": [
+              {
+                "name": "Improved empty Git repository cloning flow",
+                "summary": "When cloning an empty Git repository, Studio Web now prompts users to add a project instead of leaving the application unable to load.",
+                "analysis": "This likely resolves a poor onboarding or error-state experience and helps users recover immediately when working with empty repositories.",
+                "impact": "Studio Web users cloning empty Git repositories are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Local setup for RPA workflow and app project editing rollout",
+                "summary": "Local setup for RPA workflow and app project editing is rolling out to Enterprise accounts, with a grace period through February 1, 2027.",
+                "analysis": "This suggests expanded availability of local setup capabilities for enterprise users, while the grace period indicates a transition window for adoption or compliance.",
+                "impact": "Enterprise accounts using Studio Web for RPA workflow and app project editing are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Case and Maestro Flow project types added",
+                "summary": "Maestro Case and Maestro Flow (Preview) project types are now available in Studio Web.",
+                "analysis": "This expands the types of projects that can be created or edited in Studio Web, including preview access to Maestro Flow.",
+                "impact": "Studio Web users interested in Maestro Case and preview Maestro Flow projects are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue support and Base64 file-conversion activities for API workflows",
+                "summary": "Queue support and Base64 file-conversion activities were added for API workflows.",
+                "analysis": "This likely broadens workflow design options for API-based automations, especially where queue operations or file encoding and decoding are required.",
+                "impact": "Developers building API workflows in Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager made Autopilot Chat generally available and replaced the standalone Autopilot Search entry point in Test Cloud delivery, while also adding a customizable test execution name format at the project level. The August 25 and August 26 entries were routine maintenance releases with no significant customer-facing changes.",
+            "overall_analysis": "The substantive changes focus on AI-assisted user experience and test execution configurability, while the maintenance entries indicate platform upkeep without notable functional impact. The availability note limits the Autopilot Chat replacement to Test Cloud delivery.",
+            "changes": [
+              {
+                "name": "Autopilot Chat generally available",
+                "summary": "Autopilot Chat is now generally available, replacing the standalone Autopilot Search entry point for Test Cloud delivery.",
+                "analysis": "This likely consolidates AI-assisted capabilities into a single chat-based experience and signals production readiness for users in Test Cloud.",
+                "impact": "Test Manager users on Test Cloud delivery using Autopilot capabilities are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Customizable test execution name format",
+                "summary": "A customizable test execution name format is now available at the project level.",
+                "analysis": "This likely helps teams standardize naming conventions for test runs, improving organization, traceability, and reporting.",
+                "impact": "Project administrators and teams managing test executions in Test Manager are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Routine maintenance release on August 25, 2026",
+                "summary": "The August 25, 2026 Test Manager release was a routine maintenance release with no significant customer-facing changes.",
+                "analysis": "No specific functional impact is described in the release notes.",
+                "impact": "No significant customer-facing impact is stated.",
+                "breaking_change": false
+              },
+              {
+                "name": "Routine maintenance release on August 26, 2026",
+                "summary": "The August 26, 2026 Test Manager release was a routine maintenance release with no significant customer-facing changes.",
+                "analysis": "No specific functional impact is described in the release notes.",
+                "impact": "No significant customer-facing impact is stated.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Cloud Dedicated Admin / Test Cloud Dedicated Admin": {
+            "summary": "The admin experience now hides the Consumables API key for AI Units and Platform Units by default on the Consumables tab of the Licenses page. This is a security-focused visibility change for sensitive licensing-related information.",
+            "overall_analysis": "The update appears intended to strengthen default protection of sensitive keys in the administration interface, reducing the chance of accidental exposure.",
+            "changes": [
+              {
+                "name": "Consumables API key hidden by default",
+                "summary": "The Consumables API key for AI Units and Platform Units is now hidden by default on the Consumables tab of the Licenses page.",
+                "analysis": "This likely improves security hygiene by masking sensitive API keys unless deliberately revealed by an administrator.",
+                "impact": "Administrators using Automation Cloud Dedicated Admin or Test Cloud Dedicated Admin to manage licenses and consumables are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26444
+    }
+  ],
+  "warnings": []
+}

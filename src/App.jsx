@@ -1,126 +1,577 @@
-import { useEffect, useState } from "react";
+// Release Radar v1.2 - portal.
+// Reads pre-computed, validated analysis from static JSON (public/data) produced by the
+// scheduled pipeline. The browser holds no credentials and never calls UiPath Orchestrator.
+// Only fully analysed months are published, so there are no "pending" states to show.
+//
+// Layout: one tab per cloud; inside it one card per product for the whole month
+// (timeframes merged). Clicking a card opens all of that product's updates.
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import provider from "./data/static-provider.js";
+import { buildMonthView, productMatches } from "./lib/view-model.js";
 
-const monthDefinitions = ["january", "february", "march", "april", "may", "june", "july", "august"].map((month) => ({
-  value: month,
-  label: month[0].toUpperCase() + month.slice(1),
-  slug: `cloud-platform-${month}-2026`,
-}));
-const apiBase = "https://docs.uipath.com/_next/data/docs-build-135/release-notes/other/latest/release-notes/";
+const ADMIN_RERUN_URL = import.meta.env.VITE_ADMIN_RERUN_URL || "";
 
-function parseMonthPayload(payload, month) {
-  const body = payload.pageProps?.page?.containerItems?.[0]?.rawContent?.data?.Component?.Fields?.topicBody?.Values?.[0] || "";
-  const document = new DOMParser().parseFromString(body, "text/html");
-  const releases = [];
-  let deployment = "Other";
-  document.querySelectorAll("h3, table").forEach((element) => {
-    if (element.tagName === "H3") {
-      deployment = element.textContent.trim();
-      return;
-    }
-    const headers = [...element.querySelectorAll("thead th")].map((header) => header.textContent.trim().toLowerCase());
-    if (!headers.includes("product") || !headers.includes("release status")) return;
-    let previousProduct = "";
-    let previousStatus = "";
-    element.querySelectorAll("tbody tr").forEach((row) => {
-      const cells = [...row.children].map((cell) => cell.textContent.trim());
-      if (cells.length < 2) return;
-      const productCell = cells.length >= 5 ? cells[1] : previousProduct;
-      const statusCell = cells.length >= 5 ? cells[2] : previousStatus;
-      const product = productCell || "Unknown product";
-      const status = statusCell.includes("✅") ? "Available" : "No release";
-      const date = cells.length >= 5 ? cells[3] : cells[0];
-      previousProduct = product;
-      previousStatus = statusCell;
-      const link = row.querySelector("a")?.href || "https://docs.uipath.com/release-notes";
-        releases.push({ id: `${month.value}-${releases.length}-${product}`, month: month.label, monthValue: month.value, year: "2026", day: date.match(/\b\d{1,2}\b/)?.[0] || "--", title: `${product} release notes`, description: date === "N/A" ? "No release-note entry was published during this timeframe." : `${deployment} release catalog entry published on ${date}.`, product, deployment, type: status, tag: status === "Available" ? "Published" : "None", link, sourceContent: body });
-    });
+function formatDateTime(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? value : date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
+}
+
+const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+/** Safe inline formatting for UiPath text: **bold** and `code` only (React escapes the rest). */
+function InlineText({ text }) {
+  const parts = String(text).split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) return <strong key={index}>{part.slice(2, -2)}</strong>;
+    if (part.startsWith("`") && part.endsWith("`")) return <code key={index}>{part.slice(1, -1)}</code>;
+    return <span key={index}>{part}</span>;
   });
-  return { month, releases, content: body };
 }
 
-function sanitizeNoteContent(content) {
-  const document = new DOMParser().parseFromString(content, "text/html");
-  document.querySelectorAll("script, style, iframe, object, embed, form").forEach((element) => element.remove());
-  document.querySelectorAll("*").forEach((element) => {
-    [...element.attributes].forEach((attribute) => {
-      if (attribute.name.toLowerCase().startsWith("on") || attribute.name.toLowerCase() === "style") element.removeAttribute(attribute.name);
-    });
-    if (element.tagName === "A" && !/^https?:$/i.test(element.protocol)) element.removeAttribute("href");
-  });
-  return document.body.innerHTML;
+function SourceList({ text }) {
+  const items = String(text).split("\n").map((l) => l.trim()).filter(Boolean);
+  return (
+    <ul className="rr-source">
+      {items.map((line, index) => (
+        <li key={index} className={/^[*-] /.test(line) ? "" : "rr-source-plain"}>
+          <InlineText text={line.replace(/^[*-] /, "")} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-async function fetchReleases() {
-  const payloads = await Promise.all(monthDefinitions.map(async (month) => {
-    const query = new URLSearchParams({ productSlug: "release-notes", deliveryOption: "other", versionSlug: "latest", publicationType: "release-notes", topicSlug: month.slug });
-    const response = await fetch(`${apiBase}${month.slug}.json?${query}`);
-    if (!response.ok) throw new Error(`${month.label} request failed (${response.status})`);
-    return { month, payload: await response.json() };
-  }));
-  return payloads.map(({ month, payload }) => parseMonthPayload(payload, month));
+function ProductBadges({ product }) {
+  if (!product.breaking) return null;
+  return (
+    <span className="rr-badges">
+      <span className="rr-badge rr-badge-breaking">{product.breaking} breaking</span>
+    </span>
+  );
 }
 
-function getPreviousMonth() {
-  const date = new Date();
-  date.setMonth(date.getMonth() - 1);
-  return date.toLocaleString("en-US", { month: "long" }).toLowerCase();
+function ReleasedCard({ item }) {
+  const body = (
+    <>
+      <span className="rr-pcard-name">{item.name}</span>
+      <span className="rr-pcard-foot">
+        <span>Released {item.dates.length ? item.dates.join(", ") : "this month"}</span>
+        {item.links[0] && (
+          <span className="rr-pcard-cta" aria-hidden="true">
+            Release notes ↗
+          </span>
+        )}
+      </span>
+    </>
+  );
+  return item.links[0] ? (
+    <a className="rr-pcard rr-pcard-small" href={item.links[0].url} target="_blank" rel="noreferrer">
+      {body}
+    </a>
+  ) : (
+    <div className="rr-pcard rr-pcard-small rr-pcard-static">{body}</div>
+  );
+}
+
+function ProductCard({ product, onOpen }) {
+  return (
+    <button type="button" className={`rr-pcard ${product.breaking ? "is-breaking" : ""}`} onClick={(event) => onOpen(product.key, event.currentTarget)}>
+      <span className="rr-pcard-top">
+        <span className="rr-pcard-name">{product.name}</span>
+        <ProductBadges product={product} />
+      </span>
+      <span className="rr-pcard-summary">{product.summary || "No summary available."}</span>
+      <span className="rr-pcard-foot">
+        <span>{plural(product.updateCount, "update")}</span>
+        {product.dates.length > 0 && <span>Released {product.dates.join(", ")}</span>}
+        <span className="rr-pcard-cta" aria-hidden="true">
+          View updates →
+        </span>
+      </span>
+    </button>
+  );
+}
+
+function ProductDrawer({ product, env, monthLabel, monthPageUrl, onClose }) {
+  const closeRef = useRef(null);
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.classList.add("rr-no-scroll");
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.classList.remove("rr-no-scroll");
+    };
+  }, [onClose]);
+
+  return (
+    <div className="rr-drawer-layer">
+      <div className="rr-drawer-backdrop" onClick={onClose} aria-hidden="true" />
+      <aside className="rr-drawer" role="dialog" aria-modal="true" aria-labelledby="rr-drawer-title">
+        <header className="rr-drawer-head">
+          <div>
+            <p className="rr-drawer-eyebrow">
+              {env.short} · {monthLabel}
+            </p>
+            <h2 id="rr-drawer-title">{product.name}</h2>
+            <p className="rr-drawer-meta">
+              {plural(product.updateCount, "update")}
+              {product.dates.length > 0 && ` · Released ${product.dates.join(", ")}`}
+            </p>
+            <ProductBadges product={product} />
+          </div>
+          <button ref={closeRef} type="button" className="rr-close" onClick={onClose} aria-label="Close">
+            ×
+          </button>
+        </header>
+
+        <div className="rr-drawer-body">
+          {product.flagMismatch && (
+            <p className="rr-note rr-note-warn">UiPath's text mentions a breaking change that the analysis did not flag. Please verify.</p>
+          )}
+
+          {product.summaries.length > 0 && (
+            <section className="rr-block">
+              <h3>Summary</h3>
+              {product.summaries.map((text, i) => (
+                <p key={i}>{text}</p>
+              ))}
+            </section>
+          )}
+
+          {product.updates.length > 0 && (
+            <section className="rr-block">
+              <h3>Updates</h3>
+              <ol className="rr-updates">
+                {product.updates.map((update, i) => (
+                  <li key={`${update.name}-${i}`} className={update.breaking_change ? "is-breaking" : ""}>
+                    <div className="rr-update-head">
+                      <strong>{update.name || "Update"}</strong>
+                      {update.breaking_change && <span className="rr-badge rr-badge-breaking">Breaking</span>}
+                      {update.when && <span className="rr-when">{update.when}</span>}
+                    </div>
+                    {update.summary && <p>{update.summary}</p>}
+                    {update.impact && (
+                      <p className="rr-impact">
+                        <span>Impact</span>
+                        {update.impact}
+                      </p>
+                    )}
+                    {update.analysis && (
+                      <details className="rr-more">
+                        <summary>Agent analysis</summary>
+                        <p>{update.analysis}</p>
+                      </details>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+
+          {product.updates.length === 0 && product.pendingItems.length > 0 && (
+            <section className="rr-block">
+              <h3>What UiPath announced</h3>
+              <ul className="rr-pending">
+                {product.pendingItems.map((item, i) => (
+                  <li key={i}>
+                    <InlineText text={item.text} />
+                    {item.when && <span className="rr-when">{item.when}</span>}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {product.overall.length > 0 && (
+            <section className="rr-block">
+              <h3>Overall</h3>
+              {product.overall.map((text, i) => (
+                <p key={i}>{text}</p>
+              ))}
+            </section>
+          )}
+
+          {product.sources.length > 0 && product.updates.length > 0 && (
+            <details className="rr-more rr-original">
+              <summary>UiPath's original wording</summary>
+              {product.sources.map((source, i) => (
+                <div key={i} className="rr-original-item">
+                  {source.when && <p className="rr-when">{source.when}</p>}
+                  <SourceList text={source.text} />
+                </div>
+              ))}
+            </details>
+          )}
+
+          <div className="rr-drawer-links">
+            {product.links.map((link) => (
+              <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+                {link.label} ↗
+              </a>
+            ))}
+            {monthPageUrl && (
+              <a href={monthPageUrl} target="_blank" rel="noreferrer">
+                Full {monthLabel} notes on docs.uipath.com ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </aside>
+    </div>
+  );
 }
 
 function App() {
-  const [releases, setReleases] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState(getPreviousMonth);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [lastUpdated, setLastUpdated] = useState("Updated moments ago");
-  const [toast, setToast] = useState("");
+  const [index, setIndex] = useState(null);
+  const [indexError, setIndexError] = useState("");
+  const [selectedId, setSelectedId] = useState("");
+  const [month, setMonth] = useState(null);
+  const [monthLoading, setMonthLoading] = useState(false);
+  const [monthError, setMonthError] = useState("");
+  const [envName, setEnvName] = useState("");
+  const [query, setQuery] = useState("");
+  const [breakingOnly, setBreakingOnly] = useState(false);
+  const [openKey, setOpenKey] = useState("");
+  const searchRef = useRef(null);
+  const openerRef = useRef(null);
 
-  const loadData = async () => {
-    setLoading(true);
-    setError("");
+  const loadIndex = useCallback(async () => {
+    setIndexError("");
     try {
-      setReleases(await fetchReleases());
-      setLastUpdated("Updated just now");
-    } catch (loadError) {
-      setError(`Could not load UiPath release notes: ${loadError.message}`);
-      setToast("Feed unavailable");
-    } finally {
-      setLoading(false);
+      const data = await provider.loadIndex();
+      setIndex(data);
+      setSelectedId((current) => {
+        if (current && data.months.some((m) => m.id === current)) return current;
+        const best = data.months.find((m) => m.kind !== "release-dates");
+        return (best || data.months[0])?.id || "";
+      });
+    } catch (error) {
+      setIndexError(`Could not load release data: ${error.message}`);
     }
-  };
+  }, []);
 
-  useEffect(() => { loadData(); }, []);
   useEffect(() => {
-    if (releases.length && !releases.some((document) => document.month.value === selectedMonth)) {
-      setSelectedMonth(releases[releases.length - 1].month.value);
-    }
-  }, [releases, selectedMonth]);
-  useEffect(() => { if (toast) { const timer = setTimeout(() => setToast(""), 2200); return () => clearTimeout(timer); } }, [toast]);
-  useEffect(() => { const onKeyDown = (event) => { if (event.key === "/" && document.activeElement.tagName !== "INPUT") { event.preventDefault(); document.querySelector("#searchInput")?.focus(); } }; document.addEventListener("keydown", onKeyDown); return () => document.removeEventListener("keydown", onKeyDown); }, []);
+    loadIndex();
+  }, [loadIndex]);
 
-  const totalReleases = releases.reduce((total, document) => total + document.releases.length, 0);
-  const totalProducts = new Set(releases.flatMap((document) => document.releases.map((release) => release.product))).size;
-  const selectedDocument = releases.find((document) => document.month.value === selectedMonth);
+  useEffect(() => {
+    if (!selectedId || !index) return undefined;
+    const entry = index.months.find((m) => m.id === selectedId);
+    if (!entry) return undefined;
+    const controller = new AbortController();
+    setMonthLoading(true);
+    setMonthError("");
+    setOpenKey("");
+    provider
+      .loadMonth(entry, controller.signal)
+      .then((data) => setMonth(data))
+      .catch((error) => {
+        if (error.name !== "AbortError") setMonthError(`Could not load ${entry.label}: ${error.message}`);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setMonthLoading(false);
+      });
+    return () => controller.abort();
+  }, [selectedId, index]);
 
-  return <>
+  useEffect(() => {
+    const onKey = (event) => {
+      if (event.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) {
+        event.preventDefault();
+        searchRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const view = useMemo(() => buildMonthView(month), [month]);
+  const env = view.envs.find((e) => e.name === envName) || view.envs[0];
+  const products = useMemo(
+    () => (env ? env.products.filter((p) => productMatches(p, query.trim(), breakingOnly)) : []),
+    [env, query, breakingOnly],
+  );
+  const breakingList = useMemo(
+    () => (env ? env.products.flatMap((p) => p.updates.filter((u) => u.breaking_change).map((u) => ({ product: p, update: u }))) : []),
+    [env],
+  );
+  const openProduct = env?.products.find((p) => p.key === openKey) || null;
+  const selectedEntry = index?.months.find((m) => m.id === selectedId);
+
+  const open = useCallback((key, opener) => {
+    openerRef.current = opener || null;
+    setOpenKey(key);
+  }, []);
+  const close = useCallback(() => {
+    setOpenKey("");
+    openerRef.current?.focus?.();
+  }, []);
+
+  return (
     <div className="app-shell">
       <aside className="sidebar" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="UiPath Release Radar home"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span>release<br /><strong>radar</strong></span></a>
-        <div className="sidebar-label">Workspace</div>
-        <nav className="nav-list"><a className="nav-item active" href="#updates"><span className="nav-icon">◈</span>Release notes <span className="nav-count">{String(releases.length).padStart(2, "0")}</span></a></nav>
-        <div className="sidebar-label">Browse by month</div><nav className="product-list" aria-label="Months">{releases.map((document) => <button className={`product-link ${selectedMonth === document.month.value ? "active" : ""}`} key={document.month.value} type="button" aria-pressed={selectedMonth === document.month.value} onClick={() => { setSelectedMonth(document.month.value); document.querySelector("#updates")?.scrollIntoView({ behavior: "smooth" }); }}><span className="product-dot" />{document.month.label}</button>)}</nav>
-        <div className="sidebar-footer"><div className="status-indicator"><span />Feed status: {error ? "unavailable" : "healthy"}</div><p>Public release intelligence for the automation team.</p><a href="https://docs.uipath.com/" target="_blank" rel="noreferrer">Open UiPath docs ↗</a></div>
+        <a className="brand" href="#top" aria-label="Release Radar home">
+          <span className="brand-mark" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+          <span>
+            release
+            <br />
+            <strong>radar</strong>
+          </span>
+        </a>
+        <div className="sidebar-label">Months</div>
+        <nav className="rr-month-list" aria-label="Months">
+          {(index?.months || []).map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              className={`product-link ${m.id === selectedId ? "active" : ""}`}
+              aria-current={m.id === selectedId ? "page" : undefined}
+              onClick={() => setSelectedId(m.id)}
+            >
+              <span className="rr-dot" />
+              {m.label}
+              {m.counts?.breakingChanges > 0 && (
+                <span className="nav-count" title={`${m.counts.breakingChanges} breaking change(s)`}>
+                  {m.counts.breakingChanges} breaking
+                </span>
+              )}
+            </button>
+          ))}
+        </nav>
+        <div className="sidebar-footer">
+          <div className="status-indicator">
+            <span />
+            Data {index?.updatedAt ? `updated ${formatDateTime(index.updatedAt)}` : "loading"}
+          </div>
+          <p>Internal release intelligence for the Accelirate automation team.</p>
+          <a href="https://docs.uipath.com/release-notes" target="_blank" rel="noreferrer">
+            UiPath release notes ↗
+          </a>
+        </div>
       </aside>
+
       <main id="top" className="main-content">
-        <header className="topbar"><div className="breadcrumb"><span>Workspace</span><b>/</b>Release radar</div><div className="topbar-actions"><span className="live-chip"><span />Public feed</span><button className="icon-button" type="button" title="Refresh release feed" aria-label="Refresh release feed" onClick={() => { loadData(); setToast("Feed refreshed"); }}>↻</button></div></header>
-        <section className="hero" aria-labelledby="pageTitle"><div className="hero-copy"><p className="eyebrow">UiPath.com / product intelligence</p><h1 id="pageTitle">Know what<br /><em>just shipped.</em></h1><p className="hero-description">A clear, calm view of the latest UiPath product releases, improvements, and changes worth sharing.</p><div className="hero-meta"><span className="pulse" />{lastUpdated}<span className="meta-divider" />Source: UiPath release notes</div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" /><div className="art-core"><span>UP</span></div><span className="art-label label-top">PRODUCT<br />CHANGELOG</span><span className="art-label label-bottom">08 / 24<br />LIVE ITEMS</span></div></section>
-        <section id="updates" className="updates-section month-documents" aria-labelledby="updatesTitle"><div className="section-heading"><div><p className="eyebrow">UiPath release notes</p><h2 id="updatesTitle">2026 monthly documents</h2></div><span className="result-count">{selectedDocument ? `${selectedDocument.month.label} 2026` : `${String(releases.length).padStart(2, "0")} months`}</span></div>
-          {loading && <div className="loading-state">Loading release notes from UiPath...</div>}{error && !loading && <div className="loading-state">{error}</div>}{!loading && !error && selectedDocument && <div className="month-document-list"><article className="month-document"><div className="month-document-heading"><p className="eyebrow">Cloud platform / 2026</p><h3>{selectedDocument.month.label} 2026</h3></div><div className="release-note-document" dangerouslySetInnerHTML={{ __html: sanitizeNoteContent(selectedDocument.content) }} /></article></div>}
+        <header className="topbar">
+          <div className="breadcrumb">
+            <span>Workspace</span>
+            <b>/</b>Release radar
+          </div>
+          <div className="topbar-actions">
+            {ADMIN_RERUN_URL && (
+              <a className="rr-admin-link" href={ADMIN_RERUN_URL} target="_blank" rel="noreferrer" title="Admins only: opens the GitHub Actions workflow to re-run the analysis">
+                Re-run analysis (admin) ↗
+              </a>
+            )}
+            <button className="icon-button" type="button" title="Reload data" aria-label="Reload data" onClick={loadIndex}>
+              ↻
+            </button>
+          </div>
+        </header>
+
+        <section className="rr-intro" aria-labelledby="pageTitle">
+          <p className="eyebrow">UiPath Automation Cloud / release intelligence</p>
+          <h1 id="pageTitle">
+            Know what <em>just shipped.</em>
+          </h1>
+          <p className="rr-intro-text">Every UiPath product update of the month in one place, with impact and breaking changes called out.</p>
         </section>
-        <section className="source-banner"><div className="source-icon">↗</div><div><strong>Always go to the source.</strong><p>Release Radar is a lightweight view. Full notes, availability, and documentation live on UiPath.com.</p></div><a href="https://docs.uipath.com/release-notes" target="_blank" rel="noreferrer">Visit release notes <span>↗</span></a></section><footer className="footer"><span>Release Radar / v1.0</span><span>Made for teams who automate thoughtfully.</span></footer>
+
+        {indexError && (
+          <div className="rr-alert" role="alert">
+            {indexError}{" "}
+            <button type="button" className="rr-link-btn" onClick={loadIndex}>
+              Try again
+            </button>
+          </div>
+        )}
+        {!indexError && index && index.months.length === 0 && (
+          <div className="loading-state">
+            No month has been analysed yet. Run start-local.bat on your PC, or the Release Radar workflow on GitHub, once.
+          </div>
+        )}
+        {!index && !indexError && <div className="loading-state">Loading release data…</div>}
+
+        {selectedEntry && (
+          <section className="rr-month" aria-labelledby="monthTitle">
+            <div className="rr-month-head">
+              <div>
+                <p className="eyebrow">Release notes</p>
+                <h2 id="monthTitle">{selectedEntry.label}</h2>
+              </div>
+              <div className="rr-month-meta">
+                {month?.generatedAt && <span className="rr-muted-mono">Updated {formatDateTime(month.generatedAt)}</span>}
+                {month?.source?.pageUrl && (
+                  <a className="rr-muted-mono" href={month.source.pageUrl} target="_blank" rel="noreferrer">
+                    Full notes on docs.uipath.com ↗
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {monthLoading && <div className="loading-state">Loading {selectedEntry.label}…</div>}
+            {monthError && (
+              <div className="rr-alert" role="alert">
+                {monthError}
+              </div>
+            )}
+
+            {month && !monthLoading && !monthError && env && (
+              <>
+                <div className="rr-tabs" role="tablist" aria-label="Cloud">
+                  {view.envs.map((e) => (
+                    <button
+                      key={e.name}
+                      type="button"
+                      role="tab"
+                      aria-selected={e.name === env.name}
+                      className={`rr-tab ${e.name === env.name ? "active" : ""}`}
+                      title={e.name}
+                      onClick={() => {
+                        setEnvName(e.name);
+                        setOpenKey("");
+                      }}
+                    >
+                      {e.short}
+                      <span className="rr-tab-count">{e.stats.products || e.catalogOnly.length}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {env.products.length > 0 ? (
+                  <div className="rr-kpis">
+                    <div className="rr-kpi">
+                      <strong>{env.stats.products}</strong>
+                      <span>products updated</span>
+                    </div>
+                    <div className="rr-kpi">
+                      <strong>{env.stats.updates}</strong>
+                      <span>updates</span>
+                    </div>
+                    <div className={`rr-kpi ${env.stats.breaking ? "is-breaking" : ""}`}>
+                      <strong>{env.stats.breaking}</strong>
+                      <span>breaking changes</span>
+                    </div>
+                    <div className="rr-kpi">
+                      <strong>{env.latestRelease || "-"}</strong>
+                      <span>latest release</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="rr-kpis rr-kpis-2">
+                    <div className="rr-kpi">
+                      <strong>{env.catalogOnly.length}</strong>
+                      <span>products released</span>
+                    </div>
+                    <div className="rr-kpi">
+                      <strong>{env.latestRelease || "-"}</strong>
+                      <span>latest release</span>
+                    </div>
+                  </div>
+                )}
+
+                {breakingList.length > 0 && (
+                  <div className="rr-breaking" role="region" aria-label="Breaking changes">
+                    <p className="rr-breaking-title">
+                      ⚠ {plural(breakingList.length, "breaking change")} in {env.short} this month
+                    </p>
+                    <ul>
+                      {breakingList.map(({ product, update }, i) => (
+                        <li key={`${product.key}-${i}`}>
+                          <button type="button" onClick={(event) => open(product.key, event.currentTarget)}>
+                            <strong>{product.name}</strong> — {update.name}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {env.products.length > 0 && (
+                  <div className="rr-toolbar">
+                    <label className="rr-search">
+                      <span aria-hidden="true">⌕</span>
+                      <input
+                        ref={searchRef}
+                        type="search"
+                        value={query}
+                        placeholder={`Search ${env.short} products and updates`}
+                        aria-label="Search products and updates"
+                        onChange={(event) => setQuery(event.target.value)}
+                      />
+                      <kbd>/</kbd>
+                    </label>
+                    <label className="rr-toggle">
+                      <input type="checkbox" checked={breakingOnly} onChange={(event) => setBreakingOnly(event.target.checked)} />
+                      Breaking only
+                    </label>
+                  </div>
+                )}
+
+                {env.products.length === 0 && (
+                  <p className="rr-note">
+                    For {selectedEntry.label}, UiPath published only release dates for {env.short} (no highlight text to analyse).
+                  </p>
+                )}
+                {env.products.length > 0 && products.length === 0 && <div className="loading-state">No products match the current filters.</div>}
+
+                <div className="rr-pgrid">
+                  {products.map((product) => (
+                    <ProductCard key={product.key} product={product} onOpen={open} />
+                  ))}
+                </div>
+
+                {env.products.length === 0 && env.catalogOnly.length > 0 && (
+                  <div className="rr-pgrid">
+                    {env.catalogOnly.map((item) => (
+                      <ReleasedCard key={item.key} item={item} />
+                    ))}
+                  </div>
+                )}
+
+                {env.products.length > 0 && env.catalogOnly.length > 0 && !query && !breakingOnly && (
+                  <section className="rr-also">
+                    <h3>Also released in {selectedEntry.label} (no highlights published)</h3>
+                    <ul>
+                      {env.catalogOnly.map((item) => (
+                        <li key={item.key}>
+                          {item.links[0] ? (
+                            <a href={item.links[0].url} target="_blank" rel="noreferrer">
+                              {item.name} ↗
+                            </a>
+                          ) : (
+                            <span>{item.name}</span>
+                          )}
+                          {item.dates.length > 0 && <span className="rr-when">{item.dates.join(", ")}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </>
+            )}
+          </section>
+        )}
+
+        <footer className="footer">
+          <span>Release Radar v1.2</span>
+          <span>AI-generated from UiPath's public release notes. Always confirm critical changes in the source.</span>
+        </footer>
       </main>
+
+      {openProduct && env && (
+        <ProductDrawer product={openProduct} env={env} monthLabel={selectedEntry?.label || ""} monthPageUrl={month?.source?.pageUrl} onClose={close} />
+      )}
     </div>
-    {toast && <div className="toast visible" role="status" aria-live="polite">{toast}</div>}
-  </>;
+  );
 }
 
 export default App;

@@ -1,0 +1,112 @@
+# Release Radar v1.2 - analysis pipeline + GitHub Pages deployment.
+#
+# - schedule: every Monday 12:30 IST (07:00 UTC). First run analyses every month from
+#   RR_START_MONTH; later runs re-check only the latest months and send only new or changed
+#   UiPath text to the agent. A month is published only when its analysis is complete.
+# - workflow_dispatch: "admin re-run". Only people with write access to this repo can run it.
+# - push to main: rebuild and redeploy the portal (no agent calls).
+#
+# One-time setup (see README): Settings > Pages > Source = "GitHub Actions";
+# add secrets UIPATH_TRIGGER_URL + (UIPATH_CLIENT_ID/UIPATH_CLIENT_SECRET or UIPATH_PAT).
+
+name: Release Radar
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Monday 07:00 UTC = 12:30 IST (GitHub may start scheduled runs a few minutes late)
+  workflow_dispatch:
+    inputs:
+      month:
+        description: "Month to analyse, e.g. 2026-08 (empty = all months)"
+        required: false
+        default: ""
+      force:
+        description: "Ignore the cache and re-run the agent"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-radar
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write # commit refreshed public/data
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Run analysis pipeline
+        env:
+          UIPATH_TRIGGER_URL: ${{ secrets.UIPATH_TRIGGER_URL }}
+          UIPATH_CLIENT_ID: ${{ secrets.UIPATH_CLIENT_ID }}
+          UIPATH_CLIENT_SECRET: ${{ secrets.UIPATH_CLIENT_SECRET }}
+          UIPATH_PAT: ${{ secrets.UIPATH_PAT }}
+          UIPATH_ORG: ${{ vars.UIPATH_ORG }}
+          UIPATH_SCOPES: ${{ vars.UIPATH_SCOPES }}
+          UIPATH_INPUT_ARG: ${{ vars.UIPATH_INPUT_ARG }}
+          UIPATH_INPUT_TYPE: ${{ vars.UIPATH_INPUT_TYPE }}
+          UIPATH_CALL_MODE: ${{ vars.UIPATH_CALL_MODE }}
+          RR_START_MONTH: ${{ vars.RR_START_MONTH }}
+          RR_CACHE_KEY: ${{ vars.RR_CACHE_KEY }}
+          RR_STORE_SOURCE: ${{ vars.RR_STORE_SOURCE }}
+          RR_RECHECK_MONTHS: ${{ vars.RR_RECHECK_MONTHS }}
+          # Inputs are passed as env vars (not interpolated into the shell) and validated in code.
+          RR_MONTH: ${{ inputs.month }}
+          RR_FORCE: ${{ inputs.force }}
+        run: node pipeline/run.js
+      - name: Commit refreshed data
+        if: always()
+        run: |
+          git config user.name "release-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data data-state
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: release radar analysis ($(date -u +%Y-%m-%d))"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+  deploy:
+    needs: analyze
+    if: always() && (needs.analyze.result == 'success' || needs.analyze.result == 'skipped' || needs.analyze.result == 'failure')
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }} # include the data commit made above
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          VITE_ADMIN_RERUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/workflows/release-radar.yml
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,1159 @@
+{
+  "id": "2026-03",
+  "cacheKey": "v1",
+  "sourceSha256": "3126e56b7351e3379cb83d766d3d80822cdb068925e86a0a56d12fdc7486cd54",
+  "status": "complete",
+  "updatedAt": "2026-09-28T08:11:14.044Z",
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--late-march-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--late-march-2026",
+      "sha256": "f618db41fcd4a2d31f013255b19dab47e47dd201ee542b893a6b7870b28ff5f1",
+      "chars": 2648,
+      "payloadChars": 2755,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration capabilities were expanded across authentication, data region management, tenant region changes, and organization lifecycle controls. The notes also announce a pause in the outbound IP range transition for Customer-Managed Keys and advise customers to allow both current and upcoming IP ranges.",
+            "overall_analysis": "These changes strengthen administrative control, reduce support dependency for region management, and improve security and governance options for cloud organizations. The IP range pause is operationally significant for customers using Customer-Managed Keys because firewall configurations must accommodate both existing and future ranges during the extended transition period.",
+            "changes": [
+              {
+                "name": "JWT-based authentication for external OAuth applications",
+                "summary": "Organization administrators can authenticate external OAuth applications to UiPath using JWTs from third-party identity providers such as GitHub Actions or Azure Managed Identity, without requiring a client secret.",
+                "analysis": "This likely improves security and simplifies machine-to-machine authentication by enabling secretless or reduced-secret integration patterns with external identity providers.",
+                "impact": "Organization administrators and teams integrating external OAuth applications with UiPath, especially those using GitHub Actions or Azure Managed Identity.",
+                "breaking_change": false
+              },
+              {
+                "name": "Data region confirmation workflow",
+                "summary": "A data region confirmation workflow was added so administrators can review and confirm their organization and tenant data regions.",
+                "analysis": "This likely supports governance, compliance, and clearer administrative oversight of where data is stored.",
+                "impact": "Administrators responsible for compliance, governance, and tenant configuration.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic deletion of inactive community organizations",
+                "summary": "Inactive community organizations are automatically deleted after 90 days of inactivity, with advance notifications and a recovery window.",
+                "analysis": "This likely helps manage unused community environments and reduce dormant organization sprawl while giving users notice and a chance to recover.",
+                "impact": "Community organization administrators and users of inactive community organizations.",
+                "breaking_change": true
+              },
+              {
+                "name": "Tenant region changes from the Admin portal",
+                "summary": "Administrators can now change the tenant region directly from the Admin portal without opening a support ticket with UiPath.",
+                "analysis": "This reduces operational friction and gives administrators more direct control over tenant configuration.",
+                "impact": "Tenant and organization administrators managing regional setup.",
+                "breaking_change": false
+              },
+              {
+                "name": "Pause of Automation Cloud Portal outbound IP range transition for Customer-Managed Keys",
+                "summary": "UiPath has paused the transition of Automation Cloud Portal outbound IP ranges for Customer-Managed Keys until at least June 2026, and customers must allow both existing and upcoming IP ranges in their firewall.",
+                "analysis": "This is an important operational update for network and security planning, helping avoid connectivity or access issues during the delayed transition period.",
+                "impact": "Customers using Customer-Managed Keys, especially security and infrastructure teams managing firewall rules.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub adds Process Repository in controlled general availability, enabling management and governance of business processes together with Studio Web solutions in one searchable space.",
+            "overall_analysis": "This broadens Automation Hub's role in process governance by connecting business process management more closely with solution development artifacts. The controlled availability suggests targeted rollout while validating adoption and operational fit.",
+            "changes": [
+              {
+                "name": "Process Repository in controlled general availability",
+                "summary": "Process Repository enters controlled general availability, allowing users to manage and govern business processes alongside their Studio Web solutions in a single, searchable space.",
+                "analysis": "This likely improves traceability and governance by centralizing process artifacts and related solution assets for easier discovery and management.",
+                "impact": "Business process owners, governance teams, and users working with Studio Web solutions and process repositories.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Document Understanding": {
+            "summary": "Document Understanding introduces a new trainable splitter in preview for automatically detecting document boundaries and classifying sub-documents within complex multi-document files. It is available for tenants in Europe and the US.",
+            "overall_analysis": "This enhancement addresses a common preprocessing challenge in document workflows by automating file segmentation and classification. Its regional and preview status indicates incremental rollout while offering early value for complex document scenarios.",
+            "changes": [
+              {
+                "name": "Trainable splitter preview",
+                "summary": "A new trainable splitter in preview automatically detects document boundaries and classifies each sub-document in complex multi-document files such as mortgage applications and insurance claims, and is available for tenants in Europe and the US.",
+                "analysis": "This likely reduces manual preprocessing effort and improves automation accuracy for multi-document ingestion scenarios.",
+                "impact": "Document processing teams handling complex multi-document files, particularly tenants in Europe and the United States.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds preview support for the Gemini 2.5 Pro model for Unstructured and Complex Documents in Europe and the United States regions.",
+            "overall_analysis": "This expands model options for document-processing scenarios and may improve extraction or understanding quality for supported document types. The preview and regional scope suggest a phased rollout with limited availability.",
+            "changes": [
+              {
+                "name": "Gemini 2.5 Pro model preview",
+                "summary": "The Gemini 2.5 Pro model is available in preview for Unstructured and Complex Documents in the Europe and United States regions.",
+                "analysis": "This likely gives customers access to a newer model choice for advanced document scenarios, potentially improving capability or flexibility in supported regions.",
+                "impact": "IXP users processing Unstructured and Complex Documents in Europe and the United States.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro brings Case Management and Process Repository to controlled general availability for selected customers and adds BPMN diagram image export from the canvas.",
+            "overall_analysis": "These updates strengthen Maestro's process and case management capabilities while also improving usability for documentation and sharing. The controlled availability indicates selective access to core capabilities as UiPath expands adoption.",
+            "changes": [
+              {
+                "name": "Case Management and Process Repository in controlled general availability",
+                "summary": "Case Management and Process Repository enter controlled general availability, giving selected customers access to these capabilities.",
+                "analysis": "This likely expands platform support for structured process orchestration and governed process assets, while keeping rollout limited to selected customers.",
+                "impact": "Selected Maestro customers using or evaluating case management and process repository capabilities.",
+                "breaking_change": false
+              },
+              {
+                "name": "BPMN diagram image export",
+                "summary": "Users can export BPMN diagrams as images directly from the canvas.",
+                "analysis": "This likely makes it easier to share, document, and present process designs outside the product.",
+                "impact": "Maestro users creating, documenting, or sharing BPMN diagrams.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator improves observability with an updated Trace view and adds a Deployments overview card on the homepage for faster access to deployed solutions.",
+            "overall_analysis": "The changes focus on operational visibility and easier navigation, helping users monitor executions and access deployment information more efficiently.",
+            "changes": [
+              {
+                "name": "Updated Trace view",
+                "summary": "The updated Trace view provides better visibility into execution flows, span details, and execution costs.",
+                "analysis": "This likely helps users diagnose issues, understand execution behavior, and monitor cost-related aspects more effectively.",
+                "impact": "Operators, administrators, and developers monitoring executions in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Deployments overview card on homepage",
+                "summary": "The Deployments overview card on the homepage provides quick access to deployed solutions and their key details.",
+                "analysis": "This likely improves operational efficiency by surfacing important deployment information directly on the homepage.",
+                "impact": "Users managing or reviewing deployed solutions in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds better solution portability and project management controls, and now automatically creates snapshots at key development moments.",
+            "overall_analysis": "These changes improve developer workflow safety and flexibility by making it easier to manage solution contents, move work between environments, and recover or track important development states.",
+            "changes": [
+              {
+                "name": "Move solutions between machine and Automation Cloud",
+                "summary": "Users can move solutions between their machine and Automation Cloud.",
+                "analysis": "This likely improves portability and workflow flexibility between local and cloud-based development contexts.",
+                "impact": "Studio Web users working across local machines and Automation Cloud.",
+                "breaking_change": false
+              },
+              {
+                "name": "Manage existing projects within solutions from Solution Explorer",
+                "summary": "Users can add an existing project to a solution or exclude a project without deleting it from their machine directly from the Solution Explorer.",
+                "analysis": "This likely simplifies solution organization and reduces the risk of accidental file loss when adjusting project composition.",
+                "impact": "Developers organizing multi-project solutions in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic snapshots during development",
+                "summary": "Studio Web automatically creates snapshots in key moments during the development process.",
+                "analysis": "This likely improves resilience and recovery by preserving important states during development without requiring manual action.",
+                "impact": "Studio Web developers who may need to review or recover important development states.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds the ability to record and download the last 15 minutes of test executions and to query defects in Autopilot Chat.",
+            "overall_analysis": "These updates improve debugging and test investigation workflows while also adding conversational access to defect information. Together they can speed up issue analysis and coordination in testing activities.",
+            "changes": [
+              {
+                "name": "Record and download recent test execution footage",
+                "summary": "Users can record and download the last 15 minutes of test executions.",
+                "analysis": "This likely helps teams investigate failures by preserving recent execution context for review and sharing.",
+                "impact": "Testers, QA teams, and engineers analyzing test execution behavior.",
+                "breaking_change": false
+              },
+              {
+                "name": "Query defects in Autopilot Chat",
+                "summary": "Users can query defects in Autopilot Chat.",
+                "analysis": "This likely makes defect lookup more accessible and faster through conversational interaction.",
+                "impact": "Test Manager users investigating or reviewing defects through Autopilot Chat.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 43594
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--mid-march-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--mid-march-2026",
+      "sha256": "2a80f9fdd77c9923bd91f8b8baabed760ecfb5ca925e289afe1243cec30b2c22",
+      "chars": 4036,
+      "payloadChars": 4150,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Cloud Robots",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "This release adds delegated organization-level user management, expands AI Trust Layer flexibility for custom LLM use cases, and increases data residency coverage in additional regions and services. The changes focus on stronger governance, deployment flexibility, and regional availability.",
+            "overall_analysis": "The broader significance is improved administrative delegation and compliance support across Automation Cloud and Test Cloud. The updates also indicate continued investment in AI extensibility and regional expansion for cloud services.",
+            "changes": [
+              {
+                "name": "Custom organization-level user management role",
+                "summary": "Organization administrators can delegate identity management tasks using a new custom organization-level user management role. The role provides granular CRUD permissions for user accounts, robot accounts, and local groups without granting full admin rights.",
+                "analysis": "This likely helps organizations separate duties and reduce overuse of full administrator privileges while still allowing operational identity management.",
+                "impact": "Organization administrators and delegated identity or access-management users in Automation Cloud and Test Cloud are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bring-your-own-LLM support in AI Trust Layer",
+                "summary": "The AI Trust Layer supports bring-your-own-LLM configuration for coded agents and Semantic selectors in UI Automation, allowing replacement of UiPath-managed subscriptions with custom models.",
+                "analysis": "This likely gives customers more control over model choice, cost, governance, and integration with existing AI strategies.",
+                "impact": "Teams using coded agents, Semantic selectors in UI Automation, and AI Trust Layer configurations are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded data residency regions",
+                "summary": "Automation Cloud expands data residency to the United Arab Emirates for ACR - VM, Agents, AI Trust Layer, Apps, Automation Hub, Automation Ops, Autopilot for Everyone, Context Grounding, GenAI Activities, Insights, Integration Service, Maestro, Solutions, Studio Web, and Test Manager, and to Switzerland for Unstructured and Complex Documents and Communications Mining.",
+                "analysis": "This likely supports regulatory, compliance, and latency requirements for customers operating in or serving these regions.",
+                "impact": "Customers with data residency requirements for the listed services in the United Arab Emirates and Switzerland are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents now use unified runtime by default, gain centralized guardrail monitoring, and support custom trace retention settings through AI Trust Layer policy. These changes improve consistency, observability, and data retention control.",
+            "overall_analysis": "The broader significance is a maturing agent platform with stronger runtime standardization, governance visibility, and compliance-oriented controls. This should make agent deployment and operations more manageable across environments.",
+            "changes": [
+              {
+                "name": "Unified runtime as default execution engine",
+                "summary": "Unified runtime is the default execution engine for agents, providing a single Python-based runtime for both low-code and coded agents across design-time and production runs.",
+                "analysis": "This likely reduces runtime inconsistency between authoring and execution environments and simplifies support for mixed agent development approaches.",
+                "impact": "Users building or running low-code and coded agents across design-time and production are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Guardrail monitoring in Agent Instance Management",
+                "summary": "You can monitor and analyze guardrail usage across deployed agents, with a centralized view of invoked actions, enforcement activity, and key metrics via the Guardrails tab in Agent Instance Management.",
+                "analysis": "This likely improves operational oversight and helps teams validate that safety or policy controls are functioning as intended.",
+                "impact": "Teams operating deployed agents and monitoring guardrail enforcement are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom time-to-live for agent traces",
+                "summary": "You can define custom time-to-live settings for agent traces through the AI Trust Layer policy, giving you precise control over data retention, storage costs, and compliance.",
+                "analysis": "This likely helps organizations align trace retention with internal policies and legal requirements while managing storage consumption.",
+                "impact": "Administrators and teams responsible for agent observability, compliance, and AI Trust Layer policy management are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Cloud Robots": {
+            "summary": "Automation Cloud Robots now support user-managed Robot version updates for Automation Cloud Robots-VM and Elastic Robot Orchestration pools based on custom images. This adds more control over robot version management in custom-image deployments.",
+            "overall_analysis": "The broader significance is greater operational control and flexibility for customers managing robot lifecycle in cloud-hosted VM and elastic pool scenarios. It may help organizations align updates with validation and change-management processes.",
+            "changes": [
+              {
+                "name": "User-managed Robot version updates",
+                "summary": "User-managed Robot version updates are supported for Automation Cloud Robots-VM and Elastic Robot Orchestration pools based on custom images.",
+                "analysis": "This likely allows administrators to control upgrade timing and maintain compatibility with custom image-based environments.",
+                "impact": "Administrators managing Automation Cloud Robots-VM and Elastic Robot Orchestration pools based on custom images are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service connection management is centralized in Orchestrator, and three new connectors are generally available. The release improves operational centralization and expands integration coverage.",
+            "overall_analysis": "The broader significance is tighter alignment between integration management and orchestration workflows, alongside broader connector support for security operations use cases. This should simplify administration and increase integration options.",
+            "changes": [
+              {
+                "name": "Connections moved to Orchestrator",
+                "summary": "Integration Service connections have moved to Orchestrator, centralizing connection creation, editing, and management alongside assets, queues, and triggers at folder level.",
+                "analysis": "This likely streamlines administration by reducing context switching and placing connection management closer to other execution and automation resources.",
+                "impact": "Users who create, edit, or manage Integration Service connections at folder level are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New generally available connectors",
+                "summary": "Three new connectors are generally available: Azure Defender for Cloud, Microsoft Azure Sentinel, and Microsoft Sentinel Threat Intelligence.",
+                "analysis": "This likely expands integration capabilities for customers working with Microsoft security and threat intelligence services.",
+                "impact": "Integration builders and security-focused automation teams using Integration Service are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP updates the Measure page in Unstructured and Complex Documents with clearer field-level model performance insight, available in preview. The change targets improved model evaluation visibility.",
+            "overall_analysis": "The broader significance is better interpretability of document model results during evaluation. This may help teams refine extraction performance more effectively, although the capability is still in preview.",
+            "changes": [
+              {
+                "name": "Measure page field-level insight update",
+                "summary": "The Measure page in Unstructured and Complex Documents has been updated to provide clearer field-level insight into model performance. The updates are available in preview.",
+                "analysis": "This likely helps users better understand how models perform at the field level and identify areas for improvement in document processing.",
+                "impact": "Users evaluating models in Unstructured and Complex Documents through IXP are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro adds automatic error output generation for boundary events and subprocesses, faster progressive loading for process instances, and improved variable selection for collapsed subprocess outputs. The release improves troubleshooting, usability, and navigation of process data.",
+            "overall_analysis": "The broader significance is a more efficient authoring and monitoring experience in Maestro, with particular benefits for error handling and working with complex process structures. These updates should reduce friction in both execution review and process design.",
+            "changes": [
+              {
+                "name": "Automatic error outputs and failed-task messages",
+                "summary": "Boundary events and subprocesses automatically generate error output variables, and the activity feed displays error messages for failed tasks directly.",
+                "analysis": "This likely improves failure diagnosis and makes error data easier to consume in both process logic and operational review.",
+                "impact": "Users designing or monitoring Maestro processes with boundary events, subprocesses, and failed tasks are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Progressive loading for process instances grid",
+                "summary": "Progressive loading for the process instances grid displays initial records immediately while loading remaining data in the background.",
+                "analysis": "This likely improves perceived performance and responsiveness when viewing process instances.",
+                "impact": "Users viewing the Maestro process instances grid are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Variable picker support for collapsed subprocess outputs",
+                "summary": "The variable picker includes outputs from collapsed subprocesses, enabling correct variable references regardless of view state.",
+                "analysis": "This likely reduces mistakes and improves usability when working with subprocess outputs in complex or collapsed views.",
+                "impact": "Users configuring variables in Maestro processes with collapsed subprocesses are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator centralizes Integration Service connection management and introduces several usability and monitoring enhancements across jobs, recordings, assets, queues, roles, and webhooks. The release primarily improves administration efficiency, safety, and visibility.",
+            "overall_analysis": "The broader significance is a continued consolidation of operational controls in Orchestrator together with incremental workflow and governance improvements. These changes should make day-to-day platform administration and monitoring easier and safer.",
+            "changes": [
+              {
+                "name": "Integration Service connections managed in Orchestrator",
+                "summary": "Integration Service connections are managed directly within Orchestrator, centralizing configuration, monitoring, and troubleshooting.",
+                "analysis": "This likely simplifies platform operations by keeping integration-related administration in the main orchestration environment.",
+                "impact": "Administrators and users managing Integration Service connections in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Streamlined job start flow",
+                "summary": "Job start flow is streamlined by automatically preselecting the first available process based on name ordering.",
+                "analysis": "This likely reduces manual steps and speeds up job initiation, especially where multiple processes are available.",
+                "impact": "Users starting jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Direct deletion of video recordings",
+                "summary": "Video recordings can be deleted directly from the More Actions menu, improving accessibility of the option.",
+                "analysis": "This likely makes recording cleanup more convenient and reduces navigation effort.",
+                "impact": "Users managing video recordings in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Improved per-user and per-robot asset value removal",
+                "summary": "Per-user and per-robot asset value removal is improved with confirmation dialogs and support for bulk deletion.",
+                "analysis": "This likely improves safety and efficiency when cleaning up asset values across multiple entries.",
+                "impact": "Users administering per-user and per-robot asset values in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New queue item created columns",
+                "summary": "Queue transaction items grid includes new Created (relative) and Created (absolute) columns for better tracking.",
+                "analysis": "This likely improves visibility into queue item timing and makes queue analysis easier.",
+                "impact": "Users monitoring queue transaction items in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Typed confirmation for role deletion",
+                "summary": "Role deletion requires typed confirmation via an improved modal to prevent accidental removal.",
+                "analysis": "This likely adds a safeguard against unintended high-impact administrative changes.",
+                "impact": "Administrators deleting roles in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "QueueItem.retried webhook event",
+                "summary": "A new QueueItem.retried webhook event enables monitoring of retried queue items.",
+                "analysis": "This likely improves event-driven observability and integration around queue retry activity.",
+                "impact": "Teams using webhooks to monitor Orchestrator queue processing are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager introduces Autopilot Chat in preview, adds Accessibility Testing, and enables custom structured views for organizing test assets. The release expands AI-assisted testing, compliance testing, and asset organization capabilities.",
+            "overall_analysis": "The broader significance is a broader testing experience that combines conversational assistance, accessibility validation, and stronger information organization. These enhancements may improve test productivity and governance across the development pipeline.",
+            "changes": [
+              {
+                "name": "Autopilot Chat preview",
+                "summary": "Autopilot Chat offers a context-aware conversational assistant for natural-language search, asset generation, and action execution, with MCP Server integration for external tool connectivity. Autopilot Chat is in preview.",
+                "analysis": "This likely helps testers work faster through conversational workflows and may extend test operations through external tool connectivity.",
+                "impact": "Test Manager users seeking AI-assisted search, asset generation, and action execution are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Accessibility Testing",
+                "summary": "Accessibility Testing enables you to automate and integrate accessibility compliance testing within the development pipeline.",
+                "analysis": "This likely helps teams incorporate accessibility checks earlier and more consistently in delivery processes.",
+                "impact": "Testing teams and development pipeline owners with accessibility compliance requirements are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom structured views",
+                "summary": "Custom structured views enable you to organize test assets via grouping capabilities.",
+                "analysis": "This likely improves navigation and management of test assets, especially in larger or more complex test repositories.",
+                "impact": "Users organizing test assets in Test Manager are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 44903
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-march-2026#03",
+      "sectionId": "automation-cloud-and-test-cloud--early-march-2026",
+      "sha256": "e763da689eda4d2651588d5e4550903e9e20cdc05cd948111b4e117c801d1786",
+      "chars": 4404,
+      "payloadChars": 4536,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Data Fabric",
+          "releaseDate": null
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Process Mining",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration now shows free consumable entitlements included with licenses, and several consumable names were updated. These changes improve visibility into licensing and align terminology.",
+            "overall_analysis": "The update focuses on license transparency and clearer naming in administration experiences, which can reduce confusion for admins and users managing consumables.",
+            "changes": [
+              {
+                "name": "View free consumable entitlements",
+                "summary": "Admins and users can view the free consumable entitlements that come with their licenses.",
+                "analysis": "This likely helps organizations understand what usage is included with their licenses without needing separate clarification, improving license awareness and planning.",
+                "impact": "Admins and users managing or reviewing Automation Cloud and Test Cloud license entitlements.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consumable name updates",
+                "summary": "The following consumables were renamed: ScreenPlay LAM Calls is now ScreenPlay Runs, and UIA Runtime Executions is now Semantic Selectors.",
+                "analysis": "The rename likely standardizes product terminology and makes consumable reporting easier to understand, though users may need to adapt to the new labels.",
+                "impact": "Admins and users who view or manage consumables and licensing terminology in administration interfaces.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents now support OpenTelemetry trace export for observability of agent execution and related events. This adds external monitoring and debugging visibility.",
+            "overall_analysis": "This is a notable observability enhancement that can help teams monitor agent behavior, troubleshoot issues, and integrate agent telemetry into existing OTEL-compatible tooling.",
+            "changes": [
+              {
+                "name": "OpenTelemetry trace export support",
+                "summary": "Agents support OpenTelemetry (OTEL) trace export, allowing you to stream agent runs, LLM calls, tool usage, and guardrail evaluations to OTEL-compatible observability platforms for monitoring and debugging.",
+                "analysis": "This likely improves troubleshooting, performance analysis, and operational monitoring by making detailed agent telemetry available in standard observability systems.",
+                "impact": "Teams operating, monitoring, and debugging agents, especially those using OTEL-compatible observability platforms.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Data Fabric": {
+            "summary": "Data Fabric adds security, query, activity, search, and architecture enhancements, while also narrowing some field-referencing options for stability and performance. The release expands functionality for Data Fabric use in workflows and agents.",
+            "overall_analysis": "The update combines governance and usability improvements with new activity capabilities. It appears aimed at making Data Fabric more secure, performant, and practical across Maestro, API workflows, and agent scenarios.",
+            "changes": [
+              {
+                "name": "RBAC validation before event delivery",
+                "summary": "A security improvement now performs RBAC validation prior to Data Fabric event delivery.",
+                "analysis": "This likely reduces the risk of unauthorized event access and strengthens governance around Data Fabric event handling.",
+                "impact": "Organizations using Data Fabric events and access controls.",
+                "breaking_change": false
+              },
+              {
+                "name": "Integration Service-based activity availability scope",
+                "summary": "Integration Service-based activities are only available in Maestro, API workflows, and agents where traditional Studio activities are not available.",
+                "analysis": "This clarifies and limits where these activities can be used, likely to align feature support with runtime or design constraints in those environments.",
+                "impact": "Users building automations with Integration Service-based activities in Data Fabric-related scenarios.",
+                "breaking_change": false
+              },
+              {
+                "name": "Built-in filter builder for Query Entity Records",
+                "summary": "The Query Entity Records activity now includes a built-in filter builder.",
+                "analysis": "This likely simplifies query creation and reduces manual effort or errors when defining filters.",
+                "impact": "Users configuring the Query Entity Records activity.",
+                "breaking_change": false
+              },
+              {
+                "name": "Star schema support for entity connections",
+                "summary": "You can use a star schema architecture when connecting entities to multiple systems.",
+                "analysis": "This likely improves modeling flexibility for data integrations involving multiple connected systems.",
+                "impact": "Architects and developers designing Data Fabric entity connections across systems.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reduced field referencing external systems",
+                "summary": "The number of external systems that can be used for field referencing is being reduced as part of a focus on stability, performance, and predictable behavior.",
+                "analysis": "This suggests a tradeoff favoring reliability and consistency over breadth of supported field-referencing sources. Users relying on some external systems may need to adjust designs.",
+                "impact": "Users who use external systems for field referencing in Data Fabric.",
+                "breaking_change": false
+              },
+              {
+                "name": "Search and filter for external fields",
+                "summary": "Data Fabric now supports search and filter functionalities for external fields.",
+                "analysis": "This likely improves usability when working with larger sets of external fields by making them easier to locate and manage.",
+                "impact": "Users configuring or browsing external fields in Data Fabric.",
+                "breaking_change": false
+              },
+              {
+                "name": "Query Multiple Entity Records activity",
+                "summary": "A new Data Fabric activity, Query Multiple Entity Records, is now available.",
+                "analysis": "This expands workflow capabilities for retrieving entity data, likely supporting broader or more efficient query scenarios.",
+                "impact": "Developers and automation builders using Data Fabric activities.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Document Understanding": {
+            "summary": "Document Understanding adds generally available runtime permission checks and introduces Document Understanding API v2 in preview with expanded extraction and validation capabilities. Upgrading to API v2 requires changes to existing v1 automations.",
+            "overall_analysis": "This release strengthens runtime governance while also introducing a major API evolution with richer extraction features and broader language support. The explicit upgrade requirement signals migration planning for customers adopting v2.",
+            "changes": [
+              {
+                "name": "Runtime permission checks generally available",
+                "summary": "Runtime permission checks for Document Understanding projects are generally available and let you control which users, groups, and robots can discover and run models.",
+                "analysis": "This likely improves security and governance by allowing finer control over model access and execution at runtime.",
+                "impact": "Administrators and teams managing access to Document Understanding projects and models.",
+                "breaking_change": false
+              },
+              {
+                "name": "Document Understanding API v2 Preview",
+                "summary": "Document Understanding API v2 (Preview) introduces taxonomy-driven extraction and validation, business rule evaluation, enhanced non-Latin support, and IXP FieldGroup results for richer, more flexible automation. Upgrading to Document Understanding API v2 requires updates to existing v1 automations.",
+                "analysis": "This is a substantial functional expansion that likely enables more advanced document processing use cases, but it also introduces migration effort for existing API v1 automations.",
+                "impact": "Developers and teams using the Document Understanding API, especially those considering migration from v1 to v2.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds HTTP Request activity support for the OpenAI V1 Compliant LLM connector. This expands connector-related activity options for LLM integrations.",
+            "overall_analysis": "The update appears to improve flexibility for users building LLM-related integrations through Integration Service by enabling HTTP-based interaction with the specified connector.",
+            "changes": [
+              {
+                "name": "HTTP Request activity for OpenAI V1 Compliant LLM connector",
+                "summary": "The HTTP Request activity is available for the OpenAI V1 Compliant LLM connector.",
+                "analysis": "This likely gives users a more direct or flexible way to interact with the connector in automation scenarios.",
+                "impact": "Users building integrations with the OpenAI V1 Compliant LLM connector.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds runtime permission check enablement for Unstructured and Complex Documents projects through Manage Access. This extends governance controls to IXP project access.",
+            "overall_analysis": "The enhancement aligns IXP more closely with controlled runtime access patterns, helping administrators govern who can use document-processing capabilities.",
+            "changes": [
+              {
+                "name": "Enable runtime permission checks from Manage Access",
+                "summary": "IXP service administrators can enable runtime permission checks for Unstructured and Complex Documents projects from Manage Access.",
+                "analysis": "This likely improves access governance by letting administrators control runtime permissions centrally for these project types.",
+                "impact": "IXP service administrators and users of Unstructured and Complex Documents projects.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro introduces error-handling, data-handling, debugging, and maintainability improvements. The changes aim to make workflows more robust, easier to troubleshoot, and easier to maintain.",
+            "overall_analysis": "This release strengthens core orchestration usability by improving failure handling, Data Fabric interaction, and developer experience. It likely benefits teams building more complex process logic in Maestro.",
+            "changes": [
+              {
+                "name": "Per-node error handling and validation improvements",
+                "summary": "Maestro introduces per-node error handling with flexible error mappings, automatic error start events for subprocesses, and clear validation warnings for invalid expressions.",
+                "analysis": "These changes likely make workflows more resilient and easier to troubleshoot by improving how errors are modeled and surfaced.",
+                "impact": "Users designing and maintaining Maestro workflows and subprocesses.",
+                "breaking_change": false
+              },
+              {
+                "name": "Faster and smarter data handling",
+                "summary": "Data handling is enhanced with combined Loop outputs, field-based Data Fabric queries, and seamless Data Fabric update.",
+                "analysis": "This likely streamlines data processing and reduces friction when working with iterative logic and Data Fabric-backed data.",
+                "impact": "Users building Maestro workflows that process data or integrate with Data Fabric.",
+                "breaking_change": false
+              },
+              {
+                "name": "Debugging and maintainability improvements",
+                "summary": "Debugging and maintainability improve with agent debug jobs, automatic variable ID updates on rename, and accurate variable scope handling across subprocesses.",
+                "analysis": "These changes likely reduce workflow maintenance issues and make debugging more effective, especially in larger or multi-subprocess solutions.",
+                "impact": "Developers and maintainers working on Maestro workflows.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds more granular API authorization, homepage job visibility, responsive folder panel behavior, and search in credential store selection. These changes improve access control and usability.",
+            "overall_analysis": "The release combines security and user experience enhancements that can make administration and day-to-day operations more efficient in Orchestrator.",
+            "changes": [
+              {
+                "name": "Multiple OAuth scopes for Storage Buckets API",
+                "summary": "The Storage Buckets API supports multiple OAuth scopes, enabling more granular access control.",
+                "analysis": "This likely helps administrators and integrators apply tighter permissions to API usage, improving security governance.",
+                "impact": "Administrators and developers using the Storage Buckets API.",
+                "breaking_change": false
+              },
+              {
+                "name": "Latest jobs homepage card",
+                "summary": "The Latest jobs card on the homepage provides at-a-glance visibility into recent job activity and key execution details.",
+                "analysis": "This likely improves operational awareness by surfacing recent execution information directly on the homepage.",
+                "impact": "Users monitoring jobs in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Auto-collapsing folder side panel on smaller screens",
+                "summary": "The folder side panel automatically collapses on smaller screen resolutions to optimize workspace usability.",
+                "analysis": "This likely improves the user experience on smaller displays by preserving more workspace area.",
+                "impact": "Users accessing Orchestrator on smaller screens or lower resolutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Search in Credential Stores selection",
+                "summary": "Credential Stores selection in folder-level access rules includes search functionality for faster configuration.",
+                "analysis": "This likely reduces administrative effort when configuring access rules involving many credential stores.",
+                "impact": "Administrators configuring folder-level access rules.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Process Mining": {
+            "summary": "Process Mining now uses the UiPath standardized authorization model for access control and improves BPMN import behavior for mutually exclusive path rejoin detection. These changes improve governance consistency and modeling convenience.",
+            "overall_analysis": "The update aligns Process Mining more closely with platform-wide security practices while also reducing modeling friction during BPMN imports.",
+            "changes": [
+              {
+                "name": "Standardized authorization model for access control",
+                "summary": "Access control for Process Mining is managed through the UiPath standardized authorization model. This ensures consistent permission handling, improved governance, and better alignment with platform-wide security standards.",
+                "analysis": "This likely simplifies governance and creates a more consistent security model across UiPath products.",
+                "impact": "Administrators and users subject to Process Mining access controls.",
+                "breaking_change": false
+              },
+              {
+                "name": "Optional explicit closing XOR gateway on BPMN import",
+                "summary": "BPMN model import detects where mutually exclusive paths rejoin, which makes an explicit closing XOR gateway optional.",
+                "analysis": "This likely reduces BPMN modeling requirements and improves import flexibility for compatible process models.",
+                "impact": "Users importing BPMN models into Process Mining.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions adds a contextual Deployments sidebar that centralizes deployment details and actions. This improves deployment review and navigation.",
+            "overall_analysis": "The enhancement appears focused on streamlining deployment management workflows by putting relevant information and actions in one place.",
+            "changes": [
+              {
+                "name": "Contextual Deployments sidebar",
+                "summary": "A new contextual Deployments sidebar centralizes deployment details and key actions in one dynamic view, making it easier to review, manage, and navigate solution deployments.",
+                "analysis": "This likely improves efficiency and visibility for deployment-related tasks by reducing navigation overhead.",
+                "impact": "Users who review, manage, or navigate solution deployments.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web improves multi-file editing, resource-property consistency, connection repair, and issue grouping. These changes enhance productivity and project troubleshooting in the designer.",
+            "overall_analysis": "The update strengthens day-to-day editing workflows and error management, likely making Studio Web more practical for larger or more complex projects.",
+            "changes": [
+              {
+                "name": "Open multiple files in one designer",
+                "summary": "You can open multiple files simultaneously in the same Studio Web designer.",
+                "analysis": "This likely improves productivity by reducing context switching when working across several files.",
+                "impact": "Studio Web users editing projects with multiple files.",
+                "breaking_change": false
+              },
+              {
+                "name": "Explorer updates reflected in Properties panel",
+                "summary": "Updates to existing resources in the Explorer panel consistently appear in the Properties panel.",
+                "analysis": "This likely improves UI consistency and reduces confusion when editing resource settings.",
+                "impact": "Users modifying resources in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Fix broken Integration Service connections in activity card",
+                "summary": "You can fix broken Integration Service connections directly in the activity card.",
+                "analysis": "This likely shortens troubleshooting workflows by letting users resolve connection issues in context.",
+                "impact": "Users working with Integration Service activities in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Issues grouped by project",
+                "summary": "The Issues panel groups errors by the projects in which they occur.",
+                "analysis": "This likely makes it easier to triage and resolve errors in multi-project contexts.",
+                "impact": "Users reviewing validation errors in Studio Web projects.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds generally available RISE-compliant OAuth support for SAP, host-machine selection for test execution, and Claude Sonnet 4.5 in LLM configurations. These changes improve integration security, execution control, and model choice.",
+            "overall_analysis": "The release expands Test Manager's integration and execution capabilities while also adding flexibility for AI-assisted scenarios through an additional LLM option.",
+            "changes": [
+              {
+                "name": "SAP OAuth support generally available",
+                "summary": "OAuth support for SAP is generally available and RISE-compliant. You can use OAuth to authenticate via a secure token and a secure key, when working with the SAP-Test Manager integration.",
+                "analysis": "This likely improves security and standards alignment for SAP integrations while broadening production readiness through general availability.",
+                "impact": "Teams using the SAP-Test Manager integration.",
+                "breaking_change": false
+              },
+              {
+                "name": "Select host machines for test execution",
+                "summary": "You can select specific host machines for test execution.",
+                "analysis": "This likely gives teams more control over where tests run, which can help with environment targeting or execution planning.",
+                "impact": "Users scheduling or managing test execution in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Claude Sonnet 4.5 in LLM configurations",
+                "summary": "You can select Claude Sonnet 4.5 as part of LLM configurations.",
+                "analysis": "This likely expands AI model choice for users configuring LLM-backed features in Test Manager.",
+                "impact": "Users configuring LLM options in Test Manager.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 42230
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-march-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--late-march-2026",
+      "sha256": "4ff0add382195a67239146befc7760243ace656b69950334737c4f24a49f8194",
+      "chars": 1535,
+      "payloadChars": 1621,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector and Test Cloud Public Sector Administration": {
+            "summary": "Administration introduces a new custom organization-level role that lets admins delegate identity management tasks to non-admin users with granular CRUD permissions and safeguards against privilege escalation.",
+            "overall_analysis": "This change expands administrative delegation while aiming to maintain security controls, which can help organizations distribute identity management work without broadly increasing admin privileges.",
+            "changes": [
+              {
+                "name": "Custom org-level role for identity management delegation",
+                "summary": "A new custom org-level role allows admins to delegate identity management tasks to non-admin users, with granular create, read, update, and delete permissions and built-in safeguards against privilege escalation.",
+                "analysis": "The likely purpose is to reduce reliance on full administrators for routine identity management tasks while preserving tighter access control. Granular permissions and anti-escalation safeguards suggest a balance between operational flexibility and security.",
+                "impact": "Organization admins and delegated non-admin users involved in identity management in Automation Cloud Public Sector and Test Cloud Public Sector are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center now supports Microsoft Teams as both a notification and actionable notification channel for app actions and tasks in Maestro and Agents.",
+            "overall_analysis": "This strengthens integration with Microsoft Teams, likely helping users respond to work items from a collaboration tool they already use and improving responsiveness for task-driven workflows.",
+            "changes": [
+              {
+                "name": "Microsoft Teams notification channel for app actions and tasks",
+                "summary": "Microsoft Teams can now be used as a notification and actionable notification channel for app actions and tasks in Maestro and Agents.",
+                "analysis": "The change likely aims to bring task notifications and actions into a commonly used collaboration environment, reducing context switching and making it easier for users to act on tasks promptly.",
+                "impact": "Users working with app actions and tasks in Maestro and Agents, especially those relying on Microsoft Teams for collaboration, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service connections have moved to Orchestrator, where connection creation, editing, and management are centralized alongside assets, queues, and triggers at the folder level.",
+            "overall_analysis": "This is a significant organizational change that consolidates operational management in Orchestrator, potentially simplifying administration and aligning integration connections with other automation resources.",
+            "changes": [
+              {
+                "name": "Connections moved to Orchestrator",
+                "summary": "Integration Service connections are now created, edited, and managed in Orchestrator, alongside assets, queues, and triggers at folder level.",
+                "analysis": "The likely purpose is to centralize management of automation-related resources in one place, which can streamline administration and improve consistency for folder-level operations.",
+                "impact": "Admins and users who manage Integration Service connections and related folder-level resources in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds centralized management for Integration Service connections and several usability and monitoring improvements across job launch, video deletion, asset value deletion, queue visibility, and webhook coverage.",
+            "overall_analysis": "Taken together, these updates focus on consolidating administration in Orchestrator while reducing friction in common tasks and improving operational observability around queues and retries.",
+            "changes": [
+              {
+                "name": "Integration Service connections managed in Orchestrator",
+                "summary": "Integration Service connections are managed directly within Orchestrator, centralizing configuration, monitoring, and troubleshooting.",
+                "analysis": "This likely supports a more unified operations experience by bringing integration connection workflows into the same environment used for other automation administration tasks.",
+                "impact": "Orchestrator administrators and operators responsible for connection setup, monitoring, and troubleshooting are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic pre-selection of first available process",
+                "summary": "When starting a job, the first available process is automatically pre-selected.",
+                "analysis": "The likely purpose is to reduce the number of manual steps in the launch flow and speed up routine job starts.",
+                "impact": "Users who start jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Direct deletion of video recordings from More Actions",
+                "summary": "Video recordings can now be deleted directly from the More Actions context menu instead of requiring navigation through Job Details.",
+                "analysis": "This appears intended to simplify a maintenance task and reduce unnecessary navigation in the user interface.",
+                "impact": "Users managing video recordings for jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Asset value deletion confirmation and multi-select",
+                "summary": "Asset value deletion now includes a confirmation dialog and support for selecting multiple items.",
+                "analysis": "The confirmation dialog likely reduces accidental deletions, while multi-select improves efficiency when cleaning up multiple asset values.",
+                "impact": "Users who manage asset values in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Relative and absolute creation timestamp columns for queue transaction items",
+                "summary": "Two new optional columns showing relative and absolute creation timestamps are available in the queue transaction items grid.",
+                "analysis": "This likely improves visibility into queue item timing and helps users analyze recency and exact creation times more effectively.",
+                "impact": "Users monitoring or investigating queue transaction items in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Webhook event for queue item retries",
+                "summary": "A new webhook event is triggered whenever a queue item is retried.",
+                "analysis": "The likely purpose is to improve monitoring and automation around retry activity by exposing retries as an event that external systems can track.",
+                "impact": "Teams integrating Orchestrator webhooks with monitoring, alerting, or downstream systems are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26263
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-march-2026#05",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-march-2026",
+      "sha256": "e4d78da86da5b49e1988700111c280abf9068482e43b0625bb5138d908b05ec9",
+      "chars": 1178,
+      "payloadChars": 1255,
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Orchestrator": {
+            "summary": "Orchestrator adds centralized AI Trust Layer policy enforcement, a job timeline view, and a maintenance mode option for gracefully stopping running jobs. These updates strengthen administrative control and improve operational visibility and shutdown handling.",
+            "overall_analysis": "The changes focus on governance, observability, and operational reliability. They likely help administrators manage agent execution more precisely, troubleshoot jobs more effectively, and reduce disruption during maintenance.",
+            "changes": [
+              {
+                "name": "AI Trust Layer policy enforcement from Automation Ops",
+                "summary": "Orchestrator now enforces AI Trust Layer policies from Automation Ops, with dedicated enable/disable toggles that give admins centralized, fine-grained control over which types of agents can run.",
+                "analysis": "This likely improves governance and compliance by allowing administrators to centrally manage agent execution policies across Orchestrator.",
+                "impact": "Administrators managing agent usage and policy enforcement in Orchestrator and Automation Ops are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Job details timeline section",
+                "summary": "A new timeline section in the Job details panel displays the chronological progression of job states, including the time spent in each state.",
+                "analysis": "This likely improves troubleshooting and monitoring by making job execution history and state durations easier to inspect.",
+                "impact": "Users who monitor, investigate, or optimize jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Graceful stop option in maintenance mode",
+                "summary": "Maintenance mode now includes an option to gracefully stop all running jobs before transitioning the machine.",
+                "analysis": "This likely supports cleaner shutdown procedures and may reduce interruption-related issues during maintenance operations.",
+                "impact": "Administrators and operators performing machine maintenance while jobs are running are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager introduces structured asset visualization and organization features, along with automated accessibility compliance testing for webpages. These updates improve how testing assets are managed and expand continuous quality validation capabilities.",
+            "overall_analysis": "The changes emphasize scalability of test portfolio management and broader quality assurance coverage. They likely help teams organize large testing estates more effectively while integrating accessibility validation into ongoing development workflows.",
+            "changes": [
+              {
+                "name": "Structured visualization for flat asset lists",
+                "summary": "Flat lists of testing assets can now be visualized in meaningful structures based on grouping and filtering criteria.",
+                "analysis": "This likely makes large test portfolios easier to navigate and understand, especially when asset counts grow.",
+                "impact": "Teams managing testing assets of any size, particularly large portfolios, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automated accessibility compliance testing",
+                "summary": "Automated accessibility compliance testing is available in Test Manager, enabling continuous validation of webpage accessibility throughout the development pipeline.",
+                "analysis": "This likely helps teams identify accessibility issues earlier and maintain ongoing compliance checks as part of development and testing processes.",
+                "impact": "Testing teams and web application teams that need accessibility validation are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Saveable and shareable asset views using custom fields",
+                "summary": "Testing assets can now be organized into structured, saveable, and shareable views using group-by and filter criteria based on custom field definitions.",
+                "analysis": "This likely improves collaboration and repeatability by letting teams define and reuse consistent views tailored to their asset metadata.",
+                "impact": "Users organizing, reviewing, and sharing testing asset views in Test Manager are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 14487
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-march-2026#06",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-march-2026",
+      "sha256": "b2a27f6002e82a4d1ac572af3a8062f0169ed907885f4e2d06515ee947e423b6",
+      "chars": 1663,
+      "payloadChars": 1750,
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": "March 19, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "March 19, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "March 12, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "March 12, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Orchestrator": {
+            "summary": "Orchestrator received updates to Storage Buckets API OAuth scopes, webhook name display, AI Trust Layer policy enforcement, job-state timeline visibility, and maintenance mode behavior. The changes focus on stronger governance, clearer operational visibility, and cleaner infrastructure transitions.",
+            "overall_analysis": "These updates strengthen administrative control and observability in Orchestrator. They also signal an access-model transition for the Storage Buckets API through OAuth scope deprecation, which may require customers to review integrations.",
+            "changes": [
+              {
+                "name": "Enhanced OAuth scope support for Storage Buckets API",
+                "summary": "OAuth scope support for the Storage Buckets API was enhanced.",
+                "analysis": "This likely improves how API consumers authenticate and authorize access to storage bucket operations, potentially making permissions more granular or better aligned with supported endpoints.",
+                "impact": "Affects administrators and developers integrating with the Storage Buckets API using OAuth.",
+                "breaking_change": false
+              },
+              {
+                "name": "Improved webhook name display",
+                "summary": "The way webhook names are displayed was improved.",
+                "analysis": "This likely makes webhook identification clearer in the interface, reducing confusion and improving usability for users managing multiple webhooks.",
+                "impact": "Affects users who view or manage webhooks in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Deprecation of OR.Administration OAuth scope for Storage Buckets API endpoints",
+                "summary": "The use of the OR.Administration OAuth scope for accessing Storage Buckets API endpoints is being deprecated.",
+                "analysis": "This indicates a shift away from a broader or older permission model for Storage Buckets API access. Organizations using this scope should review and update their integrations to avoid future access issues when the deprecated scope is eventually removed or no longer supported.",
+                "impact": "Affects administrators and developers whose integrations currently rely on the OR.Administration OAuth scope for Storage Buckets API endpoints.",
+                "breaking_change": true
+              },
+              {
+                "name": "AI Trust Layer policy enforcement from Automation Ops",
+                "summary": "Orchestrator now enforces AI Trust Layer policies from Automation Ops, allowing admins to centrally control which types of agents can run through dedicated enable and disable toggles.",
+                "analysis": "This adds centralized governance for agent execution and helps organizations align runtime behavior with security, compliance, or operational policies. It is especially significant for environments that need fine-grained administrative oversight of agent usage.",
+                "impact": "Affects administrators managing agent governance through Automation Ops and users running agents in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Job details timeline section",
+                "summary": "A new timeline section in the Job details panel shows the chronological progression of job states, including the time spent in each state.",
+                "analysis": "This improves troubleshooting and operational monitoring by giving users better visibility into job execution flow and timing bottlenecks.",
+                "impact": "Affects operators, support teams, and administrators reviewing job execution details.",
+                "breaking_change": false
+              },
+              {
+                "name": "Graceful stop option in maintenance mode",
+                "summary": "Maintenance mode now includes an option to gracefully stop all running jobs before transitioning the machine.",
+                "analysis": "This helps avoid abrupt interruptions during maintenance and supports cleaner shutdown procedures, which can reduce operational risk and improve system handling during infrastructure changes.",
+                "impact": "Affects administrators and operators placing machines into maintenance mode while jobs are running.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager added automated accessibility compliance testing, asset grouping and filtering views, host-machine selection for test set execution, and support for OAuth authentication for Heatmap and Change Impact Analysis alongside SAP RISE compliance for add-on development requirements. The updates improve test coverage, organization, execution control, and enterprise compatibility.",
+            "overall_analysis": "These changes expand Test Manager's usefulness across quality, compliance, and enterprise integration scenarios. The release strengthens both test governance and execution flexibility while improving support for accessibility validation and SAP-related development requirements.",
+            "changes": [
+              {
+                "name": "Automated accessibility compliance testing",
+                "summary": "Automated accessibility compliance testing is available in Test Manager, enabling continuous validation of webpage accessibility throughout the development pipeline.",
+                "analysis": "This helps teams detect accessibility issues earlier and maintain ongoing compliance as applications evolve. It is significant for organizations prioritizing inclusive design, regulatory alignment, and continuous quality practices.",
+                "impact": "Affects QA teams, developers, and organizations validating webpage accessibility in their development pipelines.",
+                "breaking_change": false
+              },
+              {
+                "name": "Structured visualization of flat asset lists",
+                "summary": "Flat lists of assets can be visualized in meaningful structures based on grouping and filtering criteria to help keep testing portfolios organized.",
+                "analysis": "This improves portfolio management usability, especially for large testing inventories, by making assets easier to navigate and understand.",
+                "impact": "Affects users managing testing portfolios and asset collections of any size, especially larger ones.",
+                "breaking_change": false
+              },
+              {
+                "name": "Host machine selection for test set execution",
+                "summary": "Users can select a specific host machine when executing test sets.",
+                "analysis": "This adds more granular targeting for test execution, which can improve control over test environments and resource selection.",
+                "impact": "Affects users executing test sets who need to target specific host machines.",
+                "breaking_change": false
+              },
+              {
+                "name": "OAuth authentication for Heatmap and Change Impact Analysis",
+                "summary": "Test Manager now supports OAuth authentication for Heatmap and Change Impact Analysis.",
+                "analysis": "This modernizes authentication for these capabilities and may simplify alignment with enterprise identity and security practices.",
+                "impact": "Affects users and administrators configuring authentication for Heatmap and Change Impact Analysis.",
+                "breaking_change": false
+              },
+              {
+                "name": "SAP RISE compliance for add-on development requirements",
+                "summary": "Test Manager now supports full SAP RISE compliance for add-on development requirements.",
+                "analysis": "This improves suitability for organizations operating under SAP RISE requirements, helping ensure that Test Manager fits relevant compliance expectations in SAP-related development scenarios.",
+                "impact": "Affects teams developing add-ons under SAP RISE compliance requirements.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26918
+    }
+  ],
+  "warnings": []
+}

@@ -1,2 +1,13 @@
+# dependencies / build output (dist is built and deployed by GitHub Actions, never committed)
 node_modules/
-node_modules
+dist/
+
+# secrets - never commit. Real values live in GitHub Actions secrets only.
+.env
+.env.*
+!.env.example
+
+# local tooling
+*.log
+*.tmp
+.DS_Store

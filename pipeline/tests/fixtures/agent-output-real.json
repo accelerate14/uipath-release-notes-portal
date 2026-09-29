@@ -1,0 +1,290 @@
+{
+  "changes_by_product": {
+    "Automation Cloud Administration and Test Cloud Administration": {
+      "summary": "Administration updates include 30-day in-app notification retention, bulk AI and Agentic usage top-ups, a shared monthly AI and Agentic usage pool, and Transactional Billing for Maestro-orchestrated agentic solutions.",
+      "changes": [
+        {
+          "name": "In-app notification retention limit",
+          "summary": "In-app notifications are retained for 30 days; older notifications are unavailable regardless of topic.",
+          "analysis": "This establishes a fixed retention period for cloud-environment notifications. Organizations that need older notification history may need to account for the 30-day availability limit.",
+          "impact": "Progressively rolling out across regions and applies only to cloud environments; notifications older than 30 days are no longer available.",
+          "breaking_change": false
+        },
+        {
+          "name": "Multiple AI and Agentic usage top-ups",
+          "summary": "Administrators can grant multiple AI and Agentic usage top-ups to a user in one action from the User usage dashboard, with each top-up recorded as a separate consumption event.",
+          "analysis": "This streamlines allocation of multiple top-ups while retaining separate consumption-event records.",
+          "impact": "Administrators can issue more than one top-up in a single action and review each as an individual consumption event.",
+          "breaking_change": false
+        },
+        {
+          "name": "Shared monthly AI and Agentic usage pool",
+          "summary": "User licenses now provide one monthly AI and Agentic usage pool shared by Autopilot, Agent Development, ScreenPlay Development, Conversational Agents, and Autopilot for Everyone, replacing separate per-product AI entitlements.",
+          "analysis": "This consolidates usage allocation and administration across the listed capabilities instead of managing separate product-specific AI entitlements.",
+          "impact": "Administrators grant top-ups and monitor per-user usage at Admin > Licenses > Consumables > User usage.",
+          "breaking_change": false
+        },
+        {
+          "name": "Transactional Billing",
+          "summary": "Transactional Billing is a new charging model for agentic solutions orchestrated by Maestro; it packages a solution run into a single, tiered transaction cost.",
+          "analysis": "This introduces a billing model for Maestro-orchestrated agentic solutions. The provided release notes are truncated after the beginning of the cost-basis description, so further billing details are not stated.",
+          "impact": "A new charging model is available for applicable Maestro-orchestrated agentic solution runs.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "The administration changes centralize AI and Agentic usage management, add bulk top-up administration, establish notification retention, and introduce a billing model for Maestro-orchestrated agentic solutions."
+    },
+    "Action Center": {
+      "summary": "Action Center adds an Outlook consent requirement, Validation Station compact-view field filtering, and public-preview Quick Form tasks.",
+      "changes": [
+        {
+          "name": "Microsoft Entra admin consent for Outlook actionable notifications",
+          "summary": "A one-time Microsoft Entra admin consent is required by August 26, 2026 for actionable notifications in Outlook to continue working, following Microsoft’s move away from legacy authentication for Actionable Messages.",
+          "analysis": "Administrators need to complete consent by the stated date to preserve Outlook actionable-notification functionality under the updated authentication approach.",
+          "impact": "Without the required one-time consent by August 26, 2026, actionable notifications in Outlook may not continue working.",
+          "breaking_change": false
+        },
+        {
+          "name": "Validation Station compact-view filter bar",
+          "summary": "Validation Station compact view adds a filter bar that searches and hides fields by state: confirmed, not extracted, or no flagged issues.",
+          "analysis": "This helps users focus validation work on fields in selected states and locate fields more efficiently.",
+          "impact": "Compact-view users can filter and search fields by the listed states.",
+          "breaking_change": false
+        },
+        {
+          "name": "Quick Form tasks",
+          "summary": "Quick Form tasks are available in public preview for adding human-in-the-loop tasks to Maestro BPMN, Case Management, Flow, or Agents processes without building or deploying an app; inline debug support is included.",
+          "analysis": "This provides a lower-overhead way to incorporate human tasks into the listed process types and supports debugging in context.",
+          "impact": "Public-preview feature; users can add qualifying human-in-the-loop tasks without building or deploying an app.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "Action Center updates address Outlook authentication continuity, improve Validation Station field handling, and preview a simplified mechanism for human-in-the-loop tasks."
+    },
+    "Agents": {
+      "summary": "Agents adds preview episodic and escalation memory, plus public-preview personal connections for conversational agents.",
+      "changes": [
+        {
+          "name": "Episodic and escalation memory",
+          "summary": "Agents can retain and reuse learning from past executions through episodic memory and from past escalation resolutions through escalation memory; the capability is available in preview.",
+          "analysis": "Memory may allow agents to use prior execution and escalation-resolution context in later work. The release notes designate the capability as preview.",
+          "impact": "Preview availability for episodic memory and escalation memory.",
+          "breaking_change": false
+        },
+        {
+          "name": "Personal connections for conversational agents",
+          "summary": "Conversational agents support personal connections in public preview, enabling individual users to select which of their own Integration Service connections an agent uses on their behalf.",
+          "analysis": "This gives individual users control over the Integration Service connection used for their interactions with a conversational agent.",
+          "impact": "Public-preview availability; users can choose their own connection for supported agent use.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "The Agents changes expand personalization and reuse of past context, both with preview availability."
+    },
+    "Integration Service": {
+      "summary": "Integration Service updates the Snowflake Cortex and Microsoft Azure AI Foundry connectors and makes the MCP connector generally available.",
+      "changes": [
+        {
+          "name": "Snowflake Cortex authentication methods",
+          "summary": "The Snowflake Cortex connector adds OAuth 2.0 Authorization code and Client credentials authentication alongside the existing Programmatic Access Token method.",
+          "analysis": "Additional authentication methods provide more supported ways to connect to Snowflake Cortex.",
+          "impact": "Users can choose OAuth 2.0 Authorization code, Client credentials, or the existing Programmatic Access Token method.",
+          "breaking_change": false
+        },
+        {
+          "name": "Microsoft Azure AI Foundry Invoke Agent activity",
+          "summary": "The Microsoft Azure AI Foundry connector adds an Invoke Agent activity for agents created in the Azure AI Foundry portal.",
+          "analysis": "This enables connector-based invocation of agents created in the Azure AI Foundry portal.",
+          "impact": "A new activity is available for invoking applicable Azure AI Foundry agents.",
+          "breaking_change": false
+        },
+        {
+          "name": "MCP connector general availability",
+          "summary": "The MCP connector is now generally available.",
+          "analysis": "The connector has moved from a prior availability state to general availability; no further details are stated.",
+          "impact": "The MCP connector is generally available.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "The Integration Service changes broaden connector authentication and agent invocation capabilities, while making the MCP connector generally available."
+    },
+    "Maestro": {
+      "summary": "Maestro enhances Flow Autonomous Agent node MCP controls and adds two BPMN activities for Orchestrator queue interactions.",
+      "changes": [
+        {
+          "name": "Autonomous Agent node MCP tool controls",
+          "summary": "Maestro Flow Autonomous Agent nodes add per-argument descriptions, full input/output schema viewing, and a Refresh tools action that can pull tools live from Agent Hub.",
+          "analysis": "These controls improve visibility into MCP tool interfaces and allow tools to be refreshed from Agent Hub.",
+          "impact": "Users can inspect argument and schema information and refresh tools live from Agent Hub.",
+          "breaking_change": false
+        },
+        {
+          "name": "Orchestrator queue BPMN activities",
+          "summary": "New Get queue items and Wait for queue event BPMN activities support read-only queries and blocking waits against Orchestrator queues.",
+          "analysis": "These activities enable BPMN processes to inspect queue items and wait for queue events without stated write capabilities.",
+          "impact": "Maestro BPMN workflows can perform read-only queue queries and blocking waits against Orchestrator queues.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "Maestro gains improved MCP tool management in Flow and new BPMN integration patterns for Orchestrator queues."
+    },
+    "Process Mining": {
+      "summary": "The UiPath data extractor data-loading option has been removed due to low adoption.",
+      "changes": [
+        {
+          "name": "Removal of UiPath data extractor data-loading option",
+          "summary": "The UiPath data extractor data-loading option has been removed due to low adoption; users should use another supported data-loading option.",
+          "analysis": "Users relying on this option must transition to one of the remaining supported data-loading options.",
+          "impact": "The removed data-loading option is no longer available.",
+          "breaking_change": true
+        }
+      ],
+      "overall_analysis": "Process Mining removes a low-adoption data-loading option, requiring affected users to use an alternative supported option."
+    },
+    "Studio Web": {
+      "summary": "Studio Web adds read-only solution access and makes Deploy the primary toolbar action for packaging and deployment.",
+      "changes": [
+        {
+          "name": "Read-only solutions",
+          "summary": "Solutions can be opened in read-only mode and shared with read-only access without granting edit permissions.",
+          "analysis": "This supports viewing and sharing solutions while limiting modification rights.",
+          "impact": "Users can open and share solutions with read-only access.",
+          "breaking_change": false
+        },
+        {
+          "name": "Deploy toolbar action",
+          "summary": "Deploy is now the primary toolbar action for packaging and deploying a solution in one guided flow; Publish moved to the dropdown.",
+          "analysis": "The toolbar prioritizes the combined packaging-and-deployment workflow while retaining Publish in the dropdown.",
+          "impact": "The primary toolbar action changes to Deploy, and Publish is accessed from the dropdown.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "Studio Web improves permission control for solution access and shifts the main toolbar workflow toward guided packaging and deployment."
+    },
+    "Test Manager": {
+      "summary": "Test Manager expands performance reporting and execution targeting, and removes iText PDF dependency with a stated breaking change for cloud PDF attachments.",
+      "changes": [
+        {
+          "name": "Performance Testing reporting and export enhancements",
+          "summary": "Performance Testing adds per-scenario report comparisons, dry-run probe timeline data in production, and asynchronous Excel export with per-custom-field columns.",
+          "analysis": "These additions expand comparison, production timeline, and export capabilities for performance-testing results.",
+          "impact": "Users can compare reports per scenario, access dry-run probe timeline data in production, and export asynchronously to Excel with columns for each custom field.",
+          "breaking_change": false
+        },
+        {
+          "name": "Runtime configuration for autonomous runs",
+          "summary": "Autonomous Test Execution and Autonomous Exploration runs can target a specific runtime, robot account, and machine template through a new Configure tab rather than always auto-selecting an available runtime.",
+          "analysis": "This provides explicit infrastructure targeting for these runs instead of relying solely on automatic runtime selection.",
+          "impact": "Users can configure a runtime, robot account, and machine template for applicable runs.",
+          "breaking_change": false
+        },
+        {
+          "name": "iText PDF dependency removal",
+          "summary": "The iText PDF library dependency was removed. Cloud reading of PDF attachments is now text-only, and image extraction from PDF attachments is no longer supported.",
+          "analysis": "The removal changes cloud PDF attachment handling by eliminating image extraction and limiting reading to text.",
+          "impact": "Cloud PDF attachment image extraction is unavailable; PDF attachment reading is text-only.",
+          "breaking_change": true
+        }
+      ],
+      "overall_analysis": "Test Manager adds more control and reporting for testing workflows, while introducing an explicit breaking limitation for cloud PDF attachment processing."
+    },
+    "IXP": {
+      "summary": "IXP adds a preview Layout model intelligent pre-processing option for Unstructured and Complex Documents projects.",
+      "changes": [
+        {
+          "name": "Layout model intelligent pre-processing",
+          "summary": "A Layout model intelligent pre-processing option is available in preview for Unstructured and Complex Documents projects.",
+          "analysis": "This adds a pre-processing option for the specified project types; the release notes do not state further behavior or benefits.",
+          "impact": "Preview availability for Unstructured and Complex Documents projects.",
+          "breaking_change": false
+        }
+      ],
+      "overall_analysis": "IXP expands intelligent pre-processing options for the specified document project types in preview."
+    },
+    "Automation Cloud Admin": {
+      "summary": "Release-note entries are listed for August 18, August 21, and August 31, 2026; detailed changes are presented under Automation Cloud Administration and Test Cloud Administration.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Test Cloud Admin": {
+      "summary": "Release-note entries are listed for August 18, August 21, and August 31, 2026; detailed changes are presented under Automation Cloud Administration and Test Cloud Administration.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "AI Center": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "AI Computer Vision": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Apps": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Assistant Web": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Automation Cloud Robots - Serverless": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Automation Cloud Robots - VM": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Automation Hub": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Automation Ops": {
+      "summary": "A release-note entry is listed for August 21, 2026; no change details are included in the provided release notes.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Data Fabric": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Document Understanding": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Functions": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Insights": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Orchestrator": {
+      "summary": "Release-note entries are listed for August 18 and August 31, 2026; no Orchestrator-specific change details are included in the provided release notes.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Solutions": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    },
+    "Task Mining": {
+      "summary": "No release-note entry is available during August 16–31, 2026.",
+      "changes": [],
+      "overall_analysis": "Not stated in the release notes."
+    }
+  }
+}

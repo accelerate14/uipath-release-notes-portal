@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.2",
+  "updatedAt": "2026-09-28T08:20:05.280Z",
+  "source": "https://docs.uipath.com/release-notes/other/latest/release-notes",
+  "months": [
+    {
+      "id": "2026-08",
+      "label": "August 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:20:04.013Z",
+      "sourceSha256": "6f6c14833e7dd3f48851902fecd6adb417309896578a173569b85268a0c128db",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-august-2026",
+      "counts": {
+        "sections": 6,
+        "products": 36,
+        "analysedProducts": 36,
+        "changes": 94,
+        "breakingChanges": 10,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-08.json"
+    },
+    {
+      "id": "2026-07",
+      "label": "July 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:18:13.137Z",
+      "sourceSha256": "57b617d5b5d1d1ff2a5278875d77b72bf02638732045fcc344160ce9d2c42179",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-july-2026",
+      "counts": {
+        "sections": 6,
+        "products": 37,
+        "analysedProducts": 37,
+        "changes": 102,
+        "breakingChanges": 17,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-07.json"
+    },
+    {
+      "id": "2026-06",
+      "label": "June 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:16:21.526Z",
+      "sourceSha256": "1c53b5d8375c46ab96f853d716a0181b60f9aaced2796439cb79e500b6a5f70b",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-june-2026",
+      "counts": {
+        "sections": 6,
+        "products": 37,
+        "analysedProducts": 37,
+        "changes": 105,
+        "breakingChanges": 1,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-06.json"
+    },
+    {
+      "id": "2026-05",
+      "label": "May 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:14:14.905Z",
+      "sourceSha256": "783d16b5acb3bdc6493cb7d3e0385f6d2185e4888eb22651ae20adae6401989d",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-may-2026",
+      "counts": {
+        "sections": 6,
+        "products": 34,
+        "analysedProducts": 34,
+        "changes": 81,
+        "breakingChanges": 3,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-05.json"
+    },
+    {
+      "id": "2026-04",
+      "label": "April 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:12:38.624Z",
+      "sourceSha256": "055892c17ff491cef8458917f11d517ae715fb03000b6f356f46f49076d8ed7a",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-april-2026",
+      "counts": {
+        "sections": 6,
+        "products": 29,
+        "analysedProducts": 29,
+        "changes": 82,
+        "breakingChanges": 4,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-04.json"
+    },
+    {
+      "id": "2026-03",
+      "label": "March 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-09-28T08:11:14.044Z",
+      "sourceSha256": "3126e56b7351e3379cb83d766d3d80822cdb068925e86a0a56d12fdc7486cd54",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-march-2026",
+      "counts": {
+        "sections": 7,
+        "products": 38,
+        "analysedProducts": 38,
+        "changes": 97,
+        "breakingChanges": 3,
+        "chunks": {
+          "total": 6,
+          "ok": 6,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-03.json"
+    },
+    {
+      "id": "2026-02",
+      "label": "February 2026",
+      "kind": "release-dates",
+      "generatedAt": "2026-09-28T08:09:21.083Z",
+      "sourceSha256": "c41b1950dd1df94abace7cf5311347a0130a4667cba0c39ed0864f4609300252",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-february-2026",
+      "counts": {
+        "sections": 3,
+        "products": 0,
+        "analysedProducts": 0,
+        "changes": 0,
+        "breakingChanges": 0,
+        "chunks": {
+          "total": 0,
+          "ok": 0,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-02.json"
+    },
+    {
+      "id": "2026-01",
+      "label": "January 2026",
+      "kind": "release-dates",
+      "generatedAt": "2026-09-28T08:09:20.715Z",
+      "sourceSha256": "ce350e064864d385c1ff957103163afb2a38094ae835aa1d371ffd5598b7b834",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-january-2026",
+      "counts": {
+        "sections": 3,
+        "products": 0,
+        "analysedProducts": 0,
+        "changes": 0,
+        "breakingChanges": 0,
+        "chunks": {
+          "total": 0,
+          "ok": 0,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-01.json"
+    }
+  ]
+}

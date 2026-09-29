@@ -1,0 +1,1217 @@
+{
+  "id": "2026-06",
+  "cacheKey": "v1",
+  "sourceSha256": "1c53b5d8375c46ab96f853d716a0181b60f9aaced2796439cb79e500b6a5f70b",
+  "status": "complete",
+  "updatedAt": "2026-09-28T08:16:21.526Z",
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--mid-june-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--mid-june-2026",
+      "sha256": "030fdeff552f0e4c24697055bf49ba7ea0edef84d05c73227f1127baec6c27e6",
+      "chars": 6498,
+      "payloadChars": 6631,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Apps",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Healing Agent",
+          "releaseDate": null
+        },
+        {
+          "name": "Industry & Department Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "This release adds private connectivity, preview SCIM user synchronization, Relay client 26.4.2 enhancements, expanded AI Trust Layer PII masking, custom LLM subscription support for UI Automation Semantic activities, and a default model update to PathMini for most Semantic activities.",
+            "overall_analysis": "The changes focus on enterprise connectivity, identity lifecycle automation, governance, and flexibility in AI-powered automation. They also update the default AI model behavior in UI Automation Semantic activities, which may affect how those activities perform after package updates.",
+            "changes": [
+              {
+                "name": "Azure Private Link support",
+                "summary": "You can connect to Automation Cloud using Azure Private Link without routing traffic over the public internet. Primary and secondary gateways provide built-in continuity during regional outages.",
+                "analysis": "This likely improves network security posture and resilience for organizations that need private connectivity and continuity planning.",
+                "impact": "Organizations using Automation Cloud, especially enterprise environments with strict networking and availability requirements.",
+                "breaking_change": false
+              },
+              {
+                "name": "SCIM User Sync preview",
+                "summary": "SCIM User Sync is available in preview for Enterprise plans and automates user lifecycle management by synchronizing user creation, updates, and deprovisioning from Microsoft Entra ID or Okta.",
+                "analysis": "This likely reduces manual identity administration and helps keep access data aligned with identity providers.",
+                "impact": "Enterprise plan customers using Microsoft Entra ID or Okta for identity management.",
+                "breaking_change": false
+              },
+              {
+                "name": "Relay client 26.4.2 enhancements",
+                "summary": "Relay client 26.4.2 allows the persistent tunnel to connect through `cloud.uipath.com:443`, adds the `relay describe <id>` and `relay list` commands for inspecting relay information, and introduces log management controls.",
+                "analysis": "These updates likely simplify connectivity and operational troubleshooting while improving manageability of relay deployments.",
+                "impact": "Users and administrators operating Relay client connections and persistent tunnels.",
+                "breaking_change": false
+              },
+              {
+                "name": "Nordic identity entity support for PII masking",
+                "summary": "AI Trust Layer PII in-flight masking now supports Norway Identity Number, Finland National ID, Sweden National ID, and Danish Identity Number.",
+                "analysis": "This expands data protection coverage for additional regional identity formats.",
+                "impact": "Organizations processing Nordic personal identity data through AI Trust Layer.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom LLM subscription support for Semantic activities",
+                "summary": "UI Automation Semantic activities can now be powered by your own large language model subscription instead of the UiPath-managed subscription.",
+                "analysis": "This likely gives customers more control over model sourcing, billing, and governance for AI-backed UI automation.",
+                "impact": "Users of UI Automation Semantic activities who want to use their own LLM subscription.",
+                "breaking_change": false
+              },
+              {
+                "name": "Default Semantic model changed to PathMini",
+                "summary": "Updating the UI Automation Activities package changes the default model for Semantic activities, excluding Close Popup, to PathMini.",
+                "analysis": "This may alter default runtime behavior or results for Semantic activities after package updates because the underlying model selection changes automatically.",
+                "impact": "Users who update the UI Automation Activities package and rely on default model settings for Semantic activities.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center now supports using a Coded Action App as the task interface for tasks created by agents, RPA processes, and Maestro processes.",
+            "overall_analysis": "This extends task UI flexibility by allowing code-first interfaces across multiple task-producing automation types.",
+            "changes": [
+              {
+                "name": "Coded Action App task interface support",
+                "summary": "You can use a Coded Action App as the interface for Action Center tasks created by agents, RPA processes, and Maestro processes.",
+                "analysis": "This likely enables more customizable and developer-driven task experiences in Action Center.",
+                "impact": "Developers and users working with Action Center tasks from agents, RPA processes, and Maestro processes.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents gains a new Premium model tier in preview with Claude Opus 4.7 and GPT-5.5 for advanced reasoning, multi-step planning, and extended context handling.",
+            "overall_analysis": "This expands the available model options for higher-capability agent scenarios, particularly where more complex reasoning and planning are needed.",
+            "changes": [
+              {
+                "name": "Premium model tier preview",
+                "summary": "A new Premium model tier introduces Claude Opus 4.7 and GPT-5.5 for agents, available in preview, with support for advanced reasoning, multi-step planning, and extended context handling.",
+                "analysis": "This likely improves the sophistication of agent behaviors for more demanding use cases.",
+                "impact": "Users building or running agents that benefit from stronger reasoning and larger-context model capabilities.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Apps": {
+            "summary": "Apps now lets you create and manage Coded Action Apps, which are custom code-first applications built with the UiPath Coded Action App SDK and UiPath TypeScript SDK for use in Action Center.",
+            "overall_analysis": "This adds a developer-centric application model that integrates with Action Center task experiences.",
+            "changes": [
+              {
+                "name": "Create and manage Coded Action Apps",
+                "summary": "You can create and manage Coded Action Apps, which are custom code-first applications built in your IDE using the UiPath Coded Action App SDK and UiPath TypeScript SDK, for use as the task interface in Action Center.",
+                "analysis": "This likely broadens extensibility and enables teams to build tailored task interfaces using code-based tooling.",
+                "impact": "Developers building custom Action Center task interfaces.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops adds AI Trust Layer controls for UiPath-managed models and a Studio Web policy setting to cap agent iterations before workflow publication.",
+            "overall_analysis": "These updates strengthen governance over model availability and agent design-time behavior.",
+            "changes": [
+              {
+                "name": "Model availability controls in AI Trust Layer policy",
+                "summary": "From the AI Trust Layer policy, you can enable or disable specific UiPath-managed models at the provider or individual model level on a per-product basis, and control whether newly released models become automatically available.",
+                "analysis": "This likely helps organizations govern AI model exposure and rollout more precisely across products.",
+                "impact": "Administrators managing AI Trust Layer policy and model governance across UiPath products.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agent iteration cap in Studio Web policy",
+                "summary": "From the Studio Web policy, you can cap the number of iterations an agent runs before a workflow is published.",
+                "analysis": "This likely helps prevent runaway loops and adds design-time safeguards for agent behavior.",
+                "impact": "Administrators governing Studio Web and users publishing workflows with agents.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Healing Agent": {
+            "summary": "Healing Agent now exposes failure reasons through Robot logs in Orchestrator.",
+            "overall_analysis": "This improves troubleshooting visibility when healing attempts fail.",
+            "changes": [
+              {
+                "name": "Failure reason visibility in Robot logs",
+                "summary": "You can see the reason why Healing Agent has failed by navigating to Robot logs in Orchestrator.",
+                "analysis": "This likely reduces diagnostic effort by surfacing failure details in an existing operational log location.",
+                "impact": "Users and operators troubleshooting Healing Agent failures in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Industry & Department Solutions": {
+            "summary": "Supply Chain and Retail solutions now allow optional standard-schema columns in ingest payloads, and the Data Quality Dashboard has been rebuilt into a single scrolling overview with multiple KPI, trend, breakdown, and drill-down views.",
+            "overall_analysis": "The updates improve flexibility for data ingestion and expand data quality visibility through a more consolidated dashboard experience.",
+            "changes": [
+              {
+                "name": "Optional standard-schema columns in Supply Chain and Retail",
+                "summary": "In Supply Chain and Retail solutions, you can declare standard-schema columns as optional, allowing non-required fields to be omitted from ingest payloads. Omitted fields are stored as NULL or their default value.",
+                "analysis": "This likely simplifies integrations where some standard fields are not always available while preserving schema handling.",
+                "impact": "Users integrating data into Supply Chain and Retail solutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Rebuilt Data Quality Dashboard",
+                "summary": "The Data Quality Dashboard is rebuilt as a single scrolling overview with a Current health snapshot of five KPI cards, three trend charts, a ranked Top error codes table, searchable Breakdown by table and Breakdown by request views, and a table-level drill-down scoped to a selected table, solution, and date range.",
+                "analysis": "This likely makes data quality monitoring more centralized and actionable by combining high-level status with drill-down analysis.",
+                "impact": "Users monitoring data quality across solutions and requests.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro introduces Maestro Case, a new preview Function Service Task type, and canvas usability enhancements for process design.",
+            "overall_analysis": "These changes expand Maestro into case-oriented orchestration, add deterministic Python function execution from processes, and streamline process modeling.",
+            "changes": [
+              {
+                "name": "Maestro Case project type",
+                "summary": "Maestro Case is a new project type for goal-driven work where AI agents and rules can move cases forward automatically and humans step in when judgment or policy requires it. It includes a Case Plan Designer, Case Manager, Case App, and Case Instance Management.",
+                "analysis": "This likely broadens Maestro from process orchestration into case management scenarios that combine automation and human decision points.",
+                "impact": "Teams designing and operating goal-driven case workflows involving agents, rules, and human intervention.",
+                "breaking_change": false
+              },
+              {
+                "name": "Start and wait for Function Service Task preview",
+                "summary": "A new Start and wait for Function Service Task type lets you run deterministic Python logic published with the `uip` CLI directly from a process, with inputs and outputs mapped automatically from the function's schema. It is available in preview.",
+                "analysis": "This likely improves integration of deterministic code execution into processes while reducing manual mapping effort.",
+                "impact": "Process designers who want to invoke Python logic from Maestro processes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Canvas authoring enhancements",
+                "summary": "The canvas now includes an element toolbar with boundary event and marker buttons, a quick add menu for placing nodes directly on the canvas with pre-associated automation types, and a Properties panel that automatically opens the implementation area for unconfigured elements.",
+                "analysis": "These changes likely speed up modeling and reduce friction when configuring process elements.",
+                "impact": "Users designing processes in the Maestro canvas.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds inline chip filters to Processes Registry and Resources, updates Maestro process type labels, and refreshes create and edit forms with a card-based layout and sticky breadcrumb bar.",
+            "overall_analysis": "The release improves usability and aligns terminology with Maestro naming updates across the platform.",
+            "changes": [
+              {
+                "name": "Inline chip filters for grid columns",
+                "summary": "The Processes Registry and Resources pages now add inline chip filters for fixed-value columns, allowing one-click filtering without expanding a dropdown.",
+                "analysis": "This likely makes grid filtering faster and more convenient for common fixed-value fields.",
+                "impact": "Users working with the Processes Registry and Resources pages in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Updated Maestro process type labels",
+                "summary": "Orchestrator updates Maestro process type labels throughout the product: Agentic process becomes Maestro BPMN, Case Management becomes Maestro Case, and Flow becomes Maestro Flow.",
+                "analysis": "This aligns Orchestrator terminology with the latest Maestro naming conventions.",
+                "impact": "All Orchestrator users who view or manage Maestro-related process types.",
+                "breaking_change": false
+              },
+              {
+                "name": "Create and edit form redesign",
+                "summary": "Create and edit forms across Orchestrator now use a card layout with shadow and rounded corners, consistent spacing, and a sticky breadcrumb bar that remains visible while scrolling.",
+                "analysis": "This likely improves navigation and visual consistency during form-based workflows.",
+                "impact": "Users creating or editing items across Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions now allows unlinking resources during version change configuration so they can be recreated in the solution folder at upgrade time or linked to a different existing component.",
+            "overall_analysis": "This adds more flexibility to resource management during upgrades and version transitions.",
+            "changes": [
+              {
+                "name": "Unlink resources during version change configuration",
+                "summary": "When configuring a version change in the resource explorer, you can unlink resources previously linked to an existing component, then either let them be created fresh in the solution folder at upgrade time or link them to a different existing component.",
+                "analysis": "This likely helps administrators handle dependency and resource mapping changes more cleanly during upgrades.",
+                "impact": "Users managing version changes and resources in Solutions.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web updates project type names, reorganizes project creation by category, adds local run support for RPA workflows, improves debugging and resource mapping awareness, and shows progress feedback when duplicating projects.",
+            "overall_analysis": "The release refines naming consistency, project creation experience, and developer workflow efficiency in Studio Web.",
+            "changes": [
+              {
+                "name": "Updated project type names",
+                "summary": "Studio Web updates project type names: Agentic process becomes Maestro BPMN, API Automation becomes API function, and Automations becomes RPA workflow.",
+                "analysis": "This aligns Studio Web terminology with updated product and feature naming across the platform.",
+                "impact": "Studio Web users creating or managing projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Project creation organized by category",
+                "summary": "The project creation view is now organized by category. The New project dropdown, Start building modal, and Add project to solution context menu group project types under Business orchestration, Task automation, and Building blocks.",
+                "analysis": "This likely makes project discovery and selection easier by grouping options into clearer categories.",
+                "impact": "Users creating projects in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Local run for RPA workflows and debugger behavior update",
+                "summary": "You can now run an RPA workflow locally from Studio Web without publishing it first. The debugger no longer pauses on handled exceptions caught by Retry Scope or Try Catch activities.",
+                "analysis": "This likely speeds up development and reduces unnecessary debugger interruptions during expected exception handling.",
+                "impact": "Developers building and debugging RPA workflows in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Resource definition mismatch warning",
+                "summary": "Activities now show a warning hint when their bound resource has a different definition at debug time than it had at design time. The hint includes a direct link to update the resource mapping.",
+                "analysis": "This likely helps users identify and correct resource drift that could affect debugging outcomes.",
+                "impact": "Studio Web users debugging projects with bound resources.",
+                "breaking_change": false
+              },
+              {
+                "name": "Project duplication progress toast",
+                "summary": "When you duplicate a project, Studio Web shows a toast notification confirming that duplication is in progress.",
+                "analysis": "This provides clearer feedback for an asynchronous operation and may reduce uncertainty during project duplication.",
+                "impact": "Users duplicating projects in Studio Web.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds TMH-based Project Configuration export/import, group sorting in Test Cloud structured views, Romanian system prompt support in Autopilot, and multiple Performance Testing improvements including retry-aware reporting, Workflow Analyzer, and Live Streaming.",
+            "overall_analysis": "The release expands portability and administration capabilities while significantly improving performance testing diagnostics and observability.",
+            "changes": [
+              {
+                "name": "Project Configuration export and import via TMH",
+                "summary": "You can export and import Project Configuration as part of TMH files, including custom field definitions, user authorizations, roles, reporting time zone, automation context folder, and governance settings.",
+                "analysis": "This likely simplifies migration, backup, or replication of Test Manager project configuration across environments.",
+                "impact": "Test Manager administrators managing project setup and portability.",
+                "breaking_change": false
+              },
+              {
+                "name": "Group sorting in structured views on Test Cloud",
+                "summary": "You can sort groups ascending or descending in custom structured views when using Test Manager via Test Cloud.",
+                "analysis": "This likely improves usability when navigating grouped test data.",
+                "impact": "Test Cloud users working with custom structured views in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Romanian language support for Autopilot system prompts",
+                "summary": "Autopilot now supports Romanian for system prompts.",
+                "analysis": "This expands language support for users working in Romanian.",
+                "impact": "Autopilot users in Test Manager who need Romanian system prompt support.",
+                "breaking_change": false
+              },
+              {
+                "name": "Retry-aware Performance Testing reporting",
+                "summary": "Performance Testing reporting now differentiates expected retry behavior from genuine execution failures, so retries that ultimately succeed no longer inflate error counts or appear as errors in charts.",
+                "analysis": "This likely makes reports more accurate and reduces false signals in error metrics.",
+                "impact": "Users reviewing Performance Testing results and charts.",
+                "breaking_change": false
+              },
+              {
+                "name": "Workflow Analyzer for Performance Testing",
+                "summary": "A new Workflow Analyzer in Performance Testing automatically scans test automation projects during dry runs to identify selectors, interaction modes, and workflow patterns that are incompatible with or unlikely to scale in performance testing.",
+                "analysis": "This likely helps teams detect scalability and compatibility issues earlier in the testing cycle.",
+                "impact": "Users preparing or validating test automation projects for performance testing.",
+                "breaking_change": false
+              },
+              {
+                "name": "Live Streaming for Performance Testing",
+                "summary": "Live Streaming for Performance Testing lets you open a real-time view of test execution directly from an active dry run to identify issues earlier.",
+                "analysis": "This likely improves real-time troubleshooting and visibility during test execution.",
+                "impact": "Users monitoring active performance testing dry runs.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 57728
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-june-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--early-june-2026",
+      "sha256": "7738bcdba7155c1a5eab5e4d29765e6059d608c4bc9cb8c59bdb33ca6391d39a",
+      "chars": 5104,
+      "payloadChars": 5233,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "This release expands regional availability, administration capabilities, and governance controls for Automation Cloud and Test Cloud administration. It adds new roles, data export options, relay deployment choices, testing-focused groups, and updates to outbound IP management and trial sign-up requirements.",
+            "overall_analysis": "The changes emphasize enterprise administration, regional expansion, delegated governance, and operational control. They likely help organizations meet data residency, compliance, integration, and access management needs while preparing for upcoming networking changes.",
+            "changes": [
+              {
+                "name": "South Korea global cloud region generally available",
+                "summary": "The South Korea global cloud region is now generally available, with full data residency for most platform services.",
+                "analysis": "This likely supports customers that need production use in South Korea and require local data residency for compliance or operational reasons.",
+                "impact": "Organizations deploying in South Korea and teams with regional data residency requirements are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Data Fabric available in South Korea region",
+                "summary": "Data Fabric is now available in the South Korea region.",
+                "analysis": "This expands service availability in the region so customers can use Data Fabric without relying on another geography.",
+                "impact": "Customers using or planning to use Data Fabric in South Korea are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Data Export available in Admin Portal",
+                "summary": "Data Export is now available in the Admin Portal, allowing organization administrators to configure and monitor exports of platform data such as Orchestrator events, audit logs, Maestro traces, and agent traces to destinations including Azure Event Hub, AWS SQS, Databricks, Arize, and OpenTelemetry collectors.",
+                "analysis": "This likely improves observability, governance, and external analytics integration by centralizing export configuration for platform telemetry and audit data.",
+                "impact": "Organization administrators, compliance teams, and teams integrating UiPath platform data with external monitoring or analytics systems are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New License Viewer and License Administrator roles",
+                "summary": "New License Viewer and License Administrator roles allow Org Admins to delegate license management without granting full Org Admin access.",
+                "analysis": "This supports more granular access control and separation of duties for license administration.",
+                "impact": "Organization administrators and users responsible for license management are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PII in-flight masking extended to downloaded files",
+                "summary": "PII in-flight masking now also applies to files that agents download at runtime and pass to LLMs as multi-modal inputs.",
+                "analysis": "This likely strengthens privacy controls for agent workflows that process file-based content with LLMs.",
+                "impact": "Organizations using agents with LLMs, especially those handling sensitive data in files, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Relay container image support and delayed region availability",
+                "summary": "The Relay client can now run as a container image using Podman or Kubernetes, and Relay is now available in the United States delayed and European Union delayed regions.",
+                "analysis": "This improves deployment flexibility for Relay and expands availability for customers operating in delayed regions.",
+                "impact": "Infrastructure teams deploying Relay and customers in United States delayed or European Union delayed regions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified outbound IP ranges transition",
+                "summary": "UiPath is unifying outbound IP ranges across Automation Cloud and Test Cloud services into a single regional set. The transition window begins June 16, 2026, and legacy service-specific ranges are phased out starting September 16, 2026.",
+                "analysis": "This simplifies network allowlisting over time, but it also requires customers to plan updates before legacy ranges are phased out.",
+                "impact": "Network administrators and security teams maintaining allowlists for Automation Cloud and Test Cloud services are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Trial organizations with social sign-in require business email",
+                "summary": "Creating a trial organization with a social sign-in now requires a business email.",
+                "analysis": "This likely aims to improve account quality, enterprise alignment, or fraud prevention for trial sign-ups.",
+                "impact": "Prospective trial users who sign up with social sign-in are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New built-in Test Cloud user groups",
+                "summary": "Test Cloud now includes two new built-in user groups, App Test Developer and Tester, optimized for testing scenarios.",
+                "analysis": "This likely simplifies user provisioning and role assignment for testing-focused teams.",
+                "impact": "Test Cloud administrators and testing teams are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents receives upgrades for model availability, privacy protection, and authoring experience. The release adds new premium LLM models, extends PII masking to downloaded files used as multi-modal inputs, and introduces a richer Prompt editor.",
+            "overall_analysis": "These changes strengthen both agent capability and governance. They likely help teams build more powerful agent experiences while improving usability and reducing privacy risk in LLM interactions.",
+            "changes": [
+              {
+                "name": "New premium LLM models available",
+                "summary": "Premium LLM models Claude Opus 4.7 and GPT-5.5 are now available for workloads that require advanced reasoning, multi-step planning, and extended context handling.",
+                "analysis": "This expands model choice for demanding agent scenarios and may improve quality for complex reasoning tasks.",
+                "impact": "Teams building or running agents that need advanced reasoning, planning, or long-context processing are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PII in-flight masking for downloaded files",
+                "summary": "PII in-flight masking now extends to files that agents download at runtime and pass to LLMs as multi-modal inputs.",
+                "analysis": "This likely reduces the risk of exposing sensitive information in file-based LLM interactions.",
+                "impact": "Organizations using agents with file inputs and LLM integrations are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Prompt editor",
+                "summary": "A new Prompt editor provides rich text editing, with input arguments, tools, contexts, escalations, and outputs inserted as color-coded inline references using a single `@` trigger, plus Markdown formatting and automatic rename propagation.",
+                "analysis": "This likely improves prompt authoring productivity, readability, and maintainability, especially in more complex agent configurations.",
+                "impact": "Users authoring and maintaining agent prompts are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops adds new AI Trust Layer controls for MCP onboarding, regional LLM routing, and configurable PII masking scope. The updates focus on governance and policy-based control for AI usage.",
+            "overall_analysis": "The release strengthens enterprise policy enforcement for AI scenarios. It likely helps organizations manage compliance, deployment geography, and privacy controls more precisely.",
+            "changes": [
+              {
+                "name": "MCP Dynamic Client Registration in AI Trust Layer policy",
+                "summary": "MCP Dynamic Client Registration can now be enabled within an AI Trust Layer policy to simplify onboarding and lifecycle management for MCP clients.",
+                "analysis": "This likely reduces administrative overhead and standardizes how MCP clients are introduced and managed under policy controls.",
+                "impact": "Administrators managing MCP clients and AI Trust Layer policies are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "LLM region routing controls",
+                "summary": "LLM region routing lets you restrict which geographic regions LLM traffic is routed to, using the new Model Regions tab in AI Trust Layer policies.",
+                "analysis": "This likely supports compliance, residency, or risk management requirements by constraining where AI traffic is processed.",
+                "impact": "Organizations with geographic routing requirements for LLM traffic and administrators managing AI Trust Layer policies are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Configurable masking scope for in-flight PII guardrail",
+                "summary": "The in-flight PII guardrail now supports a configurable masking scope that can apply to files retrieved by agents at runtime.",
+                "analysis": "This adds finer control over privacy protection in AI workflows that incorporate runtime file retrieval.",
+                "impact": "Organizations using AI guardrails and agents that process runtime-retrieved files are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds a new Salesforce connector activity for file retrieval. The update focuses on expanding connector capabilities for classic Salesforce attachments.",
+            "overall_analysis": "This is a targeted connector enhancement that likely simplifies automation scenarios needing access to files stored in the classic Salesforce Attachment object.",
+            "changes": [
+              {
+                "name": "Salesforce Download Attachment activity",
+                "summary": "A new Download Attachment activity for the Salesforce connector retrieves files from the classic Salesforce `Attachment` object.",
+                "analysis": "This likely reduces implementation effort for automations that need to extract legacy Salesforce attachments.",
+                "impact": "Developers and integration builders using the Salesforce connector with classic Attachment records are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds support for email transform tags in Communications Mining. The feature gives more control over how raw emails are converted into messages.",
+            "overall_analysis": "This enhancement likely improves preprocessing flexibility and data quality for email-based Communications Mining use cases by allowing more deliberate transformation behavior.",
+            "changes": [
+              {
+                "name": "Email transform tags in Communications Mining",
+                "summary": "Communications Mining now supports email transform tags to control how raw emails are converted into messages, including text format, signature extraction, and default user properties.",
+                "analysis": "This likely helps teams tailor ingestion behavior and improve message consistency or downstream analysis quality.",
+                "impact": "Users configuring Communications Mining for email ingestion are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro introduces a new case-management project type and improves BPMN canvas usability. The release expands product scope beyond BPMN and streamlines process design.",
+            "overall_analysis": "These changes suggest Maestro is evolving into a broader orchestration and case-management platform. They likely improve both support for goal-driven work and day-to-day modeling efficiency.",
+            "changes": [
+              {
+                "name": "Maestro Case project type",
+                "summary": "Maestro Case is a new project type for goal-driven, agentic case management, complementing Maestro BPMN. It includes a Case Plan Designer, a Case Manager, a built-in Case App, and case instance management.",
+                "analysis": "This likely broadens Maestro to support less linear, case-oriented work where goals and evolving state matter alongside process models.",
+                "impact": "Teams designing case-management solutions and organizations evaluating agentic, goal-driven workflows are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Canvas fluidity updates",
+                "summary": "Canvas fluidity updates streamline how you build and configure BPMN processes, with a richer element toolbar, a quick add menu, and an improved Properties panel.",
+                "analysis": "This likely improves modeling speed and usability for BPMN authors.",
+                "impact": "Users building and configuring BPMN processes in Maestro are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds navigation and execution identity improvements, including a cross-folder folder shortcut, updated identity labeling and availability, tenant-level defaults, and cleanup of deleted references. The changes focus on usability and identity management.",
+            "overall_analysis": "The release improves administrative consistency and execution identity handling while making job navigation easier. It likely reduces configuration friction and helps standardize how jobs inherit identities across folders.",
+            "changes": [
+              {
+                "name": "Go to folder action in cross-folder Jobs grid",
+                "summary": "The cross-folder Jobs grid now includes a Go to folder inline action on each row.",
+                "analysis": "This likely improves navigation efficiency when reviewing jobs across multiple folders.",
+                "impact": "Users monitoring or managing jobs across folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Run as Myself relabeled and expanded",
+                "summary": "Run as Myself is now labeled Inherit parent job identity and is now also available for Windows (foreground) automations.",
+                "analysis": "This likely clarifies the feature’s behavior and extends it to more execution scenarios.",
+                "impact": "Users configuring job execution identities, including for Windows foreground automations, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level default execution identity",
+                "summary": "You can now configure a tenant-level default execution identity that is automatically applied to new folders as they are created.",
+                "analysis": "This likely promotes consistency and reduces manual setup for new folder creation.",
+                "impact": "Tenant administrators creating and governing folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic cleanup of deleted user or machine references",
+                "summary": "References to deleted users or machines are now automatically removed from the tenant-level Default Execution Identity configuration.",
+                "analysis": "This likely reduces stale configuration and administrative cleanup effort.",
+                "impact": "Tenant administrators managing default execution identity settings are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions receives a redesigned deployment experience and tighter resource selection behavior. The changes aim to guide lifecycle operations and avoid inappropriate Personal Workspace resource suggestions.",
+            "overall_analysis": "These updates likely make deployments more structured and reduce configuration mistakes, especially in cross-environment lifecycle operations.",
+            "changes": [
+              {
+                "name": "Redesigned deployment experience",
+                "summary": "A redesigned deployment experience is being introduced across Studio Web and Orchestrator, with a guided, step-by-step flow for solution lifecycle operations.",
+                "analysis": "This likely improves deployment clarity and consistency by structuring the process into guided steps.",
+                "impact": "Users deploying and managing solutions across Studio Web and Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Personal Workspace resources excluded outside Personal Workspace",
+                "summary": "Personal Workspace resources are no longer offered as candidates when you configure a deployment located outside your Personal Workspace.",
+                "analysis": "This likely prevents invalid or confusing resource choices during deployment configuration.",
+                "impact": "Users configuring deployments outside their Personal Workspace are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds direct solution deployment, better publish history detail, a native API Workflow logging activity, test case linking, and a new default branch name for repositories. The release combines deployment, developer productivity, and traceability improvements.",
+            "overall_analysis": "These changes make Studio Web more self-sufficient for solution delivery and everyday development workflows. They likely reduce context switching, improve visibility, and align repository defaults with common Git conventions.",
+            "changes": [
+              {
+                "name": "Guided solution deployment from Studio Web",
+                "summary": "A new deployment experience lets you deploy solutions directly from Studio Web through a guided panel that covers packaging, configuration, and activation.",
+                "analysis": "This likely reduces the need to switch tools and makes deployment easier to execute from the development environment.",
+                "impact": "Studio Web users deploying solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expandable publish history versions for solution projects",
+                "summary": "Version items in the publish history panel are now expandable for solution projects.",
+                "analysis": "This likely improves visibility into published versions and related details.",
+                "impact": "Users reviewing publish history for solution projects are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Native Log Message activity in API Workflow designer",
+                "summary": "A native Log Message activity is now available in the API Workflow designer.",
+                "analysis": "This likely improves observability and debugging for API workflows.",
+                "impact": "Developers building API workflows in Studio Web are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Direct Test Manager link for test-case files",
+                "summary": "Test-case files now display a direct link to the associated test case in Test Manager.",
+                "analysis": "This likely improves traceability and navigation between development assets and test management records.",
+                "impact": "Users working with test-case files and Test Manager are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Default branch name changed to main for new repositories",
+                "summary": "New repositories initialized through Studio Web now use `main` as the default branch name.",
+                "analysis": "This aligns new repositories with a common default branch naming convention.",
+                "impact": "Users creating new repositories through Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager gains general availability for Autopilot Chat in Test Cloud, TMH project configuration portability, performance testing improvements, and additional sorting and language support. The release improves AI assistance, configuration management, test execution visibility, and usability.",
+            "overall_analysis": "These changes collectively strengthen Test Manager as a more mature testing platform with broader AI availability, better portability, improved performance-testing diagnostics, and more flexible user experience features.",
+            "changes": [
+              {
+                "name": "Autopilot Chat generally available in Test Manager",
+                "summary": "Autopilot Chat is now generally available in Test Manager when delivered through Test Cloud, with MCP Server integration.",
+                "analysis": "This signals production readiness for AI-assisted testing conversations in supported Test Cloud delivery scenarios and expands integration capability through MCP Server.",
+                "impact": "Test Manager users in Test Cloud environments and teams adopting Autopilot-assisted workflows are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Project Configuration export and import in TMH files",
+                "summary": "You can now export and import Project Configuration as part of TMH files.",
+                "analysis": "This likely improves portability, backup, or reuse of project setup across environments or teams.",
+                "impact": "Test managers and teams moving or reusing project configurations are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Performance Testing improvements",
+                "summary": "Performance Testing adds retry-aware error reporting, a Workflow Analyzer pre-flight validation step, and live streaming during dry runs.",
+                "analysis": "This likely improves troubleshooting, pre-run validation, and execution visibility for performance testing workflows.",
+                "impact": "Teams running Performance Testing are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Sorting in custom structured views and Romanian Autopilot support",
+                "summary": "You can now sort groups in custom structured views, and Romanian is now a supported Autopilot language.",
+                "analysis": "These updates likely improve day-to-day usability and broaden language support for Autopilot users.",
+                "impact": "Users organizing custom structured views and Romanian-speaking Autopilot users are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 57615
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-june-2026#03",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-june-2026",
+      "sha256": "e1414eb8b6218c0b68f120c6d6eaded5cf1a08f6f7885f915a4b4adde21ecf56",
+      "chars": 1483,
+      "payloadChars": 1564,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Administration updates for Automation Cloud Public Sector and Test Cloud Public Sector add an Insights firewall allowlist domain requirement. This change helps ensure continued access to the Insights service in these environments.",
+            "overall_analysis": "The update is an infrastructure and connectivity adjustment for customers using Insights in Public Sector cloud environments. Organizations with restrictive firewall or proxy settings may need to take action to avoid access issues.",
+            "changes": [
+              {
+                "name": "Insights allowlist domain added",
+                "summary": "The `insights-looker-prod.uipath.us` domain is now included in the Insights firewall allowlist for Automation Cloud Public Sector and Test Cloud Public Sector, and customers should add it to their firewall or proxy allowlist to ensure proper access to the Insights service.",
+                "analysis": "This likely supports or formalizes network access requirements for the Insights service in Public Sector environments. The main user impact is on administrators who manage firewall or proxy rules, as failing to allow the domain could prevent proper Insights access.",
+                "impact": "Administrators of Automation Cloud Public Sector and Test Cloud Public Sector environments using firewalls or proxy allowlists, and users who need access to Insights.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator introduces navigation and execution identity improvements, including a new cross-folder Jobs action, updated execution target naming and availability, tenant-level default execution identity for new folders, and automatic cleanup of deleted identity references. These changes streamline job management and standardize execution identity behavior across folders.",
+            "overall_analysis": "The changes focus on usability, consistency, and administrative control for job execution identity management. They are likely to reduce manual setup for new folders, improve clarity around job identity inheritance, and minimize configuration drift caused by deleted users or machines.",
+            "changes": [
+              {
+                "name": "Go to folder action in cross-folder Jobs grid",
+                "summary": "The cross-folder Jobs grid now includes a **Go to folder** inline action on each row, which opens the **Jobs** page for that folder pre-filtered by the job's process.",
+                "analysis": "This improves navigation from aggregated job views into the relevant folder context. It likely helps operators investigate or manage jobs faster by reducing manual searching and filtering.",
+                "impact": "Users monitoring or managing jobs across folders in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Execution target renamed and expanded for Windows foreground automations",
+                "summary": "The **Run as Myself** execution target option is now labeled **Inherit parent job identity** and is now also available for Windows (foreground) automations.",
+                "analysis": "The rename likely clarifies how the option behaves by emphasizing identity inheritance rather than a personal execution model. Extending availability to Windows foreground automations broadens where the option can be used.",
+                "impact": "Users configuring job execution targets, especially for Windows (foreground) automations.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level default execution identity for new folders",
+                "summary": "You can now configure a tenant-level default execution identity that is automatically applied to new folders as they are created.",
+                "analysis": "This likely reduces repetitive folder setup and promotes consistent identity configuration across tenants. It can improve governance by standardizing how new folders inherit execution identity settings.",
+                "impact": "Tenant administrators creating and governing folders and execution identity settings in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic removal of deleted identity references",
+                "summary": "References to deleted users or machines are now automatically removed from the tenant-level Default Execution Identity configuration.",
+                "analysis": "This change likely reduces stale configuration and prevents misconfiguration caused by deleted identities remaining referenced. It may improve reliability and reduce administrative cleanup work.",
+                "impact": "Tenant administrators managing Default Execution Identity settings and environments where users or machines are deleted over time.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds TMH-based export and import for Project Configuration and introduces sorting for groups in custom structured views when used via Test Cloud. These updates improve portability of configuration and usability of structured views.",
+            "overall_analysis": "The changes support easier environment setup, governance consistency, and more efficient navigation of test management data. They are particularly valuable for teams that move configurations between projects or rely on custom structured views in Test Cloud.",
+            "changes": [
+              {
+                "name": "Export and import Project Configuration in TMH files",
+                "summary": "You can export and import Project Configuration as part of TMH files, including custom field definitions, user authorizations, roles, reporting time zone, automation context folder, and governance settings.",
+                "analysis": "This likely simplifies migration, backup, replication, or standardization of Test Manager project settings across environments or projects. It can reduce manual reconfiguration effort and help preserve governance and authorization setups.",
+                "impact": "Test Manager administrators and project owners who manage project setup, governance, roles, and configuration portability.",
+                "breaking_change": false
+              },
+              {
+                "name": "Sorting groups in custom structured views via Test Cloud",
+                "summary": "You can sort groups ascending or descending in custom structured views when using Test Manager via Test Cloud.",
+                "analysis": "This is a usability improvement that helps users organize and review structured view data more effectively. It likely makes large or complex grouped views easier to navigate and analyze.",
+                "impact": "Test Manager users working with custom structured views in Test Cloud.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26492
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-june-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-june-2026",
+      "sha256": "ff509ad4fc02f9f2e17a47f27c47effa25638de4344d19cb894f0fe31c46fcd4",
+      "chars": 1234,
+      "payloadChars": 1321,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Administration updates add default UiPath-managed, government-compliant email settings and introduce two new built-in user groups in Test Cloud Public Sector for testing scenarios.",
+            "overall_analysis": "These changes reduce setup effort for compliant email delivery and improve role setup for testing-focused users in public sector cloud environments.",
+            "changes": [
+              {
+                "name": "Default government-compliant email settings",
+                "summary": "Default email settings using a UiPath-managed, government-compliant email delivery service are now available in Automation Cloud Public Sector and Test Cloud Public Sector.",
+                "analysis": "This likely simplifies email configuration and helps organizations use a compliant default delivery option without needing to set up their own mail service.",
+                "impact": "Administrators and organizations using Automation Cloud Public Sector and Test Cloud Public Sector who need email delivery in compliant environments.",
+                "breaking_change": false
+              },
+              {
+                "name": "New built-in testing user groups",
+                "summary": "Test Cloud Public Sector now includes two new built-in user groups, App Test Developer and Tester, optimized for testing scenarios.",
+                "analysis": "This likely makes it easier to assign appropriate access for testing workflows by providing predefined roles aligned to common testing responsibilities.",
+                "impact": "Test Cloud Public Sector administrators and users involved in application testing, especially App Test Developers and Testers.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds a new Salesforce connector activity for downloading files from the classic Salesforce Attachment object.",
+            "overall_analysis": "This expands Salesforce connector capabilities for legacy attachment retrieval scenarios and may reduce the need for custom workarounds when handling classic Salesforce attachments.",
+            "changes": [
+              {
+                "name": "Salesforce Download Attachment activity",
+                "summary": "A new Download Attachment activity for the Salesforce connector retrieves files from the classic Salesforce `Attachment` object.",
+                "analysis": "This likely helps users automate access to files stored in Salesforce's classic attachment model, improving connector completeness for Salesforce-based automations.",
+                "impact": "Users building automations with Integration Service and the Salesforce connector who need to retrieve classic Salesforce attachments.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator introduces a new Delinea Secret Server credential store integration, more detailed queue item JSON schema validation errors, automatic cleanup of Default Execution Identity references, Personal Workspace subfolder management permissions, and tenant-level resources support in binding overwrites.",
+            "overall_analysis": "These updates improve security integration, validation clarity, permissions management, and configuration flexibility, suggesting a focus on operational reliability and administrative control.",
+            "changes": [
+              {
+                "name": "Delinea Secret Server credential store integration",
+                "summary": "A new read-only credential store integration is available for Delinea Secret Server, the successor to Thycotic Secret Server.",
+                "analysis": "This likely supports customers using Delinea for secret management and helps align Orchestrator integrations with the current vendor product.",
+                "impact": "Administrators and organizations using Orchestrator with external credential stores, especially those using or migrating to Delinea Secret Server.",
+                "breaking_change": false
+              },
+              {
+                "name": "Detailed queue item JSON schema validation errors",
+                "summary": "Queue item endpoints now provide detailed JSON schema validation errors.",
+                "analysis": "This likely makes troubleshooting request payload issues easier by giving more precise feedback when queue item submissions fail validation.",
+                "impact": "Developers and API users working with Orchestrator queue item endpoints.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic cleanup of Default Execution Identity references",
+                "summary": "Orchestrator now performs automatic cleanup of Default Execution Identity references.",
+                "analysis": "This likely reduces stale or invalid identity references and improves system consistency with less manual maintenance.",
+                "impact": "Administrators and users managing execution identities in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Subfolder management permissions in Personal Workspace",
+                "summary": "Subfolder management permissions are now available in Personal Workspace.",
+                "analysis": "This likely gives users or administrators more granular control over organizing and governing content within Personal Workspace.",
+                "impact": "Users and administrators managing folders and permissions in Personal Workspace.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level resources support in binding overwrites",
+                "summary": "Binding overwrites now support tenant-level resources.",
+                "analysis": "This likely increases configuration flexibility by allowing bindings to reference or override resources defined at the tenant level.",
+                "impact": "Administrators and users configuring bindings that rely on tenant-level resources in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds bulk updating of custom fields in Group by operations and includes test steps in test case exports.",
+            "overall_analysis": "These enhancements improve test management efficiency and data portability by streamlining bulk edits and making exports more complete.",
+            "changes": [
+              {
+                "name": "Bulk update custom fields in Group by",
+                "summary": "Custom fields can now be bulk updated in Group by operations.",
+                "analysis": "This likely reduces repetitive manual editing and improves efficiency when managing grouped test artifacts with shared custom field changes.",
+                "impact": "Test Manager users maintaining custom field values across grouped items.",
+                "breaking_change": false
+              },
+              {
+                "name": "Export test steps with test case exports",
+                "summary": "Test steps can now be exported as part of test case exports.",
+                "analysis": "This likely makes exports more useful for reporting, review, migration, or offline analysis by including the detailed steps of each test case.",
+                "impact": "Test Manager users exporting test cases for documentation, sharing, or downstream processing.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26608
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-june-2026#05",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-june-2026",
+      "sha256": "8001fd8602f9563d14decd119a989ddae379d20972e1fe2ecc634dcf0bebac2b",
+      "chars": 2339,
+      "payloadChars": 2434,
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "June 22, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "June 22, 2026"
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": "June 22, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "June 22, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "June 22, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration": {
+            "summary": "This release includes general improvements and bug fixes for the administration experience. The stated focus is on platform stability and performance.",
+            "overall_analysis": "The changes appear to be maintenance-oriented, aimed at improving reliability and overall system behavior rather than introducing new end-user features.",
+            "changes": [
+              {
+                "name": "General improvements and bug fixes",
+                "summary": "General improvements and bug fixes were made to enhance platform stability and performance.",
+                "analysis": "This likely addresses underlying issues and optimizations to make the administration experience more reliable and performant.",
+                "impact": "Administrators using Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration are affected through improved stability and performance.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator introduces navigation, execution identity, and configuration improvements. These changes streamline cross-folder job management and expand how execution identities are configured and applied.",
+            "overall_analysis": "The broader significance is improved usability and governance for job execution across folders and tenants. The updates reduce manual setup, clarify identity behavior, and help keep identity configurations valid over time.",
+            "changes": [
+              {
+                "name": "Go to folder action in cross-folder Jobs grid",
+                "summary": "A new Go to folder inline action in the cross-folder Jobs grid lets you navigate to the folder page for any job row.",
+                "analysis": "This likely improves operator efficiency when investigating or managing jobs across folders by reducing navigation steps.",
+                "impact": "Users working with jobs across multiple folders in Orchestrator are affected, especially operators and administrators.",
+                "breaking_change": false
+              },
+              {
+                "name": "Run as Myself renamed and expanded",
+                "summary": "The Run as Myself option in execution target bindings is renamed to Inherit parent job identity and is now also available for Windows (foreground) automations.",
+                "analysis": "The rename likely clarifies the behavior of the setting, while the expanded availability increases consistency across automation types and enables more scenarios.",
+                "impact": "Users configuring execution target bindings, including those running Windows (foreground) automations, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level default execution identity",
+                "summary": "You can now configure a tenant-level default execution identity that is automatically applied to new folders when they are created.",
+                "analysis": "This likely improves governance and reduces repetitive configuration by standardizing execution identity settings for newly created folders.",
+                "impact": "Tenant administrators and teams creating new folders in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic cleanup of deleted users or machines from Default Execution Identity",
+                "summary": "Deleted users or machines are now automatically removed from the tenant-level Default Execution Identity configuration.",
+                "analysis": "This likely prevents stale or invalid identity references, improving configuration hygiene and reducing administrative maintenance.",
+                "impact": "Tenant administrators managing execution identities are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions now prevents Personal Workspace resources from being offered for deployments outside the Personal Workspace. This helps avoid invalid deployment configurations during collaboration.",
+            "overall_analysis": "The change strengthens deployment safeguards by restricting unsuitable resource choices in collaborative contexts. Its significance is primarily in preventing misconfiguration and reducing setup failures.",
+            "changes": [
+              {
+                "name": "Exclude Personal Workspace resources from external deployments",
+                "summary": "Personal Workspace resources are no longer offered as candidates when you configure a deployment outside your Personal Workspace, preventing broken setups during collaboration.",
+                "analysis": "This likely reduces user error by filtering out incompatible deployment targets and making configuration choices context-appropriate.",
+                "impact": "Users configuring deployments in Solutions, especially in collaborative scenarios outside Personal Workspace, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds solution linkage, local saving, logging support, test case linking, a new default branch name for new repositories, and a guided deployment flow. The release focuses on improving usability across development, testing, source control, and deployment.",
+            "overall_analysis": "These updates significantly broaden Studio Web’s role as an end-to-end development environment. The changes reduce friction in common workflows, improve integration with other UiPath products, and simplify deployment and project management.",
+            "changes": [
+              {
+                "name": "Automation Hub idea link in Solution Properties",
+                "summary": "You can view and navigate to the Automation Hub idea linked to a solution directly from the Solution Properties panel.",
+                "analysis": "This likely improves traceability between implementation work and the originating idea, helping teams move more easily between planning and execution.",
+                "impact": "Studio Web users working with solutions linked to Automation Hub ideas are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Save individual cloud projects to Local Workspace",
+                "summary": "Individual cloud projects can now be saved directly to your Local Workspace.",
+                "analysis": "This likely gives users more flexibility in how they manage project files and supports hybrid or local working practices.",
+                "impact": "Studio Web users working with individual cloud projects are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Native Log Message activity in API Workflow designer",
+                "summary": "Studio Web now includes a native Log Message activity in the API Workflow designer, providing a low-code alternative to custom JavaScript for logging.",
+                "analysis": "This likely lowers the technical barrier for adding logging and improves maintainability by replacing custom scripting in some scenarios.",
+                "impact": "Users building API workflows in Studio Web are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Direct Test Manager link in test-case files",
+                "summary": "Test-case files in Studio Web now display a direct link to the associated test case in Test Manager.",
+                "analysis": "This likely improves traceability and speeds navigation between implementation artifacts and test management records.",
+                "impact": "Users working with test-case files connected to Test Manager are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Default branch name changed to main",
+                "summary": "When initializing a new repository in Studio Web, the default branch is now named main instead of master.",
+                "analysis": "This aligns new repositories with common modern source control conventions. Existing workflows or automation that assume master for newly initialized repositories may need adjustment.",
+                "impact": "Users creating new repositories in Studio Web are affected, particularly teams with branch naming expectations or automation tied to default branch names.",
+                "breaking_change": false
+              },
+              {
+                "name": "Guided deployment experience for solutions",
+                "summary": "A new guided deployment experience lets you deploy solutions directly from Studio Web, covering packaging, configuration, and activation in one place.",
+                "analysis": "This likely streamlines the deployment process, centralizes steps that were previously distributed, and reduces complexity for users deploying solutions.",
+                "impact": "Studio Web users deploying solutions are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds TMH-based Project Configuration portability, sorting for groups in custom structured views, and direct automation of test cases from Studio Web. The changes improve administration, usability, and integration with Studio Web.",
+            "overall_analysis": "The release enhances both governance portability and day-to-day productivity in Test Manager. It also strengthens the connection between test management and automation authoring by enabling a more direct Studio Web workflow.",
+            "changes": [
+              {
+                "name": "Export and import Project Configuration in TMH files",
+                "summary": "You can export and import Project Configuration — including custom field definitions, user authorizations, roles, and governance settings — as part of TMH files.",
+                "analysis": "This likely simplifies environment setup, migration, backup, or standardization by allowing key project settings to travel with TMH files.",
+                "impact": "Test Manager administrators and teams managing project configurations across environments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Sort groups in custom structured views",
+                "summary": "Groups can be sorted ascending or descending when working with custom structured views.",
+                "analysis": "This likely improves usability and data organization when navigating grouped information in custom views.",
+                "impact": "Test Manager users working with custom structured views are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automate in Studio Web option",
+                "summary": "You can automate Test Manager test cases directly from Studio Web using the new Automate in Studio Web option.",
+                "analysis": "This likely shortens the path from test case management to automation creation and strengthens workflow continuity between Test Manager and Studio Web.",
+                "impact": "Test authors and automation engineers using Test Manager and Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 42045
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-june-2026#06",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-june-2026",
+      "sha256": "7b0d1b75e730818eaa19170546fcf432ab2d1088be60ead76413d1fd1e5a36a5",
+      "chars": 1051,
+      "payloadChars": 1132,
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "June 4, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "June 4, 2026"
+        },
+        {
+          "name": "Agents",
+          "releaseDate": "June 10, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration": {
+            "summary": "This release includes general improvements and bug fixes aimed at improving platform stability and performance. No specific feature-level changes are detailed.",
+            "overall_analysis": "The update appears to be a maintenance release focused on reliability and operational quality rather than introducing new functionality.",
+            "changes": [
+              {
+                "name": "General improvements and bug fixes",
+                "summary": "General improvements and bug fixes were made to enhance platform stability and performance.",
+                "analysis": "This likely reduces defects and improves the consistency and responsiveness of the administration experience, but the exact areas affected are not stated.",
+                "impact": "Administrators using Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds a new Delinea Secret Server credential store integration, more detailed queue item JSON schema validation errors, automatic cleanup of Default Execution Identity references, Personal Workspace subfolder management permissions, and tenant-level resources support in binding overwrites.",
+            "overall_analysis": "These changes strengthen integration options, improve diagnostics and administration, and expand permission and resource configuration capabilities. The release is likely significant for administrators and developers managing credentials, queues, workspace permissions, execution identities, and resource bindings.",
+            "changes": [
+              {
+                "name": "Delinea Secret Server credential store integration",
+                "summary": "A new credential store integration was added for Delinea Secret Server in read-only mode, identified as the successor to Thycotic Secret Server.",
+                "analysis": "This expands supported secret-management integrations and may help organizations align with Delinea branding or platform transitions from Thycotic Secret Server. The read-only limitation is important for implementation planning.",
+                "impact": "Administrators and security teams integrating Orchestrator with external credential stores, especially organizations using or migrating to Delinea Secret Server.",
+                "breaking_change": false
+              },
+              {
+                "name": "Detailed queue item JSON schema validation errors",
+                "summary": "Queue item endpoints now provide detailed JSON schema validation errors.",
+                "analysis": "More detailed validation feedback should make API troubleshooting faster and reduce time spent diagnosing malformed payloads when interacting with queue item endpoints.",
+                "impact": "Developers and integrators using Orchestrator queue item endpoints.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic cleanup of Default Execution Identity references",
+                "summary": "Default Execution Identity references are now cleaned up automatically.",
+                "analysis": "This likely reduces stale or invalid references and lowers administrative overhead, improving configuration hygiene and possibly preventing issues caused by lingering identity references.",
+                "impact": "Administrators managing execution identities and related Orchestrator configurations.",
+                "breaking_change": false
+              },
+              {
+                "name": "Subfolder management permissions in Personal Workspace",
+                "summary": "Subfolder management permissions were added in Personal Workspace.",
+                "analysis": "This enhances access control granularity within Personal Workspace, allowing better management of who can organize or administer subfolders.",
+                "impact": "Users and administrators working with Personal Workspace permissions and folder structures.",
+                "breaking_change": false
+              },
+              {
+                "name": "Tenant-level resources support in binding overwrites",
+                "summary": "Binding overwrites now support tenant-level resources.",
+                "analysis": "This broadens how resource bindings can be configured and reused across a tenant, which may simplify multi-scope deployments and centralized resource management.",
+                "impact": "Administrators and developers configuring bindings and tenant-level resources.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents introduces a new Prompt editor with rich text editing, `@`-triggered insertion of inline references, Markdown formatting, and automatic rename propagation.",
+            "overall_analysis": "This is a usability-focused enhancement that likely streamlines prompt authoring and maintenance for agent builders. It should improve editing efficiency, clarity, and consistency when working with prompts that reference arguments, tools, contexts, escalations, and outputs.",
+            "changes": [
+              {
+                "name": "New Prompt editor",
+                "summary": "A new Prompt editor provides a rich text editing experience, allowing input arguments, tools, contexts, escalations, and outputs to be inserted as color-coded inline references using a single `@` trigger, and also includes Markdown formatting and automatic rename propagation.",
+                "analysis": "The editor likely makes prompt creation more intuitive and less error-prone by improving discoverability of insertable elements, visual clarity of references, and consistency when referenced items are renamed.",
+                "impact": "Users authoring and maintaining prompts in Agents.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26278
+    }
+  ],
+  "warnings": []
+}

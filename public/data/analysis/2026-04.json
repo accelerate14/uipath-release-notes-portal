@@ -1,0 +1,3225 @@
+{
+  "schemaVersion": "1.2",
+  "id": "2026-04",
+  "label": "April 2026",
+  "title": "April 2026",
+  "cacheKey": "v1",
+  "generatedAt": "2026-09-28T08:12:38.624Z",
+  "source": {
+    "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-april-2026",
+    "markdownUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-april-2026.md",
+    "sha256": "055892c17ff491cef8458917f11d517ae715fb03000b6f356f46f49076d8ed7a",
+    "chars": 36138
+  },
+  "status": "complete",
+  "sections": [
+    {
+      "id": "automation-cloud-and-test-cloud--late-april-2026",
+      "environment": "Automation Cloud and Test Cloud",
+      "timeframe": "Late April 2026",
+      "publishingDate": "April 30, 2026",
+      "range": "April 16, 2026 – April 30, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Tenant consumption enforcement is now available. Org Admins and Tenant Administrators can configure whether services stop consuming units when a tenant reaches its allocation, with notifications at 50%, 75%, and 90% consumption.\n* The New Unit Consumption Experience [Public Preview] provides visibility into unit allocation and consumption across the organizational hierarchy, with drill-down to tenant, folder, and process levels, and support for exporting consumption data.\n* You can now bring your own LLM configuration for Context Grounding through the AI Trust Layer, with support for OpenAI v1 APIs.\n* The outbound IP range migration is now complete for Apps, Automation Ops, AI Trust Layer – Bring your own LLM, Integration Service, and Test Manager. The transition for Customer-Managed Keys outbound IP ranges for Automation Cloud Portal remains ongoing until approximately June 2026.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Administration and Test Cloud Administration",
+            "summary": "Automation Cloud Administration and Test Cloud Administration introduced tenant consumption enforcement, a new public preview unit consumption experience, bring-your-own LLM configuration for Context Grounding through the AI Trust Layer, and completed most outbound IP range migrations.",
+            "overall_analysis": "These updates focus on administrative control, visibility into consumption, and infrastructure/networking readiness. They likely help administrators manage usage more precisely, support custom AI configurations, and prepare environments for network allowlisting changes.",
+            "changes": [
+              {
+                "name": "Tenant consumption enforcement",
+                "summary": "Tenant consumption enforcement is now available. Org Admins and Tenant Administrators can configure whether services stop consuming units when a tenant reaches its allocation, with notifications at 50%, 75%, and 90% consumption.",
+                "analysis": "This likely helps organizations prevent overconsumption and enforce budget or allocation limits while giving administrators advance warning before limits are reached.",
+                "impact": "Org Admins, Tenant Administrators, and tenants consuming allocated units are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Unit Consumption Experience [Public Preview]",
+                "summary": "The New Unit Consumption Experience is in public preview and provides visibility into unit allocation and consumption across the organizational hierarchy, with drill-down to tenant, folder, and process levels, and support for exporting consumption data.",
+                "analysis": "This likely improves monitoring and reporting of consumption by making usage easier to analyze across multiple levels of the organization.",
+                "impact": "Administrators tracking unit allocation and consumption across organizations, tenants, folders, and processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bring your own LLM for Context Grounding",
+                "summary": "You can now bring your own LLM configuration for Context Grounding through the AI Trust Layer, with support for OpenAI v1 APIs.",
+                "analysis": "This likely gives customers more flexibility in how they configure AI models for grounding scenarios while aligning with supported OpenAI v1 APIs.",
+                "impact": "Customers using Context Grounding and administrators configuring AI Trust Layer integrations are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Outbound IP range migration update",
+                "summary": "The outbound IP range migration is now complete for Apps, Automation Ops, AI Trust Layer – Bring your own LLM, Integration Service, and Test Manager. The transition for Customer-Managed Keys outbound IP ranges for Automation Cloud Portal remains ongoing until approximately June 2026.",
+                "analysis": "This is significant for customers managing network allowlists or firewall rules, because completed and ongoing IP range migrations may require infrastructure review and updates.",
+                "impact": "Customers and administrators managing network security, allowlists, or Customer-Managed Keys connectivity are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now clone a low-code agent as a coded agent directly from Studio Web, generating a Python project with the agent's prompts, tools, schemas, and all required dependencies.\n* The Microsoft Teams and Slack deployment channels are now generally available. A new Dedicated Teams App provides persistent conversation context, supports concurrent conversations, and removes the requirement to @mention the bot.\n* Healing Agent is now available with dedicated Test Cloud entitlements (App Test Heals). Application Testing Enterprise customers receive 5,000 App Test Heals per year included; Standard customers can purchase the add-on.\n* ScreenPlay is now available with a dedicated Test Cloud Add-On (App Test ScreenPlay).",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Agents",
+            "summary": "Agents added cloning from low-code to coded agents in Studio Web, made Microsoft Teams and Slack deployment channels generally available, and introduced dedicated Test Cloud entitlements and add-ons for Healing Agent and ScreenPlay.",
+            "overall_analysis": "These changes expand deployment flexibility, developer portability, and commercial packaging for agent-related capabilities. They likely make agents easier to adopt across collaboration platforms and testing workflows.",
+            "changes": [
+              {
+                "name": "Clone low-code agent as coded agent",
+                "summary": "You can now clone a low-code agent as a coded agent directly from Studio Web, generating a Python project with the agent's prompts, tools, schemas, and all required dependencies.",
+                "analysis": "This likely helps teams move from low-code prototyping to code-based development and customization without rebuilding the agent manually.",
+                "impact": "Studio Web users, developers, and teams maintaining low-code and coded agents are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Teams and Slack channels generally available",
+                "summary": "The Microsoft Teams and Slack deployment channels are now generally available. A new Dedicated Teams App provides persistent conversation context, supports concurrent conversations, and removes the requirement to @mention the bot.",
+                "analysis": "This likely improves production readiness for collaboration-channel deployments and makes Teams interactions more natural and scalable for ongoing use.",
+                "impact": "Users deploying or using agents in Microsoft Teams and Slack are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Healing Agent dedicated Test Cloud entitlements",
+                "summary": "Healing Agent is now available with dedicated Test Cloud entitlements called App Test Heals. Application Testing Enterprise customers receive 5,000 App Test Heals per year included, while Standard customers can purchase the add-on.",
+                "analysis": "This likely clarifies packaging and access to Healing Agent capabilities while expanding availability through entitlement-based licensing.",
+                "impact": "Test Cloud customers, especially Application Testing Enterprise and Standard customers, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "ScreenPlay dedicated Test Cloud add-on",
+                "summary": "ScreenPlay is now available with a dedicated Test Cloud Add-On called App Test ScreenPlay.",
+                "analysis": "This likely makes ScreenPlay easier to purchase and manage as a distinct testing capability within Test Cloud.",
+                "impact": "Test Cloud customers interested in ScreenPlay are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.\n* A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.\n* You can now import multiple business processes from a CSV file using a guided AI assistant.\n* BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Hub",
+            "summary": "Automation Hub updated submission flows, added support for agentic AI ideas, enabled CSV import of multiple business processes with AI assistance, and introduced BPMN uploads with interactive rendering.",
+            "overall_analysis": "These updates improve intake, process documentation, and support for newer automation initiative types. They likely make it easier for organizations to collect, organize, and visualize automation opportunities at scale.",
+            "changes": [
+              {
+                "name": "Submit New workflow",
+                "summary": "Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.",
+                "analysis": "This likely streamlines intake by supporting multiple submission types from a single entry point and clarifying user intent earlier in the process.",
+                "impact": "Automation Hub users submitting ideas, change requests, or business processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agentic AI idea flow",
+                "summary": "A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.",
+                "analysis": "This likely helps organizations evaluate and manage agentic AI opportunities as a distinct category within their innovation pipeline.",
+                "impact": "Users submitting, reviewing, or tracking agentic automation initiatives in Automation Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "CSV import for multiple business processes",
+                "summary": "You can now import multiple business processes from a CSV file using a guided AI assistant.",
+                "analysis": "This likely reduces manual data entry and speeds up onboarding of business process inventories into Automation Hub.",
+                "impact": "Users importing business processes into Automation Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "BPMN upload and interactive rendering",
+                "summary": "BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+                "analysis": "This likely improves process documentation and review by allowing users to view BPMN diagrams directly in the product.",
+                "impact": "Users documenting or reviewing business processes in Automation Hub are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Agent 2 Agent (A2A) connector has entered Controlled General Availability.\n* The Microsoft Azure Active Directory connector has new group management activities: List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.\n* The Anthropic Claude connector has a new Generate Message activity using the current `/v1/messages` API. The Generate Text Completion activity is deprecated and no longer functional.\n* The Nvidia NIM connector is now available in preview.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service introduced the A2A connector in Controlled General Availability, added Microsoft Azure Active Directory connector group-management activities, updated the Anthropic Claude connector API support while deprecating an older activity, and added the Nvidia NIM connector in preview.",
+            "overall_analysis": "These changes expand connector coverage and modernize AI-related integrations. The Anthropic Claude update is especially important because it includes a deprecation and loss of functionality for an older activity.",
+            "changes": [
+              {
+                "name": "Agent 2 Agent (A2A) connector",
+                "summary": "The Agent 2 Agent (A2A) connector has entered Controlled General Availability.",
+                "analysis": "This likely signals increased stability and broader production-readiness for customers integrating agent-to-agent scenarios, though availability is still controlled.",
+                "impact": "Customers using or evaluating the A2A connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure Active Directory connector group management activities",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities, including List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.",
+                "analysis": "This likely expands administrative and automation use cases for Azure Active Directory-related workflows.",
+                "impact": "Users building automations with the Microsoft Azure Active Directory connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude connector message API update",
+                "summary": "The Anthropic Claude connector has a new Generate Message activity using the current `/v1/messages` API. The Generate Text Completion activity is deprecated and no longer functional.",
+                "analysis": "This is a significant connector update because users must move to the current API pattern. The older activity being deprecated and no longer functional indicates an incompatible change for workflows relying on it.",
+                "impact": "Users of the Anthropic Claude connector, especially those using Generate Text Completion, are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Nvidia NIM connector preview",
+                "summary": "The Nvidia NIM connector is now available in preview.",
+                "analysis": "This likely broadens AI integration options for customers experimenting with Nvidia NIM-based scenarios.",
+                "impact": "Customers interested in Nvidia NIM integrations are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Gemini 3.1 Pro, GPT 5.1, and GPT 5.4 models are available in public preview, with improved reasoning, instruction-following, and extraction accuracy across complex document types.\n* The Layout model for extended languages is available in preview in the Japan region, improving extraction accuracy.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "IXP",
+            "summary": "IXP added Gemini 3.1 Pro, GPT 5.1, and GPT 5.4 in public preview, and made the Layout model for extended languages available in preview in the Japan region.",
+            "overall_analysis": "These updates center on model expansion and regional language support. They likely improve extraction quality for complex documents while increasing model choice, with some availability limited by preview status and region.",
+            "changes": [
+              {
+                "name": "New preview models",
+                "summary": "The Gemini 3.1 Pro, GPT 5.1, and GPT 5.4 models are available in public preview, with improved reasoning, instruction-following, and extraction accuracy across complex document types.",
+                "analysis": "This likely gives customers access to stronger model options for document understanding and extraction tasks, especially in more complex scenarios.",
+                "impact": "IXP users working with document extraction and model selection are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Layout model for extended languages in Japan region",
+                "summary": "The Layout model for extended languages is available in preview in the Japan region, improving extraction accuracy.",
+                "analysis": "This likely expands regional and language-specific extraction support for customers operating in Japan.",
+                "impact": "IXP users in the Japan region or those processing extended-language documents are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Data Fabric queries now support the `qem:` prefix, returning all matching records as an array of up to 1,000 items. Queries using `qes:` now return an explicit error when more than one record matches.\n* A new instance throttling indicator appears when a workflow instance is being throttled, with a warning icon in the Instances table and a banner on the Instance details page.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Maestro",
+            "summary": "Maestro updated Data Fabric query behavior with new `qem:` support and stricter `qes:` error handling, and added a new throttling indicator for workflow instances.",
+            "overall_analysis": "These changes improve data query capabilities and operational visibility. The query behavior update may require attention from users relying on previous `qes:` assumptions because multi-match cases now explicitly error.",
+            "changes": [
+              {
+                "name": "Data Fabric query enhancements and `qes:` behavior change",
+                "summary": "Data Fabric queries now support the `qem:` prefix, returning all matching records as an array of up to 1,000 items. Queries using `qes:` now return an explicit error when more than one record matches.",
+                "analysis": "This likely adds a clearer option for multi-record retrieval while making single-record queries stricter and more predictable. Users may need to adjust queries depending on whether they expect one or many matches.",
+                "impact": "Users building or maintaining Maestro workflows that query Data Fabric are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Workflow instance throttling indicator",
+                "summary": "A new instance throttling indicator appears when a workflow instance is being throttled, with a warning icon in the Instances table and a banner on the Instance details page.",
+                "analysis": "This likely improves troubleshooting and operational awareness by clearly showing when throttling is affecting workflow execution.",
+                "impact": "Users monitoring workflow instances in Maestro are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The new Automation Registry provides a centralized, cross-folder view for discovering, managing, and governing solution deployments, processes, and resources.\n* A new Latest jobs card is available on the Tenant and folder homepages, showing recent jobs with filters for creation time and process time.\n* Cross-folder jobs filtering at Tenant level is now available, with filters for creation time, process type, process, and state.\n* Automation Cloud Robots - Serverless now support static IPs in Canada, Singapore, and United Arab Emirates regions.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator introduced the Automation Registry, added a Latest jobs card and tenant-level cross-folder jobs filtering, and expanded Automation Cloud Robots - Serverless static IP support to additional regions.",
+            "overall_analysis": "These updates improve operational visibility, governance, and regional infrastructure support. They likely help administrators and operators manage deployments and monitor jobs more effectively across folders and regions.",
+            "changes": [
+              {
+                "name": "Automation Registry",
+                "summary": "The new Automation Registry provides a centralized, cross-folder view for discovering, managing, and governing solution deployments, processes, and resources.",
+                "analysis": "This likely strengthens governance and discoverability by consolidating key automation assets across folders into one view.",
+                "impact": "Administrators and users managing deployments, processes, and resources across folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Latest jobs card",
+                "summary": "A new Latest jobs card is available on the Tenant and folder homepages, showing recent jobs with filters for creation time and process time.",
+                "analysis": "This likely improves at-a-glance monitoring by surfacing recent execution activity directly on homepage views.",
+                "impact": "Orchestrator users monitoring recent jobs from Tenant and folder homepages are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Cross-folder jobs filtering at Tenant level",
+                "summary": "Cross-folder jobs filtering at Tenant level is now available, with filters for creation time, process type, process, and state.",
+                "analysis": "This likely helps users investigate and monitor jobs across a wider scope without manually checking each folder.",
+                "impact": "Tenant-level users and administrators monitoring jobs across folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Serverless static IP regional expansion",
+                "summary": "Automation Cloud Robots - Serverless now support static IPs in Canada, Singapore, and United Arab Emirates regions.",
+                "analysis": "This likely helps customers in those regions meet networking and allowlisting requirements for serverless robot traffic.",
+                "impact": "Customers using Automation Cloud Robots - Serverless in Canada, Singapore, and United Arab Emirates are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can export individual test case logs as PDFs.\n* PII masking: PII used in Autopilot activities is automatically masked before being sent to LLMs.\n* Live logs: Access and monitor automated test case logs in real time while execution is still running.\n* Machine selection for individual test case execution is now available from the Test Cases view.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager added PDF export for individual test case logs, PII masking for Autopilot activities, live logs for running automated test cases, and machine selection from the Test Cases view.",
+            "overall_analysis": "These changes improve observability, privacy, and execution control for testing teams. They likely make it easier to monitor runs in progress, protect sensitive data, and manage where tests execute.",
+            "changes": [
+              {
+                "name": "PDF export for individual test case logs",
+                "summary": "You can export individual test case logs as PDFs.",
+                "analysis": "This likely helps with reporting, auditability, and sharing test execution details outside the product.",
+                "impact": "Test Manager users needing to review or distribute individual test case logs are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PII masking for Autopilot activities",
+                "summary": "PII used in Autopilot activities is automatically masked before being sent to LLMs.",
+                "analysis": "This likely improves privacy and compliance by reducing exposure of personally identifiable information in AI-related processing.",
+                "impact": "Users of Autopilot activities and organizations with privacy or compliance requirements are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Live logs for automated test cases",
+                "summary": "You can access and monitor automated test case logs in real time while execution is still running.",
+                "analysis": "This likely improves troubleshooting speed and execution visibility by allowing teams to observe tests before completion.",
+                "impact": "Users monitoring automated test case execution are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Machine selection from Test Cases view",
+                "summary": "Machine selection for individual test case execution is now available from the Test Cases view.",
+                "analysis": "This likely gives testers more direct control over execution targeting and may streamline how they launch individual test cases.",
+                "impact": "Users executing individual test cases from the Test Cases view are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 22, 2026",
+            "April 23, 2026",
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Automation Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 22, 2026",
+            "April 23, 2026",
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Test Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 29, 2026"
+          ],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 17, 2026",
+            "April 27, 2026",
+            "April 30, 2026"
+          ],
+          "notes": [
+            "Agents release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "AI Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "AI Center release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Apps release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Assistant Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - Serverless",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 16, 2026"
+          ],
+          "notes": [
+            "Automation Hub release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 20, 2026",
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Automation Ops release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Data Fabric",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 23, 2026",
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Document Understanding release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 20, 2026",
+            "April 21, 2026",
+            "April 27, 2026",
+            "April 30, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "IXP",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 20, 2026",
+            "April 21, 2026"
+          ],
+          "notes": [
+            "IXP release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 30, 2026"
+          ],
+          "notes": [
+            "Maestro release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 21, 2026",
+            "April 22, 2026",
+            "April 23, 2026",
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 20, 2026"
+          ],
+          "notes": [
+            "Process Mining release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Solutions Management release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 23, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 17, 2026",
+            "April 27, 2026",
+            "April 29, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--mid-april-2026",
+      "environment": "Automation Cloud and Test Cloud",
+      "timeframe": "Mid-April 2026",
+      "publishingDate": "April 15, 2026",
+      "range": "April 2, 2026 – April 15, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Automation Cloud and Test Cloud are now certified under the Dubai Electronic Security Center (DESC) standard.\n* UiPath now offers unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Administration and Test Cloud Administration",
+            "summary": "Automation Cloud Administration and Test Cloud Administration gained DESC certification and now have unified admin documentation across multiple cloud offerings.",
+            "overall_analysis": "These changes emphasize compliance readiness and a more consistent administrative experience across Automation Cloud variants.",
+            "changes": [
+              {
+                "name": "DESC certification",
+                "summary": "Automation Cloud and Test Cloud are now certified under the Dubai Electronic Security Center (DESC) standard.",
+                "analysis": "This likely helps organizations with regional security or compliance requirements evaluate or adopt the platforms with greater confidence.",
+                "impact": "Organizations using or assessing Automation Cloud and Test Cloud, especially those with DESC-related compliance needs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation",
+                "summary": "UiPath now offers unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely reduces documentation fragmentation and makes it easier for administrators to find consistent guidance across deployment types.",
+                "impact": "Administrators of Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Database Hub supports OAuth Client Credentials authentication for Databricks and TLS-encrypted connections for PostgreSQL and Amazon Redshift.\n* The Databricks Agent connector has a new **Query a Serving Endpoint (Manual)** activity for sending requests with fully custom JSON payloads.\n* The Zoho Desk connector now supports the Canada data center.\n* The Microsoft Azure Active Directory connector has new group management activities and triggers: List All Groups in Group, List All Records, User Added to the Group, and User Removed from the Group.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service expands connector and Database Hub capabilities with new authentication options, encrypted connectivity, a new Databricks activity, Zoho Desk Canada data center support, and additional Microsoft Azure Active Directory group-related activities and triggers.",
+            "overall_analysis": "The updates broaden integration coverage, improve security and regional support, and add more automation options for data and identity-related workflows.",
+            "changes": [
+              {
+                "name": "Database Hub authentication and encrypted connectivity updates",
+                "summary": "Database Hub supports OAuth Client Credentials authentication for Databricks and TLS-encrypted connections for PostgreSQL and Amazon Redshift.",
+                "analysis": "This likely improves security and compatibility for enterprise database integrations by enabling stronger authentication and encrypted transport.",
+                "impact": "Users connecting Database Hub to Databricks, PostgreSQL, or Amazon Redshift.",
+                "breaking_change": false
+              },
+              {
+                "name": "Databricks Agent connector manual serving endpoint query activity",
+                "summary": "The Databricks Agent connector has a new Query a Serving Endpoint (Manual) activity for sending requests with fully custom JSON payloads.",
+                "analysis": "This likely gives users more control over how they interact with Databricks serving endpoints, especially for custom request formats.",
+                "impact": "Users building automations with the Databricks Agent connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Zoho Desk Canada data center support",
+                "summary": "The Zoho Desk connector now supports the Canada data center.",
+                "analysis": "This likely enables customers hosted in the Canada region to use the connector more easily and align integrations with their data residency setup.",
+                "impact": "Zoho Desk connector users in or using the Canada data center.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure Active Directory group management additions",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities and triggers: List All Groups in Group, List All Records, User Added to the Group, and User Removed from the Group.",
+                "analysis": "This likely expands identity and access automation scenarios by adding both administrative actions and event-driven group membership monitoring.",
+                "impact": "Users automating Microsoft Azure Active Directory group management and membership events.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* A new **Duplicate job** action is available for jobs in non-terminal states (Pending, Running, Stopping, Terminating, Suspended, Resumed), opening the **Start Job** form pre-filled with the original configuration.\n* Queue triggers can continue processing new queue items even when previously started jobs are in a **Suspended** state.\n* A new **Reset to default** button for runtime arguments restores any field to its package or process default value.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator adds job duplication, allows queue triggers to continue when earlier jobs are suspended, and introduces a reset option for runtime arguments.",
+            "overall_analysis": "These enhancements focus on operational efficiency and resilience by simplifying job reruns, reducing queue-processing interruptions, and making runtime configuration easier to manage.",
+            "changes": [
+              {
+                "name": "Duplicate job action",
+                "summary": "A new Duplicate job action is available for jobs in non-terminal states (Pending, Running, Stopping, Terminating, Suspended, Resumed), opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds up reruns or similar job launches by reducing manual re-entry of settings for active or interrupted jobs.",
+                "impact": "Users managing jobs in Orchestrator, especially for jobs in non-terminal states.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue triggers continue with suspended jobs",
+                "summary": "Queue triggers can continue processing new queue items even when previously started jobs are in a Suspended state.",
+                "analysis": "This likely improves throughput and reduces bottlenecks in queue-based automations when some jobs are paused.",
+                "impact": "Teams relying on queue triggers and queue-based job processing in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its package or process default value.",
+                "analysis": "This likely reduces configuration errors and makes it easier to revert temporary or mistaken runtime argument changes.",
+                "impact": "Users configuring package or process runtime arguments in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can duplicate projects within solutions and publish individual RPA workflow and app projects directly from the **Solution Explorer**.\n* Solutions can now be linked to Automation Hub business processes directly from the **Properties** panel.\n* The **Issues** panel is now the **Health Analyzer** panel, with filtering by scope, severity, or quality area.\n* A new **Show Files** button in the **Solution Explorer** lets you view solution files stored on disk when working on a local solution.\n* Panels in Studio Web now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Studio Web",
+            "summary": "Studio Web improves solution-based development with project duplication and publishing from Solution Explorer, Automation Hub linking, the new Health Analyzer panel, local file visibility, and persistent panels across projects.",
+            "overall_analysis": "The changes strengthen multi-project solution workflows and usability in Studio Web, supporting better governance, discoverability, and continuity during development.",
+            "changes": [
+              {
+                "name": "Project duplication and publishing from Solution Explorer",
+                "summary": "You can duplicate projects within solutions and publish individual RPA workflow and app projects directly from the Solution Explorer.",
+                "analysis": "This likely streamlines solution management and deployment by reducing context switching and making common project actions faster.",
+                "impact": "Studio Web users working with solution-based RPA workflow and app projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automation Hub business process linking",
+                "summary": "Solutions can now be linked to Automation Hub business processes directly from the Properties panel.",
+                "analysis": "This likely improves traceability between implementation work and business process definitions.",
+                "impact": "Teams using both Studio Web solutions and Automation Hub business processes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Health Analyzer panel rename and filtering",
+                "summary": "The Issues panel is now the Health Analyzer panel, with filtering by scope, severity, or quality area.",
+                "analysis": "This likely improves quality review workflows by providing clearer positioning and better ways to narrow findings.",
+                "impact": "Studio Web users reviewing issues and quality signals in projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Show Files button for local solutions",
+                "summary": "A new Show Files button in the Solution Explorer lets you view solution files stored on disk when working on a local solution.",
+                "analysis": "This likely helps users navigate and inspect the underlying local file structure more easily.",
+                "impact": "Studio Web users working on local solutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Persistent panels across projects",
+                "summary": "Panels in Studio Web now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+                "analysis": "This likely improves usability and continuity when moving among projects in the same solution.",
+                "impact": "Studio Web users working across multiple project types within solutions.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 7, 2026",
+            "April 15, 2026"
+          ],
+          "notes": [
+            "Automation Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 7, 2026",
+            "April 15, 2026"
+          ],
+          "notes": [
+            "Test Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Assistant Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - Serverless",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Fabric",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 3, 2026",
+            "April 8, 2026",
+            "April 9, 2026",
+            "April 14, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "IXP",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 14, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 3, 2026",
+            "April 8, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-april-2026",
+      "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
+      "timeframe": "Late April 2026",
+      "publishingDate": "April 30, 2026",
+      "range": "April 16, 2026 – April 30, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* UiPath GenAI Activities are now available in Automation Cloud Public Sector and Test Cloud Public Sector, accessible through Integration Service.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+            "summary": "Administration for Automation Cloud Public Sector and Test Cloud Public Sector now includes access to UiPath GenAI Activities through Integration Service. This expands available AI-related capabilities in these environments.",
+            "overall_analysis": "This update brings GenAI-related functionality into public sector cloud environments through Integration Service, indicating broader availability of AI integrations for regulated deployments.",
+            "changes": [
+              {
+                "name": "UiPath GenAI Activities availability",
+                "summary": "UiPath GenAI Activities are now available in Automation Cloud Public Sector and Test Cloud Public Sector, accessible through Integration Service.",
+                "analysis": "This likely enables organizations in these public sector environments to use UiPath GenAI capabilities within the supported integration framework, increasing parity with broader cloud offerings.",
+                "impact": "Customers using Automation Cloud Public Sector and Test Cloud Public Sector who want access to UiPath GenAI Activities through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.\n* A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.\n* You can now import multiple business processes from a CSV file using a guided AI assistant.\n* BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Hub",
+            "summary": "Automation Hub adds a redesigned submission entry point, a new Agentic AI idea flow, AI-assisted CSV import for multiple business processes, and BPMN upload with interactive diagram rendering. These changes improve intake, process documentation, and support for agentic automation initiatives.",
+            "overall_analysis": "The release strengthens Automation Hub as an ideation and process-capture platform by expanding submission types, introducing agentic AI-specific flows, and improving process import and visualization capabilities.",
+            "changes": [
+              {
+                "name": "Submit New replaces Submit Idea",
+                "summary": "Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.",
+                "analysis": "This likely streamlines intake by supporting multiple submission paths from a single entry point and making the submission type explicit earlier in the workflow.",
+                "impact": "Users submitting ideas, change requests, or business processes in Automation Hub.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agentic AI idea flow",
+                "summary": "A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.",
+                "analysis": "This likely helps organizations capture and manage emerging agentic AI use cases in a structured way within Automation Hub.",
+                "impact": "Teams proposing and tracking agentic automation initiatives in Automation Hub.",
+                "breaking_change": false
+              },
+              {
+                "name": "AI-assisted CSV import for business processes",
+                "summary": "You can now import multiple business processes from a CSV file using a guided AI assistant.",
+                "analysis": "This likely reduces manual effort and speeds bulk onboarding of process information into Automation Hub.",
+                "impact": "Users importing multiple business processes into Automation Hub from CSV files.",
+                "breaking_change": false
+              },
+              {
+                "name": "BPMN upload and interactive rendering",
+                "summary": "BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+                "analysis": "This likely improves process documentation and review by allowing native BPMN visualization directly inside the product.",
+                "impact": "Users documenting and reviewing business processes in Automation Hub.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The UiPath GenAI Activities connector is now available in Automation Cloud Public Sector and Test Cloud Public Sector.\n* The Microsoft Azure Active Directory connector has new group management activities: List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.\n* The Anthropic Claude connector has a new Generate Message activity. The Generate Text Completion activity is deprecated and no longer functional.\n* The Nvidia NIM connector is now available in preview.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service adds the UiPath GenAI Activities connector in public sector environments, expands Microsoft Azure Active Directory connector operations, updates the Anthropic Claude connector with a new Generate Message activity while deprecating Generate Text Completion, and introduces the Nvidia NIM connector in preview. The release broadens AI and directory-management integrations while signaling a connector activity transition.",
+            "overall_analysis": "This release significantly expands Integration Service capabilities across AI and identity scenarios. It also includes an explicit deprecation and nonfunctional older activity, which is important for customers maintaining existing Anthropic Claude automations.",
+            "changes": [
+              {
+                "name": "UiPath GenAI Activities connector availability in public sector",
+                "summary": "The UiPath GenAI Activities connector is now available in Automation Cloud Public Sector and Test Cloud Public Sector.",
+                "analysis": "This likely extends GenAI integration support into public sector cloud deployments, enabling regulated customers to use the connector in those environments.",
+                "impact": "Integration Service users in Automation Cloud Public Sector and Test Cloud Public Sector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded Microsoft Azure Active Directory group management activities",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities: List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.",
+                "analysis": "This likely expands administrative and automation coverage for Azure Active Directory-related user and group management tasks.",
+                "impact": "Users automating Microsoft Azure Active Directory user and group operations through Integration Service.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude Generate Message activity",
+                "summary": "The Anthropic Claude connector has a new Generate Message activity.",
+                "analysis": "This likely provides an updated way to interact with Anthropic Claude models, possibly aligning with newer messaging-style patterns.",
+                "impact": "Users building automations with the Anthropic Claude connector in Integration Service.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude Generate Text Completion deprecation",
+                "summary": "The Generate Text Completion activity in the Anthropic Claude connector is deprecated and no longer functional.",
+                "analysis": "This is a significant compatibility concern because existing automations using this activity may stop working and need to be updated to supported alternatives such as Generate Message.",
+                "impact": "Users with existing Integration Service automations that rely on the Anthropic Claude Generate Text Completion activity.",
+                "breaking_change": true
+              },
+              {
+                "name": "Nvidia NIM connector preview",
+                "summary": "The Nvidia NIM connector is now available in preview.",
+                "analysis": "This likely gives customers early access to integrate Nvidia NIM capabilities, while preview status indicates it may still evolve before general availability.",
+                "impact": "Early adopters evaluating Nvidia NIM integrations through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.\n* Queue triggers can continue processing new items when previously started jobs are in a Suspended state.\n* A new Reset to default button for runtime arguments restores any field to its package or process default value.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator adds a Duplicate job action for active jobs, allows queue triggers to continue processing when prior jobs are suspended, and introduces a Reset to default option for runtime arguments. These updates improve operational efficiency, resiliency, and configuration management.",
+            "overall_analysis": "The release focuses on reducing operational friction in job handling and process execution. It improves recovery and repeatability for operators while making runtime configuration easier to manage.",
+            "changes": [
+              {
+                "name": "Duplicate job action",
+                "summary": "A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds reruns or similar job launches by reducing the need to manually re-enter settings.",
+                "impact": "Operators and users managing active jobs in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue trigger processing with suspended jobs",
+                "summary": "Queue triggers can continue processing new items when previously started jobs are in a Suspended state.",
+                "analysis": "This likely improves throughput and reduces backlog risk by preventing suspended jobs from blocking new queue item processing.",
+                "impact": "Users relying on queue triggers and queue-based automations in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its package or process default value.",
+                "analysis": "This likely reduces configuration errors and makes it easier to revert temporary or unintended argument changes.",
+                "impact": "Users configuring runtime arguments for packages or processes in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 28, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 28, 2026"
+          ],
+          "notes": [
+            "Test Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 29, 2026"
+          ],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 16, 2026"
+          ],
+          "notes": [
+            "Automation Hub release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 23, 2026",
+            "April 28, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 20, 2026"
+          ],
+          "notes": [
+            "Process Mining release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 22, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-april-2026",
+      "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
+      "timeframe": "Mid-April 2026",
+      "publishingDate": "April 15, 2026",
+      "range": "April 2, 2026 – April 15, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector and Test Cloud Public Sector Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Organization administrators can delegate identity management tasks to non-admin users through a new custom organization-level user management role. The role provides granular CRUD permissions for user accounts, robot accounts, and local groups without granting full administrator rights.\n* UiPath now offers unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Public Sector and Test Cloud Public Sector Administration",
+            "summary": "Administration updates introduce a custom organization-level user management role and unified admin documentation across Automation Cloud offerings. These changes focus on more granular delegation of identity tasks and consistent guidance across cloud environments.",
+            "overall_analysis": "These updates likely improve administrative governance by allowing identity-related work to be delegated without broad admin access, while the unified documentation may reduce confusion for administrators working across multiple UiPath cloud deployments.",
+            "changes": [
+              {
+                "name": "Custom organization-level user management role",
+                "summary": "Organization administrators can now delegate identity management tasks to non-admin users through a new custom organization-level user management role. The role provides granular CRUD permissions for user accounts, robot accounts, and local groups without granting full administrator rights.",
+                "analysis": "This likely supports stronger separation of duties and more controlled access management by letting organizations assign specific identity responsibilities without elevating users to full administrator status.",
+                "impact": "Organization administrators and delegated non-admin users managing user accounts, robot accounts, and local groups in Automation Cloud Public Sector and Test Cloud Public Sector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation across cloud offerings",
+                "summary": "UiPath now provides unified documentation for Automation Cloud and Test Cloud administration across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely makes administrative guidance more consistent and easier to navigate for users operating across different UiPath cloud environments.",
+                "impact": "Administrators using Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated documentation are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator removes a previously deprecated API endpoint. The change affects integrations still using the deprecated asset retrieval method.",
+            "overall_analysis": "This is a cleanup of deprecated functionality that may require customers to update any remaining dependencies on the removed endpoint. The main significance is compatibility impact for existing API consumers rather than new platform capability.",
+            "changes": [
+              {
+                "name": "Removal of deprecated GetRobotAsset endpoint",
+                "summary": "The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+                "analysis": "This likely finalizes an earlier deprecation and may break scripts, integrations, or applications that still call this endpoint, requiring migration to supported alternatives not specified in the release notes.",
+                "impact": "Developers, API consumers, and integrations relying on the `GetRobotAsset(robotId='{robotId}')` endpoint in Orchestrator are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 2, 2026",
+            "April 7, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 2, 2026",
+            "April 7, 2026"
+          ],
+          "notes": [
+            "Test Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 14, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--late-april-2026",
+      "environment": "Automation Cloud Dedicated and Test Cloud Dedicated",
+      "timeframe": "Late April 2026",
+      "publishingDate": "April 30, 2026",
+      "range": "April 29, 2026, April 27, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 27, 2026",
+          "releaseDates": [
+            "April 27, 2026"
+          ],
+          "source": "* Various fixes and improvements are included in this release.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+            "summary": "This release includes various unspecified fixes and improvements for Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration. No detailed feature-level changes are provided in the notes.",
+            "overall_analysis": "The release appears to focus on maintenance and incremental quality improvements for the administration experience in dedicated cloud environments, but the specific significance is not stated in the release notes.",
+            "changes": [
+              {
+                "name": "Various fixes and improvements",
+                "summary": "Various fixes and improvements are included in this release.",
+                "analysis": "This suggests a maintenance update intended to improve stability, usability, or performance, but no specific areas are identified.",
+                "impact": "Administrators using Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 27, 2026",
+          "releaseDates": [
+            "April 27, 2026"
+          ],
+          "source": "* A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.\n* Queue triggers can continue processing new items when previously started jobs are in a Suspended state.\n* A new Reset to default button for runtime arguments restores any field to its default value.\n* Fixed a rollback error that occurred for duplicate resource names during upgrade or rollback operations.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator adds several usability and operational improvements, including job duplication, better queue trigger behavior with suspended jobs, and runtime argument reset functionality. It also fixes an upgrade or rollback issue related to duplicate resource names.",
+            "overall_analysis": "These changes improve day-to-day job management and operational resilience in Orchestrator. The release reduces manual reconfiguration, supports more reliable queue processing, and addresses a deployment-related error that could affect upgrade or rollback workflows.",
+            "changes": [
+              {
+                "name": "Duplicate job action for active jobs",
+                "summary": "A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds up rerunning or recreating similar jobs by reducing manual setup and minimizing configuration errors.",
+                "impact": "Users managing active jobs in Orchestrator, especially operators who frequently restart or replicate job runs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue triggers continue with suspended jobs",
+                "summary": "Queue triggers can continue processing new items when previously started jobs are in a Suspended state.",
+                "analysis": "This improves operational continuity by preventing suspended jobs from unnecessarily blocking queue processing.",
+                "impact": "Teams using queue triggers and job-based processing in Orchestrator workflows.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its default value.",
+                "analysis": "This improves usability when configuring jobs by making it easier to revert changes and avoid incorrect runtime argument values.",
+                "impact": "Users configuring runtime arguments when starting or managing jobs in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Fix for duplicate resource name rollback error",
+                "summary": "Fixed a rollback error that occurred for duplicate resource names during upgrade or rollback operations.",
+                "analysis": "This addresses an operational issue that could disrupt upgrade or rollback procedures, improving reliability for environment maintenance.",
+                "impact": "Administrators performing upgrade or rollback operations in Orchestrator environments where duplicate resource names may exist.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "April 27, 2026",
+          "releaseDates": [
+            "April 27, 2026"
+          ],
+          "source": "* You can enable or disable Git version control for local solutions using a new toggle in the Version Control panel header.\n* Right-clicking a cloud solution now shows a Download option to save the solution as a `.uis` file.\n* Coded workflow projects (`.cs` files) can now be opened from the Explorer panel in read-only mode with C# syntax highlighting.\n* You can remove activity categories directly from the Resource Explorer.\n* Panels now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Studio Web",
+            "summary": "Studio Web introduces version control, download, navigation, and interface persistence enhancements for solution and project management. It also improves support for coded workflow projects by allowing `.cs` files to be opened in read-only mode with C# syntax highlighting.",
+            "overall_analysis": "The release strengthens the development experience in Studio Web by improving project handling, consistency across project types, and access to source artifacts. These changes likely help users work more efficiently across cloud solutions, local solutions, and coded workflows.",
+            "changes": [
+              {
+                "name": "Git toggle for local solutions",
+                "summary": "You can enable or disable Git version control for local solutions using a new toggle in the Version Control panel header.",
+                "analysis": "This adds more direct control over versioning behavior for local solutions, making it easier to manage source control settings without extra steps.",
+                "impact": "Studio Web users working with local solutions and Git version control.",
+                "breaking_change": false
+              },
+              {
+                "name": "Download cloud solution as .uis file",
+                "summary": "Right-clicking a cloud solution now shows a Download option to save the solution as a `.uis` file.",
+                "analysis": "This improves portability and backup options for cloud solutions by making export more accessible from the solution context menu.",
+                "impact": "Users managing cloud solutions in Studio Web who need to save or transfer solutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Read-only opening of coded workflow .cs files",
+                "summary": "Coded workflow projects (`.cs` files) can now be opened from the Explorer panel in read-only mode with C# syntax highlighting.",
+                "analysis": "This improves visibility into coded workflow content in Studio Web, helping users inspect code more easily even when editing is not available.",
+                "impact": "Users working with coded workflow projects in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Remove activity categories from Resource Explorer",
+                "summary": "You can remove activity categories directly from the Resource Explorer.",
+                "analysis": "This simplifies resource organization and cleanup by allowing category management in context.",
+                "impact": "Users organizing activities and resources in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Panel persistence across project switching",
+                "summary": "Panels now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+                "analysis": "This improves usability and continuity by reducing interface reset friction when moving between projects.",
+                "impact": "Users switching between multiple projects or project types in Studio Web.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "April 27, 2026",
+          "releaseDates": [
+            "April 27, 2026"
+          ],
+          "source": "* PII masking: PII used in Autopilot activities is automatically masked before being sent to LLMs.\n* Live logs: Access and monitor automated test case logs in real time while execution is still running.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager adds privacy protection for Autopilot activity data sent to LLMs and introduces live logging for running automated test cases. These updates focus on observability and sensitive data handling.",
+            "overall_analysis": "The release improves both trust and monitoring in test operations. Automatic PII masking supports safer AI-assisted workflows, while live logs help teams track execution progress and troubleshoot issues sooner.",
+            "changes": [
+              {
+                "name": "PII masking for Autopilot activities",
+                "summary": "PII used in Autopilot activities is automatically masked before being sent to LLMs.",
+                "analysis": "This likely reduces privacy and compliance risk when Autopilot activities use large language models by limiting exposure of sensitive data.",
+                "impact": "Test Manager users relying on Autopilot activities and any organizations with PII handling requirements.",
+                "breaking_change": false
+              },
+              {
+                "name": "Live logs for automated test cases",
+                "summary": "Access and monitor automated test case logs in real time while execution is still running.",
+                "analysis": "This enhances test observability and can speed up debugging by allowing users to detect issues before execution completes.",
+                "impact": "Testers and QA teams monitoring automated test executions in Test Manager.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": "April 29, 2026",
+          "releaseDates": [
+            "April 29, 2026"
+          ],
+          "source": "* Unified documentation for Action Center is now available across all cloud environments: Automation Cloud and Test Cloud, Automation Cloud Public Sector and Test Cloud Public Sector, and Automation Cloud Dedicated and Test Cloud Dedicated.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Action Center",
+            "summary": "Action Center now has unified documentation across multiple cloud environments, including Automation Cloud, Test Cloud, Public Sector variants, and Dedicated variants. The update is documentation-focused rather than a product behavior change.",
+            "overall_analysis": "This change likely improves documentation consistency and discoverability for users across deployment models, helping reduce confusion when working in different cloud environments. No functional product change is stated in the release notes.",
+            "changes": [
+              {
+                "name": "Unified documentation across cloud environments",
+                "summary": "Unified documentation for Action Center is now available across all cloud environments: Automation Cloud and Test Cloud, Automation Cloud Public Sector and Test Cloud Public Sector, and Automation Cloud Dedicated and Test Cloud Dedicated.",
+                "analysis": "This likely makes guidance easier to find and more consistent for users working across different cloud offerings.",
+                "impact": "Action Center users and administrators across Automation Cloud, Test Cloud, Public Sector, and Dedicated cloud environments.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-27-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Test Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-27-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 29, 2026"
+          ],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": [
+            {
+              "label": "Action Center release notes",
+              "url": "https://docs.uipath.com/action-center/automation-cloud/latest/release-notes/dedicated-april-2026#april-29-2026"
+            }
+          ]
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Suite Robots",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/dedicated-april-2026#april-27-2026"
+            }
+          ]
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Solutions Management release notes"
+          ],
+          "links": [
+            {
+              "label": "Solutions Management release notes",
+              "url": "https://docs.uipath.com/solutions-management/automation-cloud/latest/release-notes/dedicated-april-2026#april-23-2026"
+            }
+          ]
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": [
+            {
+              "label": "Studio Web release notes",
+              "url": "https://docs.uipath.com/studio-web/automation-cloud/latest/release-notes/dedicated-april-2026#april-27-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 27, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud/latest/release-notes/dedicated-april-2026#april-27-2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-april-2026",
+      "environment": "Automation Cloud Dedicated and Test Cloud Dedicated",
+      "timeframe": "Mid-April 2026",
+      "publishingDate": "April 15, 2026",
+      "range": "April 14, 2026, April 7, 2026, April 6, 2026, April 1, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 14, 2026",
+          "releaseDates": [
+            "April 14, 2026",
+            "April 7, 2026",
+            "April 1, 2026"
+          ],
+          "source": "* Organization administrators can manage federated identity credentials for OAuth external applications, allowing external systems to authenticate to UiPath using JWTs from third-party identity providers such as GitHub Actions or Azure Managed Identity, without requiring a client secret.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+            "summary": "Administration updates added federated identity credentials for OAuth external applications, introduced a custom organization-level user management role, and announced unified admin documentation across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+            "overall_analysis": "These changes expand delegated administration and machine-to-machine authentication options while also simplifying documentation access across cloud offerings. The likely impact is improved security and governance flexibility for organizations using dedicated and test cloud environments.",
+            "changes": [
+              {
+                "name": "Federated identity credentials for OAuth external applications",
+                "summary": "Organization administrators can now manage federated identity credentials for OAuth external applications, allowing external systems to authenticate to UiPath using JWTs from third-party identity providers such as GitHub Actions or Azure Managed Identity without requiring a client secret.",
+                "analysis": "This likely enables more secure external application authentication by reducing reliance on stored client secrets and supporting workload identity scenarios with third-party identity providers.",
+                "impact": "Organization administrators and external systems integrating with UiPath OAuth applications in Automation Cloud Dedicated and Test Cloud Dedicated are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation across cloud offerings",
+                "summary": "UiPath now provides unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely improves consistency and discoverability of administrative guidance across deployment models, but the release notes do not describe functional product behavior changes.",
+                "impact": "Administrators who use UiPath documentation across multiple cloud offerings are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom organization-level user management role",
+                "summary": "Organization administrators can now delegate identity management tasks to non-admin users through a new custom organization-level user management role with granular CRUD permissions for user accounts, robot accounts, and local groups, without granting full administrator rights.",
+                "analysis": "This likely strengthens governance by enabling separation of duties and least-privilege administration for identity-related tasks.",
+                "impact": "Organization administrators and delegated non-admin users responsible for user, robot account, and local group management are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 14, 2026",
+          "releaseDates": [
+            "April 14, 2026",
+            "April 1, 2026"
+          ],
+          "source": "* The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator removed a previously deprecated endpoint and introduced several usability and monitoring improvements for job starts, queue retry tracking, queue grid visibility, and role deletion confirmation.",
+            "overall_analysis": "The release combines a clear API removal with incremental operational and UX enhancements. Users may see smoother day-to-day management, while integrations using the removed endpoint require action because it is an explicit breaking change.",
+            "changes": [
+              {
+                "name": "Removal of deprecated GetRobotAsset endpoint",
+                "summary": "The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+                "analysis": "This is a breaking API cleanup that likely finalizes a prior deprecation and requires any remaining consumers of the endpoint to migrate to supported alternatives.",
+                "impact": "Developers and integrations that still call the `GetRobotAsset(robotId='{robotId}')` endpoint are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Automatic pre-selection of first available process when starting a job",
+                "summary": "When starting a job, the first available process is now automatically pre-selected, reducing steps in the launch flow.",
+                "analysis": "This likely streamlines job initiation and reduces user effort for common launch scenarios.",
+                "impact": "Users who manually start jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "QueueItem.retried webhook event",
+                "summary": "A new `QueueItem.retried` webhook event now fires whenever a queue item is retried.",
+                "analysis": "This likely improves observability and integration options for queue processing by exposing retry activity as a dedicated event.",
+                "impact": "Teams monitoring queue execution and developers consuming Orchestrator webhooks are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Created columns in queue transaction items grid",
+                "summary": "Two new optional columns, **Created** (relative) and **Created (absolute)**, are now available in the queue transaction items grid.",
+                "analysis": "This likely improves visibility into queue item timing and supports faster operational review directly in the grid.",
+                "impact": "Users reviewing queue transaction items in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Typed confirmation required when deleting roles",
+                "summary": "Deleting roles now requires typed confirmation through an improved modal to help prevent accidental removal.",
+                "analysis": "This likely reduces accidental administrative changes by adding a stronger confirmation step for destructive actions.",
+                "impact": "Administrators who delete roles in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 7, 2026",
+          "source": "* UiPath now offers unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": null,
+          "sharedAnalysis": true
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "April 6, 2026",
+          "releaseDates": [
+            "April 6, 2026"
+          ],
+          "source": "* You can duplicate projects within solutions and publish individual RPA workflow and app projects directly from the **Solution Explorer**.\n* Solutions can now be linked to Automation Hub business processes directly from the **Properties** panel.\n* The **Issues** panel is now the **Health Analyzer** panel, with filtering by scope, severity, or quality area.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Studio Web",
+            "summary": "Studio Web added project duplication within solutions, direct publishing of individual RPA workflow and app projects from Solution Explorer, linking of solutions to Automation Hub business processes from Properties, and renamed the Issues panel to Health Analyzer with new filtering.",
+            "overall_analysis": "These enhancements focus on solution management, publishing efficiency, integration with business process records, and quality visibility in the authoring experience. The likely result is a smoother development workflow for users building and maintaining solution-based projects in Studio Web.",
+            "changes": [
+              {
+                "name": "Duplicate and publish projects from Solution Explorer",
+                "summary": "Users can now duplicate projects within solutions and publish individual RPA workflow and app projects directly from the **Solution Explorer**.",
+                "analysis": "This likely reduces friction in solution maintenance and deployment by making common project management and publishing actions available directly in the solution view.",
+                "impact": "Studio Web users working with solutions, especially those managing RPA workflow and app projects, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Link solutions to Automation Hub business processes",
+                "summary": "Solutions can now be linked to Automation Hub business processes directly from the **Properties** panel.",
+                "analysis": "This likely improves traceability between implementation work and documented business processes by creating a direct linkage in the authoring environment.",
+                "impact": "Studio Web users coordinating solution development with Automation Hub business processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Issues panel renamed to Health Analyzer with filtering",
+                "summary": "The **Issues** panel is now called the **Health Analyzer** panel and now supports filtering by scope, severity, or quality area.",
+                "analysis": "This likely improves issue triage and code quality review by making analysis results easier to categorize and inspect.",
+                "impact": "Studio Web users reviewing validation or quality findings in projects are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 1, 2026",
+          "source": "* Organization administrators can delegate identity management tasks to non-admin users through a new custom organization-level user management role. The role provides granular CRUD permissions for user accounts, robot accounts, and local groups without granting full administrator rights.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": null,
+          "sharedAnalysis": true
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 1, 2026",
+          "source": "* The first available process is now automatically pre-selected when starting a job, reducing steps in the launch flow.\n* A new **QueueItem.retried** webhook event fires whenever a queue item is retried, enabling better monitoring of retry activity.\n* Two new optional columns — **Created** (relative) and **Created (absolute)** — are available in the queue transaction items grid.\n* Deleting roles now requires typed confirmation via an improved modal to prevent accidental removal.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": null,
+          "sharedAnalysis": true
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 14, 2026",
+            "April 7, 2026",
+            "April 1, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-14-2026"
+            },
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-7-2026"
+            },
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-1-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "April 14, 2026",
+            "April 7, 2026",
+            "April 1, 2026"
+          ],
+          "notes": [
+            "Test Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-14-2026"
+            },
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-7-2026"
+            },
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/dedicated-april-2026#april-1-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Suite Robots",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 14, 2026",
+            "April 1, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud-dedicated/latest/release-notes/april-2026#april-14-2026"
+            },
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud-dedicated/latest/release-notes/april-2026#april-1-2026"
+            }
+          ]
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "April 6, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": [
+            {
+              "label": "Studio Web release notes",
+              "url": "https://docs.uipath.com/studio-web/automation-cloud/latest/release-notes/dedicated-april-2026#april-6-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "sections": 6,
+    "products": 29,
+    "analysedProducts": 29,
+    "changes": 82,
+    "breakingChanges": 4,
+    "chunks": {
+      "total": 6,
+      "ok": 6,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--late-april-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--late-april-2026",
+      "sha256": "ad80aecede8647881db05bf38c4eddb658026393291c02a72dd63e188fad8af0",
+      "chars": 4555,
+      "payloadChars": 4672,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Automation Cloud Administration and Test Cloud Administration introduced tenant consumption enforcement, a new public preview unit consumption experience, bring-your-own LLM configuration for Context Grounding through the AI Trust Layer, and completed most outbound IP range migrations.",
+            "overall_analysis": "These updates focus on administrative control, visibility into consumption, and infrastructure/networking readiness. They likely help administrators manage usage more precisely, support custom AI configurations, and prepare environments for network allowlisting changes.",
+            "changes": [
+              {
+                "name": "Tenant consumption enforcement",
+                "summary": "Tenant consumption enforcement is now available. Org Admins and Tenant Administrators can configure whether services stop consuming units when a tenant reaches its allocation, with notifications at 50%, 75%, and 90% consumption.",
+                "analysis": "This likely helps organizations prevent overconsumption and enforce budget or allocation limits while giving administrators advance warning before limits are reached.",
+                "impact": "Org Admins, Tenant Administrators, and tenants consuming allocated units are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Unit Consumption Experience [Public Preview]",
+                "summary": "The New Unit Consumption Experience is in public preview and provides visibility into unit allocation and consumption across the organizational hierarchy, with drill-down to tenant, folder, and process levels, and support for exporting consumption data.",
+                "analysis": "This likely improves monitoring and reporting of consumption by making usage easier to analyze across multiple levels of the organization.",
+                "impact": "Administrators tracking unit allocation and consumption across organizations, tenants, folders, and processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bring your own LLM for Context Grounding",
+                "summary": "You can now bring your own LLM configuration for Context Grounding through the AI Trust Layer, with support for OpenAI v1 APIs.",
+                "analysis": "This likely gives customers more flexibility in how they configure AI models for grounding scenarios while aligning with supported OpenAI v1 APIs.",
+                "impact": "Customers using Context Grounding and administrators configuring AI Trust Layer integrations are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Outbound IP range migration update",
+                "summary": "The outbound IP range migration is now complete for Apps, Automation Ops, AI Trust Layer – Bring your own LLM, Integration Service, and Test Manager. The transition for Customer-Managed Keys outbound IP ranges for Automation Cloud Portal remains ongoing until approximately June 2026.",
+                "analysis": "This is significant for customers managing network allowlists or firewall rules, because completed and ongoing IP range migrations may require infrastructure review and updates.",
+                "impact": "Customers and administrators managing network security, allowlists, or Customer-Managed Keys connectivity are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents added cloning from low-code to coded agents in Studio Web, made Microsoft Teams and Slack deployment channels generally available, and introduced dedicated Test Cloud entitlements and add-ons for Healing Agent and ScreenPlay.",
+            "overall_analysis": "These changes expand deployment flexibility, developer portability, and commercial packaging for agent-related capabilities. They likely make agents easier to adopt across collaboration platforms and testing workflows.",
+            "changes": [
+              {
+                "name": "Clone low-code agent as coded agent",
+                "summary": "You can now clone a low-code agent as a coded agent directly from Studio Web, generating a Python project with the agent's prompts, tools, schemas, and all required dependencies.",
+                "analysis": "This likely helps teams move from low-code prototyping to code-based development and customization without rebuilding the agent manually.",
+                "impact": "Studio Web users, developers, and teams maintaining low-code and coded agents are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Teams and Slack channels generally available",
+                "summary": "The Microsoft Teams and Slack deployment channels are now generally available. A new Dedicated Teams App provides persistent conversation context, supports concurrent conversations, and removes the requirement to @mention the bot.",
+                "analysis": "This likely improves production readiness for collaboration-channel deployments and makes Teams interactions more natural and scalable for ongoing use.",
+                "impact": "Users deploying or using agents in Microsoft Teams and Slack are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Healing Agent dedicated Test Cloud entitlements",
+                "summary": "Healing Agent is now available with dedicated Test Cloud entitlements called App Test Heals. Application Testing Enterprise customers receive 5,000 App Test Heals per year included, while Standard customers can purchase the add-on.",
+                "analysis": "This likely clarifies packaging and access to Healing Agent capabilities while expanding availability through entitlement-based licensing.",
+                "impact": "Test Cloud customers, especially Application Testing Enterprise and Standard customers, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "ScreenPlay dedicated Test Cloud add-on",
+                "summary": "ScreenPlay is now available with a dedicated Test Cloud Add-On called App Test ScreenPlay.",
+                "analysis": "This likely makes ScreenPlay easier to purchase and manage as a distinct testing capability within Test Cloud.",
+                "impact": "Test Cloud customers interested in ScreenPlay are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub updated submission flows, added support for agentic AI ideas, enabled CSV import of multiple business processes with AI assistance, and introduced BPMN uploads with interactive rendering.",
+            "overall_analysis": "These updates improve intake, process documentation, and support for newer automation initiative types. They likely make it easier for organizations to collect, organize, and visualize automation opportunities at scale.",
+            "changes": [
+              {
+                "name": "Submit New workflow",
+                "summary": "Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.",
+                "analysis": "This likely streamlines intake by supporting multiple submission types from a single entry point and clarifying user intent earlier in the process.",
+                "impact": "Automation Hub users submitting ideas, change requests, or business processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agentic AI idea flow",
+                "summary": "A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.",
+                "analysis": "This likely helps organizations evaluate and manage agentic AI opportunities as a distinct category within their innovation pipeline.",
+                "impact": "Users submitting, reviewing, or tracking agentic automation initiatives in Automation Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "CSV import for multiple business processes",
+                "summary": "You can now import multiple business processes from a CSV file using a guided AI assistant.",
+                "analysis": "This likely reduces manual data entry and speeds up onboarding of business process inventories into Automation Hub.",
+                "impact": "Users importing business processes into Automation Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "BPMN upload and interactive rendering",
+                "summary": "BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+                "analysis": "This likely improves process documentation and review by allowing users to view BPMN diagrams directly in the product.",
+                "impact": "Users documenting or reviewing business processes in Automation Hub are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service introduced the A2A connector in Controlled General Availability, added Microsoft Azure Active Directory connector group-management activities, updated the Anthropic Claude connector API support while deprecating an older activity, and added the Nvidia NIM connector in preview.",
+            "overall_analysis": "These changes expand connector coverage and modernize AI-related integrations. The Anthropic Claude update is especially important because it includes a deprecation and loss of functionality for an older activity.",
+            "changes": [
+              {
+                "name": "Agent 2 Agent (A2A) connector",
+                "summary": "The Agent 2 Agent (A2A) connector has entered Controlled General Availability.",
+                "analysis": "This likely signals increased stability and broader production-readiness for customers integrating agent-to-agent scenarios, though availability is still controlled.",
+                "impact": "Customers using or evaluating the A2A connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure Active Directory connector group management activities",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities, including List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.",
+                "analysis": "This likely expands administrative and automation use cases for Azure Active Directory-related workflows.",
+                "impact": "Users building automations with the Microsoft Azure Active Directory connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude connector message API update",
+                "summary": "The Anthropic Claude connector has a new Generate Message activity using the current `/v1/messages` API. The Generate Text Completion activity is deprecated and no longer functional.",
+                "analysis": "This is a significant connector update because users must move to the current API pattern. The older activity being deprecated and no longer functional indicates an incompatible change for workflows relying on it.",
+                "impact": "Users of the Anthropic Claude connector, especially those using Generate Text Completion, are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Nvidia NIM connector preview",
+                "summary": "The Nvidia NIM connector is now available in preview.",
+                "analysis": "This likely broadens AI integration options for customers experimenting with Nvidia NIM-based scenarios.",
+                "impact": "Customers interested in Nvidia NIM integrations are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP added Gemini 3.1 Pro, GPT 5.1, and GPT 5.4 in public preview, and made the Layout model for extended languages available in preview in the Japan region.",
+            "overall_analysis": "These updates center on model expansion and regional language support. They likely improve extraction quality for complex documents while increasing model choice, with some availability limited by preview status and region.",
+            "changes": [
+              {
+                "name": "New preview models",
+                "summary": "The Gemini 3.1 Pro, GPT 5.1, and GPT 5.4 models are available in public preview, with improved reasoning, instruction-following, and extraction accuracy across complex document types.",
+                "analysis": "This likely gives customers access to stronger model options for document understanding and extraction tasks, especially in more complex scenarios.",
+                "impact": "IXP users working with document extraction and model selection are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Layout model for extended languages in Japan region",
+                "summary": "The Layout model for extended languages is available in preview in the Japan region, improving extraction accuracy.",
+                "analysis": "This likely expands regional and language-specific extraction support for customers operating in Japan.",
+                "impact": "IXP users in the Japan region or those processing extended-language documents are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro updated Data Fabric query behavior with new `qem:` support and stricter `qes:` error handling, and added a new throttling indicator for workflow instances.",
+            "overall_analysis": "These changes improve data query capabilities and operational visibility. The query behavior update may require attention from users relying on previous `qes:` assumptions because multi-match cases now explicitly error.",
+            "changes": [
+              {
+                "name": "Data Fabric query enhancements and `qes:` behavior change",
+                "summary": "Data Fabric queries now support the `qem:` prefix, returning all matching records as an array of up to 1,000 items. Queries using `qes:` now return an explicit error when more than one record matches.",
+                "analysis": "This likely adds a clearer option for multi-record retrieval while making single-record queries stricter and more predictable. Users may need to adjust queries depending on whether they expect one or many matches.",
+                "impact": "Users building or maintaining Maestro workflows that query Data Fabric are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Workflow instance throttling indicator",
+                "summary": "A new instance throttling indicator appears when a workflow instance is being throttled, with a warning icon in the Instances table and a banner on the Instance details page.",
+                "analysis": "This likely improves troubleshooting and operational awareness by clearly showing when throttling is affecting workflow execution.",
+                "impact": "Users monitoring workflow instances in Maestro are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator introduced the Automation Registry, added a Latest jobs card and tenant-level cross-folder jobs filtering, and expanded Automation Cloud Robots - Serverless static IP support to additional regions.",
+            "overall_analysis": "These updates improve operational visibility, governance, and regional infrastructure support. They likely help administrators and operators manage deployments and monitor jobs more effectively across folders and regions.",
+            "changes": [
+              {
+                "name": "Automation Registry",
+                "summary": "The new Automation Registry provides a centralized, cross-folder view for discovering, managing, and governing solution deployments, processes, and resources.",
+                "analysis": "This likely strengthens governance and discoverability by consolidating key automation assets across folders into one view.",
+                "impact": "Administrators and users managing deployments, processes, and resources across folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Latest jobs card",
+                "summary": "A new Latest jobs card is available on the Tenant and folder homepages, showing recent jobs with filters for creation time and process time.",
+                "analysis": "This likely improves at-a-glance monitoring by surfacing recent execution activity directly on homepage views.",
+                "impact": "Orchestrator users monitoring recent jobs from Tenant and folder homepages are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Cross-folder jobs filtering at Tenant level",
+                "summary": "Cross-folder jobs filtering at Tenant level is now available, with filters for creation time, process type, process, and state.",
+                "analysis": "This likely helps users investigate and monitor jobs across a wider scope without manually checking each folder.",
+                "impact": "Tenant-level users and administrators monitoring jobs across folders are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Serverless static IP regional expansion",
+                "summary": "Automation Cloud Robots - Serverless now support static IPs in Canada, Singapore, and United Arab Emirates regions.",
+                "analysis": "This likely helps customers in those regions meet networking and allowlisting requirements for serverless robot traffic.",
+                "impact": "Customers using Automation Cloud Robots - Serverless in Canada, Singapore, and United Arab Emirates are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager added PDF export for individual test case logs, PII masking for Autopilot activities, live logs for running automated test cases, and machine selection from the Test Cases view.",
+            "overall_analysis": "These changes improve observability, privacy, and execution control for testing teams. They likely make it easier to monitor runs in progress, protect sensitive data, and manage where tests execute.",
+            "changes": [
+              {
+                "name": "PDF export for individual test case logs",
+                "summary": "You can export individual test case logs as PDFs.",
+                "analysis": "This likely helps with reporting, auditability, and sharing test execution details outside the product.",
+                "impact": "Test Manager users needing to review or distribute individual test case logs are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PII masking for Autopilot activities",
+                "summary": "PII used in Autopilot activities is automatically masked before being sent to LLMs.",
+                "analysis": "This likely improves privacy and compliance by reducing exposure of personally identifiable information in AI-related processing.",
+                "impact": "Users of Autopilot activities and organizations with privacy or compliance requirements are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Live logs for automated test cases",
+                "summary": "You can access and monitor automated test case logs in real time while execution is still running.",
+                "analysis": "This likely improves troubleshooting speed and execution visibility by allowing teams to observe tests before completion.",
+                "impact": "Users monitoring automated test case execution are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Machine selection from Test Cases view",
+                "summary": "Machine selection for individual test case execution is now available from the Test Cases view.",
+                "analysis": "This likely gives testers more direct control over execution targeting and may streamline how they launch individual test cases.",
+                "impact": "Users executing individual test cases from the Test Cases view are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 42293
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--mid-april-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--mid-april-2026",
+      "sha256": "54476f74f850774cf68b9c6c4907e4e02eaaf6c65e476c6f9c3df107b4cd711d",
+      "chars": 2221,
+      "payloadChars": 2312,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Automation Cloud Administration and Test Cloud Administration gained DESC certification and now have unified admin documentation across multiple cloud offerings.",
+            "overall_analysis": "These changes emphasize compliance readiness and a more consistent administrative experience across Automation Cloud variants.",
+            "changes": [
+              {
+                "name": "DESC certification",
+                "summary": "Automation Cloud and Test Cloud are now certified under the Dubai Electronic Security Center (DESC) standard.",
+                "analysis": "This likely helps organizations with regional security or compliance requirements evaluate or adopt the platforms with greater confidence.",
+                "impact": "Organizations using or assessing Automation Cloud and Test Cloud, especially those with DESC-related compliance needs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation",
+                "summary": "UiPath now offers unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely reduces documentation fragmentation and makes it easier for administrators to find consistent guidance across deployment types.",
+                "impact": "Administrators of Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service expands connector and Database Hub capabilities with new authentication options, encrypted connectivity, a new Databricks activity, Zoho Desk Canada data center support, and additional Microsoft Azure Active Directory group-related activities and triggers.",
+            "overall_analysis": "The updates broaden integration coverage, improve security and regional support, and add more automation options for data and identity-related workflows.",
+            "changes": [
+              {
+                "name": "Database Hub authentication and encrypted connectivity updates",
+                "summary": "Database Hub supports OAuth Client Credentials authentication for Databricks and TLS-encrypted connections for PostgreSQL and Amazon Redshift.",
+                "analysis": "This likely improves security and compatibility for enterprise database integrations by enabling stronger authentication and encrypted transport.",
+                "impact": "Users connecting Database Hub to Databricks, PostgreSQL, or Amazon Redshift.",
+                "breaking_change": false
+              },
+              {
+                "name": "Databricks Agent connector manual serving endpoint query activity",
+                "summary": "The Databricks Agent connector has a new Query a Serving Endpoint (Manual) activity for sending requests with fully custom JSON payloads.",
+                "analysis": "This likely gives users more control over how they interact with Databricks serving endpoints, especially for custom request formats.",
+                "impact": "Users building automations with the Databricks Agent connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Zoho Desk Canada data center support",
+                "summary": "The Zoho Desk connector now supports the Canada data center.",
+                "analysis": "This likely enables customers hosted in the Canada region to use the connector more easily and align integrations with their data residency setup.",
+                "impact": "Zoho Desk connector users in or using the Canada data center.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure Active Directory group management additions",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities and triggers: List All Groups in Group, List All Records, User Added to the Group, and User Removed from the Group.",
+                "analysis": "This likely expands identity and access automation scenarios by adding both administrative actions and event-driven group membership monitoring.",
+                "impact": "Users automating Microsoft Azure Active Directory group management and membership events.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds job duplication, allows queue triggers to continue when earlier jobs are suspended, and introduces a reset option for runtime arguments.",
+            "overall_analysis": "These enhancements focus on operational efficiency and resilience by simplifying job reruns, reducing queue-processing interruptions, and making runtime configuration easier to manage.",
+            "changes": [
+              {
+                "name": "Duplicate job action",
+                "summary": "A new Duplicate job action is available for jobs in non-terminal states (Pending, Running, Stopping, Terminating, Suspended, Resumed), opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds up reruns or similar job launches by reducing manual re-entry of settings for active or interrupted jobs.",
+                "impact": "Users managing jobs in Orchestrator, especially for jobs in non-terminal states.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue triggers continue with suspended jobs",
+                "summary": "Queue triggers can continue processing new queue items even when previously started jobs are in a Suspended state.",
+                "analysis": "This likely improves throughput and reduces bottlenecks in queue-based automations when some jobs are paused.",
+                "impact": "Teams relying on queue triggers and queue-based job processing in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its package or process default value.",
+                "analysis": "This likely reduces configuration errors and makes it easier to revert temporary or mistaken runtime argument changes.",
+                "impact": "Users configuring package or process runtime arguments in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web improves solution-based development with project duplication and publishing from Solution Explorer, Automation Hub linking, the new Health Analyzer panel, local file visibility, and persistent panels across projects.",
+            "overall_analysis": "The changes strengthen multi-project solution workflows and usability in Studio Web, supporting better governance, discoverability, and continuity during development.",
+            "changes": [
+              {
+                "name": "Project duplication and publishing from Solution Explorer",
+                "summary": "You can duplicate projects within solutions and publish individual RPA workflow and app projects directly from the Solution Explorer.",
+                "analysis": "This likely streamlines solution management and deployment by reducing context switching and making common project actions faster.",
+                "impact": "Studio Web users working with solution-based RPA workflow and app projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automation Hub business process linking",
+                "summary": "Solutions can now be linked to Automation Hub business processes directly from the Properties panel.",
+                "analysis": "This likely improves traceability between implementation work and business process definitions.",
+                "impact": "Teams using both Studio Web solutions and Automation Hub business processes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Health Analyzer panel rename and filtering",
+                "summary": "The Issues panel is now the Health Analyzer panel, with filtering by scope, severity, or quality area.",
+                "analysis": "This likely improves quality review workflows by providing clearer positioning and better ways to narrow findings.",
+                "impact": "Studio Web users reviewing issues and quality signals in projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Show Files button for local solutions",
+                "summary": "A new Show Files button in the Solution Explorer lets you view solution files stored on disk when working on a local solution.",
+                "analysis": "This likely helps users navigate and inspect the underlying local file structure more easily.",
+                "impact": "Studio Web users working on local solutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Persistent panels across projects",
+                "summary": "Panels in Studio Web now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+                "analysis": "This likely improves usability and continuity when moving among projects in the same solution.",
+                "impact": "Studio Web users working across multiple project types within solutions.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26586
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-april-2026#03",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--late-april-2026",
+      "sha256": "071731fbc200bbb85a92c8aa1155675dd17fbb85e2036853145930f4b3b3a02d",
+      "chars": 1846,
+      "payloadChars": 1935,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Administration for Automation Cloud Public Sector and Test Cloud Public Sector now includes access to UiPath GenAI Activities through Integration Service. This expands available AI-related capabilities in these environments.",
+            "overall_analysis": "This update brings GenAI-related functionality into public sector cloud environments through Integration Service, indicating broader availability of AI integrations for regulated deployments.",
+            "changes": [
+              {
+                "name": "UiPath GenAI Activities availability",
+                "summary": "UiPath GenAI Activities are now available in Automation Cloud Public Sector and Test Cloud Public Sector, accessible through Integration Service.",
+                "analysis": "This likely enables organizations in these public sector environments to use UiPath GenAI capabilities within the supported integration framework, increasing parity with broader cloud offerings.",
+                "impact": "Customers using Automation Cloud Public Sector and Test Cloud Public Sector who want access to UiPath GenAI Activities through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub adds a redesigned submission entry point, a new Agentic AI idea flow, AI-assisted CSV import for multiple business processes, and BPMN upload with interactive diagram rendering. These changes improve intake, process documentation, and support for agentic automation initiatives.",
+            "overall_analysis": "The release strengthens Automation Hub as an ideation and process-capture platform by expanding submission types, introducing agentic AI-specific flows, and improving process import and visualization capabilities.",
+            "changes": [
+              {
+                "name": "Submit New replaces Submit Idea",
+                "summary": "Submit New replaces the Submit Idea button. After selecting Submit New, an intermediary screen lets you choose the type of submission: Idea, Change request, or Business process.",
+                "analysis": "This likely streamlines intake by supporting multiple submission paths from a single entry point and making the submission type explicit earlier in the workflow.",
+                "impact": "Users submitting ideas, change requests, or business processes in Automation Hub.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agentic AI idea flow",
+                "summary": "A new Agentic AI idea flow supports submission and tracking of agentic automation initiatives.",
+                "analysis": "This likely helps organizations capture and manage emerging agentic AI use cases in a structured way within Automation Hub.",
+                "impact": "Teams proposing and tracking agentic automation initiatives in Automation Hub.",
+                "breaking_change": false
+              },
+              {
+                "name": "AI-assisted CSV import for business processes",
+                "summary": "You can now import multiple business processes from a CSV file using a guided AI assistant.",
+                "analysis": "This likely reduces manual effort and speeds bulk onboarding of process information into Automation Hub.",
+                "impact": "Users importing multiple business processes into Automation Hub from CSV files.",
+                "breaking_change": false
+              },
+              {
+                "name": "BPMN upload and interactive rendering",
+                "summary": "BPMN files can now be uploaded in the Documentation section and render as interactive diagrams using the built-in viewer.",
+                "analysis": "This likely improves process documentation and review by allowing native BPMN visualization directly inside the product.",
+                "impact": "Users documenting and reviewing business processes in Automation Hub.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds the UiPath GenAI Activities connector in public sector environments, expands Microsoft Azure Active Directory connector operations, updates the Anthropic Claude connector with a new Generate Message activity while deprecating Generate Text Completion, and introduces the Nvidia NIM connector in preview. The release broadens AI and directory-management integrations while signaling a connector activity transition.",
+            "overall_analysis": "This release significantly expands Integration Service capabilities across AI and identity scenarios. It also includes an explicit deprecation and nonfunctional older activity, which is important for customers maintaining existing Anthropic Claude automations.",
+            "changes": [
+              {
+                "name": "UiPath GenAI Activities connector availability in public sector",
+                "summary": "The UiPath GenAI Activities connector is now available in Automation Cloud Public Sector and Test Cloud Public Sector.",
+                "analysis": "This likely extends GenAI integration support into public sector cloud deployments, enabling regulated customers to use the connector in those environments.",
+                "impact": "Integration Service users in Automation Cloud Public Sector and Test Cloud Public Sector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded Microsoft Azure Active Directory group management activities",
+                "summary": "The Microsoft Azure Active Directory connector has new group management activities: List All Groups in Group, List All Records, Lists Lifecycle Policy, and more user and group operations.",
+                "analysis": "This likely expands administrative and automation coverage for Azure Active Directory-related user and group management tasks.",
+                "impact": "Users automating Microsoft Azure Active Directory user and group operations through Integration Service.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude Generate Message activity",
+                "summary": "The Anthropic Claude connector has a new Generate Message activity.",
+                "analysis": "This likely provides an updated way to interact with Anthropic Claude models, possibly aligning with newer messaging-style patterns.",
+                "impact": "Users building automations with the Anthropic Claude connector in Integration Service.",
+                "breaking_change": false
+              },
+              {
+                "name": "Anthropic Claude Generate Text Completion deprecation",
+                "summary": "The Generate Text Completion activity in the Anthropic Claude connector is deprecated and no longer functional.",
+                "analysis": "This is a significant compatibility concern because existing automations using this activity may stop working and need to be updated to supported alternatives such as Generate Message.",
+                "impact": "Users with existing Integration Service automations that rely on the Anthropic Claude Generate Text Completion activity.",
+                "breaking_change": true
+              },
+              {
+                "name": "Nvidia NIM connector preview",
+                "summary": "The Nvidia NIM connector is now available in preview.",
+                "analysis": "This likely gives customers early access to integrate Nvidia NIM capabilities, while preview status indicates it may still evolve before general availability.",
+                "impact": "Early adopters evaluating Nvidia NIM integrations through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds a Duplicate job action for active jobs, allows queue triggers to continue processing when prior jobs are suspended, and introduces a Reset to default option for runtime arguments. These updates improve operational efficiency, resiliency, and configuration management.",
+            "overall_analysis": "The release focuses on reducing operational friction in job handling and process execution. It improves recovery and repeatability for operators while making runtime configuration easier to manage.",
+            "changes": [
+              {
+                "name": "Duplicate job action",
+                "summary": "A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds reruns or similar job launches by reducing the need to manually re-enter settings.",
+                "impact": "Operators and users managing active jobs in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue trigger processing with suspended jobs",
+                "summary": "Queue triggers can continue processing new items when previously started jobs are in a Suspended state.",
+                "analysis": "This likely improves throughput and reduces backlog risk by preventing suspended jobs from blocking new queue item processing.",
+                "impact": "Users relying on queue triggers and queue-based automations in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its package or process default value.",
+                "analysis": "This likely reduces configuration errors and makes it easier to revert temporary or unintended argument changes.",
+                "impact": "Users configuring runtime arguments for packages or processes in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26625
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-april-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--mid-april-2026",
+      "sha256": "6671929aef4025f6d294df754c52ebc09cfa778a6de253dd91b1395ee6e05705",
+      "chars": 829,
+      "payloadChars": 903,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector and Test Cloud Public Sector Administration": {
+            "summary": "Administration updates introduce a custom organization-level user management role and unified admin documentation across Automation Cloud offerings. These changes focus on more granular delegation of identity tasks and consistent guidance across cloud environments.",
+            "overall_analysis": "These updates likely improve administrative governance by allowing identity-related work to be delegated without broad admin access, while the unified documentation may reduce confusion for administrators working across multiple UiPath cloud deployments.",
+            "changes": [
+              {
+                "name": "Custom organization-level user management role",
+                "summary": "Organization administrators can now delegate identity management tasks to non-admin users through a new custom organization-level user management role. The role provides granular CRUD permissions for user accounts, robot accounts, and local groups without granting full administrator rights.",
+                "analysis": "This likely supports stronger separation of duties and more controlled access management by letting organizations assign specific identity responsibilities without elevating users to full administrator status.",
+                "impact": "Organization administrators and delegated non-admin users managing user accounts, robot accounts, and local groups in Automation Cloud Public Sector and Test Cloud Public Sector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation across cloud offerings",
+                "summary": "UiPath now provides unified documentation for Automation Cloud and Test Cloud administration across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely makes administrative guidance more consistent and easier to navigate for users operating across different UiPath cloud environments.",
+                "impact": "Administrators using Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated documentation are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator removes a previously deprecated API endpoint. The change affects integrations still using the deprecated asset retrieval method.",
+            "overall_analysis": "This is a cleanup of deprecated functionality that may require customers to update any remaining dependencies on the removed endpoint. The main significance is compatibility impact for existing API consumers rather than new platform capability.",
+            "changes": [
+              {
+                "name": "Removal of deprecated GetRobotAsset endpoint",
+                "summary": "The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+                "analysis": "This likely finalizes an earlier deprecation and may break scripts, integrations, or applications that still call this endpoint, requiring migration to supported alternatives not specified in the release notes.",
+                "impact": "Developers, API consumers, and integrations relying on the `GetRobotAsset(robotId='{robotId}')` endpoint in Orchestrator are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 14343
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--late-april-2026#05",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--late-april-2026",
+      "sha256": "610b0e46e52580b1507029f8fc998bc364e17ec9737408b952b46b698e30f549",
+      "chars": 1974,
+      "payloadChars": 2067,
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 27, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 27, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "April 27, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "April 27, 2026"
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": "April 29, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration": {
+            "summary": "This release includes various unspecified fixes and improvements for Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration. No detailed feature-level changes are provided in the notes.",
+            "overall_analysis": "The release appears to focus on maintenance and incremental quality improvements for the administration experience in dedicated cloud environments, but the specific significance is not stated in the release notes.",
+            "changes": [
+              {
+                "name": "Various fixes and improvements",
+                "summary": "Various fixes and improvements are included in this release.",
+                "analysis": "This suggests a maintenance update intended to improve stability, usability, or performance, but no specific areas are identified.",
+                "impact": "Administrators using Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds several usability and operational improvements, including job duplication, better queue trigger behavior with suspended jobs, and runtime argument reset functionality. It also fixes an upgrade or rollback issue related to duplicate resource names.",
+            "overall_analysis": "These changes improve day-to-day job management and operational resilience in Orchestrator. The release reduces manual reconfiguration, supports more reliable queue processing, and addresses a deployment-related error that could affect upgrade or rollback workflows.",
+            "changes": [
+              {
+                "name": "Duplicate job action for active jobs",
+                "summary": "A new Duplicate job action is available for active jobs, opening the Start Job form pre-filled with the original configuration.",
+                "analysis": "This likely speeds up rerunning or recreating similar jobs by reducing manual setup and minimizing configuration errors.",
+                "impact": "Users managing active jobs in Orchestrator, especially operators who frequently restart or replicate job runs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue triggers continue with suspended jobs",
+                "summary": "Queue triggers can continue processing new items when previously started jobs are in a Suspended state.",
+                "analysis": "This improves operational continuity by preventing suspended jobs from unnecessarily blocking queue processing.",
+                "impact": "Teams using queue triggers and job-based processing in Orchestrator workflows.",
+                "breaking_change": false
+              },
+              {
+                "name": "Reset to default for runtime arguments",
+                "summary": "A new Reset to default button for runtime arguments restores any field to its default value.",
+                "analysis": "This improves usability when configuring jobs by making it easier to revert changes and avoid incorrect runtime argument values.",
+                "impact": "Users configuring runtime arguments when starting or managing jobs in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Fix for duplicate resource name rollback error",
+                "summary": "Fixed a rollback error that occurred for duplicate resource names during upgrade or rollback operations.",
+                "analysis": "This addresses an operational issue that could disrupt upgrade or rollback procedures, improving reliability for environment maintenance.",
+                "impact": "Administrators performing upgrade or rollback operations in Orchestrator environments where duplicate resource names may exist.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web introduces version control, download, navigation, and interface persistence enhancements for solution and project management. It also improves support for coded workflow projects by allowing `.cs` files to be opened in read-only mode with C# syntax highlighting.",
+            "overall_analysis": "The release strengthens the development experience in Studio Web by improving project handling, consistency across project types, and access to source artifacts. These changes likely help users work more efficiently across cloud solutions, local solutions, and coded workflows.",
+            "changes": [
+              {
+                "name": "Git toggle for local solutions",
+                "summary": "You can enable or disable Git version control for local solutions using a new toggle in the Version Control panel header.",
+                "analysis": "This adds more direct control over versioning behavior for local solutions, making it easier to manage source control settings without extra steps.",
+                "impact": "Studio Web users working with local solutions and Git version control.",
+                "breaking_change": false
+              },
+              {
+                "name": "Download cloud solution as .uis file",
+                "summary": "Right-clicking a cloud solution now shows a Download option to save the solution as a `.uis` file.",
+                "analysis": "This improves portability and backup options for cloud solutions by making export more accessible from the solution context menu.",
+                "impact": "Users managing cloud solutions in Studio Web who need to save or transfer solutions.",
+                "breaking_change": false
+              },
+              {
+                "name": "Read-only opening of coded workflow .cs files",
+                "summary": "Coded workflow projects (`.cs` files) can now be opened from the Explorer panel in read-only mode with C# syntax highlighting.",
+                "analysis": "This improves visibility into coded workflow content in Studio Web, helping users inspect code more easily even when editing is not available.",
+                "impact": "Users working with coded workflow projects in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Remove activity categories from Resource Explorer",
+                "summary": "You can remove activity categories directly from the Resource Explorer.",
+                "analysis": "This simplifies resource organization and cleanup by allowing category management in context.",
+                "impact": "Users organizing activities and resources in Studio Web.",
+                "breaking_change": false
+              },
+              {
+                "name": "Panel persistence across project switching",
+                "summary": "Panels now persist when switching between projects, providing a consistent design experience across solutions with multiple project types.",
+                "analysis": "This improves usability and continuity by reducing interface reset friction when moving between projects.",
+                "impact": "Users switching between multiple projects or project types in Studio Web.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds privacy protection for Autopilot activity data sent to LLMs and introduces live logging for running automated test cases. These updates focus on observability and sensitive data handling.",
+            "overall_analysis": "The release improves both trust and monitoring in test operations. Automatic PII masking supports safer AI-assisted workflows, while live logs help teams track execution progress and troubleshoot issues sooner.",
+            "changes": [
+              {
+                "name": "PII masking for Autopilot activities",
+                "summary": "PII used in Autopilot activities is automatically masked before being sent to LLMs.",
+                "analysis": "This likely reduces privacy and compliance risk when Autopilot activities use large language models by limiting exposure of sensitive data.",
+                "impact": "Test Manager users relying on Autopilot activities and any organizations with PII handling requirements.",
+                "breaking_change": false
+              },
+              {
+                "name": "Live logs for automated test cases",
+                "summary": "Access and monitor automated test case logs in real time while execution is still running.",
+                "analysis": "This enhances test observability and can speed up debugging by allowing users to detect issues before execution completes.",
+                "impact": "Testers and QA teams monitoring automated test executions in Test Manager.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center now has unified documentation across multiple cloud environments, including Automation Cloud, Test Cloud, Public Sector variants, and Dedicated variants. The update is documentation-focused rather than a product behavior change.",
+            "overall_analysis": "This change likely improves documentation consistency and discoverability for users across deployment models, helping reduce confusion when working in different cloud environments. No functional product change is stated in the release notes.",
+            "changes": [
+              {
+                "name": "Unified documentation across cloud environments",
+                "summary": "Unified documentation for Action Center is now available across all cloud environments: Automation Cloud and Test Cloud, Automation Cloud Public Sector and Test Cloud Public Sector, and Automation Cloud Dedicated and Test Cloud Dedicated.",
+                "analysis": "This likely makes guidance easier to find and more consistent for users working across different cloud offerings.",
+                "impact": "Action Center users and administrators across Automation Cloud, Test Cloud, Public Sector, and Dedicated cloud environments.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26265
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-april-2026#06",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--mid-april-2026",
+      "sha256": "1c3223d6aa07382f12209b1f30523ae931def6724c88dfe0c282d4ffe3a8e824",
+      "chars": 2354,
+      "payloadChars": 2448,
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 14, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 14, 2026"
+        },
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 7, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "April 6, 2026"
+        },
+        {
+          "name": "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration",
+          "releaseDate": "April 1, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "April 1, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Dedicated Administration and Test Cloud Dedicated Administration": {
+            "summary": "Administration updates added federated identity credentials for OAuth external applications, introduced a custom organization-level user management role, and announced unified admin documentation across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+            "overall_analysis": "These changes expand delegated administration and machine-to-machine authentication options while also simplifying documentation access across cloud offerings. The likely impact is improved security and governance flexibility for organizations using dedicated and test cloud environments.",
+            "changes": [
+              {
+                "name": "Federated identity credentials for OAuth external applications",
+                "summary": "Organization administrators can now manage federated identity credentials for OAuth external applications, allowing external systems to authenticate to UiPath using JWTs from third-party identity providers such as GitHub Actions or Azure Managed Identity without requiring a client secret.",
+                "analysis": "This likely enables more secure external application authentication by reducing reliance on stored client secrets and supporting workload identity scenarios with third-party identity providers.",
+                "impact": "Organization administrators and external systems integrating with UiPath OAuth applications in Automation Cloud Dedicated and Test Cloud Dedicated are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Unified admin documentation across cloud offerings",
+                "summary": "UiPath now provides unified documentation for Automation Cloud and Test Cloud admin across Automation Cloud, Automation Cloud Public Sector, and Automation Cloud Dedicated.",
+                "analysis": "This likely improves consistency and discoverability of administrative guidance across deployment models, but the release notes do not describe functional product behavior changes.",
+                "impact": "Administrators who use UiPath documentation across multiple cloud offerings are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom organization-level user management role",
+                "summary": "Organization administrators can now delegate identity management tasks to non-admin users through a new custom organization-level user management role with granular CRUD permissions for user accounts, robot accounts, and local groups, without granting full administrator rights.",
+                "analysis": "This likely strengthens governance by enabling separation of duties and least-privilege administration for identity-related tasks.",
+                "impact": "Organization administrators and delegated non-admin users responsible for user, robot account, and local group management are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator removed a previously deprecated endpoint and introduced several usability and monitoring improvements for job starts, queue retry tracking, queue grid visibility, and role deletion confirmation.",
+            "overall_analysis": "The release combines a clear API removal with incremental operational and UX enhancements. Users may see smoother day-to-day management, while integrations using the removed endpoint require action because it is an explicit breaking change.",
+            "changes": [
+              {
+                "name": "Removal of deprecated GetRobotAsset endpoint",
+                "summary": "The previously deprecated `GetRobotAsset(robotId='{robotId}')` endpoint has been removed.",
+                "analysis": "This is a breaking API cleanup that likely finalizes a prior deprecation and requires any remaining consumers of the endpoint to migrate to supported alternatives.",
+                "impact": "Developers and integrations that still call the `GetRobotAsset(robotId='{robotId}')` endpoint are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Automatic pre-selection of first available process when starting a job",
+                "summary": "When starting a job, the first available process is now automatically pre-selected, reducing steps in the launch flow.",
+                "analysis": "This likely streamlines job initiation and reduces user effort for common launch scenarios.",
+                "impact": "Users who manually start jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "QueueItem.retried webhook event",
+                "summary": "A new `QueueItem.retried` webhook event now fires whenever a queue item is retried.",
+                "analysis": "This likely improves observability and integration options for queue processing by exposing retry activity as a dedicated event.",
+                "impact": "Teams monitoring queue execution and developers consuming Orchestrator webhooks are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Created columns in queue transaction items grid",
+                "summary": "Two new optional columns, **Created** (relative) and **Created (absolute)**, are now available in the queue transaction items grid.",
+                "analysis": "This likely improves visibility into queue item timing and supports faster operational review directly in the grid.",
+                "impact": "Users reviewing queue transaction items in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Typed confirmation required when deleting roles",
+                "summary": "Deleting roles now requires typed confirmation through an improved modal to help prevent accidental removal.",
+                "analysis": "This likely reduces accidental administrative changes by adding a stronger confirmation step for destructive actions.",
+                "impact": "Administrators who delete roles in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web added project duplication within solutions, direct publishing of individual RPA workflow and app projects from Solution Explorer, linking of solutions to Automation Hub business processes from Properties, and renamed the Issues panel to Health Analyzer with new filtering.",
+            "overall_analysis": "These enhancements focus on solution management, publishing efficiency, integration with business process records, and quality visibility in the authoring experience. The likely result is a smoother development workflow for users building and maintaining solution-based projects in Studio Web.",
+            "changes": [
+              {
+                "name": "Duplicate and publish projects from Solution Explorer",
+                "summary": "Users can now duplicate projects within solutions and publish individual RPA workflow and app projects directly from the **Solution Explorer**.",
+                "analysis": "This likely reduces friction in solution maintenance and deployment by making common project management and publishing actions available directly in the solution view.",
+                "impact": "Studio Web users working with solutions, especially those managing RPA workflow and app projects, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Link solutions to Automation Hub business processes",
+                "summary": "Solutions can now be linked to Automation Hub business processes directly from the **Properties** panel.",
+                "analysis": "This likely improves traceability between implementation work and documented business processes by creating a direct linkage in the authoring environment.",
+                "impact": "Studio Web users coordinating solution development with Automation Hub business processes are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Issues panel renamed to Health Analyzer with filtering",
+                "summary": "The **Issues** panel is now called the **Health Analyzer** panel and now supports filtering by scope, severity, or quality area.",
+                "analysis": "This likely improves issue triage and code quality review by making analysis results easier to categorize and inspect.",
+                "impact": "Studio Web users reviewing validation or quality findings in projects are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 26502
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,990 @@
+{
+  "schemaVersion": "1.2",
+  "id": "2026-02",
+  "label": "February 2026",
+  "title": "February 2026",
+  "cacheKey": "v1",
+  "generatedAt": "2026-09-28T08:09:21.083Z",
+  "source": {
+    "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-february-2026",
+    "markdownUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-february-2026.md",
+    "sha256": "c41b1950dd1df94abace7cf5311347a0130a4667cba0c39ed0864f4609300252",
+    "chars": 33558
+  },
+  "status": "no-highlights",
+  "sections": [
+    {
+      "id": "automation-cloud-and-test-cloud--release-notes-catalog",
+      "environment": "Automation Cloud and Test Cloud",
+      "timeframe": "Release notes catalog",
+      "publishingDate": "",
+      "range": "",
+      "note": "The following table outlines the release status and release notes of all UiPath platform capabilities and products deployed under Automation Cloud and Test Cloud during February 2026.",
+      "products": [],
+      "catalog": [
+        {
+          "product": "Automation Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 27, 2026",
+            "February 17, 2026",
+            "February 16, 2026",
+            "February 11, 2026",
+            "February 6, 2026",
+            "February 4, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Automation Cloud platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-27%2C-2026"
+            },
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-17%2C-2026"
+            },
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-16%2C-2026"
+            },
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            },
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-6%2C-2026"
+            },
+            {
+              "label": "Automation Cloud platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/february-2026#february-2%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 27, 2026",
+            "February 17, 2026",
+            "February 16, 2026",
+            "February 11, 2026",
+            "February 6, 2026",
+            "February 4, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Test Cloud platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/february-2026#february-27%2C-2026"
+            },
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/february-2026#february-17%2C-2026"
+            },
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/february-2026#february-16%2C-2026"
+            },
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            },
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/release-notes-february-2026#february-6%2C-2026"
+            },
+            {
+              "label": "Test Cloud platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/february-2026#february-2%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 26, 2026",
+            "February 16, 2026"
+          ],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": [
+            {
+              "label": "Action Center release notes",
+              "url": "https://docs.uipath.com/action-center/automation-cloud/latest/user-guide/release-notes-february-2026#february-26%2C-2026"
+            },
+            {
+              "label": "Action Center release notes",
+              "url": "https://docs.uipath.com/action-center/automation-cloud/latest/user-guide/release-notes-february-2026#february-16%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026"
+          ],
+          "notes": [
+            "Agents release notes"
+          ],
+          "links": [
+            {
+              "label": "Agents release notes",
+              "url": "https://docs.uipath.com/agents/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "AI Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 16, 2026",
+            "February 6, 2026"
+          ],
+          "notes": [
+            "Apps release notes"
+          ],
+          "links": [
+            {
+              "label": "Apps release notes",
+              "url": "https://docs.uipath.com/apps/automation-cloud/latest/release-notes/february-2026#february-16%2C-2026"
+            },
+            {
+              "label": "Apps release notes",
+              "url": "https://docs.uipath.com/apps/automation-cloud/latest/release-notes/february-2026#february-6%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Assistant Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Assistant Web release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - Serverless",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026",
+            "February 11, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Robots release notes - Serverless"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Robots release notes - Serverless",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-18%2C-2026"
+            },
+            {
+              "label": "Automation Cloud Robots release notes - Serverless",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 11, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Robots release notes - VM"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Robots release notes - VM",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 11, 2026"
+          ],
+          "notes": [
+            "Automation Hub release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Hub release notes",
+              "url": "https://docs.uipath.com/automation-hub/automation-cloud/latest/user-guide/release-notes-february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Fabric",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 24, 2026"
+          ],
+          "notes": [
+            "Data Fabric release notes"
+          ],
+          "links": [
+            {
+              "label": "Data Fabric release notes",
+              "url": "https://docs.uipath.com/data-service/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 24, 2026",
+            "February 3rd, 2026"
+          ],
+          "notes": [
+            "Document Understanding release notes"
+          ],
+          "links": [
+            {
+              "label": "Document Understanding release notes",
+              "url": "https://docs.uipath.com/document-understanding/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 11, 2026"
+          ],
+          "notes": [
+            "Insights release notes"
+          ],
+          "links": [
+            {
+              "label": "Insights release notes",
+              "url": "https://docs.uipath.com/insights/automation-cloud/latest/user-guide/release-notes-february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 23, 2026",
+            "February 13, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": [
+            {
+              "label": "Integration Service release notes",
+              "url": "https://docs.uipath.com/integration-service/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "IXP",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 16, 2026",
+            "February 9, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Unstructured complex documents release notes",
+            "Communications Mining release notes  Unstructured complex documents release notes"
+          ],
+          "links": [
+            {
+              "label": "Unstructured complex documents release notes",
+              "url": "https://docs.uipath.com/ixp/automation-cloud/latest/release-notes/ucd-february-2026#february-16%2C-2026"
+            },
+            {
+              "label": "Unstructured complex documents release notes",
+              "url": "https://docs.uipath.com/ixp/automation-cloud/latest/release-notes/ucd-february-2026#february-9%2C-2025"
+            },
+            {
+              "label": "Communications Mining release notes",
+              "url": "https://docs.uipath.com/ixp/automation-cloud/latest/release-notes/cm-february-2026#february-2%2C-2026"
+            },
+            {
+              "label": "Unstructured complex documents release notes",
+              "url": "https://docs.uipath.com/ixp/automation-cloud/latest/release-notes/ucd-february-2026#february-2%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 19, 2026",
+            "February 13, 2026"
+          ],
+          "notes": [
+            "Maestro release notes"
+          ],
+          "links": [
+            {
+              "label": "Maestro release notes",
+              "url": "https://docs.uipath.com/maestro/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026",
+            "February 16, 2026",
+            "February 11, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-2026"
+            },
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-16%2C-2026"
+            },
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            },
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/february-2026#february-2%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026",
+            "February 11, 2026",
+            "February 4th, 2026"
+          ],
+          "notes": [
+            "Process Mining release notes"
+          ],
+          "links": [
+            {
+              "label": "Process Mining release notes",
+              "url": "https://docs.uipath.com/process-mining/automation-cloud/latest/user-guide/february-2026"
+            },
+            {
+              "label": "Process Mining release notes",
+              "url": "https://docs.uipath.com/process-mining/automation-cloud/latest/user-guide/february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 16, 2026",
+            "February 3rd, 2026"
+          ],
+          "notes": [
+            "Solutions release notes"
+          ],
+          "links": [
+            {
+              "label": "Solutions release notes",
+              "url": "https://docs.uipath.com/solutions-management/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 19, 2026",
+            "February 13, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": [
+            {
+              "label": "Studio Web release notes",
+              "url": "https://docs.uipath.com/studio-web/automation-cloud/latest/release-notes/february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026",
+            "February 11, 2026",
+            "February 3rd, 2026",
+            "February 4th, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud/latest/release-notes/february-2026"
+            },
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud/latest/release-notes/february-2026#february-11%2C-2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--release-notes-catalog",
+      "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
+      "timeframe": "Release notes catalog",
+      "publishingDate": "",
+      "range": "",
+      "note": "The following table outlines the release status and release notes of all UiPath platform capabilities and products deployed under Automation Cloud Public Sector and Test Cloud Public Sector during February 2026.",
+      "products": [],
+      "catalog": [
+        {
+          "product": "Automation Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 23, 2026",
+            "February 20, 2026",
+            "February 11, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Public Sector platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud-public-sector/automation-cloud-public-sector/latest/release-notes/february-2026#february-23%2C-2026"
+            },
+            {
+              "label": "Automation Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud-public-sector/automation-cloud-public-sector/latest/release-notes/february-2026#february-20%2C-2026"
+            },
+            {
+              "label": "Automation Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud-public-sector/automation-cloud-public-sector/latest/release-notes/february-2026#automation-cloud-public-sector-release-digest%3A-february-3%2C-2026---february-9%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 23, 2026",
+            "February 20, 2026",
+            "February 11, 2026",
+            "February 2, 2026"
+          ],
+          "notes": [
+            "Test Cloud Public Sector platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/public-sector-february-2026#february-23%2C-2026"
+            },
+            {
+              "label": "Test Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/public-sector-february-2026#february-20%2C-2026"
+            },
+            {
+              "label": "Test Cloud Public Sector platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/public-sector-february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 13, 2026"
+          ],
+          "notes": [
+            "Apps release notes"
+          ],
+          "links": [
+            {
+              "label": "Apps release notes",
+              "url": "https://docs.uipath.com/apps/automation-cloud/latest/release-notes/release-notes-public-sector-february-2026#february-13%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 10, 2026"
+          ],
+          "notes": [
+            "Insights release notes"
+          ],
+          "links": [
+            {
+              "label": "Insights release notes",
+              "url": "https://docs.uipath.com/insights/automation-cloud-public-sector/latest/user-guide/release-notes-february-2026#february-10%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "November 26, 2025"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 23, 2026",
+            "February 16, 2026",
+            "February 2, 2026",
+            "January 19, 2026",
+            "December 10, 2025",
+            "November 24, 2025"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud-public-sector/latest/release-notes/february-2026#february-23%2C-2026"
+            },
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud-public-sector/latest/release-notes/february-2026#february-16%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 18, 2026",
+            "February 4, 2026",
+            "December 9, 2025",
+            "November 25, 2025"
+          ],
+          "notes": [
+            "Process Mining release notes"
+          ],
+          "links": [
+            {
+              "label": "Process Mining release notes",
+              "url": "https://docs.uipath.com/process-mining/automation-cloud-public-sector/latest/user-guide/public-sector-february-2026#february-18%2C-2026"
+            },
+            {
+              "label": "Process Mining release notes",
+              "url": "https://docs.uipath.com/process-mining/automation-cloud-public-sector/latest/user-guide/public-sector-february-2026#february-4%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "January 20, 2026",
+            "December 1, 2025"
+          ],
+          "notes": [
+            "Task Mining release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 19, 2026",
+            "February 9, 2026",
+            "January 12, 2026",
+            "December 22, 2025",
+            "December 1, 2025"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud-public-sector/latest/release-notes/february-2026#february-19%2C-2026"
+            },
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud-public-sector/latest/release-notes/february-2026#february-9%2C-2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--release-notes-catalog",
+      "environment": "Automation Cloud Dedicated and Test Cloud Dedicated",
+      "timeframe": "Release notes catalog",
+      "publishingDate": "",
+      "range": "",
+      "note": "The following table outlines the release status and release notes of all UiPath platform capabilities and products deployed under Automation Cloud Dedicated and Test Cloud Dedicated during February 2026.",
+      "products": [],
+      "catalog": [
+        {
+          "product": "Automation Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud-dedicated/automation-cloud-dedicated/latest/release-notes/february-2026#february-12%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Test Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud-dedicated/latest/release-notes/release-notes-february-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Apps release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Suite Robots",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Automation Suite Robots release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Automation Ops release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Data Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Document Understanding release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Insights release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Maestro release notes"
+          ],
+          "links": [
+            {
+              "label": "Maestro release notes",
+              "url": "https://docs.uipath.com/maestro/automation-cloud/latest/release-notes/dedicated-february-2026#february-11%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud-dedicated/latest/release-notes/february-2026#february-12%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Solutions release notes"
+          ],
+          "links": [
+            {
+              "label": "Solutions release notes",
+              "url": "https://docs.uipath.com/solutions-management/automation-cloud/latest/release-notes/dedicated-february-2026#solutions-onboarded-in-automation-cloud%E2%84%A2-dedicated-and-test-cloud-dedicated"
+            }
+          ]
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": [
+            {
+              "label": "Studio Web release notes",
+              "url": "https://docs.uipath.com/studio-web/automation-cloud/latest/release-notes/dedicated-february-2026#february-12%2C-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "February 12, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud-dedicated/latest/release-notes/february-2026#february-12,-2026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "sections": 3,
+    "products": 0,
+    "analysedProducts": 0,
+    "changes": 0,
+    "breakingChanges": 0,
+    "chunks": {
+      "total": 0,
+      "ok": 0,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "chunks": [],
+  "warnings": []
+}
