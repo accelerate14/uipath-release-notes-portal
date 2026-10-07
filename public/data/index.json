@@ -1,8 +1,30 @@
 {
   "schemaVersion": "1.2",
-  "updatedAt": "2026-09-28T08:20:05.280Z",
+  "updatedAt": "2026-10-07T08:00:39.281Z",
   "source": "https://docs.uipath.com/release-notes/other/latest/release-notes",
   "months": [
+    {
+      "id": "2026-09",
+      "label": "September 2026",
+      "kind": "analysed",
+      "generatedAt": "2026-10-07T08:00:39.113Z",
+      "sourceSha256": "8e8cf9ba94a663b167a78742f44e253421393a139290322044792b677fdc6f41",
+      "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-september-2026",
+      "counts": {
+        "sections": 3,
+        "products": 20,
+        "analysedProducts": 20,
+        "changes": 53,
+        "breakingChanges": 2,
+        "chunks": {
+          "total": 3,
+          "ok": 3,
+          "failed": 0,
+          "pending": 0
+        }
+      },
+      "file": "analysis/2026-09.json"
+    },
     {
       "id": "2026-08",
       "label": "August 2026",

@@ -1,0 +1,632 @@
+{
+  "id": "2026-09",
+  "cacheKey": "v1",
+  "sourceSha256": "8e8cf9ba94a663b167a78742f44e253421393a139290322044792b677fdc6f41",
+  "status": "complete",
+  "updatedAt": "2026-10-07T08:00:39.113Z",
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--early-september-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--early-september-2026",
+      "sha256": "47de7873a1f541d8aead9c7b323e76da7494cbd1d5ee412e64803cb7cd2b586a",
+      "chars": 6170,
+      "payloadChars": 6308,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Data Fabric",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        },
+        {
+          "name": "Supply Chain & Retail Solutions: Inventory Management",
+          "releaseDate": null
+        },
+        {
+          "name": "Supply Chain & Retail Solutions: Commercial Pricing, Inventory Management, and Merchandising",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "The release updates Relay administration, connectivity, client shutdown behavior, and platform API tenant runtime reporting. It also introduces a permission model change for Relay management.",
+            "overall_analysis": "This strengthens delegated administration and expands Relay's integration role for on-premises connectivity, while the permission change may require immediate role updates to preserve access.",
+            "changes": [
+              {
+                "name": "Dedicated Relay permissions for Relay access",
+                "summary": "Relay access is now controlled by dedicated Relay permissions instead of administrator group membership, so Tenant Administrators can manage Relay Groups without an Organization Administrator role. Custom roles that granted Relay visibility through the Centralized Access Administration page permission must now include Relay > Relay group > View.",
+                "analysis": "This shifts Relay administration to a more granular authorization model, reducing dependence on broad administrator roles and enabling more precise access control.",
+                "impact": "Tenant Administrators, Organization Administrators, and users with custom roles related to Relay administration are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "TCP-based Relay connections and containerized Relay client support",
+                "summary": "Relay now supports TCP-based connections to on-premises systems, starting with SAP BAPI, through an on-prem executor. Container deployments of the Relay client using Docker and Podman are supported as of September 10, 2026.",
+                "analysis": "This broadens Relay's applicability for enterprise connectivity scenarios and makes deployment more flexible for infrastructure teams using containers.",
+                "impact": "Organizations connecting cloud automation to on-premises systems, especially SAP BAPI environments, and teams deploying Relay clients are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Immediate Relay client stop on Relay Group deletion",
+                "summary": "Deleting a Relay Group now immediately stops all Relay clients connected to it, with no drain period.",
+                "analysis": "This changes operational behavior for Relay lifecycle management and may require more caution when removing Relay Groups.",
+                "impact": "Administrators managing Relay Groups and users relying on connected Relay clients are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Platform API tenant runtime allocation and usage reporting",
+                "summary": "The platform API now returns per-tenant robot runtime allocation and usage, and a per-tenant consumption breakdown by process.",
+                "analysis": "This improves visibility into tenant-level capacity usage and process consumption, supporting monitoring, chargeback, or governance scenarios.",
+                "impact": "Platform administrators, API consumers, and teams monitoring robot runtime and consumption are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents receives general availability for UiPath Agents in Flow, adds conversational and voice agent flow support, introduces the LLM as Judge guardrail in preview, and makes agent design policies generally available. The updates focus on broader agent-building capability and governance.",
+            "overall_analysis": "The release signals maturation of the agent platform by combining production-ready flow-based authoring with new interaction modes and stronger safety and governance controls.",
+            "changes": [
+              {
+                "name": "UiPath Agents in Flow generally available",
+                "summary": "UiPath Agents in Flow is now generally available. You configure the agent's system prompt, model, schemas, and tools directly on the Flow canvas, and you can chain multiple agents in a single flow.",
+                "analysis": "This makes agent construction more accessible and operationally ready, while enabling multi-agent orchestration directly in flows.",
+                "impact": "Builders creating agent-based automations in Flow are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Conversational chat and real-time voice agents in Maestro Flow",
+                "summary": "You can now build conversational chat agents and real-time voice agents as a Maestro Flow.",
+                "analysis": "This expands the supported interaction patterns for agents, enabling use cases that require live conversational or voice experiences.",
+                "impact": "Teams designing customer-facing or interactive agent workflows in Maestro Flow are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "LLM as Judge guardrail preview",
+                "summary": "The LLM as Judge guardrail is available in preview. It uses an LLM to evaluate agent prompts, responses, or LLM calls against instructions that you write in natural language.",
+                "analysis": "This adds a flexible quality and compliance mechanism for agent behavior, potentially improving trust and policy enforcement.",
+                "impact": "Teams governing, testing, or validating agent behavior are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Agent design policies generally available",
+                "summary": "Agent design policies in the Studio Web governance policy are now generally available.",
+                "analysis": "This indicates that governance controls for agent design are ready for broader enterprise use.",
+                "impact": "Administrators and teams enforcing governance over agent design in Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub adds Markdown process document upload and preview support, and expands custom-role permissions with view-only access for user administration pages. The changes improve documentation handling and role-based access flexibility.",
+            "overall_analysis": "These updates support better process documentation workflows and finer-grained administrative visibility without overprovisioning access.",
+            "changes": [
+              {
+                "name": "Markdown process document upload and preview",
+                "summary": "You can now upload Markdown (.md) process documents and preview them in the document viewer.",
+                "analysis": "This improves compatibility with lightweight documentation formats and may streamline process authoring and review.",
+                "impact": "Automation Hub users managing process documentation are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "View-only access for Users and User Roles pages",
+                "summary": "Custom roles can now be granted view-only access to the Users and User Roles pages.",
+                "analysis": "This adds more granular role-based access for administrative visibility without edit permissions.",
+                "impact": "Administrators configuring custom roles and users who need read-only access to user management information are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops expands generally available agent design governance policies and adds new AI Trust Layer policy toggles for Context Grounding and the LLM as Judge guardrail. The release emphasizes governance and control over agent behavior.",
+            "overall_analysis": "The release strengthens enterprise policy enforcement for AI agents, helping organizations standardize safety, quality, and execution constraints.",
+            "changes": [
+              {
+                "name": "Agent design policies generally available with enforcement controls",
+                "summary": "Agent design policies in the Studio Web governance policy are now generally available. They enforce a minimum agent score, a maximum temperature range, maximum tokens per response, human-in-the-loop escalation, and a maximum number of iterations per agent execution.",
+                "analysis": "This provides concrete governance levers for controlling agent quality, cost, and operational behavior.",
+                "impact": "Governance administrators and teams deploying agents through Studio Web are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "AI Trust Layer policy toggles for Context Grounding and LLM as Judge",
+                "summary": "The AI Trust Layer policy adds Enable Context Grounding and Enable LLM as Judge guardrail product toggles, both set to Yes by default.",
+                "analysis": "This gives administrators centralized policy control over two AI safety and quality features, with default enablement encouraging adoption.",
+                "impact": "Administrators managing AI Trust Layer policies and users subject to those policies are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Data Fabric": {
+            "summary": "Data Fabric introduces preview support for inline entity modeling in VS Code and new Maestro Flow nodes that use those entities without an Integration Service connection. The release links data modeling more directly with flow execution.",
+            "overall_analysis": "This reduces friction between defining business entities and using them in automations, suggesting a more integrated low-code data experience.",
+            "changes": [
+              {
+                "name": "Inline Data Fabric entity modeling in VS Code preview",
+                "summary": "You can now model Data Fabric entities inline in VS Code, in preview, using a new Data Fabric Entity project type.",
+                "analysis": "This extends Data Fabric authoring into a developer-centric environment and may improve productivity for users working in VS Code.",
+                "impact": "Developers and technical users modeling Data Fabric entities in VS Code are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "New Maestro Flow entity record nodes",
+                "summary": "Four new Maestro Flow nodes—Query, Create, Update, and Delete entity record—consume these entities without an Integration Service connection.",
+                "analysis": "This simplifies flow interactions with Data Fabric entities by removing the need for an Integration Service connection in these scenarios.",
+                "impact": "Users building Maestro Flows that work with Data Fabric entities are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds OAuth 2.0 API access for registered external applications, enhances Connector Builder scripting, expands connector capabilities, updates Azure OpenAI connection input requirements, and improves connector search. The updates span extensibility, authentication, and discoverability.",
+            "overall_analysis": "This release improves both platform integration depth and connector development flexibility, while also refining usability for authentication and search.",
+            "changes": [
+              {
+                "name": "OAuth 2.0 access for Integration Service API",
+                "summary": "You can now call the Integration Service API from a registered external application using OAuth 2.0.",
+                "analysis": "This enables more standardized and secure external application access to the Integration Service API.",
+                "impact": "Developers integrating external applications with the Integration Service API are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Global Scripts tab in Connector Builder",
+                "summary": "Connector Builder adds a Global Scripts tab for JavaScript that runs before and after every request a custom connector makes.",
+                "analysis": "This gives connector builders a reusable mechanism for cross-request logic, reducing duplication and enabling more sophisticated connector behavior.",
+                "impact": "Developers building custom connectors in Connector Builder are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Snowflake and Database Hub connector enhancements",
+                "summary": "The Snowflake connector adds Microsoft Entra ID authentication, and the Database Hub connector can now connect to Databricks Lakebase.",
+                "analysis": "These changes broaden supported authentication and target system connectivity for data-related connectors.",
+                "impact": "Users of the Snowflake connector and Database Hub connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Coupa connector trigger addition",
+                "summary": "The Coupa connector adds a Requisition Comment Added trigger.",
+                "analysis": "This enables automations to react to an additional Coupa event.",
+                "impact": "Users building event-driven automations with the Coupa connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Azure OpenAI connection form uses full endpoint URL",
+                "summary": "The Microsoft Azure OpenAI connection form now takes the full endpoint URL instead of the resource name.",
+                "analysis": "This changes how connection details are entered and may align configuration more closely with Azure endpoint conventions.",
+                "impact": "Users configuring Microsoft Azure OpenAI connections are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded connector search matching",
+                "summary": "Connector search now matches tags and descriptions in addition to names.",
+                "analysis": "This improves discoverability of connectors, especially when users search by capability rather than exact connector name.",
+                "impact": "Users searching for connectors in Integration Service are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds preview support for bring your own subscription for certain projects and keeps United Kingdom Gemini 2.5 Flash requests within the United Kingdom region. The changes focus on cost flexibility and data locality.",
+            "overall_analysis": "The release improves deployment control for AI-powered document processing by offering customer-managed model subscriptions and stronger regional routing behavior.",
+            "changes": [
+              {
+                "name": "Bring your own subscription preview",
+                "summary": "Bring your own subscription (BYOS) is available in preview, letting Unstructured and Complex Documents projects run on your own Gemini or GPT subscriptions, with discounted consumption rates for projects that run entirely on them.",
+                "analysis": "This gives customers more control over model usage and cost structure, especially when they already maintain provider subscriptions.",
+                "impact": "Customers running Unstructured and Complex Documents projects with Gemini or GPT models are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "United Kingdom regional routing for Gemini 2.5 Flash",
+                "summary": "Requests from the United Kingdom region for the Gemini 2.5 Flash model now stay in the United Kingdom.",
+                "analysis": "This strengthens regional processing behavior, which may support residency, latency, or compliance objectives.",
+                "impact": "Customers in the United Kingdom region using the Gemini 2.5 Flash model are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro introduces preview evaluations for BPMN, expands Maestro Case with preview AI-assisted orchestration and case building, enhances Autonomous Agent node tool controls, and extends the v3 CaseApp API. The release deepens orchestration, evaluation, and case management capabilities.",
+            "overall_analysis": "These changes advance Maestro as a more intelligent orchestration platform, combining evaluation tooling, agent-assisted case handling, and more flexible API and tool integration support.",
+            "changes": [
+              {
+                "name": "Maestro BPMN evaluations preview",
+                "summary": "Evaluations for Maestro BPMN are available in preview, letting you group expected outcomes into evaluation sets and score each run with deterministic or LLM-judge evaluators.",
+                "analysis": "This adds a structured way to assess process execution quality and correctness, supporting testing and optimization.",
+                "impact": "Users designing and validating Maestro BPMN workflows are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Case preview enhancements",
+                "summary": "In Maestro Case, the Case Manager Agent (preview) can make orchestration decisions for events that your deterministic rules don't cover, and you can build a case with a coding agent of your choice (preview).",
+                "analysis": "This introduces more adaptive case orchestration and flexible case-building assistance where static rules are insufficient.",
+                "impact": "Users building and managing cases in Maestro Case are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Autonomous Agent node MCP controls and schema refresh",
+                "summary": "Maestro Flow Autonomous Agent nodes gain richer MCP tool controls and a Refresh schema before call toggle that keeps tool schemas up to date.",
+                "analysis": "This improves control and reliability when agent nodes interact with tools whose schemas may change.",
+                "impact": "Users configuring Autonomous Agent nodes in Maestro Flow are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "v3 CaseApp API endpoint additions",
+                "summary": "The v3 CaseApp API adds endpoints to close a case instance and to trigger ad hoc tasks, with an optional taskInput payload.",
+                "analysis": "This expands programmatic case lifecycle and task management capabilities for integrations.",
+                "impact": "Developers and integrators using the v3 CaseApp API are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds AWS Secrets Manager integration through Integration Service, updates Credentials Proxy 2.2.2 with .NET and Delinea support, and enhances several registry pages with grouping and metadata columns. The release improves secrets management and operational usability.",
+            "overall_analysis": "This strengthens enterprise credential-store integration and modernizes related infrastructure, while also making resource and deployment views easier to organize and inspect.",
+            "changes": [
+              {
+                "name": "AWS Secrets Manager credential store integration",
+                "summary": "AWS Secrets Manager can now be integrated as a credential store through an Integration Service connection, which supports IAM role-based authentication.",
+                "analysis": "This expands supported secrets back ends and aligns Orchestrator with cloud-native AWS credential management practices.",
+                "impact": "Administrators configuring credential stores in AWS-backed environments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Orchestrator Credentials Proxy 2.2.2 update",
+                "summary": "Orchestrator Credentials Proxy 2.2.2 updates the framework to .NET 10.0.11 and adds Delinea Secret Server as a read-only credential store. Install the .NET 10 Hosting Bundle before you upgrade.",
+                "analysis": "This update adds another enterprise credential store option and introduces a technical upgrade prerequisite that administrators must plan for.",
+                "impact": "Administrators upgrading Orchestrator Credentials Proxy and using external credential stores are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Registry page grouping and metadata columns",
+                "summary": "The Solution deployments, Processes, and Resources registry pages add a Group by option, and the Resources and Processes pages add Labels and Properties columns.",
+                "analysis": "This improves organization and visibility in registry views, which may help users manage larger environments more efficiently.",
+                "impact": "Users managing solution deployments, processes, and resources in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds nested folders for solution project organization and speeds up local debugging by uploading only changed files. The updates improve project structure and developer iteration time.",
+            "overall_analysis": "These enhancements target everyday productivity by making complex solutions easier to organize and reducing local debug overhead.",
+            "changes": [
+              {
+                "name": "Nested folders in Solution Explorer",
+                "summary": "You can now organize the projects in a solution into nested folders from the Solution Explorer.",
+                "analysis": "This improves manageability for larger or more complex solutions.",
+                "impact": "Studio Web users organizing multi-project solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Incremental file upload for local debug sessions",
+                "summary": "Local debug sessions now upload only the files that changed since the last session, so they start faster.",
+                "analysis": "This reduces debugging startup time and improves the edit-test cycle.",
+                "impact": "Studio Web users running local debug sessions are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds controlled-availability Playwright test automation for eligible Test Cloud tenants, expands Integration Service connector activities, and improves requirement and execution log experiences. The changes strengthen test execution integration and usability.",
+            "overall_analysis": "This release broadens testing ecosystem compatibility and improves both automation connectivity and day-to-day test management workflows.",
+            "changes": [
+              {
+                "name": "Playwright test automation controlled availability",
+                "summary": "Playwright test automation is available in controlled availability to eligible tenants, letting Test Manager run test cases backed by existing Playwright suites (Test Cloud delivery only).",
+                "analysis": "This extends Test Manager to a widely used external testing framework while limiting rollout to eligible tenants.",
+                "impact": "Eligible Test Cloud tenants using or considering Playwright-based test suites are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "UiPath Test Manager connector activity expansion",
+                "summary": "The UiPath Test Manager connector in Integration Service adds seven activities, including Create Test Step, Get Requirements, and Get Test Cases.",
+                "analysis": "This expands integration and automation possibilities for Test Manager operations.",
+                "impact": "Users automating Test Manager workflows through Integration Service are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Requirement details and execution log UI improvements",
+                "summary": "The requirement details page is redesigned, and the Logs tab of a test execution adds a full-message pop-up with a Copy message button, message search, and a Level filter.",
+                "analysis": "These usability enhancements make requirement review and log inspection more effective.",
+                "impact": "Test Manager users reviewing requirements and investigating test execution logs are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Supply Chain & Retail Solutions: Inventory Management": {
+            "summary": "Inventory Management changes foreign-key handling so rows with unresolved references are retained and flagged, with asynchronous validation clearing the flag later when parent rows arrive. This removes the need to ingest parent tables before child tables.",
+            "overall_analysis": "The update makes ingestion workflows more resilient and less order-dependent, reducing operational friction in data loading pipelines.",
+            "changes": [
+              {
+                "name": "Retain and asynchronously validate unresolved foreign-key rows",
+                "summary": "Rows whose only problem is an unresolved foreign-key reference are now kept in the destination table and flagged, and a new async_foreign_key validation clears the flag once the parent row is loaded, so tables no longer have to be ingested parent-before-child.",
+                "analysis": "This reduces failed or blocked loads caused solely by ingestion order and supports more flexible data pipeline sequencing.",
+                "impact": "Teams loading data into Inventory Management destination tables and monitoring data validation are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Supply Chain & Retail Solutions: Commercial Pricing, Inventory Management, and Merchandising": {
+            "summary": "Foreign-key checks now surface in the Data Quality Dashboard through two new panels. The change improves visibility into validation issues and asynchronous foreign-key processing.",
+            "overall_analysis": "This enhances monitoring and diagnostics for data quality by exposing foreign-key validation outcomes directly in the dashboard.",
+            "changes": [
+              {
+                "name": "Foreign-key reporting in Data Quality Dashboard",
+                "summary": "Foreign-key checks now report to the Data Quality Dashboard, with a new FK validation issue rows panel and an Async foreign-key checks panel.",
+                "analysis": "This gives users clearer operational insight into foreign-key data quality problems and async validation activity.",
+                "impact": "Users monitoring data quality in Commercial Pricing, Inventory Management, and Merchandising are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 71333
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-september-2026#02",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-september-2026",
+      "sha256": "bf213c557680dbc215f8e175ab21e9755a77fb845b610a5230147faf8b01e605",
+      "chars": 1321,
+      "payloadChars": 1401,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Microsoft Entra ID directory integration now supports delegated and app-only access and cached user tokens for group membership checks. This extends group membership evaluation to unattended automations and service-to-service scenarios.",
+            "overall_analysis": "This expands identity integration coverage beyond interactive user scenarios, which likely improves access evaluation for automated and service-driven workloads in public sector cloud environments.",
+            "changes": [
+              {
+                "name": "Expanded Microsoft Entra ID directory integration scopes and token handling",
+                "summary": "The Microsoft Entra ID directory integration now supports the Delegated and app-only access scope and the Use cached user tokens for group membership checks option, extending group membership evaluation to unattended automations and service-to-service scenarios.",
+                "analysis": "The change appears intended to support more authentication patterns and make directory-based group evaluation usable in non-interactive contexts such as unattended automations and service-to-service integrations.",
+                "impact": "Organizations using Microsoft Entra ID directory integration in Automation Cloud Public Sector Administration or Test Cloud Public Sector Administration, especially those running unattended automations or service-to-service scenarios.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds OAuth 2.0 access for registered external applications through its API and expands connector capabilities across Snowflake, Database Hub, Coupa, and Microsoft Azure OpenAI. These updates improve authentication options and broaden supported integration scenarios.",
+            "overall_analysis": "The release strengthens Integration Service as an extensibility and connectivity layer by enabling external app API access and enhancing several connectors with new authentication methods, targets, triggers, and configuration behavior.",
+            "changes": [
+              {
+                "name": "OAuth 2.0 support for Integration Service API",
+                "summary": "You can now call the Integration Service API from a registered external application using OAuth 2.0.",
+                "analysis": "This likely enables more secure and standardized API access for external applications, making it easier to integrate Integration Service into enterprise app ecosystems.",
+                "impact": "Developers and organizations integrating registered external applications with the Integration Service API.",
+                "breaking_change": false
+              },
+              {
+                "name": "Snowflake connector adds Microsoft Entra ID authentication",
+                "summary": "The Snowflake connector now supports Microsoft Entra ID authentication.",
+                "analysis": "This likely gives customers an additional enterprise authentication method for Snowflake connections, aligning connector access with identity management practices based on Microsoft Entra ID.",
+                "impact": "Users configuring the Snowflake connector, especially organizations standardizing on Microsoft Entra ID authentication.",
+                "breaking_change": false
+              },
+              {
+                "name": "Database Hub connector supports Databricks Lakebase",
+                "summary": "The Database Hub connector can now connect to Databricks Lakebase.",
+                "analysis": "This broadens the range of supported data platforms and likely makes Database Hub more useful for organizations working with Databricks Lakebase environments.",
+                "impact": "Users of the Database Hub connector who need connectivity to Databricks Lakebase.",
+                "breaking_change": false
+              },
+              {
+                "name": "Coupa connector adds Requisition Comment Added trigger",
+                "summary": "The Coupa connector adds a Requisition Comment Added trigger.",
+                "analysis": "This likely enables new event-driven automation scenarios based on comments being added to requisitions in Coupa.",
+                "impact": "Users building automations or integrations with the Coupa connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Azure OpenAI connection form uses full endpoint URL",
+                "summary": "The Microsoft Azure OpenAI connection form now takes the full endpoint URL instead of the resource name.",
+                "analysis": "This likely changes connection setup to use a more explicit endpoint value, which may support broader or clearer configuration patterns for Azure OpenAI connections.",
+                "impact": "Users configuring Microsoft Azure OpenAI connections in Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager updates the requirement details page, enhances test execution logs with richer inspection and filtering tools, and adds an optional Clipboard data argument to MCP tools for adding and updating test steps. These changes improve usability in both the interface and tooling.",
+            "overall_analysis": "The release focuses on productivity and diagnostics in Test Manager by improving page design, making execution logs easier to inspect, and extending MCP tooling inputs for test step management.",
+            "changes": [
+              {
+                "name": "Requirement details page redesign",
+                "summary": "The requirement details page is redesigned.",
+                "analysis": "The redesign likely aims to improve usability, readability, or workflow efficiency when reviewing and managing requirement details.",
+                "impact": "Test Manager users working with requirement details.",
+                "breaking_change": false
+              },
+              {
+                "name": "Enhanced test execution Logs tab",
+                "summary": "The Logs tab of a test execution now includes a full-message pop-up with a Copy message button, message search, and a Level filter.",
+                "analysis": "These additions likely make troubleshooting and log review faster by improving visibility into full messages and adding search and filtering capabilities.",
+                "impact": "Test Manager users reviewing test execution logs, especially those diagnosing failures or investigating execution behavior.",
+                "breaking_change": false
+              },
+              {
+                "name": "Clipboard data argument for MCP test step tools",
+                "summary": "The Test Manager MCP tools for adding and updating test steps now accept an optional Clipboard data argument.",
+                "analysis": "This likely streamlines test step creation and updates in MCP-based workflows by allowing supplementary clipboard content to be passed into the tools.",
+                "impact": "Users of Test Manager MCP tools for adding and updating test steps.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 25800
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-september-2026#03",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-september-2026",
+      "sha256": "1b343ec17c920035be848bb3b47b54adfc3c6550ceb36dc22b0b0744b6df8a4b",
+      "chars": 1708,
+      "payloadChars": 1793,
+      "products": [
+        {
+          "name": "Automation Cloud Dedicated Admin / Test Cloud Dedicated Admin",
+          "releaseDate": "September 11, 2026"
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": "September 11, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "September 11, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "September 11, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Dedicated Admin / Test Cloud Dedicated Admin": {
+            "summary": "The admin experience adds a Check access API enhancement that returns effective access across the organization, including tenant-level assignments from all active tenants. This expands visibility into permissions for users, groups, and external applications.",
+            "overall_analysis": "This update appears aimed at improving organization-wide access auditing and permission verification in dedicated cloud environments. It likely helps administrators investigate and validate access more efficiently across tenants from a single API capability.",
+            "changes": [
+              {
+                "name": "Check access API returns organization-wide effective access",
+                "summary": "Organization Administrators can now use the Check access API to retrieve effective access for a user, group, or external application across the organization, including tenant-level assignments from every active tenant.",
+                "analysis": "The likely purpose is to centralize and simplify access reviews by exposing effective permissions across the full organization scope, rather than requiring separate tenant-by-tenant checks.",
+                "impact": "Organization Administrators managing users, groups, external applications, and tenant-level access assignments across active tenants are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds broader package source support, queue monitoring enhancements, and job execution and recording controls. It also improves job troubleshooting by exposing stop reasons in the Job state history timeline.",
+            "overall_analysis": "These changes collectively suggest a focus on operational flexibility, observability, and execution control. They likely benefit administrators and operators who manage package sources, monitor queue health, and troubleshoot or govern job execution behavior.",
+            "changes": [
+              {
+                "name": "Support for multiple package sources per category",
+                "summary": "Orchestrator now supports multiple NuGet feeds, npm registries, and PyPI indexes instead of a single feed per category.",
+                "analysis": "This likely increases deployment flexibility for teams that consume packages from multiple internal or external repositories across different package ecosystems.",
+                "impact": "Administrators and development or operations teams configuring package sources for NuGet, npm, and PyPI in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Queue monitoring and Start job dialog improvements",
+                "summary": "The per-queue monitoring dashboard adds a Queue item failures by reason widget, and the Start job dialog lets you pin the Execution settings panel open.",
+                "analysis": "The new monitoring widget likely helps identify recurring failure patterns faster, while the dialog change improves usability for users who frequently adjust execution settings.",
+                "impact": "Users monitoring queue performance and users manually starting jobs in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maximum job recording duration and stop-reason visibility",
+                "summary": "You can set the maximum job recording duration, up to 15 minutes on the Enterprise plan (Unified Pricing) or the Advanced plan (Flex), and the Job state history timeline now shows why a job was stopped.",
+                "analysis": "This likely gives organizations more control over recording resource usage and auditing while improving troubleshooting by exposing explicit stop reasons in job history.",
+                "impact": "Administrators configuring job recording and operators reviewing stopped jobs are affected, especially on Enterprise plan (Unified Pricing) and Advanced plan (Flex).",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web introduces read-only access for solutions and adds notifications when solutions are shared. These updates improve collaboration while limiting unintended edits.",
+            "overall_analysis": "The broader significance is improved governance and collaboration around solution sharing. Read-only access likely supports review workflows, while notifications help recipients discover shared content promptly.",
+            "changes": [
+              {
+                "name": "Read-only solution access and sharing",
+                "summary": "You can now open a solution in read-only mode and share a solution with read-only access without granting edit permissions.",
+                "analysis": "This likely enables safer collaboration scenarios such as review, approval, or stakeholder visibility without risking unwanted modifications.",
+                "impact": "Solution owners, collaborators, and reviewers using Studio Web are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Notifications for shared solutions",
+                "summary": "You now receive a notification when someone shares a solution with you.",
+                "analysis": "This likely improves discoverability and responsiveness in collaboration workflows by making sharing events more visible.",
+                "impact": "Users who receive shared solutions in Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager improves manual execution context and export behavior, and it removes the iText PDF library dependency with resulting limitations for PDF attachment handling in the cloud. The PDF-related change introduces reduced functionality and is explicitly a breaking change.",
+            "overall_analysis": "These updates combine usability improvements with a significant dependency-driven change in document handling. The breaking change likely affects teams that relied on PDF image extraction or richer PDF attachment reading in cloud-based testing workflows.",
+            "changes": [
+              {
+                "name": "Manual execution assistant and asynchronous Excel export enhancements",
+                "summary": "The manual execution assistant now shows the test case description above Precondition, and Excel export of requirements and test cases is now asynchronous with one column per custom field.",
+                "analysis": "These changes likely improve test execution clarity and make large or structured exports more usable and less disruptive by processing them asynchronously and preserving custom-field separation.",
+                "impact": "Manual testers and users exporting requirements and test cases from Test Manager are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Removal of iText PDF library dependency",
+                "summary": "The iText PDF library dependency was removed: reading PDF attachments in the cloud is now text-only, and image extraction from PDF attachments is no longer supported.",
+                "analysis": "The likely purpose is dependency removal, but the practical impact is reduced PDF processing capability in cloud scenarios. Teams that depended on image extraction or richer PDF attachment reading may need to adjust their workflows.",
+                "impact": "Cloud users of Test Manager who read PDF attachments or rely on image extraction from PDF attachments are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 24484
+    }
+  ],
+  "warnings": []
+}
