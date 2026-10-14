@@ -1,0 +1,35 @@
+# Put this at .github/workflows/schedule-debug.yml on main.
+# Purpose: prove the schedule trigger fires, and show a log line every 30 seconds.
+# Delete this file when you're done debugging.
+
+name: Schedule Debug
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: schedule-debug
+  cancel-in-progress: true
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Trigger info
+        run: |
+          echo "event:   ${{ github.event_name }}"
+          echo "ref:     ${{ github.ref }}"
+          echo "started: $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+          echo "started: $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S') IST"
+      - name: Heartbeat every 30 seconds
+        run: |
+          for i in $(seq 1 9); do
+            echo "[$(TZ=Asia/Kolkata date +%H:%M:%S) IST] heartbeat $i/9"
+            sleep 30
+          done
