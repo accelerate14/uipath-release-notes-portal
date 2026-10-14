@@ -13,7 +13,10 @@ name: Release Radar
 
 on:
   schedule:
-    - cron: "0 7 * * 1" # Monday 07:00 UTC = 12:30 IST (GitHub may start scheduled runs a few minutes late)
+    # DEBUG: every 5 minutes (GitHub's minimum interval). Switch back to "0 7 * * 1" when done.
+    - cron: "*/5 * * * *"
+    # PRODUCTION (Monday 07:00 UTC = 12:30 IST):
+    # - cron: "0 7 * * 1"
   workflow_dispatch:
     inputs:
       month:
@@ -76,11 +79,28 @@ jobs:
           git add public/data data-state
           if git diff --cached --quiet; then
             echo "No data changes."
-          else
-            git commit -m "data: release radar analysis ($(date -u +%Y-%m-%d))"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            exit 0
           fi
+          git commit -m "data: release radar analysis ($(date -u +%Y-%m-%d))"
+
+          # Retry loop: fetch latest, replay our commit on top, push.
+          # In a rebase, "-X theirs" means OUR commit's changes win on conflicts
+          # (these files are generated, so the fresh analysis is the source of truth).
+          for attempt in 1 2 3; do
+            git fetch origin "${GITHUB_REF_NAME}"
+            if git rebase -X theirs "origin/${GITHUB_REF_NAME}"; then
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                echo "Pushed on attempt $attempt"
+                exit 0
+              fi
+            else
+              git rebase --abort || true
+              echo "Rebase failed on attempt $attempt"
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Could not push after 3 attempts"
+          exit 1
 
   deploy:
     needs: analyze
