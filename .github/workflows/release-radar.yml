@@ -14,7 +14,7 @@ name: Release Radar
 on:
   schedule:
      # PRODUCTION (Monday 07:00 UTC = 12:30 IST):
-     - cron: "0 0 * * *"
+     - cron: "30 1 * * *"
   workflow_dispatch:
     inputs:
       month:
