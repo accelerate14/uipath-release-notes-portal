@@ -1,0 +1,2430 @@
+{
+  "schemaVersion": "1.2",
+  "id": "2026-10",
+  "label": "October 2026",
+  "title": "October 2026",
+  "cacheKey": "v1",
+  "generatedAt": "2026-10-17T05:46:55.816Z",
+  "source": {
+    "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026",
+    "markdownUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026.md",
+    "sha256": "5b4c9b6d909196f4d09e54590eb25ebc488fa482e851f5bd0813a9fde788be0b",
+    "chars": 22678
+  },
+  "status": "complete",
+  "sections": [
+    {
+      "id": "automation-cloud-and-test-cloud--early-october-2026",
+      "environment": "Automation Cloud and Test Cloud",
+      "timeframe": "Early October 2026",
+      "publishingDate": "October 15, 2026",
+      "range": "October 1, 2026 – October 15, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now bring your own (BYO) guardrail subscription into the AI Trust Layer, in preview, so agent guardrails are evaluated by your own safety vendor under your own region and vendor agreement. Azure AI Language, Azure Content Safety, and Noma are supported during preview.\n* Organization Administrators can configure an AI Trust Layer governance policy that lets users automatically acquire AI and Agentic usage top-ups instead of requesting them manually. This feature is being rolled out gradually.\n* Private (Relay) connections for the Snowflake connector and for SQL Server in the Database Hub connector now run through the Relay on-prem executor. This requires Relay client 26.4.4 or later, which also adds commands to restart multiple Relay groups at once and more detail in `relay describe`.\n* Model Hub now shows the status of BYO configurations and lets you enable disabled configurations.\n* Allowlisting the Cloudflare `104.16.0.0/13` outbound IP range might now be required for any UiPath service, not only Document Understanding, if your network equipment doesn't support DNS-based allowlisting.\n* The **gpt-4o-2024-05-13** and **Claude Sonnet 4** models were removed from the UiPath platform and replaced by **gpt-5.1-2025-11-13** and **Claude Sonnet 4.6**. BYO configurations that still reference the removed models are invalidated and fall back to UiPath-managed models.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Administration and Test Cloud Administration",
+            "summary": "Administration adds preview support for bringing your own guardrail subscription into the AI Trust Layer, governance automation for AI and Agentic top-ups, Relay-based private connector routing enhancements, Model Hub visibility improvements, expanded Cloudflare allowlisting guidance, and model replacements on the UiPath platform.",
+            "overall_analysis": "These changes expand enterprise control over AI safety, licensing, private connectivity, and model management, while also introducing operational requirements such as network allowlisting updates and model migration effects for BYO configurations.",
+            "changes": [
+              {
+                "name": "BYO guardrail subscription for AI Trust Layer",
+                "summary": "You can now bring your own guardrail subscription into the AI Trust Layer, in preview, so agent guardrails are evaluated by your own safety vendor under your own region and vendor agreement. Azure AI Language, Azure Content Safety, and Noma are supported during preview.",
+                "analysis": "This likely gives organizations more control over compliance, data residency, and commercial relationships for AI safety checks.",
+                "impact": "Organizations using AI Trust Layer and agents, especially those with region, compliance, or vendor requirements, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic acquisition of AI and Agentic usage top-ups",
+                "summary": "Organization Administrators can configure an AI Trust Layer governance policy that lets users automatically acquire AI and Agentic usage top-ups instead of requesting them manually. This feature is being rolled out gradually.",
+                "analysis": "This likely reduces administrative friction and prevents delays when users need additional AI or Agentic capacity.",
+                "impact": "Organization Administrators and users consuming AI or Agentic usage top-ups are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Relay-based private connections for Snowflake and SQL Server",
+                "summary": "Private (Relay) connections for the Snowflake connector and for SQL Server in the Database Hub connector now run through the Relay on-prem executor. This requires Relay client 26.4.4 or later, which also adds commands to restart multiple Relay groups at once and more detail in `relay describe`.",
+                "analysis": "This likely standardizes private connectivity through the Relay executor and improves Relay administration, but it also introduces a minimum client version requirement.",
+                "impact": "Teams using private Relay connections for Snowflake or SQL Server and administrators managing Relay clients are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Model Hub BYO configuration status and enablement",
+                "summary": "Model Hub now shows the status of BYO configurations and lets you enable disabled configurations.",
+                "analysis": "This likely improves visibility and operational control for organizations managing bring-your-own model configurations.",
+                "impact": "Administrators and users managing BYO model configurations in Model Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded Cloudflare outbound IP allowlisting requirement",
+                "summary": "Allowlisting the Cloudflare `104.16.0.0/13` outbound IP range might now be required for any UiPath service, not only Document Understanding, if your network equipment doesn't support DNS-based allowlisting.",
+                "analysis": "This likely reflects broader infrastructure routing through Cloudflare and may require network configuration updates to maintain service access.",
+                "impact": "Network and security administrators responsible for outbound allowlisting for UiPath services are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "UiPath-managed model replacements",
+                "summary": "The **gpt-4o-2024-05-13** and **Claude Sonnet 4** models were removed from the UiPath platform and replaced by **gpt-5.1-2025-11-13** and **Claude Sonnet 4.6**. BYO configurations that still reference the removed models are invalidated and fall back to UiPath-managed models.",
+                "analysis": "This updates the platform model catalog but also forces a transition for configurations referencing removed models, which may affect expected model behavior and governance.",
+                "impact": "Users of the UiPath platform models and administrators maintaining BYO configurations are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now freeze the leading columns of a table in the compact view of the Validation Station, so they stay in view while the rest of the table scrolls.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Action Center",
+            "summary": "Action Center adds the ability to freeze leading columns in Validation Station compact-view tables.",
+            "overall_analysis": "This is a usability improvement aimed at making wide table-based validation work easier and more efficient.",
+            "changes": [
+              {
+                "name": "Freeze leading columns in Validation Station compact view",
+                "summary": "You can now freeze the leading columns of a table in the compact view of the Validation Station, so they stay in view while the rest of the table scrolls.",
+                "analysis": "This likely improves navigation and reduces user error when reviewing wide tables with many columns.",
+                "impact": "Users working in Validation Station tables in compact view are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Agent review, in preview, replaces the Agent score. Autopilot reviews your agent, grades it from A to F based on the issues it finds, and can fix the issues in the same conversation.\n* Agents can now use guardrails from your organization's own safety vendor subscription, in preview, alongside the UiPath-managed guardrails.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Agents",
+            "summary": "Agents introduces preview Agent review to replace Agent score and adds preview support for using guardrails from an organization's own safety vendor subscription.",
+            "overall_analysis": "The product is shifting from simple scoring to review-and-remediation workflows while also increasing enterprise control over AI safety enforcement.",
+            "changes": [
+              {
+                "name": "Agent review replaces Agent score",
+                "summary": "Agent review, in preview, replaces the Agent score. Autopilot reviews your agent, grades it from A to F based on the issues it finds, and can fix the issues in the same conversation.",
+                "analysis": "This likely provides more actionable agent quality assessment than a single score by combining evaluation with guided remediation.",
+                "impact": "Users building or reviewing agents with Autopilot are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "BYO guardrails for agents",
+                "summary": "Agents can now use guardrails from your organization's own safety vendor subscription, in preview, alongside the UiPath-managed guardrails.",
+                "analysis": "This likely helps organizations apply their preferred safety tooling and align agent behavior with internal compliance requirements.",
+                "impact": "Organizations deploying agents and managing AI safety policies are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Apps",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now publish and deploy coded apps directly from Orchestrator. The **App versions** grid in Orchestrator now lists only apps built with the VB app designer.\n* Action tasks built from RPA apps can now save user data, the same way VB apps already can.\n* Apps now compiles and runs VB expressions on .NET 10 instead of .NET 6. Publishing a new version of an app moves it to .NET 10, and expressions that convert text with two-digit years to dates return different results.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Apps",
+            "summary": "Apps adds Orchestrator-based publishing and deployment for coded apps, enables data saving for action tasks built from RPA apps, and moves VB expression compilation and execution from .NET 6 to .NET 10.",
+            "overall_analysis": "These updates improve deployment workflows and app capabilities, but the .NET runtime upgrade can change expression behavior and requires attention when republishing apps.",
+            "changes": [
+              {
+                "name": "Publish and deploy coded apps from Orchestrator",
+                "summary": "You can now publish and deploy coded apps directly from Orchestrator. The **App versions** grid in Orchestrator now lists only apps built with the VB app designer.",
+                "analysis": "This likely streamlines lifecycle management for coded apps while clarifying the scope of the App versions grid.",
+                "impact": "App developers and administrators using Orchestrator to manage app deployments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Save user data in action tasks built from RPA apps",
+                "summary": "Action tasks built from RPA apps can now save user data, the same way VB apps already can.",
+                "analysis": "This likely improves parity between RPA apps and VB apps for task-based user interactions.",
+                "impact": "Users building or completing action tasks from RPA apps are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "VB expressions now run on .NET 10",
+                "summary": "Apps now compiles and runs VB expressions on .NET 10 instead of .NET 6. Publishing a new version of an app moves it to .NET 10, and expressions that convert text with two-digit years to dates return different results.",
+                "analysis": "This likely modernizes the runtime and aligns with newer platform support, but it can change expression results for some date conversions after republishing.",
+                "impact": "App developers maintaining VB expressions, especially date parsing logic, are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Cloud Robots - VM",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Windows 10 and Windows Server 2019 standard machine images are deprecated. You can select them for new pools until January 31, 2027, and must migrate existing pools by April 30, 2027.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Robots - VM",
+            "summary": "Automation Cloud Robots - VM deprecates the Windows 10 and Windows Server 2019 standard machine images with defined dates for new-pool selection and migration of existing pools.",
+            "overall_analysis": "This is a lifecycle management change that requires customers to plan and complete infrastructure migration before the deadlines.",
+            "changes": [
+              {
+                "name": "Deprecation of Windows 10 and Windows Server 2019 standard images",
+                "summary": "The Windows 10 and Windows Server 2019 standard machine images are deprecated. You can select them for new pools until January 31, 2027, and must migrate existing pools by April 30, 2027.",
+                "analysis": "This likely reflects support lifecycle or platform standardization and gives customers a transition window.",
+                "impact": "Administrators managing VM pools that use these standard images are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Admins can now make the **Applications** section of an assessment optional, and the `POST /idea-from-schema` API can create an application that isn't yet in the Application Inventory.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Hub",
+            "summary": "Automation Hub now lets admins make the Applications section of an assessment optional, and the `POST /idea-from-schema` API can create an application not yet present in the Application Inventory.",
+            "overall_analysis": "These changes increase assessment flexibility and reduce dependency on pre-existing inventory records when creating ideas through the API.",
+            "changes": [
+              {
+                "name": "Optional Applications section in assessments",
+                "summary": "Admins can now make the **Applications** section of an assessment optional.",
+                "analysis": "This likely helps tailor assessments to scenarios where application details are unnecessary or unavailable.",
+                "impact": "Automation Hub administrators configuring assessments and users completing them are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "API support for creating applications not yet in inventory",
+                "summary": "The `POST /idea-from-schema` API can create an application that isn't yet in the Application Inventory.",
+                "analysis": "This likely simplifies intake workflows by allowing idea creation before inventory data is fully established.",
+                "impact": "Developers and teams integrating with the Automation Hub API are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Integration Service policies add a **Connectivity** setting that controls whether users create Standard connections, Relay connections, or both, and a **Custom connectors** tab. Custom connectors stay disabled in tenants with existing policies until you enable them on the new tab (breaking change).\n* AI Trust Layer policies add an **Automatic License Top-Up Grant** toggle that grants AI and Agentic usage top-up requests automatically for a configured number of packs.\n* You can enforce your own guardrails organization-wide through an AI Trust Layer policy, in preview.\n* The **Enforce minimum agent score before publishing** policy for Studio Web is no longer enforced, because Agent review has replaced the agent score. The policy will be removed in a future release.",
+          "sourceMentionsBreaking": true,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Ops",
+            "summary": "Automation Ops adds Integration Service policy controls for connectivity and custom connectors, new AI Trust Layer policy options for automatic top-up grants and organization-wide guardrail enforcement, and stops enforcing the Studio Web minimum agent score policy.",
+            "overall_analysis": "The release strengthens centralized governance for integrations and AI usage while reflecting the platform shift from agent scoring to agent review.",
+            "changes": [
+              {
+                "name": "Integration Service connectivity and custom connector policy controls",
+                "summary": "Integration Service policies add a **Connectivity** setting that controls whether users create Standard connections, Relay connections, or both, and a **Custom connectors** tab. Custom connectors stay disabled in tenants with existing policies until you enable them on the new tab (breaking change).",
+                "analysis": "This likely gives administrators finer governance over connection architecture and custom connector use, while changing behavior for tenants with existing policies until they opt in.",
+                "impact": "Automation Ops administrators and tenant users creating Integration Service connections or custom connectors are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Automatic License Top-Up Grant policy",
+                "summary": "AI Trust Layer policies add an **Automatic License Top-Up Grant** toggle that grants AI and Agentic usage top-up requests automatically for a configured number of packs.",
+                "analysis": "This likely reduces manual approvals and helps maintain uninterrupted AI-related usage within policy-defined limits.",
+                "impact": "Administrators configuring AI Trust Layer policies and users requesting top-ups are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Organization-wide BYO guardrail enforcement",
+                "summary": "You can enforce your own guardrails organization-wide through an AI Trust Layer policy, in preview.",
+                "analysis": "This likely centralizes AI safety enforcement and helps standardize compliance across the organization.",
+                "impact": "Organizations using AI Trust Layer policies and custom guardrail subscriptions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Minimum agent score policy no longer enforced",
+                "summary": "The **Enforce minimum agent score before publishing** policy for Studio Web is no longer enforced, because Agent review has replaced the agent score. The policy will be removed in a future release.",
+                "analysis": "This reflects the underlying change in agent quality controls and may require administrators to update governance expectations.",
+                "impact": "Automation Ops administrators governing Studio Web publishing and users subject to agent publishing policies are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The UiPath Document OCR public endpoint improves handwriting recognition accuracy for purchase order numbers, reduces processing latency by 30%, and returns more accurate handwriting confidence scores.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Document Understanding",
+            "summary": "Document Understanding improves the UiPath Document OCR public endpoint with better handwriting recognition for purchase order numbers, 30% lower latency, and more accurate handwriting confidence scores.",
+            "overall_analysis": "This is a quality and performance improvement that can improve extraction reliability and throughput for handwriting-heavy document processing.",
+            "changes": [
+              {
+                "name": "UiPath Document OCR public endpoint improvements",
+                "summary": "The UiPath Document OCR public endpoint improves handwriting recognition accuracy for purchase order numbers, reduces processing latency by 30%, and returns more accurate handwriting confidence scores.",
+                "analysis": "This likely improves both operational efficiency and confidence in OCR results for affected document types.",
+                "impact": "Users and systems relying on UiPath Document OCR, especially for handwritten purchase order numbers, are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.\n* The Snowflake, Snowflake Cortex, and Microsoft Teams connectors add OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.\n* Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.\n* The Agent 2 Agent (A2A) connector adds a **Scope** field for all OAuth 2.0 authentication types.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service adds policy-based governance of connection types and custom connectors, PKCE support for several connectors, Microsoft national cloud targeting for Teams, and a Scope field for the A2A connector's OAuth 2.0 flows.",
+            "overall_analysis": "The release combines stronger administrative control with broader authentication and deployment options for connectors.",
+            "changes": [
+              {
+                "name": "Governance of connection types and custom connectors",
+                "summary": "Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.",
+                "analysis": "This likely helps organizations align connector usage with security and network architecture standards.",
+                "impact": "Integration Service administrators and tenant users creating connections or custom connectors are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PKCE support for Snowflake, Snowflake Cortex, and Microsoft Teams",
+                "summary": "The Snowflake, Snowflake Cortex, and Microsoft Teams connectors add OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This likely simplifies and strengthens authentication for scenarios where storing a client secret is undesirable or impractical.",
+                "impact": "Users configuring these connectors are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Teams national cloud targeting",
+                "summary": "Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.",
+                "analysis": "This likely expands support for sovereign and regulated cloud environments.",
+                "impact": "Organizations connecting to Microsoft Teams in US Government L4, US Government L5, or China environments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Scope field for A2A connector OAuth 2.0 types",
+                "summary": "The Agent 2 Agent (A2A) connector adds a **Scope** field for all OAuth 2.0 authentication types.",
+                "analysis": "This likely gives administrators and developers finer control over requested OAuth permissions.",
+                "impact": "Users configuring OAuth 2.0 authentication for the A2A connector are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Gemini 3.5 Flash extraction model is generally available for a set of customers and remains in preview for all other customers.\n* The UiPath Helix Extractor 1.0 (IXP-Comms) LLM is retired in Singapore, the United Kingdom, Switzerland, and EU GxP, where Generative Extraction now uses UiPath Helix Extractor 2.0 (IXP-Comms). Retirement is in progress in Japan, Canada, and Australia.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "IXP",
+            "summary": "IXP makes Gemini 3.5 Flash generally available for a subset of customers while keeping preview status for others, and retires UiPath Helix Extractor 1.0 in several regions in favor of UiPath Helix Extractor 2.0, with additional regional rollout in progress.",
+            "overall_analysis": "These changes show a staged rollout strategy for extraction models and a region-by-region modernization of the generative extraction stack.",
+            "changes": [
+              {
+                "name": "Gemini 3.5 Flash availability update",
+                "summary": "The Gemini 3.5 Flash extraction model is generally available for a set of customers and remains in preview for all other customers.",
+                "analysis": "This likely indicates progressive rollout based on customer eligibility or readiness.",
+                "impact": "IXP customers using or evaluating the Gemini 3.5 Flash extraction model are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Retirement of UiPath Helix Extractor 1.0 in selected regions",
+                "summary": "The UiPath Helix Extractor 1.0 (IXP-Comms) LLM is retired in Singapore, the United Kingdom, Switzerland, and EU GxP, where Generative Extraction now uses UiPath Helix Extractor 2.0 (IXP-Comms). Retirement is in progress in Japan, Canada, and Australia.",
+                "analysis": "This likely upgrades customers to a newer extraction model, but regional timing means behavior may differ depending on deployment geography.",
+                "impact": "Customers using Generative Extraction in Singapore, the United Kingdom, Switzerland, EU GxP, Japan, Canada, and Australia are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now build a Maestro BPMN process with the coding agent of your choice, in preview, using the `uipath-maestro-bpmn` skill.\n* All canvases now consistently use the names Maestro BPMN, Maestro Case, and Maestro Flow, and Maestro Flow is no longer labeled as a preview feature.\n* Maestro Case adds an endpoint to discover the ad hoc tasks you can trigger on a case instance, runtime stage states such as **Ended case**, **Failed**, and **Terminated**, and validation for case roles in the Case JSON editor.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Maestro",
+            "summary": "Maestro adds preview support for building BPMN processes with coding agents using the `uipath-maestro-bpmn` skill, standardizes product naming across canvases, promotes Maestro Flow beyond preview labeling, and expands Maestro Case runtime and validation capabilities.",
+            "overall_analysis": "The release improves both product consistency and workflow/case design capabilities, with early support for agent-assisted BPMN creation.",
+            "changes": [
+              {
+                "name": "Coding-agent support for Maestro BPMN",
+                "summary": "You can now build a Maestro BPMN process with the coding agent of your choice, in preview, using the `uipath-maestro-bpmn` skill.",
+                "analysis": "This likely speeds up process creation and experimentation by allowing AI-assisted BPMN authoring.",
+                "impact": "Users designing Maestro BPMN processes with coding agents are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consistent Maestro canvas naming and Maestro Flow label update",
+                "summary": "All canvases now consistently use the names Maestro BPMN, Maestro Case, and Maestro Flow, and Maestro Flow is no longer labeled as a preview feature.",
+                "analysis": "This likely reduces naming confusion and signals increased maturity for Maestro Flow.",
+                "impact": "Users navigating Maestro canvases and documentation are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Case endpoint, runtime states, and role validation",
+                "summary": "Maestro Case adds an endpoint to discover the ad hoc tasks you can trigger on a case instance, runtime stage states such as **Ended case**, **Failed**, and **Terminated**, and validation for case roles in the Case JSON editor.",
+                "analysis": "This likely improves case automation, runtime visibility, and configuration correctness.",
+                "impact": "Developers and users working with Maestro Case APIs, runtime monitoring, and case definitions are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Maestro Automate",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Maestro Automate is now available. It is a lightweight runtime for short-running workflows of AI agents and APIs.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Maestro Automate",
+            "summary": "Maestro Automate is now available as a lightweight runtime for short-running workflows of AI agents and APIs.",
+            "overall_analysis": "This introduces a new runtime option focused on lightweight orchestration scenarios involving AI agents and APIs.",
+            "changes": [
+              {
+                "name": "General availability of Maestro Automate",
+                "summary": "Maestro Automate is now available. It is a lightweight runtime for short-running workflows of AI agents and APIs.",
+                "analysis": "This likely targets faster, simpler execution scenarios than heavier workflow runtimes.",
+                "impact": "Teams building short-running workflows involving AI agents and APIs are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. You can switch back to the classic layout at any time.\n* Organizations on eligible plans can request enforced encryption for their Orchestrator tenants, which encrypts sensitive job, log, queue item, and storage bucket data at rest with a key from the key management service (KMS).\n* Deleting a video recording now requires **View** permission on the job or queue instead of **Delete**. Custom roles that have **Delete** but not **View** can no longer delete recordings (breaking change).\n* The asset form is redesigned, and the **Expose value to API** toggle replaces the **Access scope** options.\n* Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.\n* Autopilot Chat was removed from Orchestrator and will return with improved features.",
+          "sourceMentionsBreaking": true,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator adds an opt-in redesigned layout, support for requesting enforced encryption with KMS-backed keys on eligible plans, permission changes for deleting video recordings, a redesigned asset form, improved bulk action behavior, and removes Autopilot Chat for now.",
+            "overall_analysis": "This release combines user experience improvements, stronger data protection options, and notable operational changes including a permissions-related breaking change and temporary feature removal.",
+            "changes": [
+              {
+                "name": "Redesigned opt-in Orchestrator layout",
+                "summary": "A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. You can switch back to the classic layout at any time.",
+                "analysis": "This likely improves navigation efficiency and usability while minimizing adoption risk through opt-in availability and reversibility.",
+                "impact": "Orchestrator users navigating folders and pages are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Enforced encryption for eligible tenants",
+                "summary": "Organizations on eligible plans can request enforced encryption for their Orchestrator tenants, which encrypts sensitive job, log, queue item, and storage bucket data at rest with a key from the key management service (KMS).",
+                "analysis": "This likely strengthens security and compliance for organizations with stricter data protection requirements.",
+                "impact": "Organizations on eligible plans using Orchestrator tenants and managing sensitive data are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Changed permission requirement for deleting video recordings",
+                "summary": "Deleting a video recording now requires **View** permission on the job or queue instead of **Delete**. Custom roles that have **Delete** but not **View** can no longer delete recordings (breaking change).",
+                "analysis": "This changes the authorization model for recording deletion and may require role updates to preserve existing operational workflows.",
+                "impact": "Administrators managing custom roles and users who delete video recordings are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Redesigned asset form and API exposure toggle",
+                "summary": "The asset form is redesigned, and the **Expose value to API** toggle replaces the **Access scope** options.",
+                "analysis": "This likely simplifies asset configuration and clarifies API exposure behavior.",
+                "impact": "Users creating or editing assets in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk actions on eligible rows in mixed selections",
+                "summary": "Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.",
+                "analysis": "This likely improves productivity by allowing partial execution rather than forcing users to refine selections manually.",
+                "impact": "Users performing bulk operations in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Removal of Autopilot Chat from Orchestrator",
+                "summary": "Autopilot Chat was removed from Orchestrator and will return with improved features.",
+                "analysis": "This is a temporary feature withdrawal that may interrupt current usage while signaling a planned improved return.",
+                "impact": "Users who relied on Autopilot Chat inside Orchestrator are affected.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Process Mining",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Process Insights is now generally available.\n* CSV exports now include each duration a second time as raw milliseconds, so you can calculate with exported durations.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Process Mining",
+            "summary": "Process Mining makes Process Insights generally available and adds raw millisecond duration values to CSV exports.",
+            "overall_analysis": "These changes indicate product maturation and improve downstream analysis capabilities for exported process data.",
+            "changes": [
+              {
+                "name": "Process Insights general availability",
+                "summary": "Process Insights is now generally available.",
+                "analysis": "This signals broader production readiness and likely increased confidence for adoption.",
+                "impact": "Organizations evaluating or using Process Insights are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Raw millisecond durations in CSV exports",
+                "summary": "CSV exports now include each duration a second time as raw milliseconds, so you can calculate with exported durations.",
+                "analysis": "This likely makes exported data easier to process accurately in external tools and calculations.",
+                "impact": "Users exporting Process Mining data to CSV for analysis are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now publish a solution package to, and deploy it from, a specific Orchestrator folder's feed instead of only the tenant feed.\n* Solutions now validates an uninstall when the uninstall page opens, before the uninstall starts, so a blocked uninstall no longer leaves a failed entry in the deployment history.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Solutions",
+            "summary": "Solutions adds support for publishing to and deploying from a specific Orchestrator folder feed, and validates uninstall eligibility earlier to avoid failed deployment history entries.",
+            "overall_analysis": "These changes improve deployment targeting and make uninstall behavior more predictable and cleaner from an operational standpoint.",
+            "changes": [
+              {
+                "name": "Folder feed support for solution packages",
+                "summary": "You can now publish a solution package to, and deploy it from, a specific Orchestrator folder's feed instead of only the tenant feed.",
+                "analysis": "This likely enables more granular release management aligned to folder-level environments.",
+                "impact": "Teams publishing and deploying solution packages through Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Early uninstall validation",
+                "summary": "Solutions now validates an uninstall when the uninstall page opens, before the uninstall starts, so a blocked uninstall no longer leaves a failed entry in the deployment history.",
+                "analysis": "This likely improves operational clarity by surfacing blockers earlier and reducing misleading failure records.",
+                "impact": "Users performing solution uninstalls and reviewing deployment history are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now select a Tenant or folder feed when you publish or deploy a solution.\n* Switching local branches no longer discards uncommitted changes, and **Restore** in the publish history panel is disabled while another user is editing the solution.\n* You can paste multiple key-value pairs at once into dictionary properties of API workflow activities.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Studio Web",
+            "summary": "Studio Web adds tenant or folder feed selection for solution publish/deploy, preserves uncommitted changes when switching local branches, disables Restore during concurrent editing, and supports pasting multiple key-value pairs into dictionary properties of API workflow activities.",
+            "overall_analysis": "The release improves collaboration safety, source control ergonomics, and publishing flexibility while making API workflow configuration faster.",
+            "changes": [
+              {
+                "name": "Tenant or folder feed selection for solutions",
+                "summary": "You can now select a Tenant or folder feed when you publish or deploy a solution.",
+                "analysis": "This likely gives users more precise control over release destinations and aligns Studio Web with broader solution deployment options.",
+                "impact": "Studio Web users publishing or deploying solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Safer branch switching and publish history restore behavior",
+                "summary": "Switching local branches no longer discards uncommitted changes, and **Restore** in the publish history panel is disabled while another user is editing the solution.",
+                "analysis": "This likely reduces accidental work loss and helps prevent conflicting restore actions during collaborative editing.",
+                "impact": "Studio Web users working with local branches, publish history, and shared solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk paste into dictionary properties for API workflow activities",
+                "summary": "You can paste multiple key-value pairs at once into dictionary properties of API workflow activities.",
+                "analysis": "This likely speeds up configuration of API activities and reduces repetitive manual entry.",
+                "impact": "Users building API workflows in Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Testing Process Governance is generally available (Test Cloud delivery only). It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.\n* Custom fields of type **Rich Text** are available (Test Cloud delivery only).\n* Desktop automated performance tests now report average, minimum, and maximum duration for each step (Test Cloud delivery only).\n* Test executions and test case logs now carry over the labels of the test sets and test cases you run.\n* The **Override Parameters** panel adds an **In automation** column, and the UiPath Test Manager connector in Integration Service now supports event-driven triggers.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager adds generally available Testing Process Governance, new Rich Text custom fields, more detailed desktop automated performance test metrics, label carryover in executions and logs, and updates to Override Parameters and Integration Service connector triggers. Several enhancements are limited to Test Cloud delivery only.",
+            "overall_analysis": "These changes strengthen governance, reporting fidelity, test metadata continuity, and execution configurability in Test Manager, with several capabilities specifically expanding Test Cloud functionality.",
+            "changes": [
+              {
+                "name": "Testing Process Governance generally available",
+                "summary": "Testing Process Governance is generally available for Test Cloud delivery only. It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.",
+                "analysis": "This likely helps teams formalize oversight and compliance processes around testing by broadening governance coverage and making governance information visible in outputs used for auditing or coordination.",
+                "impact": "Test Cloud users of Test Manager, especially teams with governance, approval, or compliance requirements for testing workflows and reporting.",
+                "breaking_change": false
+              },
+              {
+                "name": "Rich Text custom fields available",
+                "summary": "Custom fields of type Rich Text are available for Test Cloud delivery only.",
+                "analysis": "This likely allows users to capture more expressive formatted content in custom fields, improving documentation quality and flexibility for test-related records.",
+                "impact": "Test Cloud users who define and use custom fields in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded desktop automated performance test duration metrics",
+                "summary": "Desktop automated performance tests now report average, minimum, and maximum duration for each step for Test Cloud delivery only.",
+                "analysis": "This likely improves performance analysis by giving teams more granular timing data per step, making it easier to identify variability and bottlenecks in automated desktop tests.",
+                "impact": "Test Cloud users running desktop automated performance tests and analyzing execution timing.",
+                "breaking_change": false
+              },
+              {
+                "name": "Labels carried over to executions and logs",
+                "summary": "Test executions and test case logs now carry over the labels of the test sets and test cases you run.",
+                "analysis": "This likely improves traceability and organization by preserving categorization metadata across execution results and logs.",
+                "impact": "Users reviewing or managing test executions and test case logs in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Override Parameters and Integration Service connector enhancements",
+                "summary": "The Override Parameters panel adds an In automation column, and the UiPath Test Manager connector in Integration Service now supports event-driven triggers.",
+                "analysis": "These updates likely improve parameter visibility during automation-related configuration and expand integration automation options through trigger-based workflows.",
+                "impact": "Users configuring parameter overrides in Test Manager and teams integrating Test Manager through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 6, 2026",
+            "October 7, 2026",
+            "October 13, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Automation Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 5, 2026",
+            "October 7, 2026",
+            "October 13, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Test Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 6, 2026"
+          ],
+          "notes": [
+            "Action Center release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 7, 2026",
+            "October 8, 2026"
+          ],
+          "notes": [
+            "Agents release notes",
+            "Healing Agent release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "AI Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 6, 2026",
+            "October 8, 2026"
+          ],
+          "notes": [
+            "Apps release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Assistant Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - Serverless",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 12, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Robots release notes - VM"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 8, 2026"
+          ],
+          "notes": [
+            "Automation Hub release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 6, 2026",
+            "October 7, 2026",
+            "October 13, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Automation Ops release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Commercial Pricing",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 12, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Commercial Pricing release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Data Fabric",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Document Understanding release notes (ML packages and public endpoints)"
+          ],
+          "links": []
+        },
+        {
+          "product": "Financial Crime Compliance",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Functions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Healthcare",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 6, 2026",
+            "October 14, 2026",
+            "October 15, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Inventory Management",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 12, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Inventory Management release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "IXP",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 6, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "IXP release notes (Communications Mining)",
+            "IXP release notes (Unstructured and Complex Documents)",
+            "IXP release notes (Communications Mining)IXP release notes (Unstructured and Complex Documents)"
+          ],
+          "links": []
+        },
+        {
+          "product": "Loan Origination",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 7, 2026",
+            "October 13, 2026"
+          ],
+          "notes": [
+            "Maestro release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Maestro Automate",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 12, 2026"
+          ],
+          "notes": [
+            "Maestro Automate release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Merchandising",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 12, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Merchandising release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 5, 2026",
+            "October 7, 2026",
+            "October 12, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 6, 2026",
+            "October 13, 2026",
+            "October 15, 2026"
+          ],
+          "notes": [
+            "Process Mining release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Rebuy & Replenishment",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 13, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Solutions Management release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 9, 2026",
+            "October 14, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 1, 2026",
+            "October 6, 2026",
+            "October 7, 2026",
+            "October 15, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026",
+      "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
+      "timeframe": "Early October 2026",
+      "publishingDate": "October 15, 2026",
+      "range": "October 1, 2026 – October 15, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Robots - VM",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Windows Server 2019 standard machine image is deprecated. You can select it for new pools until January 31, 2027, and must migrate existing pools to Windows Server 2025 by April 30, 2027.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Robots - VM",
+            "summary": "Automation Cloud Robots - VM deprecates the Windows Server 2019 standard machine image and sets deadlines for using it in new and existing pools. The release primarily signals a required migration path to Windows Server 2025.",
+            "overall_analysis": "This change is significant for administrators managing VM pool images because it introduces a time-bound deprecation and a mandatory migration deadline for existing pools.",
+            "changes": [
+              {
+                "name": "Windows Server 2019 standard machine image deprecated",
+                "summary": "The Windows Server 2019 standard machine image is deprecated. It can still be selected for new pools until January 31, 2027, and existing pools must be migrated to Windows Server 2025 by April 30, 2027.",
+                "analysis": "The likely purpose is to phase out an older standard machine image and move customers to Windows Server 2025 on a defined schedule. Administrators need to plan both short-term pool creation choices and migration of current pools before the deadline.",
+                "impact": "Affects administrators who create or manage Automation Cloud Robots - VM pools using the Windows Server 2019 standard machine image.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Integration Service policies add a **Connectivity** setting that controls whether users create Standard connections, Relay connections, or both, and a **Custom connectors** tab. Custom connectors stay disabled in tenants with existing policies until you enable them on the new tab (breaking change).",
+          "sourceMentionsBreaking": true,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Ops",
+            "summary": "Automation Ops adds new Integration Service policy controls for connection types and introduces a Custom connectors tab. The update also changes behavior for tenants with existing policies, where custom connectors remain disabled until explicitly enabled.",
+            "overall_analysis": "This expands governance controls for Integration Service while introducing a policy-related behavior change that administrators must review to avoid unexpected custom connector availability.",
+            "changes": [
+              {
+                "name": "Integration Service policy adds Connectivity setting",
+                "summary": "Integration Service policies now include a Connectivity setting that controls whether users can create Standard connections, Relay connections, or both.",
+                "analysis": "The likely purpose is to give administrators more precise control over what types of connections users can create in a tenant. This can help enforce governance, security, or operational standards.",
+                "impact": "Affects administrators configuring Automation Ops policies and users whose ability to create specific connection types is governed by those policies.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom connectors tab added to policies",
+                "summary": "Integration Service policies now include a Custom connectors tab.",
+                "analysis": "The likely purpose is to provide a dedicated policy area for governing custom connector usage. This makes connector governance more explicit within policy configuration.",
+                "impact": "Affects administrators who manage Integration Service policies and custom connector availability.",
+                "breaking_change": false
+              },
+              {
+                "name": "Existing-policy tenants require explicit enablement for custom connectors",
+                "summary": "In tenants with existing policies, custom connectors remain disabled until administrators enable them on the new Custom connectors tab.",
+                "analysis": "This introduces a behavior change for existing policy setups and may prevent custom connector use until policy settings are updated. Administrators should review current policies to avoid disruptions.",
+                "impact": "Affects tenants with existing Automation Ops policies and users expecting custom connectors to be available.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.\n* The Perplexity connector now uses the Perplexity Agent API. Existing workflows keep working, but some fields and the **List Async Chat** activity are no longer available, so re-test workflows that parse the output of these activities.\n* Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service adds tenant-level governance for connection types and custom connectors, updates the Perplexity connector to use the Perplexity Agent API, and expands Microsoft Teams connection support to national clouds. The changes combine administrative control, connector evolution, and broader cloud support.",
+            "overall_analysis": "The release strengthens administrative governance and expands deployment options, but it also includes a connector update that can affect workflow compatibility and requires validation for some existing automations.",
+            "changes": [
+              {
+                "name": "Tenant connection-type and custom connector governance",
+                "summary": "Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.",
+                "analysis": "The likely purpose is to align tenant connection creation and custom connector usage with organizational governance requirements. This gives administrators centralized control over Integration Service behavior.",
+                "impact": "Affects tenant administrators managing Integration Service access and users whose available connection options are restricted by policy.",
+                "breaking_change": false
+              },
+              {
+                "name": "Perplexity connector uses Perplexity Agent API",
+                "summary": "The Perplexity connector now uses the Perplexity Agent API.",
+                "analysis": "The likely purpose is to align the connector with the current Perplexity API model. This may improve long-term compatibility with the service, but it also accompanies activity and field changes that warrant workflow validation.",
+                "impact": "Affects users and developers who build or maintain workflows using the Perplexity connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Perplexity connector field and activity availability changes",
+                "summary": "Existing workflows continue to work, but some fields and the List Async Chat activity are no longer available. Users should re-test workflows that parse the output of these activities.",
+                "analysis": "This indicates an API-driven connector change that preserves basic workflow operation while altering available outputs and activities. Workflows depending on removed fields or the List Async Chat activity may need updates after re-testing.",
+                "impact": "Affects existing workflows using removed fields or the List Async Chat activity, especially workflows that parse activity output.",
+                "breaking_change": true
+              },
+              {
+                "name": "Microsoft Teams national cloud support",
+                "summary": "Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.",
+                "analysis": "The likely purpose is to support tenants operating in regulated or region-specific Microsoft cloud environments. This broadens deployment compatibility for organizations using national cloud instances.",
+                "impact": "Affects users and organizations that need Microsoft Teams connections in US Government L4, US Government L5, or China environments.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.\n* Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator adds support for environment variables during RPA process deployment and editing, including references to secret-type assets, and updates webhook behavior for bulk queue uploads. The release improves deployment configuration flexibility while changing how some event consumers may observe queue item additions.",
+            "overall_analysis": "These changes enhance process configuration capabilities and clarify event behavior for queue uploads. Teams integrating with webhooks should review event-handling assumptions, while process administrators can take advantage of more configurable deployments if they meet the robot version requirement.",
+            "changes": [
+              {
+                "name": "Environment variables for process deployment and editing",
+                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
+                "analysis": "The likely purpose is to make process deployment and maintenance more flexible by allowing environment-specific configuration, including secure references to secret-type assets. The robot version requirement means adoption depends on running Robot 25.10 or later.",
+                "impact": "Affects administrators and users who deploy or edit RPA processes, especially those managing environment-specific settings and secret references.",
+                "breaking_change": false
+              },
+              {
+                "name": "Multiple webhook events for bulk queue uploads",
+                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
+                "analysis": "The likely purpose is to reflect bulk upload processing in smaller event batches rather than a single event. Integrations that consume these webhooks may need to handle multiple events for one bulk operation.",
+                "impact": "Affects systems and developers consuming Orchestrator `queueItem.added` webhook events for bulk queue item uploads.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager adds an In automation column to the Override Parameters panel to show which overridden parameters are actually used by the linked automation. The enhancement improves visibility into parameter usage during test configuration.",
+            "overall_analysis": "This is a usability improvement that helps users understand the relationship between overridden parameters and linked automation behavior, potentially reducing confusion during test setup and review.",
+            "changes": [
+              {
+                "name": "In automation column for overridden parameters",
+                "summary": "The Override Parameters panel now includes an In automation column that shows which overridden parameters the linked automation actually uses.",
+                "analysis": "The likely purpose is to make parameter overrides easier to validate by showing whether each override is relevant to the linked automation. This can help users avoid unnecessary or ineffective overrides.",
+                "impact": "Affects Test Manager users who configure or review overridden parameters for linked automations.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 12, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Robots release notes - VM"
+          ],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 15, 2026"
+          ],
+          "notes": [
+            "Automation Ops release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 6, 2026",
+            "October 8, 2026",
+            "October 15, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 12, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 2, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026",
+      "environment": "Automation Cloud Dedicated and Test Cloud Dedicated",
+      "timeframe": "Early October 2026",
+      "publishingDate": "October 15, 2026",
+      "range": "October 9, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": "October 9, 2026",
+          "releaseDates": [
+            "October 9, 2026"
+          ],
+          "source": "* The Automation Registry is now available, with a cross-folder view of solution deployments, processes, and resources across all automation types.\n* You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.\n* Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.\n* Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator introduces the Automation Registry, adds environment variable support when deploying or editing RPA processes, changes webhook behavior for bulk queue uploads, and adds distinct icons for Maestro process and resource types.",
+            "overall_analysis": "These updates expand visibility across automations, improve deployment configuration for RPA processes, and refine how Orchestrator represents and reports operational events and Maestro assets.",
+            "changes": [
+              {
+                "name": "Automation Registry availability",
+                "summary": "The Automation Registry is now available, providing a cross-folder view of solution deployments, processes, and resources across all automation types.",
+                "analysis": "This likely helps users centrally inspect automation assets across folders instead of checking each folder separately, improving visibility and governance.",
+                "impact": "Administrators and users managing solution deployments, processes, and resources across multiple folders and automation types.",
+                "breaking_change": false
+              },
+              {
+                "name": "Environment variables for RPA process deployment and editing",
+                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
+                "analysis": "This likely makes RPA process configuration more flexible and secure by allowing environment-specific settings and secret references during deployment and updates.",
+                "impact": "Users deploying or editing RPA processes; environments using Robot 25.10 or later; teams managing secrets through assets.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk queue upload webhook behavior update",
+                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
+                "analysis": "This changes how downstream consumers may receive notifications for bulk uploads, which may improve event handling scalability but requires attention from integrations that assume a single event per bulk upload.",
+                "impact": "Integrations, webhook consumers, and developers processing `queueItem.added` events for bulk queue item uploads.",
+                "breaking_change": false
+              },
+              {
+                "name": "Distinct icons for Maestro process and resource types",
+                "summary": "Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
+                "analysis": "This likely improves visual differentiation and usability when working with different Maestro artifact types.",
+                "impact": "Users viewing or managing Maestro BPMN, Maestro Case, and Maestro Flow processes and resources in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "October 9, 2026",
+          "releaseDates": [
+            "October 9, 2026"
+          ],
+          "source": "* Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.\n* API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Studio Web",
+            "summary": "Studio Web adds Autopilot as a coding agent in public preview and changes API workflow licensing to a flat fee per workflow execution with Integration Service usage no longer metered separately inside those workflows.",
+            "overall_analysis": "The release expands AI-assisted development capabilities in Studio Web while simplifying the commercial model for API workflows.",
+            "changes": [
+              {
+                "name": "Autopilot coding agent in public preview",
+                "summary": "Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.",
+                "analysis": "This likely accelerates development and review tasks by adding AI assistance across several Studio Web project types, though availability is still limited by its public preview status.",
+                "impact": "Developers and makers using Studio Web for API workflows, RPA workflows, coded apps, and Functions.",
+                "breaking_change": false
+              },
+              {
+                "name": "API workflow licensing model update",
+                "summary": "API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
+                "analysis": "This likely makes API workflow cost calculation more predictable and may reduce billing complexity for workflows that use Integration Service within the execution path.",
+                "impact": "Customers running API workflows in Studio Web, especially those using Integration Service within those workflows.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "October 9, 2026",
+          "releaseDates": [
+            "October 9, 2026"
+          ],
+          "source": "* The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager enhances the Override Parameters panel by showing which overridden parameters are actually used by the linked automation.",
+            "overall_analysis": "This update improves parameter visibility between tests and linked automations, helping users better understand relevance and usage of overrides.",
+            "changes": [
+              {
+                "name": "In automation column for overridden parameters",
+                "summary": "The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
+                "analysis": "This likely helps users identify effective versus unused parameter overrides, reducing confusion and improving test configuration accuracy.",
+                "impact": "Test Manager users configuring override parameters for linked automations.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 9, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Automation Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/automation-cloud/automation-cloud/latest/release-notes/dedicated-october-2026#october-9-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 9, 2026"
+          ],
+          "notes": [
+            "Test Cloud Dedicated platform release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Cloud Dedicated platform release notes",
+              "url": "https://docs.uipath.com/test-cloud/automation-cloud/latest/release-notes/dedicated-october-2026#october-9-2026"
+            }
+          ]
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Suite Robots",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Autopilot",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Healing Agent",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 9, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": [
+            {
+              "label": "Orchestrator release notes",
+              "url": "https://docs.uipath.com/orchestrator/automation-cloud/latest/release-notes/dedicated-october-2026#october-9-2026"
+            }
+          ]
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 9, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": [
+            {
+              "label": "Studio Web release notes",
+              "url": "https://docs.uipath.com/studio-web/automation-cloud/latest/release-notes/dedicated-october-2026#october-9-2026"
+            }
+          ]
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 9, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": [
+            {
+              "label": "Test Manager release notes",
+              "url": "https://docs.uipath.com/test-manager/automation-cloud/latest/release-notes/dedicated-october-2026#october-8-2026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "sections": 3,
+    "products": 25,
+    "analysedProducts": 25,
+    "changes": 66,
+    "breakingChanges": 8,
+    "chunks": {
+      "total": 4,
+      "ok": 4,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "chunks": [
+    {
+      "id": "automation-cloud-and-test-cloud--early-october-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--early-october-2026",
+      "sha256": "a1166a4e941e9c20e78ca3d390eaa20f911382e8d09c9b6c22df5824a9d74580",
+      "chars": 7588,
+      "payloadChars": 7743,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Apps",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Cloud Robots - VM",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro Automate",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Process Mining",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration adds preview support for bringing your own guardrail subscription into the AI Trust Layer, governance automation for AI and Agentic top-ups, Relay-based private connector routing enhancements, Model Hub visibility improvements, expanded Cloudflare allowlisting guidance, and model replacements on the UiPath platform.",
+            "overall_analysis": "These changes expand enterprise control over AI safety, licensing, private connectivity, and model management, while also introducing operational requirements such as network allowlisting updates and model migration effects for BYO configurations.",
+            "changes": [
+              {
+                "name": "BYO guardrail subscription for AI Trust Layer",
+                "summary": "You can now bring your own guardrail subscription into the AI Trust Layer, in preview, so agent guardrails are evaluated by your own safety vendor under your own region and vendor agreement. Azure AI Language, Azure Content Safety, and Noma are supported during preview.",
+                "analysis": "This likely gives organizations more control over compliance, data residency, and commercial relationships for AI safety checks.",
+                "impact": "Organizations using AI Trust Layer and agents, especially those with region, compliance, or vendor requirements, are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Automatic acquisition of AI and Agentic usage top-ups",
+                "summary": "Organization Administrators can configure an AI Trust Layer governance policy that lets users automatically acquire AI and Agentic usage top-ups instead of requesting them manually. This feature is being rolled out gradually.",
+                "analysis": "This likely reduces administrative friction and prevents delays when users need additional AI or Agentic capacity.",
+                "impact": "Organization Administrators and users consuming AI or Agentic usage top-ups are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Relay-based private connections for Snowflake and SQL Server",
+                "summary": "Private (Relay) connections for the Snowflake connector and for SQL Server in the Database Hub connector now run through the Relay on-prem executor. This requires Relay client 26.4.4 or later, which also adds commands to restart multiple Relay groups at once and more detail in `relay describe`.",
+                "analysis": "This likely standardizes private connectivity through the Relay executor and improves Relay administration, but it also introduces a minimum client version requirement.",
+                "impact": "Teams using private Relay connections for Snowflake or SQL Server and administrators managing Relay clients are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Model Hub BYO configuration status and enablement",
+                "summary": "Model Hub now shows the status of BYO configurations and lets you enable disabled configurations.",
+                "analysis": "This likely improves visibility and operational control for organizations managing bring-your-own model configurations.",
+                "impact": "Administrators and users managing BYO model configurations in Model Hub are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded Cloudflare outbound IP allowlisting requirement",
+                "summary": "Allowlisting the Cloudflare `104.16.0.0/13` outbound IP range might now be required for any UiPath service, not only Document Understanding, if your network equipment doesn't support DNS-based allowlisting.",
+                "analysis": "This likely reflects broader infrastructure routing through Cloudflare and may require network configuration updates to maintain service access.",
+                "impact": "Network and security administrators responsible for outbound allowlisting for UiPath services are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "UiPath-managed model replacements",
+                "summary": "The **gpt-4o-2024-05-13** and **Claude Sonnet 4** models were removed from the UiPath platform and replaced by **gpt-5.1-2025-11-13** and **Claude Sonnet 4.6**. BYO configurations that still reference the removed models are invalidated and fall back to UiPath-managed models.",
+                "analysis": "This updates the platform model catalog but also forces a transition for configurations referencing removed models, which may affect expected model behavior and governance.",
+                "impact": "Users of the UiPath platform models and administrators maintaining BYO configurations are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center adds the ability to freeze leading columns in Validation Station compact-view tables.",
+            "overall_analysis": "This is a usability improvement aimed at making wide table-based validation work easier and more efficient.",
+            "changes": [
+              {
+                "name": "Freeze leading columns in Validation Station compact view",
+                "summary": "You can now freeze the leading columns of a table in the compact view of the Validation Station, so they stay in view while the rest of the table scrolls.",
+                "analysis": "This likely improves navigation and reduces user error when reviewing wide tables with many columns.",
+                "impact": "Users working in Validation Station tables in compact view are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents introduces preview Agent review to replace Agent score and adds preview support for using guardrails from an organization's own safety vendor subscription.",
+            "overall_analysis": "The product is shifting from simple scoring to review-and-remediation workflows while also increasing enterprise control over AI safety enforcement.",
+            "changes": [
+              {
+                "name": "Agent review replaces Agent score",
+                "summary": "Agent review, in preview, replaces the Agent score. Autopilot reviews your agent, grades it from A to F based on the issues it finds, and can fix the issues in the same conversation.",
+                "analysis": "This likely provides more actionable agent quality assessment than a single score by combining evaluation with guided remediation.",
+                "impact": "Users building or reviewing agents with Autopilot are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "BYO guardrails for agents",
+                "summary": "Agents can now use guardrails from your organization's own safety vendor subscription, in preview, alongside the UiPath-managed guardrails.",
+                "analysis": "This likely helps organizations apply their preferred safety tooling and align agent behavior with internal compliance requirements.",
+                "impact": "Organizations deploying agents and managing AI safety policies are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Apps": {
+            "summary": "Apps adds Orchestrator-based publishing and deployment for coded apps, enables data saving for action tasks built from RPA apps, and moves VB expression compilation and execution from .NET 6 to .NET 10.",
+            "overall_analysis": "These updates improve deployment workflows and app capabilities, but the .NET runtime upgrade can change expression behavior and requires attention when republishing apps.",
+            "changes": [
+              {
+                "name": "Publish and deploy coded apps from Orchestrator",
+                "summary": "You can now publish and deploy coded apps directly from Orchestrator. The **App versions** grid in Orchestrator now lists only apps built with the VB app designer.",
+                "analysis": "This likely streamlines lifecycle management for coded apps while clarifying the scope of the App versions grid.",
+                "impact": "App developers and administrators using Orchestrator to manage app deployments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Save user data in action tasks built from RPA apps",
+                "summary": "Action tasks built from RPA apps can now save user data, the same way VB apps already can.",
+                "analysis": "This likely improves parity between RPA apps and VB apps for task-based user interactions.",
+                "impact": "Users building or completing action tasks from RPA apps are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "VB expressions now run on .NET 10",
+                "summary": "Apps now compiles and runs VB expressions on .NET 10 instead of .NET 6. Publishing a new version of an app moves it to .NET 10, and expressions that convert text with two-digit years to dates return different results.",
+                "analysis": "This likely modernizes the runtime and aligns with newer platform support, but it can change expression results for some date conversions after republishing.",
+                "impact": "App developers maintaining VB expressions, especially date parsing logic, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Cloud Robots - VM": {
+            "summary": "Automation Cloud Robots - VM deprecates the Windows 10 and Windows Server 2019 standard machine images with defined dates for new-pool selection and migration of existing pools.",
+            "overall_analysis": "This is a lifecycle management change that requires customers to plan and complete infrastructure migration before the deadlines.",
+            "changes": [
+              {
+                "name": "Deprecation of Windows 10 and Windows Server 2019 standard images",
+                "summary": "The Windows 10 and Windows Server 2019 standard machine images are deprecated. You can select them for new pools until January 31, 2027, and must migrate existing pools by April 30, 2027.",
+                "analysis": "This likely reflects support lifecycle or platform standardization and gives customers a transition window.",
+                "impact": "Administrators managing VM pools that use these standard images are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub now lets admins make the Applications section of an assessment optional, and the `POST /idea-from-schema` API can create an application not yet present in the Application Inventory.",
+            "overall_analysis": "These changes increase assessment flexibility and reduce dependency on pre-existing inventory records when creating ideas through the API.",
+            "changes": [
+              {
+                "name": "Optional Applications section in assessments",
+                "summary": "Admins can now make the **Applications** section of an assessment optional.",
+                "analysis": "This likely helps tailor assessments to scenarios where application details are unnecessary or unavailable.",
+                "impact": "Automation Hub administrators configuring assessments and users completing them are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "API support for creating applications not yet in inventory",
+                "summary": "The `POST /idea-from-schema` API can create an application that isn't yet in the Application Inventory.",
+                "analysis": "This likely simplifies intake workflows by allowing idea creation before inventory data is fully established.",
+                "impact": "Developers and teams integrating with the Automation Hub API are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops adds Integration Service policy controls for connectivity and custom connectors, new AI Trust Layer policy options for automatic top-up grants and organization-wide guardrail enforcement, and stops enforcing the Studio Web minimum agent score policy.",
+            "overall_analysis": "The release strengthens centralized governance for integrations and AI usage while reflecting the platform shift from agent scoring to agent review.",
+            "changes": [
+              {
+                "name": "Integration Service connectivity and custom connector policy controls",
+                "summary": "Integration Service policies add a **Connectivity** setting that controls whether users create Standard connections, Relay connections, or both, and a **Custom connectors** tab. Custom connectors stay disabled in tenants with existing policies until you enable them on the new tab (breaking change).",
+                "analysis": "This likely gives administrators finer governance over connection architecture and custom connector use, while changing behavior for tenants with existing policies until they opt in.",
+                "impact": "Automation Ops administrators and tenant users creating Integration Service connections or custom connectors are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Automatic License Top-Up Grant policy",
+                "summary": "AI Trust Layer policies add an **Automatic License Top-Up Grant** toggle that grants AI and Agentic usage top-up requests automatically for a configured number of packs.",
+                "analysis": "This likely reduces manual approvals and helps maintain uninterrupted AI-related usage within policy-defined limits.",
+                "impact": "Administrators configuring AI Trust Layer policies and users requesting top-ups are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Organization-wide BYO guardrail enforcement",
+                "summary": "You can enforce your own guardrails organization-wide through an AI Trust Layer policy, in preview.",
+                "analysis": "This likely centralizes AI safety enforcement and helps standardize compliance across the organization.",
+                "impact": "Organizations using AI Trust Layer policies and custom guardrail subscriptions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Minimum agent score policy no longer enforced",
+                "summary": "The **Enforce minimum agent score before publishing** policy for Studio Web is no longer enforced, because Agent review has replaced the agent score. The policy will be removed in a future release.",
+                "analysis": "This reflects the underlying change in agent quality controls and may require administrators to update governance expectations.",
+                "impact": "Automation Ops administrators governing Studio Web publishing and users subject to agent publishing policies are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Document Understanding": {
+            "summary": "Document Understanding improves the UiPath Document OCR public endpoint with better handwriting recognition for purchase order numbers, 30% lower latency, and more accurate handwriting confidence scores.",
+            "overall_analysis": "This is a quality and performance improvement that can improve extraction reliability and throughput for handwriting-heavy document processing.",
+            "changes": [
+              {
+                "name": "UiPath Document OCR public endpoint improvements",
+                "summary": "The UiPath Document OCR public endpoint improves handwriting recognition accuracy for purchase order numbers, reduces processing latency by 30%, and returns more accurate handwriting confidence scores.",
+                "analysis": "This likely improves both operational efficiency and confidence in OCR results for affected document types.",
+                "impact": "Users and systems relying on UiPath Document OCR, especially for handwritten purchase order numbers, are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds policy-based governance of connection types and custom connectors, PKCE support for several connectors, Microsoft national cloud targeting for Teams, and a Scope field for the A2A connector's OAuth 2.0 flows.",
+            "overall_analysis": "The release combines stronger administrative control with broader authentication and deployment options for connectors.",
+            "changes": [
+              {
+                "name": "Governance of connection types and custom connectors",
+                "summary": "Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.",
+                "analysis": "This likely helps organizations align connector usage with security and network architecture standards.",
+                "impact": "Integration Service administrators and tenant users creating connections or custom connectors are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "PKCE support for Snowflake, Snowflake Cortex, and Microsoft Teams",
+                "summary": "The Snowflake, Snowflake Cortex, and Microsoft Teams connectors add OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This likely simplifies and strengthens authentication for scenarios where storing a client secret is undesirable or impractical.",
+                "impact": "Users configuring these connectors are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Microsoft Teams national cloud targeting",
+                "summary": "Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.",
+                "analysis": "This likely expands support for sovereign and regulated cloud environments.",
+                "impact": "Organizations connecting to Microsoft Teams in US Government L4, US Government L5, or China environments are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Scope field for A2A connector OAuth 2.0 types",
+                "summary": "The Agent 2 Agent (A2A) connector adds a **Scope** field for all OAuth 2.0 authentication types.",
+                "analysis": "This likely gives administrators and developers finer control over requested OAuth permissions.",
+                "impact": "Users configuring OAuth 2.0 authentication for the A2A connector are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP makes Gemini 3.5 Flash generally available for a subset of customers while keeping preview status for others, and retires UiPath Helix Extractor 1.0 in several regions in favor of UiPath Helix Extractor 2.0, with additional regional rollout in progress.",
+            "overall_analysis": "These changes show a staged rollout strategy for extraction models and a region-by-region modernization of the generative extraction stack.",
+            "changes": [
+              {
+                "name": "Gemini 3.5 Flash availability update",
+                "summary": "The Gemini 3.5 Flash extraction model is generally available for a set of customers and remains in preview for all other customers.",
+                "analysis": "This likely indicates progressive rollout based on customer eligibility or readiness.",
+                "impact": "IXP customers using or evaluating the Gemini 3.5 Flash extraction model are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Retirement of UiPath Helix Extractor 1.0 in selected regions",
+                "summary": "The UiPath Helix Extractor 1.0 (IXP-Comms) LLM is retired in Singapore, the United Kingdom, Switzerland, and EU GxP, where Generative Extraction now uses UiPath Helix Extractor 2.0 (IXP-Comms). Retirement is in progress in Japan, Canada, and Australia.",
+                "analysis": "This likely upgrades customers to a newer extraction model, but regional timing means behavior may differ depending on deployment geography.",
+                "impact": "Customers using Generative Extraction in Singapore, the United Kingdom, Switzerland, EU GxP, Japan, Canada, and Australia are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro adds preview support for building BPMN processes with coding agents using the `uipath-maestro-bpmn` skill, standardizes product naming across canvases, promotes Maestro Flow beyond preview labeling, and expands Maestro Case runtime and validation capabilities.",
+            "overall_analysis": "The release improves both product consistency and workflow/case design capabilities, with early support for agent-assisted BPMN creation.",
+            "changes": [
+              {
+                "name": "Coding-agent support for Maestro BPMN",
+                "summary": "You can now build a Maestro BPMN process with the coding agent of your choice, in preview, using the `uipath-maestro-bpmn` skill.",
+                "analysis": "This likely speeds up process creation and experimentation by allowing AI-assisted BPMN authoring.",
+                "impact": "Users designing Maestro BPMN processes with coding agents are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consistent Maestro canvas naming and Maestro Flow label update",
+                "summary": "All canvases now consistently use the names Maestro BPMN, Maestro Case, and Maestro Flow, and Maestro Flow is no longer labeled as a preview feature.",
+                "analysis": "This likely reduces naming confusion and signals increased maturity for Maestro Flow.",
+                "impact": "Users navigating Maestro canvases and documentation are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Case endpoint, runtime states, and role validation",
+                "summary": "Maestro Case adds an endpoint to discover the ad hoc tasks you can trigger on a case instance, runtime stage states such as **Ended case**, **Failed**, and **Terminated**, and validation for case roles in the Case JSON editor.",
+                "analysis": "This likely improves case automation, runtime visibility, and configuration correctness.",
+                "impact": "Developers and users working with Maestro Case APIs, runtime monitoring, and case definitions are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro Automate": {
+            "summary": "Maestro Automate is now available as a lightweight runtime for short-running workflows of AI agents and APIs.",
+            "overall_analysis": "This introduces a new runtime option focused on lightweight orchestration scenarios involving AI agents and APIs.",
+            "changes": [
+              {
+                "name": "General availability of Maestro Automate",
+                "summary": "Maestro Automate is now available. It is a lightweight runtime for short-running workflows of AI agents and APIs.",
+                "analysis": "This likely targets faster, simpler execution scenarios than heavier workflow runtimes.",
+                "impact": "Teams building short-running workflows involving AI agents and APIs are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds an opt-in redesigned layout, support for requesting enforced encryption with KMS-backed keys on eligible plans, permission changes for deleting video recordings, a redesigned asset form, improved bulk action behavior, and removes Autopilot Chat for now.",
+            "overall_analysis": "This release combines user experience improvements, stronger data protection options, and notable operational changes including a permissions-related breaking change and temporary feature removal.",
+            "changes": [
+              {
+                "name": "Redesigned opt-in Orchestrator layout",
+                "summary": "A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. You can switch back to the classic layout at any time.",
+                "analysis": "This likely improves navigation efficiency and usability while minimizing adoption risk through opt-in availability and reversibility.",
+                "impact": "Orchestrator users navigating folders and pages are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Enforced encryption for eligible tenants",
+                "summary": "Organizations on eligible plans can request enforced encryption for their Orchestrator tenants, which encrypts sensitive job, log, queue item, and storage bucket data at rest with a key from the key management service (KMS).",
+                "analysis": "This likely strengthens security and compliance for organizations with stricter data protection requirements.",
+                "impact": "Organizations on eligible plans using Orchestrator tenants and managing sensitive data are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Changed permission requirement for deleting video recordings",
+                "summary": "Deleting a video recording now requires **View** permission on the job or queue instead of **Delete**. Custom roles that have **Delete** but not **View** can no longer delete recordings (breaking change).",
+                "analysis": "This changes the authorization model for recording deletion and may require role updates to preserve existing operational workflows.",
+                "impact": "Administrators managing custom roles and users who delete video recordings are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Redesigned asset form and API exposure toggle",
+                "summary": "The asset form is redesigned, and the **Expose value to API** toggle replaces the **Access scope** options.",
+                "analysis": "This likely simplifies asset configuration and clarifies API exposure behavior.",
+                "impact": "Users creating or editing assets in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk actions on eligible rows in mixed selections",
+                "summary": "Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.",
+                "analysis": "This likely improves productivity by allowing partial execution rather than forcing users to refine selections manually.",
+                "impact": "Users performing bulk operations in Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Removal of Autopilot Chat from Orchestrator",
+                "summary": "Autopilot Chat was removed from Orchestrator and will return with improved features.",
+                "analysis": "This is a temporary feature withdrawal that may interrupt current usage while signaling a planned improved return.",
+                "impact": "Users who relied on Autopilot Chat inside Orchestrator are affected.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Process Mining": {
+            "summary": "Process Mining makes Process Insights generally available and adds raw millisecond duration values to CSV exports.",
+            "overall_analysis": "These changes indicate product maturation and improve downstream analysis capabilities for exported process data.",
+            "changes": [
+              {
+                "name": "Process Insights general availability",
+                "summary": "Process Insights is now generally available.",
+                "analysis": "This signals broader production readiness and likely increased confidence for adoption.",
+                "impact": "Organizations evaluating or using Process Insights are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Raw millisecond durations in CSV exports",
+                "summary": "CSV exports now include each duration a second time as raw milliseconds, so you can calculate with exported durations.",
+                "analysis": "This likely makes exported data easier to process accurately in external tools and calculations.",
+                "impact": "Users exporting Process Mining data to CSV for analysis are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions adds support for publishing to and deploying from a specific Orchestrator folder feed, and validates uninstall eligibility earlier to avoid failed deployment history entries.",
+            "overall_analysis": "These changes improve deployment targeting and make uninstall behavior more predictable and cleaner from an operational standpoint.",
+            "changes": [
+              {
+                "name": "Folder feed support for solution packages",
+                "summary": "You can now publish a solution package to, and deploy it from, a specific Orchestrator folder's feed instead of only the tenant feed.",
+                "analysis": "This likely enables more granular release management aligned to folder-level environments.",
+                "impact": "Teams publishing and deploying solution packages through Orchestrator are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Early uninstall validation",
+                "summary": "Solutions now validates an uninstall when the uninstall page opens, before the uninstall starts, so a blocked uninstall no longer leaves a failed entry in the deployment history.",
+                "analysis": "This likely improves operational clarity by surfacing blockers earlier and reducing misleading failure records.",
+                "impact": "Users performing solution uninstalls and reviewing deployment history are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds tenant or folder feed selection for solution publish/deploy, preserves uncommitted changes when switching local branches, disables Restore during concurrent editing, and supports pasting multiple key-value pairs into dictionary properties of API workflow activities.",
+            "overall_analysis": "The release improves collaboration safety, source control ergonomics, and publishing flexibility while making API workflow configuration faster.",
+            "changes": [
+              {
+                "name": "Tenant or folder feed selection for solutions",
+                "summary": "You can now select a Tenant or folder feed when you publish or deploy a solution.",
+                "analysis": "This likely gives users more precise control over release destinations and aligns Studio Web with broader solution deployment options.",
+                "impact": "Studio Web users publishing or deploying solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Safer branch switching and publish history restore behavior",
+                "summary": "Switching local branches no longer discards uncommitted changes, and **Restore** in the publish history panel is disabled while another user is editing the solution.",
+                "analysis": "This likely reduces accidental work loss and helps prevent conflicting restore actions during collaborative editing.",
+                "impact": "Studio Web users working with local branches, publish history, and shared solutions are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk paste into dictionary properties for API workflow activities",
+                "summary": "You can paste multiple key-value pairs at once into dictionary properties of API workflow activities.",
+                "analysis": "This likely speeds up configuration of API activities and reduces repetitive manual entry.",
+                "impact": "Users building API workflows in Studio Web are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 70765
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-october-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--early-october-2026",
+      "sha256": "d5ecd6a531db2273fde1b23a26ed7a22565ed2d53cb048dba701fae515befb5a",
+      "chars": 880,
+      "payloadChars": 953,
+      "products": [
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Test Manager": {
+            "summary": "Test Manager adds generally available Testing Process Governance, new Rich Text custom fields, more detailed desktop automated performance test metrics, label carryover in executions and logs, and updates to Override Parameters and Integration Service connector triggers. Several enhancements are limited to Test Cloud delivery only.",
+            "overall_analysis": "These changes strengthen governance, reporting fidelity, test metadata continuity, and execution configurability in Test Manager, with several capabilities specifically expanding Test Cloud functionality.",
+            "changes": [
+              {
+                "name": "Testing Process Governance generally available",
+                "summary": "Testing Process Governance is generally available for Test Cloud delivery only. It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.",
+                "analysis": "This likely helps teams formalize oversight and compliance processes around testing by broadening governance coverage and making governance information visible in outputs used for auditing or coordination.",
+                "impact": "Test Cloud users of Test Manager, especially teams with governance, approval, or compliance requirements for testing workflows and reporting.",
+                "breaking_change": false
+              },
+              {
+                "name": "Rich Text custom fields available",
+                "summary": "Custom fields of type Rich Text are available for Test Cloud delivery only.",
+                "analysis": "This likely allows users to capture more expressive formatted content in custom fields, improving documentation quality and flexibility for test-related records.",
+                "impact": "Test Cloud users who define and use custom fields in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Expanded desktop automated performance test duration metrics",
+                "summary": "Desktop automated performance tests now report average, minimum, and maximum duration for each step for Test Cloud delivery only.",
+                "analysis": "This likely improves performance analysis by giving teams more granular timing data per step, making it easier to identify variability and bottlenecks in automated desktop tests.",
+                "impact": "Test Cloud users running desktop automated performance tests and analyzing execution timing.",
+                "breaking_change": false
+              },
+              {
+                "name": "Labels carried over to executions and logs",
+                "summary": "Test executions and test case logs now carry over the labels of the test sets and test cases you run.",
+                "analysis": "This likely improves traceability and organization by preserving categorization metadata across execution results and logs.",
+                "impact": "Users reviewing or managing test executions and test case logs in Test Manager.",
+                "breaking_change": false
+              },
+              {
+                "name": "Override Parameters and Integration Service connector enhancements",
+                "summary": "The Override Parameters panel adds an In automation column, and the UiPath Test Manager connector in Integration Service now supports event-driven triggers.",
+                "analysis": "These updates likely improve parameter visibility during automation-related configuration and expand integration automation options through trigger-based workflows.",
+                "impact": "Users configuring parameter overrides in Test Manager and teams integrating Test Manager through Integration Service.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 14792
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026#03",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026",
+      "sha256": "ec31c2d03dee5e4a09ce0b6582e04ddce10e8e861cd42702d8418b69f64aed69",
+      "chars": 1741,
+      "payloadChars": 1829,
+      "products": [
+        {
+          "name": "Automation Cloud Robots - VM",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Robots - VM": {
+            "summary": "Automation Cloud Robots - VM deprecates the Windows Server 2019 standard machine image and sets deadlines for using it in new and existing pools. The release primarily signals a required migration path to Windows Server 2025.",
+            "overall_analysis": "This change is significant for administrators managing VM pool images because it introduces a time-bound deprecation and a mandatory migration deadline for existing pools.",
+            "changes": [
+              {
+                "name": "Windows Server 2019 standard machine image deprecated",
+                "summary": "The Windows Server 2019 standard machine image is deprecated. It can still be selected for new pools until January 31, 2027, and existing pools must be migrated to Windows Server 2025 by April 30, 2027.",
+                "analysis": "The likely purpose is to phase out an older standard machine image and move customers to Windows Server 2025 on a defined schedule. Administrators need to plan both short-term pool creation choices and migration of current pools before the deadline.",
+                "impact": "Affects administrators who create or manage Automation Cloud Robots - VM pools using the Windows Server 2019 standard machine image.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops adds new Integration Service policy controls for connection types and introduces a Custom connectors tab. The update also changes behavior for tenants with existing policies, where custom connectors remain disabled until explicitly enabled.",
+            "overall_analysis": "This expands governance controls for Integration Service while introducing a policy-related behavior change that administrators must review to avoid unexpected custom connector availability.",
+            "changes": [
+              {
+                "name": "Integration Service policy adds Connectivity setting",
+                "summary": "Integration Service policies now include a Connectivity setting that controls whether users can create Standard connections, Relay connections, or both.",
+                "analysis": "The likely purpose is to give administrators more precise control over what types of connections users can create in a tenant. This can help enforce governance, security, or operational standards.",
+                "impact": "Affects administrators configuring Automation Ops policies and users whose ability to create specific connection types is governed by those policies.",
+                "breaking_change": false
+              },
+              {
+                "name": "Custom connectors tab added to policies",
+                "summary": "Integration Service policies now include a Custom connectors tab.",
+                "analysis": "The likely purpose is to provide a dedicated policy area for governing custom connector usage. This makes connector governance more explicit within policy configuration.",
+                "impact": "Affects administrators who manage Integration Service policies and custom connector availability.",
+                "breaking_change": false
+              },
+              {
+                "name": "Existing-policy tenants require explicit enablement for custom connectors",
+                "summary": "In tenants with existing policies, custom connectors remain disabled until administrators enable them on the new Custom connectors tab.",
+                "analysis": "This introduces a behavior change for existing policy setups and may prevent custom connector use until policy settings are updated. Administrators should review current policies to avoid disruptions.",
+                "impact": "Affects tenants with existing Automation Ops policies and users expecting custom connectors to be available.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds tenant-level governance for connection types and custom connectors, updates the Perplexity connector to use the Perplexity Agent API, and expands Microsoft Teams connection support to national clouds. The changes combine administrative control, connector evolution, and broader cloud support.",
+            "overall_analysis": "The release strengthens administrative governance and expands deployment options, but it also includes a connector update that can affect workflow compatibility and requires validation for some existing automations.",
+            "changes": [
+              {
+                "name": "Tenant connection-type and custom connector governance",
+                "summary": "Administrators can restrict which connection types a tenant can create and govern custom connectors through the Integration Service Automation Ops policy.",
+                "analysis": "The likely purpose is to align tenant connection creation and custom connector usage with organizational governance requirements. This gives administrators centralized control over Integration Service behavior.",
+                "impact": "Affects tenant administrators managing Integration Service access and users whose available connection options are restricted by policy.",
+                "breaking_change": false
+              },
+              {
+                "name": "Perplexity connector uses Perplexity Agent API",
+                "summary": "The Perplexity connector now uses the Perplexity Agent API.",
+                "analysis": "The likely purpose is to align the connector with the current Perplexity API model. This may improve long-term compatibility with the service, but it also accompanies activity and field changes that warrant workflow validation.",
+                "impact": "Affects users and developers who build or maintain workflows using the Perplexity connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Perplexity connector field and activity availability changes",
+                "summary": "Existing workflows continue to work, but some fields and the List Async Chat activity are no longer available. Users should re-test workflows that parse the output of these activities.",
+                "analysis": "This indicates an API-driven connector change that preserves basic workflow operation while altering available outputs and activities. Workflows depending on removed fields or the List Async Chat activity may need updates after re-testing.",
+                "impact": "Affects existing workflows using removed fields or the List Async Chat activity, especially workflows that parse activity output.",
+                "breaking_change": true
+              },
+              {
+                "name": "Microsoft Teams national cloud support",
+                "summary": "Microsoft Teams connections can now target Microsoft national clouds: US Government L4, US Government L5, and China.",
+                "analysis": "The likely purpose is to support tenants operating in regulated or region-specific Microsoft cloud environments. This broadens deployment compatibility for organizations using national cloud instances.",
+                "impact": "Affects users and organizations that need Microsoft Teams connections in US Government L4, US Government L5, or China environments.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator adds support for environment variables during RPA process deployment and editing, including references to secret-type assets, and updates webhook behavior for bulk queue uploads. The release improves deployment configuration flexibility while changing how some event consumers may observe queue item additions.",
+            "overall_analysis": "These changes enhance process configuration capabilities and clarify event behavior for queue uploads. Teams integrating with webhooks should review event-handling assumptions, while process administrators can take advantage of more configurable deployments if they meet the robot version requirement.",
+            "changes": [
+              {
+                "name": "Environment variables for process deployment and editing",
+                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
+                "analysis": "The likely purpose is to make process deployment and maintenance more flexible by allowing environment-specific configuration, including secure references to secret-type assets. The robot version requirement means adoption depends on running Robot 25.10 or later.",
+                "impact": "Affects administrators and users who deploy or edit RPA processes, especially those managing environment-specific settings and secret references.",
+                "breaking_change": false
+              },
+              {
+                "name": "Multiple webhook events for bulk queue uploads",
+                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
+                "analysis": "The likely purpose is to reflect bulk upload processing in smaller event batches rather than a single event. Integrations that consume these webhooks may need to handle multiple events for one bulk operation.",
+                "impact": "Affects systems and developers consuming Orchestrator `queueItem.added` webhook events for bulk queue item uploads.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds an In automation column to the Override Parameters panel to show which overridden parameters are actually used by the linked automation. The enhancement improves visibility into parameter usage during test configuration.",
+            "overall_analysis": "This is a usability improvement that helps users understand the relationship between overridden parameters and linked automation behavior, potentially reducing confusion during test setup and review.",
+            "changes": [
+              {
+                "name": "In automation column for overridden parameters",
+                "summary": "The Override Parameters panel now includes an In automation column that shows which overridden parameters the linked automation actually uses.",
+                "analysis": "The likely purpose is to make parameter overrides easier to validate by showing whether each override is relevant to the linked automation. This can help users avoid unnecessary or ineffective overrides.",
+                "impact": "Affects Test Manager users who configure or review overridden parameters for linked automations.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 24980
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026#04",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026",
+      "sha256": "d12a0bb15761e8b999fb81a48ab623d315a20d2443090104686ebb9c36c94d3b",
+      "chars": 1366,
+      "payloadChars": 1447,
+      "products": [
+        {
+          "name": "Orchestrator",
+          "releaseDate": "October 9, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "October 9, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "October 9, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Orchestrator": {
+            "summary": "Orchestrator introduces the Automation Registry, adds environment variable support when deploying or editing RPA processes, changes webhook behavior for bulk queue uploads, and adds distinct icons for Maestro process and resource types.",
+            "overall_analysis": "These updates expand visibility across automations, improve deployment configuration for RPA processes, and refine how Orchestrator represents and reports operational events and Maestro assets.",
+            "changes": [
+              {
+                "name": "Automation Registry availability",
+                "summary": "The Automation Registry is now available, providing a cross-folder view of solution deployments, processes, and resources across all automation types.",
+                "analysis": "This likely helps users centrally inspect automation assets across folders instead of checking each folder separately, improving visibility and governance.",
+                "impact": "Administrators and users managing solution deployments, processes, and resources across multiple folders and automation types.",
+                "breaking_change": false
+              },
+              {
+                "name": "Environment variables for RPA process deployment and editing",
+                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
+                "analysis": "This likely makes RPA process configuration more flexible and secure by allowing environment-specific settings and secret references during deployment and updates.",
+                "impact": "Users deploying or editing RPA processes; environments using Robot 25.10 or later; teams managing secrets through assets.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk queue upload webhook behavior update",
+                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
+                "analysis": "This changes how downstream consumers may receive notifications for bulk uploads, which may improve event handling scalability but requires attention from integrations that assume a single event per bulk upload.",
+                "impact": "Integrations, webhook consumers, and developers processing `queueItem.added` events for bulk queue item uploads.",
+                "breaking_change": false
+              },
+              {
+                "name": "Distinct icons for Maestro process and resource types",
+                "summary": "Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
+                "analysis": "This likely improves visual differentiation and usability when working with different Maestro artifact types.",
+                "impact": "Users viewing or managing Maestro BPMN, Maestro Case, and Maestro Flow processes and resources in Orchestrator.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web adds Autopilot as a coding agent in public preview and changes API workflow licensing to a flat fee per workflow execution with Integration Service usage no longer metered separately inside those workflows.",
+            "overall_analysis": "The release expands AI-assisted development capabilities in Studio Web while simplifying the commercial model for API workflows.",
+            "changes": [
+              {
+                "name": "Autopilot coding agent in public preview",
+                "summary": "Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.",
+                "analysis": "This likely accelerates development and review tasks by adding AI assistance across several Studio Web project types, though availability is still limited by its public preview status.",
+                "impact": "Developers and makers using Studio Web for API workflows, RPA workflows, coded apps, and Functions.",
+                "breaking_change": false
+              },
+              {
+                "name": "API workflow licensing model update",
+                "summary": "API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
+                "analysis": "This likely makes API workflow cost calculation more predictable and may reduce billing complexity for workflows that use Integration Service within the execution path.",
+                "impact": "Customers running API workflows in Studio Web, especially those using Integration Service within those workflows.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager enhances the Override Parameters panel by showing which overridden parameters are actually used by the linked automation.",
+            "overall_analysis": "This update improves parameter visibility between tests and linked automations, helping users better understand relevance and usage of overrides.",
+            "changes": [
+              {
+                "name": "In automation column for overridden parameters",
+                "summary": "The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
+                "analysis": "This likely helps users identify effective versus unused parameter overrides, reducing confusion and improving test configuration accuracy.",
+                "impact": "Test Manager users configuring override parameters for linked automations.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 24368
+    }
+  ],
+  "warnings": []
+}
