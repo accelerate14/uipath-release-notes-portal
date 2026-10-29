@@ -1,12 +1,648 @@
 {
   "id": "2026-09",
   "cacheKey": "v1",
-  "sourceSha256": "8e8cf9ba94a663b167a78742f44e253421393a139290322044792b677fdc6f41",
+  "sourceSha256": "7bf63c05a2f617bd08c938a06433991761383a3fd5acd1fb97060358f1740dec",
   "status": "complete",
-  "updatedAt": "2026-10-07T08:00:39.113Z",
+  "updatedAt": "2026-10-29T07:20:30.789Z",
   "chunks": [
     {
-      "id": "automation-cloud-and-test-cloud--early-september-2026#01",
+      "id": "automation-cloud-and-test-cloud--late-september-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--late-september-2026",
+      "sha256": "5439ca59936234c7098114986829bff860e5d6faeb75c289ab7e7a3caed4984f",
+      "chars": 7715,
+      "payloadChars": 7876,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Action Center",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Apps",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Cloud Robots",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Hub",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Autopilot",
+          "releaseDate": null
+        },
+        {
+          "name": "Data Fabric",
+          "releaseDate": null
+        },
+        {
+          "name": "Document Understanding",
+          "releaseDate": null
+        },
+        {
+          "name": "Functions",
+          "releaseDate": null
+        },
+        {
+          "name": "Insights",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration adds broader AI Trust Layer visibility and impact analysis, consumables visibility improvements, and a notification email discontinuation. It also introduces BYO-model support for a UI Automation semantic activity and includes required model migration and retirement updates.",
+            "overall_analysis": "These changes strengthen administrative oversight of AI model usage, dependencies, and consumption while signaling ongoing model lifecycle management responsibilities. They also reduce reliance on legacy notifications and require admins to adapt to provider model replacements and retirements.",
+            "changes": [
+              {
+                "name": "Model hub generally available",
+                "summary": "Model hub in the AI Trust Layer is now generally available. It gives administrators a central view of the provider, model, routing region, and lifecycle status behind each product feature, for every tenant in the organization. Document Understanding models now also appear in Model hub.",
+                "analysis": "This likely improves governance and transparency for AI feature dependencies across tenants, helping administrators understand what models are in use and where.",
+                "impact": "Organization administrators and teams overseeing AI usage across Automation Cloud and Test Cloud tenants; includes visibility into Document Understanding models.",
+                "breaking_change": false
+              },
+              {
+                "name": "Model impact preview tab",
+                "summary": "Model impact, a new tenant-level Model hub tab, is available in preview. It shows which products, features, and processes depend on each model, how often they call it, and when they last used it.",
+                "analysis": "This likely helps tenants assess operational dependence on specific models and evaluate risk before changing or retiring model configurations.",
+                "impact": "Tenant administrators managing model usage, dependency tracking, and change planning.",
+                "breaking_change": false
+              },
+              {
+                "name": "BYO LLM for Close Popup semantic activity",
+                "summary": "You can now power the Close Popup semantic activity in UI Automation with your own LLM subscription.",
+                "analysis": "This likely gives customers more control over model sourcing, compliance, and cost for this semantic automation capability.",
+                "impact": "Administrators and automation teams using UI Automation and bring-your-own-model configurations.",
+                "breaking_change": false
+              },
+              {
+                "name": "Kimi K2.7 Code replaced by Kimi K3",
+                "summary": "Kimi K2.7 Code is replaced with Kimi K3. Bring-your-own-model configurations that reference Kimi K2.7 Code must be updated to Kimi K3, or they fall back to UiPath-managed models.",
+                "analysis": "This is a model lifecycle update that requires configuration maintenance to preserve intended BYO-model behavior.",
+                "impact": "Customers with bring-your-own-model configurations referencing Kimi K2.7 Code.",
+                "breaking_change": true
+              },
+              {
+                "name": "Azure OpenAI and Amazon Bedrock model retirements announced",
+                "summary": "Azure OpenAI retires gpt-4o-2024-05-13 on September 30, 2026, and Amazon Bedrock retires anthropic.claude-sonnet-4-20250514-v1:0 on October 13, 2026.",
+                "analysis": "The announcement gives customers time to prepare for provider-side model retirements that may affect dependent features or configurations.",
+                "impact": "Administrators and teams relying on those specific provider models.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consumables Overview button",
+                "summary": "Each unit card on the Consumables tab now has an Overview button that shows consumption charts without opening the full Consumables Center dashboard.",
+                "analysis": "This likely streamlines quick consumption checks and reduces navigation overhead for administrators monitoring usage.",
+                "impact": "Administrators reviewing consumables usage.",
+                "breaking_change": false
+              },
+              {
+                "name": "Daily notification summary email discontinued",
+                "summary": "The daily notification summary email is discontinued starting November 1, 2026. Digest emails and notification subscriptions are not affected.",
+                "analysis": "This simplifies the notification model while preserving other notification mechanisms, but users relying on the daily summary must adjust.",
+                "impact": "Users and administrators who rely on daily notification summary emails.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Action Center": {
+            "summary": "Action Center makes human-in-the-loop task authoring via coding agent generally available and improves Validation Station compact view usability with collapsible field groups. The changes focus on task integration and reviewer efficiency.",
+            "overall_analysis": "The release strengthens both automation design and validation workflows by making human review steps easier to add and making dense validation interfaces easier to navigate.",
+            "changes": [
+              {
+                "name": "Human-in-the-loop tasks via coding agent generally available",
+                "summary": "Adding human-in-the-loop tasks to an automation with a coding agent is now generally available, through the `uipath-human-in-the-loop` skill.",
+                "analysis": "This likely makes it easier to include human review and decision points when building automations through coding-agent-assisted development.",
+                "impact": "Developers and automation builders using coding agents to create automations with Action Center tasks.",
+                "breaking_change": false
+              },
+              {
+                "name": "Collapsible field groups in Validation Station compact view",
+                "summary": "Field groups in the compact view of the Validation Station can now be collapsed, per group or per instance.",
+                "analysis": "This likely improves usability and focus for validators working with many grouped fields or repeated instances.",
+                "impact": "Users performing document or data validation in Validation Station.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents expands general availability for coding-agent-based agent development and Data Fabric entity context, while introducing preview support for advanced agents and Autopilot Agent in Studio Web. The release broadens both agent-building methods and runtime options.",
+            "overall_analysis": "These updates indicate a significant maturation of the agent platform, with more production-ready development paths and new preview capabilities for complex, long-running workloads.",
+            "changes": [
+              {
+                "name": "Low-code and coded agents via coding agent generally available",
+                "summary": "Building low-code and coded agents with a coding agent is now generally available, through the `uipath-agents` skill.",
+                "analysis": "This likely lowers development effort and standardizes agent creation workflows through assisted development.",
+                "impact": "Developers and automation teams building agents in low-code or coded styles.",
+                "breaking_change": false
+              },
+              {
+                "name": "Data Fabric entities as structured agent context generally available",
+                "summary": "Using Data Fabric entities as structured agent context is now generally available.",
+                "analysis": "This likely improves how agents consume structured business data, enabling more reliable context injection.",
+                "impact": "Teams building agents that use Data Fabric entities for context.",
+                "breaking_change": false
+              },
+              {
+                "name": "Advanced agents preview",
+                "summary": "Advanced agents are available in preview. They run on an alternative harness for long-running, document-heavy work, with a file workspace, sub-agents, and programmatic tool calls.",
+                "analysis": "This expands the kinds of workloads agents can handle, especially more complex or longer-running tasks involving documents and orchestration of tools or sub-agents.",
+                "impact": "Developers exploring more capable agent architectures for complex workloads.",
+                "breaking_change": false
+              },
+              {
+                "name": "Autopilot Agent preview in Studio Web",
+                "summary": "Autopilot Agent, a coding agent built into Studio Web, is available in preview and is now the default Autopilot experience for agents. You can switch back to classic Autopilot.",
+                "analysis": "This likely updates the default assisted-development experience for agents while keeping a fallback path for users not ready to switch.",
+                "impact": "Studio Web users building agents with Autopilot.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Apps": {
+            "summary": "Apps adds generally available coding-agent support for coded web apps and Action apps, and extends the Apps API with deployed app deletion. The updates improve both app development and lifecycle management.",
+            "overall_analysis": "The changes continue the platform's shift toward coding-agent-assisted development while filling an API management gap for deployed applications.",
+            "changes": [
+              {
+                "name": "Coded web apps and Action apps via coding agent generally available",
+                "summary": "Building coded web apps and Action apps with a coding agent is now generally available, through the `uipath-coded-apps` skill.",
+                "analysis": "This likely accelerates app development and broadens coding-agent support across app types.",
+                "impact": "Developers building coded web apps or Action apps.",
+                "breaking_change": false
+              },
+              {
+                "name": "Apps API supports deleting deployed apps",
+                "summary": "The Apps API now supports deleting a deployed app.",
+                "analysis": "This likely improves deployment lifecycle automation and cleanup through API-based administration.",
+                "impact": "Developers and administrators managing deployed apps through the Apps API.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Cloud Robots": {
+            "summary": "Automation Cloud Robots has a documentation-only update: relevant documentation moved from the Orchestrator guide to the Robot guide. This affects where users find product guidance rather than product behavior.",
+            "overall_analysis": "The significance is organizational and discoverability-focused, helping align documentation with product ownership and usage patterns.",
+            "changes": [
+              {
+                "name": "Documentation moved to Robot guide",
+                "summary": "The Cloud Robots, Elastic Robot Orchestration, and Automation Suite Robots documentation for Automation Cloud moved from the Orchestrator guide to the Robot guide.",
+                "analysis": "This likely improves documentation structure and makes robot-related guidance easier to find in a more appropriate location.",
+                "impact": "Users and administrators looking for Automation Cloud Robots documentation.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Hub": {
+            "summary": "Automation Hub improves integration with UiPath Cartographer and adds process-model-linked automation benefit rollups and visual enhancements. The changes strengthen idea creation and business process alignment.",
+            "overall_analysis": "These updates make it easier to connect discovery artifacts and process models with automation opportunities, improving traceability and value tracking.",
+            "changes": [
+              {
+                "name": "Cartographer documents create idea and attach files in one step",
+                "summary": "Process Design Documents and Solution Design Documents published from UiPath Cartographer now create the automation idea and attach both documents in one step.",
+                "analysis": "This likely reduces manual setup and preserves documentation context when moving from discovery into automation ideation.",
+                "impact": "Users publishing process and solution design documents from UiPath Cartographer into Automation Hub.",
+                "breaking_change": false
+              },
+              {
+                "name": "Link automation to process step with rolled-up benefits",
+                "summary": "You can now link an automation to a step of a business process model and roll its estimated benefit up to the parent process. Three rolled-up benefit columns are available in Workspace, and process model nodes can have a background color.",
+                "analysis": "This likely improves process-level value analysis and visual organization for business process modeling and automation planning.",
+                "impact": "Process owners, analysts, and Automation Hub users tracking benefits across business process models.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops introduces public preview coding-agent support for governance policy authoring and CI/CD pipeline management. This expands assisted administration and delivery workflow capabilities.",
+            "overall_analysis": "The release suggests a move toward agent-assisted platform governance and DevOps operations, which could reduce manual effort for policy and pipeline management.",
+            "changes": [
+              {
+                "name": "Coding-agent support for governance and CI/CD in public preview",
+                "summary": "You can now author governance policies and manage continuous integration and continuous delivery (CI/CD) pipelines from a coding agent, in public preview, through the `uipath-governance` and `uipath-aops` skills.",
+                "analysis": "This likely helps administrators and DevOps teams automate or accelerate common governance and delivery management tasks using coding agents.",
+                "impact": "Automation Ops administrators, governance owners, and CI/CD pipeline managers.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Autopilot": {
+            "summary": "Autopilot becomes available as a coding agent in Studio Web across multiple project types in public preview, with file read/edit limitations for some project types. This broadens where Autopilot can assist development.",
+            "overall_analysis": "The update positions Autopilot as a cross-project coding assistant in Studio Web, extending its reach while making current limitations explicit for certain project types.",
+            "changes": [
+              {
+                "name": "Studio Web coding-agent support across project types",
+                "summary": "Autopilot is available as a coding agent in Studio Web, in public preview, across Maestro Flow, Maestro BPMN, Maestro Case, Agent, API workflow, RPA workflow, Coded App, and Function projects. For RPA workflow, Coded App, and Function projects, it reads and edits files only.",
+                "analysis": "This likely creates a more unified development assistant experience across project types, though capability depth still varies by project.",
+                "impact": "Studio Web users working across the listed project types.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Data Fabric": {
+            "summary": "Data Fabric is now generally available in Automation Cloud and adds new entity modeling and query behavior changes, including stricter external query requirements and generally available folder-level entities. The release combines maturity milestones with notable behavior constraints.",
+            "overall_analysis": "These changes mark Data Fabric's transition to broader production use while tightening how federated and external data is modeled and queried for clarity, performance, and scale control.",
+            "changes": [
+              {
+                "name": "Data Fabric generally available in Automation Cloud",
+                "summary": "Data Fabric is now generally available in Automation Cloud.",
+                "analysis": "This indicates the product is ready for broader production adoption in the cloud environment.",
+                "impact": "Automation Cloud customers adopting Data Fabric.",
+                "breaking_change": false
+              },
+              {
+                "name": "Entity type selection and mixed local-external entity creation removed",
+                "summary": "When you create an entity, you now choose its type: Native or Federated. Entities that combine locally stored and external fields can no longer be created, but existing ones continue to work.",
+                "analysis": "This likely simplifies and clarifies entity modeling boundaries, though it constrains new mixed-source designs.",
+                "impact": "Users creating new Data Fabric entities; existing mixed entities remain supported.",
+                "breaking_change": true
+              },
+              {
+                "name": "Federated entity can reference native entity",
+                "summary": "A Federated entity can now reference a native Data Fabric entity as a source.",
+                "analysis": "This likely increases modeling flexibility by allowing federated designs to build on native Data Fabric data.",
+                "impact": "Users designing federated entities in Data Fabric.",
+                "breaking_change": false
+              },
+              {
+                "name": "External query behavior changes",
+                "summary": "Queries over external data now require a filter, return a single page from data warehouse sources, and are limited in result size. Failed queries return clearer errors, and queries run faster.",
+                "analysis": "The constraints likely aim to improve performance and predictability for external queries, while better errors improve troubleshooting.",
+                "impact": "Users and integrations querying external data through Data Fabric.",
+                "breaking_change": true
+              },
+              {
+                "name": "Folder-level entities generally available",
+                "summary": "Folder-level entities and their integration with Automation Solutions are now generally available.",
+                "analysis": "This likely improves organizational scoping and solution integration for entity usage.",
+                "impact": "Teams using Data Fabric entities within folders and Automation Solutions.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Document Understanding": {
+            "summary": "Document Understanding updates OCR confidence scoring for handwritten text in the public endpoint and advises threshold recalibration for validation routing. The change affects how confidence-based automation decisions should be tuned.",
+            "overall_analysis": "This is significant for customers who rely on OCR confidence thresholds operationally, because scoring now better reflects actual model confidence and may change routing behavior.",
+            "changes": [
+              {
+                "name": "Handwritten OCR confidence scores adjusted",
+                "summary": "Confidence scores for handwritten text in the UiPath Document OCR public endpoint now reflect the model's actual confidence. If you route documents to validation on a high OCR confidence threshold, recalibrate the threshold.",
+                "analysis": "This likely improves score fidelity, but it may alter existing validation-routing outcomes if thresholds were tuned to previous behavior.",
+                "impact": "Customers using the UiPath Document OCR public endpoint, especially those routing documents based on OCR confidence thresholds.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Functions": {
+            "summary": "Functions adds preview support for JavaScript and TypeScript authoring with HTTP endpoints and identity-aware execution context, plus coding-agent and Autopilot support in Studio Web. The release expands both language options and assisted development.",
+            "overall_analysis": "These changes broaden Functions from a capability and developer-experience perspective, making it more attractive for coded extensibility and modern web-oriented function scenarios.",
+            "changes": [
+              {
+                "name": "JavaScript and TypeScript authoring preview",
+                "summary": "Functions can now be authored in JavaScript and TypeScript, in preview, with HTTP endpoints and an execution context that carries both the caller's and the function's identities.",
+                "analysis": "This likely opens Functions to a wider developer audience and enables HTTP-based integration patterns with clearer identity context.",
+                "impact": "Developers building Functions who prefer JavaScript or TypeScript or need HTTP endpoints.",
+                "breaking_change": false
+              },
+              {
+                "name": "Coded functions via coding agent in public preview",
+                "summary": "You can now build coded functions with a coding agent, in public preview, through the `uipath-functions` skill.",
+                "analysis": "This likely accelerates function development by introducing assisted coding workflows.",
+                "impact": "Developers building coded functions with coding-agent assistance.",
+                "breaking_change": false
+              },
+              {
+                "name": "Autopilot for Function projects in Studio Web",
+                "summary": "Autopilot is available as a coding agent for Function projects in Studio Web, in public preview. It reads, explains, and reviews source files.",
+                "analysis": "This likely improves developer productivity for understanding and reviewing function code in Studio Web.",
+                "impact": "Studio Web users working on Function projects.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Insights": {
+            "summary": "Insights adds public preview coding-agent access to job metrics, failure trends, and process performance queries. This makes analytics data more accessible through agent-based workflows.",
+            "overall_analysis": "The release points toward conversational or agent-assisted operational analytics, which may reduce friction in retrieving performance insights.",
+            "changes": [
+              {
+                "name": "Coding-agent analytics queries in public preview",
+                "summary": "You can now query job metrics, failure trends, and process performance from a coding agent, in public preview, through the `uipath-insights` skill.",
+                "analysis": "This likely simplifies access to operational analytics by letting users retrieve insights through coding-agent interactions rather than manual dashboard exploration.",
+                "impact": "Users and analysts querying operational metrics and process performance through Insights.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service removes usage metering under certain licensing plans, adds connector availability updates, and includes important migration, deprecation, and removal notices for Perplexity and OpenAI-related activities. The release mixes pricing simplification with potentially disruptive connector changes.",
+            "overall_analysis": "These changes are operationally significant because they reduce cost constraints for some customers while requiring workflow retesting and migration for affected connectors and deprecated activities.",
+            "changes": [
+              {
+                "name": "Usage no longer metered or billed under Unified Pricing and Flex",
+                "summary": "Integration Service usage is no longer metered or billed under the Unified Pricing and Flex licensing plans.",
+                "analysis": "This likely lowers adoption friction and removes a cost consideration for customers on those plans.",
+                "impact": "Customers using Integration Service under Unified Pricing and Flex licensing plans.",
+                "breaking_change": false
+              },
+              {
+                "name": "Salesforce Agentforce & Flows connector generally available",
+                "summary": "The Salesforce Agentforce & Flows connector is now generally available.",
+                "analysis": "This indicates the connector is ready for broader production use.",
+                "impact": "Customers integrating with Salesforce Agentforce & Flows.",
+                "breaking_change": false
+              },
+              {
+                "name": "Epic FHIR connector preview",
+                "summary": "The Epic FHIR connector is available in preview.",
+                "analysis": "This expands healthcare integration options for customers exploring Epic FHIR scenarios.",
+                "impact": "Customers interested in Epic FHIR integrations.",
+                "breaking_change": false
+              },
+              {
+                "name": "Perplexity API migration and removals",
+                "summary": "The Perplexity connector and the GenAI connector's Web Summary activity are migrated to the Perplexity Agent API. Re-test workflows that parse their output. The `r1-1776` model and the List Async Chat activity are no longer available in the Perplexity connector.",
+                "analysis": "This changes connector behavior and available options, so workflows may need validation or redesign if they depend on prior output formats or removed capabilities.",
+                "impact": "Users of the Perplexity connector and GenAI connector Web Summary activity, especially workflows parsing returned output or using the removed model or activity.",
+                "breaking_change": true
+              },
+              {
+                "name": "OpenAI Generate Text Completion deprecated",
+                "summary": "The Generate Text Completion activity in the OpenAI connector is deprecated. After October 23, 2026, workflows that use it fail. Migrate them to Generate Chat Completion.",
+                "analysis": "This is a time-bound migration requirement for affected workflows, making prompt transition planning necessary.",
+                "impact": "Users with workflows that use the OpenAI connector's Generate Text Completion activity.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds generally available coding-agent support for building IXP projects. The release focuses on assisted development enablement.",
+            "overall_analysis": "This extends coding-agent coverage to another product area, likely helping standardize project creation experiences across the platform.",
+            "changes": [
+              {
+                "name": "IXP projects via coding agent generally available",
+                "summary": "Building IXP projects with a coding agent is now generally available, through the `uipath-ixp` skill.",
+                "analysis": "This likely streamlines IXP project development through assisted coding workflows.",
+                "impact": "Developers building IXP projects.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro expands with generally available Maestro Flow and Maestro Automate, adds several preview Flow capabilities, coding-agent support, Studio Desktop solution creation, BPMN Patterns library, and preview Autopilot support across project types. The release significantly broadens Maestro's canvases and development experience.",
+            "overall_analysis": "This is a major platform expansion for Maestro, signaling maturation of orchestration and process design capabilities while unifying low-code, coded, and agent-assisted development across Flow, BPMN, and Case.",
+            "changes": [
+              {
+                "name": "Maestro Flow generally available",
+                "summary": "Maestro Flow is now generally available as the third canvas in Maestro Orchestrate, alongside Business Process Model and Notation (BPMN) and Case.",
+                "analysis": "This marks a maturity milestone and formalizes Flow as a core Maestro canvas.",
+                "impact": "Users of Maestro Orchestrate working with BPMN, Case, and Flow canvases.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Automate generally available",
+                "summary": "Maestro Automate is now generally available, for short-running workflows of AI agents and APIs on the same canvas and engine as Maestro Flow.",
+                "analysis": "This likely supports production use of short-running orchestration scenarios that combine agents and APIs in a unified design/runtime model.",
+                "impact": "Teams orchestrating short-running workflows involving AI agents and APIs in Maestro.",
+                "breaking_change": false
+              },
+              {
+                "name": "Preview Flow capabilities added",
+                "summary": "Maestro Flow adds several preview capabilities: conversational chat and voice agents, inline Data Fabric entity modeling in VS Code, coded functions as nodes, Autopilot for Flow, and native document processing nodes.",
+                "analysis": "These previews broaden what Flow can model and execute, especially for conversational, data-aware, and document-centric use cases.",
+                "impact": "Users exploring advanced or emerging Maestro Flow capabilities.",
+                "breaking_change": false
+              },
+              {
+                "name": "Maestro Flow via coding agent generally available",
+                "summary": "Building a Maestro Flow with a coding agent is now generally available, through the `uipath-maestro-flow` skill.",
+                "analysis": "This likely speeds up flow creation and aligns Maestro with the platform's coding-agent strategy.",
+                "impact": "Developers and designers building Maestro Flow projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "Studio Desktop solution support for Flow projects",
+                "summary": "You can now create Maestro Flow projects in a Studio Desktop solution, and Flow validation errors appear in the VS Code Problems panel.",
+                "analysis": "This likely improves desktop-based development workflows and error visibility for Flow authors.",
+                "impact": "Developers creating Flow projects in Studio Desktop and using VS Code for validation feedback.",
+                "breaking_change": false
+              },
+              {
+                "name": "Patterns library for Maestro BPMN",
+                "summary": "The Patterns library lets you insert prebuilt, editable process structures into a Maestro BPMN process.",
+                "analysis": "This likely accelerates process modeling and promotes reuse of common BPMN structures.",
+                "impact": "Users designing Maestro BPMN processes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Autopilot for Flow, BPMN, and Case in Studio Web preview",
+                "summary": "Autopilot is available as a coding agent for Maestro Flow, BPMN, and Case projects in Studio Web, in preview.",
+                "analysis": "This likely improves guided creation and editing across the main Maestro project types in Studio Web.",
+                "impact": "Studio Web users working on Maestro Flow, BPMN, or Case projects.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator introduces preview Agent Gateway and MCP server capabilities, adds folder-scoped credential stores and environment variables for RPA processes, and changes webhook behavior for bulk queue item insertion. The release enhances agent integration, governance, and process configuration.",
+            "overall_analysis": "These updates extend Orchestrator beyond classic orchestration into agent interoperability and configuration management, while also introducing an integration behavior change that webhook consumers should handle carefully.",
+            "changes": [
+              {
+                "name": "Agent Gateway preview",
+                "summary": "Agent Gateway is available in preview. It brings the existing MCP Servers area for Model Context Protocol (MCP) servers together with a new A2A Agents area for Agent2Agent (A2A) agents, where you register external agents and expose your conversational agents to A2A clients.",
+                "analysis": "This likely expands Orchestrator into a hub for agent interoperability, registration, and exposure to external agent ecosystems.",
+                "impact": "Administrators and developers integrating MCP servers, external agents, and conversational agents through Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Platform MCP Servers and Swagger MCP Servers preview",
+                "summary": "Platform MCP Servers and Swagger MCP Servers are available in preview.",
+                "analysis": "This likely increases the range of MCP server integrations available through Orchestrator.",
+                "impact": "Users adopting MCP-based integrations in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Credential stores limited to selected folders",
+                "summary": "Credential stores can now be limited to selected folders.",
+                "analysis": "This likely improves security and access control by narrowing where credential stores are available.",
+                "impact": "Administrators managing credential store scope in Orchestrator folders.",
+                "breaking_change": false
+              },
+              {
+                "name": "Environment variables for RPA processes",
+                "summary": "You can now configure environment variables for RPA processes. This requires Robot 25.10 or later.",
+                "analysis": "This likely improves process configurability and deployment flexibility, but it introduces a Robot version prerequisite.",
+                "impact": "Users configuring RPA processes and robots; requires Robot 25.10 or later.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk queue add webhook behavior change",
+                "summary": "When you add queue items in bulk, Orchestrator may now emit several `queueItem.added` webhook events, each covering a subset of the items.",
+                "analysis": "Webhook consumers may need to handle multiple events for one bulk operation instead of assuming a single event, affecting downstream processing logic.",
+                "impact": "Integrations and systems consuming `queueItem.added` webhooks for bulk queue item additions.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 71570
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--late-september-2026#02",
+      "sectionId": "automation-cloud-and-test-cloud--late-september-2026",
+      "sha256": "3a5287d568f866ebdc3456c89a6fc76f7a4219ed305907f12043ba49aebada71",
+      "chars": 1332,
+      "payloadChars": 1419,
+      "products": [
+        {
+          "name": "Process Mining",
+          "releaseDate": null
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": null
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": null
+        },
+        {
+          "name": "Supply Chain & Retail Solutions: Commercial Pricing",
+          "releaseDate": null
+        },
+        {
+          "name": "Supply Chain & Retail Solutions: Commercial Pricing, Inventory Management, and Merchandising",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Process Mining": {
+            "summary": "Process Mining adds public preview support for building and querying process apps from a coding agent via the `uipath-process-mining` skill.",
+            "overall_analysis": "This expands agent-assisted interactions with Process Mining by enabling coding-agent-based app creation and querying in preview, which may speed up work for users comfortable with agent-driven workflows while signaling early-stage availability.",
+            "changes": [
+              {
+                "name": "Coding agent support for process apps",
+                "summary": "Users can now build and query process apps from a coding agent through the `uipath-process-mining` skill. The capability is in public preview.",
+                "analysis": "The change likely aims to let users interact with Process Mining programmatically or conversationally through an agent, reducing manual steps for creating and analyzing process apps. Because it is in public preview, adopters should expect the feature to still be maturing.",
+                "impact": "Affects Process Mining users who want to build or query process apps using a coding agent, especially early adopters evaluating preview features.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions now lets users link a resource installed by a previous solution version to an existing resource when changing solution versions or editing deployment configuration.",
+            "overall_analysis": "This adds more flexibility to solution upgrades and deployment configuration, but the stated permanent deletion of the installed resource and its data makes the change operationally significant and potentially risky if not planned carefully.",
+            "changes": [
+              {
+                "name": "Link previous-version installed resources to existing resources",
+                "summary": "When changing the solution version or editing a deployment's configuration, users can now link a resource that a previous solution version installed to an existing resource. Linking permanently deletes the installed resource and its data.",
+                "analysis": "The feature likely helps reuse or remap resources during upgrades or deployment changes instead of keeping duplicate installed resources. However, because linking permanently deletes the installed resource and its data, teams must assess data retention and migration implications before using it.",
+                "impact": "Affects Solutions users managing version changes and deployment configuration, particularly administrators responsible for resource mapping and data preservation.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web introduces generally available coding-agent support for building API workflows, new flat-fee pricing for API workflow executions, and public preview Autopilot support as a coding agent for API workflows.",
+            "overall_analysis": "These changes significantly expand Studio Web's API workflow story by combining broader availability of agent-assisted development with a new execution pricing model and preview automation capabilities for the workflow lifecycle.",
+            "changes": [
+              {
+                "name": "General availability of coding-agent API workflow building",
+                "summary": "Building API workflows with a coding agent is now generally available through the `uipath-api-workflow` skill.",
+                "analysis": "This indicates the capability has moved beyond preview into broader production readiness, making agent-assisted API workflow creation a standard option for Studio Web users.",
+                "impact": "Affects Studio Web users building API workflows, especially teams looking for production-ready agent-assisted development.",
+                "breaking_change": false
+              },
+              {
+                "name": "Flat-fee pricing for API workflow executions",
+                "summary": "API workflows are now charged a flat fee per workflow execution, and Integration Service usage inside the workflow is included.",
+                "analysis": "This changes the commercial model for API workflows and may make costs easier to predict by bundling Integration Service usage within each workflow execution fee.",
+                "impact": "Affects customers using or planning API workflows in Studio Web, especially budget owners and teams tracking execution and integration costs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Autopilot coding agent for API workflows",
+                "summary": "Autopilot is available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows.",
+                "analysis": "The change likely aims to automate more of the API workflow lifecycle inside Studio Web, reducing manual effort from creation through publication. Since it is in public preview, organizations may treat it as an evaluation feature rather than a fully established production capability.",
+                "impact": "Affects Studio Web users working with API workflows who want agent assistance for building, validation, execution, and publishing.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Supply Chain & Retail Solutions: Commercial Pricing": {
+            "summary": "Commercial Pricing now requires 18 data model fields, and related validation failures across Commercial Pricing, Inventory Management, and Merchandising are consolidated into a single email per person with error codes.",
+            "overall_analysis": "The required-field update increases data completeness requirements, while the validation-notification change improves how users receive and interpret validation failures across related supply chain and retail solutions.",
+            "changes": [
+              {
+                "name": "18 data model fields now required",
+                "summary": "In Commercial Pricing, 18 data model fields are now required.",
+                "analysis": "This likely tightens data-entry or data-model validation requirements to ensure more complete or standardized information for Commercial Pricing processes.",
+                "impact": "Affects users and implementations of Commercial Pricing that populate or validate the data model, particularly anyone responsible for required field completeness.",
+                "breaking_change": false
+              },
+              {
+                "name": "Consolidated validation failure emails with error codes",
+                "summary": "For Commercial Pricing, Inventory Management, and Merchandising, a validation run that fails several checks now sends one email to each person, covering every failure they should see, with an error code for each failure.",
+                "analysis": "This likely reduces notification noise and makes troubleshooting easier by consolidating validation issues into a single message while preserving detail through error codes.",
+                "impact": "Affects users involved in validation runs and failure triage across Commercial Pricing, Inventory Management, and Merchandising.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Supply Chain & Retail Solutions: Commercial Pricing, Inventory Management, and Merchandising": {
+            "summary": "Validation failures across these supply chain and retail solutions are now consolidated into a single email per person, with all relevant failures and an error code for each one.",
+            "overall_analysis": "This is a usability and operational improvement for validation monitoring, making failure communication more centralized and likely easier to act on across the affected solution areas.",
+            "changes": [
+              {
+                "name": "Consolidated validation failure emails with error codes",
+                "summary": "A validation run that fails several checks now sends one email to each person, covering every failure they should see, with an error code for each failure.",
+                "analysis": "This likely improves clarity and efficiency in handling validation failures by reducing multiple notifications and giving recipients a complete, coded list of issues to review.",
+                "impact": "Affects recipients of validation failure notifications in Commercial Pricing, Inventory Management, and Merchandising.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 25733
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-september-2026#03",
       "sectionId": "automation-cloud-and-test-cloud--early-september-2026",
       "sha256": "47de7873a1f541d8aead9c7b323e76da7494cbd1d5ee412e64803cb7cd2b586a",
       "chars": 6170,
@@ -66,7 +702,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -402,10 +1038,75 @@
           }
         }
       },
-      "durationMs": 71333
+      "durationMs": null
     },
     {
-      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-september-2026#02",
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-september-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--late-september-2026",
+      "sha256": "8dac34749105570588b1de9fb95bdab01b677e1c3a48a8fae8d02466d9ed559f",
+      "chars": 860,
+      "payloadChars": 935,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "Administration now lets users open consumption charts directly from each unit card on the Consumables tab through a new Overview button, without opening the full Consumables Center dashboard.",
+            "overall_analysis": "This change appears to streamline access to consumption insights and reduce navigation steps for administrators monitoring usage.",
+            "changes": [
+              {
+                "name": "Overview button on Consumables unit cards",
+                "summary": "Each unit card on the Consumables tab now includes an Overview button that displays consumption charts without opening the full Consumables Center dashboard.",
+                "analysis": "This likely improves efficiency for administrators who need quick visibility into consumption data by surfacing charts in place instead of requiring a full dashboard transition.",
+                "impact": "Users of Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration who monitor consumables usage on the Consumables tab.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service adds general availability for the Salesforce Agentforce & Flows connector, migrates the GenAI connector's Web Summary activity to the Perplexity Agent API, and deprecates the OpenAI connector's Generate Text Completion activity with workflow failures after October 23, 2026.",
+            "overall_analysis": "These changes expand production-ready connector availability, introduce behavior-affecting backend changes that require workflow retesting, and announce a time-bound deprecation that requires migration to avoid failures. Overall, the release combines feature maturation with important maintenance actions for existing automations.",
+            "changes": [
+              {
+                "name": "Salesforce Agentforce & Flows connector generally available",
+                "summary": "The Salesforce Agentforce & Flows connector is now generally available.",
+                "analysis": "General availability indicates the connector is ready for broader production use and may give customers more confidence to adopt it in live integrations.",
+                "impact": "Teams using or planning to use Integration Service with Salesforce Agentforce & Flows.",
+                "breaking_change": false
+              },
+              {
+                "name": "Web Summary activity migrated to Perplexity Agent API",
+                "summary": "The GenAI connector's Web Summary activity is migrated to the Perplexity Agent API, and workflows that parse its output should be re-tested.",
+                "analysis": "Because the underlying API changed, output format or behavior may differ, so workflows that depend on parsed results could require validation or adjustment.",
+                "impact": "Users of the GenAI connector's Web Summary activity, especially workflows that parse the activity output.",
+                "breaking_change": false
+              },
+              {
+                "name": "Generate Text Completion deprecated in OpenAI connector",
+                "summary": "The Generate Text Completion activity in the OpenAI connector is deprecated. After October 23, 2026, workflows that use it fail, and users should migrate to Generate Chat Completion.",
+                "analysis": "This is a time-sensitive deprecation with an explicit failure date, making migration necessary to maintain workflow continuity. It signals a shift toward the newer Generate Chat Completion activity as the supported path.",
+                "impact": "Users with workflows that currently use the OpenAI connector's Generate Text Completion activity.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 13856
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-september-2026#05",
       "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-september-2026",
       "sha256": "bf213c557680dbc215f8e175ab21e9755a77fb845b610a5230147faf8b01e605",
       "chars": 1321,
@@ -425,7 +1126,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -512,10 +1213,127 @@
           }
         }
       },
-      "durationMs": 25800
+      "durationMs": null
     },
     {
-      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-september-2026#03",
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--late-september-2026#06",
+      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--late-september-2026",
+      "sha256": "5aab8190195c521eaff171098fcfe11608403020b1cceea36a509a633fb93b54",
+      "chars": 1641,
+      "payloadChars": 1729,
+      "products": [
+        {
+          "name": "Apps",
+          "releaseDate": "September 17, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "September 17, 2026"
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": "September 17, 2026"
+        },
+        {
+          "name": "Solutions",
+          "releaseDate": "September 24, 2026"
+        },
+        {
+          "name": "Studio Web",
+          "releaseDate": "September 24, 2026"
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Apps": {
+            "summary": "Apps now supports Coded Apps and Coded Action Apps in Automation Cloud Dedicated and Test Cloud Dedicated. Coded Action Apps have minimum SDK version requirements.",
+            "overall_analysis": "This expands development options for Apps by enabling code-based app experiences in these cloud environments, but adoption depends on using the required SDK versions.",
+            "changes": [
+              {
+                "name": "Coded Apps and Coded Action Apps availability",
+                "summary": "Coded Apps and Coded Action Apps are now available in Automation Cloud Dedicated and Test Cloud Dedicated. Coded Action Apps require `uipath-typescript` SDK 1.7.1 or later and `@uipath/coded-action-app` SDK 1.0.0 or later.",
+                "analysis": "This likely enables developers to build more customizable app experiences using code in dedicated cloud environments. The stated SDK requirements indicate teams may need to update their development dependencies before using Coded Action Apps.",
+                "impact": "Developers building apps in Automation Cloud Dedicated and Test Cloud Dedicated, especially those using or planning to use Coded Action Apps.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Studio Web": {
+            "summary": "Studio Web introduces workflow authoring and deployment usability improvements, including a new default Deploy action, nested solution folders, generally available coding-agent support for API workflows, and faster local debug sessions. These changes span both the September 17 and September 24 releases.",
+            "overall_analysis": "The updates suggest a focus on improving developer productivity and organization in Studio Web. They streamline deployment, improve project structure management, expand AI-assisted API workflow creation, and reduce debug iteration time.",
+            "changes": [
+              {
+                "name": "Deploy as default toolbar action",
+                "summary": "**Deploy** is now the default toolbar button for packaging and deploying a solution, while **Publish** is available from the **Deploy** dropdown.",
+                "analysis": "This likely simplifies the primary release workflow by emphasizing deployment as the main action in the toolbar. Users accustomed to Publish as a primary action may need to adjust to the updated interface flow.",
+                "impact": "Studio Web users who package and deploy solutions from the toolbar.",
+                "breaking_change": false
+              },
+              {
+                "name": "Nested folders in Solution Explorer",
+                "summary": "Projects in a solution can now be organized into nested folders from the **Solution Explorer**.",
+                "analysis": "This likely improves manageability for larger or more complex solutions by allowing clearer project organization. It can help teams structure multi-project solutions more effectively.",
+                "impact": "Studio Web users managing solutions with multiple projects.",
+                "breaking_change": false
+              },
+              {
+                "name": "API workflows with coding agent generally available",
+                "summary": "Building API workflows with a coding agent is now generally available through the `uipath-api-workflow` skill.",
+                "analysis": "General availability indicates the feature is ready for broader production use. This likely helps users create API workflows more efficiently with coding-agent assistance.",
+                "impact": "Studio Web users building API workflows, particularly those adopting coding-agent-assisted development.",
+                "breaking_change": false
+              },
+              {
+                "name": "Faster local debug uploads",
+                "summary": "Local debug sessions now upload only the files that changed since the last session, allowing sessions to start faster.",
+                "analysis": "This likely reduces waiting time during iterative development by minimizing upload volume between debug runs. The improvement is especially useful for frequent testing cycles.",
+                "impact": "Studio Web users running local debug sessions.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager updates improve requirement and execution log usability, and expand MCP tool inputs for test-step management. The changes focus on better test review and more flexible test authoring workflows.",
+            "overall_analysis": "These enhancements appear aimed at improving tester efficiency and usability in both the interface and automation tooling. Better log inspection and optional clipboard-based input can support faster troubleshooting and test maintenance.",
+            "changes": [
+              {
+                "name": "Requirement details and test execution logs enhancements",
+                "summary": "The requirement details page is redesigned, and the **Logs** tab of a test execution now includes a full-message pop-up with a **Copy message** button, message search, and a **Level** filter.",
+                "analysis": "This likely improves usability when reviewing requirements and diagnosing test execution issues. More detailed log interaction can help users inspect and filter execution information more efficiently.",
+                "impact": "Test Manager users reviewing requirements and investigating test execution logs.",
+                "breaking_change": false
+              },
+              {
+                "name": "Clipboard data support in MCP tools",
+                "summary": "The Test Manager MCP tools for adding and updating test steps now accept an optional **Clipboard data** argument.",
+                "analysis": "This likely makes MCP-based test-step creation and updates more flexible by allowing additional input content to be passed directly. It may streamline workflows that involve copying step content from another source.",
+                "impact": "Users of Test Manager MCP tools who add or update test steps programmatically or through assisted tooling.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Solutions": {
+            "summary": "Solutions now lets users link a resource installed by a previous solution version to an existing resource during version changes or deployment configuration edits. The operation permanently deletes the installed resource and its data.",
+            "overall_analysis": "This adds flexibility when reconciling resources across solution versions or deployment changes, but it also introduces a clearly destructive action. Users need to evaluate data retention carefully before using it.",
+            "changes": [
+              {
+                "name": "Link previously installed resource to existing resource",
+                "summary": "When changing the solution version or editing a deployment's configuration, you can now link a resource that a previous solution version installed to an existing resource. Linking permanently deletes the installed resource and its data.",
+                "analysis": "This likely helps align deployments with resources that already exist instead of keeping duplicate installed resources. Because the release notes explicitly state that linking permanently deletes the installed resource and its data, users must handle this action carefully to avoid unintended data loss.",
+                "impact": "Solutions users updating solution versions or editing deployment configurations where previously installed resources are being reconciled with existing resources.",
+                "breaking_change": true
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 25137
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-september-2026#07",
       "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-september-2026",
       "sha256": "1b343ec17c920035be848bb3b47b54adfc3c6550ceb36dc22b0b0744b6df8a4b",
       "chars": 1708,
@@ -539,7 +1357,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -625,7 +1443,7 @@
           }
         }
       },
-      "durationMs": 24484
+      "durationMs": null
     }
   ],
   "warnings": []
