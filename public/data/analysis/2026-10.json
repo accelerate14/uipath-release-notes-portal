@@ -4,15 +4,662 @@
   "label": "October 2026",
   "title": "October 2026",
   "cacheKey": "v1",
-  "generatedAt": "2026-10-17T05:46:55.816Z",
+  "generatedAt": "2026-11-03T08:07:14.176Z",
   "source": {
     "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026",
     "markdownUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026.md",
-    "sha256": "5b4c9b6d909196f4d09e54590eb25ebc488fa482e851f5bd0813a9fde788be0b",
-    "chars": 22678
+    "sha256": "4679d280dca84b2cbaf29d56b27ed2af4565ac35d856ef9cb033f21a9f6a13c0",
+    "chars": 37716
   },
   "status": "complete",
   "sections": [
+    {
+      "id": "automation-cloud-and-test-cloud--late-october-2026",
+      "environment": "Automation Cloud and Test Cloud",
+      "timeframe": "Late October 2026",
+      "publishingDate": "October 31, 2026",
+      "range": "October 16, 2026 – October 31, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* New AI Trust Layer policies no longer save prompt inputs and LLM-generated outputs for audit by default. LLM calls governed by a new policy appear in the audit logs with their inputs and outputs shown as **Blocked by Policy** until you enable input/output saving. Existing policies keep their current setting.\n* Solutions is now available in the India region with full data residency.\n* Insights is now available in the European Union delayed region.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Administration and Test Cloud Administration",
+            "summary": "Administration updates change AI Trust Layer audit defaults and expand regional availability for Solutions and Insights. The release focuses on data-handling policy behavior and broader service availability across regions.",
+            "overall_analysis": "These changes primarily affect governance and deployment planning. Organizations using AI Trust Layer policies must review audit expectations, while customers in India and the EU delayed region gain access to additional cloud services with region-specific availability.",
+            "changes": [
+              {
+                "name": "AI Trust Layer audit saving disabled by default for new policies",
+                "summary": "New AI Trust Layer policies no longer save prompt inputs and LLM-generated outputs for audit by default. For LLM calls governed by a new policy, audit logs show inputs and outputs as **Blocked by Policy** until input/output saving is enabled. Existing policies keep their current setting.",
+                "analysis": "This likely reflects a stronger default privacy posture for AI interactions while preserving the ability to opt in to more detailed auditing when needed.",
+                "impact": "Affects administrators managing AI Trust Layer policies and audit practices in Automation Cloud and Test Cloud Administration.",
+                "breaking_change": false
+              },
+              {
+                "name": "Solutions available in India region",
+                "summary": "Solutions is now available in the India region with full data residency.",
+                "analysis": "This expands regional access and supports customers that require workloads and data to remain in India.",
+                "impact": "Affects customers deploying Solutions in the India region, especially those with data residency requirements.",
+                "breaking_change": false
+              },
+              {
+                "name": "Insights available in EU delayed region",
+                "summary": "Insights is now available in the European Union delayed region.",
+                "analysis": "This broadens regional product availability and may help organizations align analytics usage with regional deployment preferences.",
+                "impact": "Affects customers using or planning to use Insights in the European Union delayed region.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Runtime evaluations, in preview, score a deployed agent against datasets of inputs and expected outputs, on demand or on a recurring schedule.\n* Starting December 2, 2026, coded agents use the AI Trust Layer agents settings and the LLM configurations of low-code agents, which can be a breaking change for coded agents whose settings differ. Coded agents settings and configurations that exist only for coded agents are no longer used.",
+          "sourceMentionsBreaking": true,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Agents",
+            "summary": "Agents adds preview runtime evaluations and announces a December 2, 2026 settings change for coded agents. The release introduces evaluation tooling while aligning coded agents with the AI Trust Layer and low-code agent configuration model.",
+            "overall_analysis": "The update strengthens agent quality assessment and standardizes configuration behavior across agent types. However, the December change may require review and remediation for coded agents that currently rely on separate settings.",
+            "changes": [
+              {
+                "name": "Runtime evaluations in preview",
+                "summary": "Runtime evaluations, in preview, score a deployed agent against datasets of inputs and expected outputs, either on demand or on a recurring schedule.",
+                "analysis": "This likely helps teams measure agent quality, detect regressions, and monitor performance over time in production-like scenarios.",
+                "impact": "Affects teams deploying and maintaining agents who need systematic evaluation and monitoring.",
+                "breaking_change": false
+              },
+              {
+                "name": "Coded agents move to AI Trust Layer and low-code LLM settings",
+                "summary": "Starting December 2, 2026, coded agents use the AI Trust Layer agents settings and the LLM configurations of low-code agents. This can be a breaking change for coded agents whose settings differ, and coded-agent-only settings and configurations are no longer used.",
+                "analysis": "This standardizes agent configuration across coded and low-code experiences, but it may alter runtime behavior for existing coded agents that depend on distinct settings.",
+                "impact": "Affects developers and administrators of coded agents, particularly where coded-agent settings differ from low-code or AI Trust Layer settings.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* New AI Trust Layer policies have input/output saving for audit turned off by default. You can turn it on in the **Feature Toggles** tab.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Ops",
+            "summary": "Automation Ops updates AI Trust Layer policy defaults so audit input/output saving is turned off by default for new policies. The change emphasizes configurable governance through the Feature Toggles tab.",
+            "overall_analysis": "The release appears focused on privacy-oriented default behavior for AI policy management. Administrators may need to explicitly enable logging where audit detail is required.",
+            "changes": [
+              {
+                "name": "Default audit input/output saving turned off for new AI Trust Layer policies",
+                "summary": "New AI Trust Layer policies have input/output saving for audit turned off by default. Administrators can enable it in the **Feature Toggles** tab.",
+                "analysis": "This likely reduces default retention of AI interaction data and gives administrators explicit control over when detailed audit logging is collected.",
+                "impact": "Affects administrators configuring AI Trust Layer policies in Automation Ops.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The TypeSafe connector is available in preview. It calls the TypeSafe System One API to make choice, score, and yes/no decisions about text or JSON content in RPA workflows, API workflows, and Maestro agentic processes.\n* The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.\n* The **Generate Text Completion** activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Use **Generate Chat Completion** instead.\n* In the OpenAI **Generate Chat Completion** activity, an empty **Model name** now fails instead of using a default model.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service introduces the preview TypeSafe connector, adds PKCE authentication to the Microsoft OneDrive and SharePoint connector, and changes OpenAI connector behavior through one removal and one stricter validation. The release mixes new integration options with connector behavior changes that may require workflow updates.",
+            "overall_analysis": "The update expands AI-related connector capabilities and modernizes authentication, while also enforcing a transition away from older OpenAI patterns. The OpenAI changes have the highest operational significance because they can break or invalidate workflow behavior.",
+            "changes": [
+              {
+                "name": "TypeSafe connector in preview",
+                "summary": "The TypeSafe connector is available in preview. It calls the TypeSafe System One API to make choice, score, and yes/no decisions about text or JSON content in RPA workflows, API workflows, and Maestro agentic processes.",
+                "analysis": "This likely adds decisioning capabilities that can be embedded into workflows and agentic processes without custom API implementation.",
+                "impact": "Affects builders of RPA workflows, API workflows, and Maestro agentic processes who want to use TypeSafe System One API decisions.",
+                "breaking_change": false
+              },
+              {
+                "name": "PKCE authentication for Microsoft OneDrive and SharePoint connector",
+                "summary": "The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This improves authentication flexibility and may simplify or strengthen setups where a client secret is undesirable or unavailable.",
+                "impact": "Affects users configuring authentication for the Microsoft OneDrive and SharePoint connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Generate Text Completion removed for new workflows",
+                "summary": "The **Generate Text Completion** activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Users should use **Generate Chat Completion** instead.",
+                "analysis": "This forces migration away from a retiring model and older completion pattern toward chat-based completion, reducing reliance on unsupported OpenAI functionality.",
+                "impact": "Affects users creating new workflows with OpenAI or Microsoft Azure OpenAI connectors and existing OpenAI workflows that still use **Generate Text Completion**.",
+                "breaking_change": true
+              },
+              {
+                "name": "Empty model name now fails in Generate Chat Completion",
+                "summary": "In the OpenAI **Generate Chat Completion** activity, an empty **Model name** now fails instead of using a default model.",
+                "analysis": "This enforces explicit configuration and prevents implicit fallback behavior that could hide setup errors or produce unexpected model selection.",
+                "impact": "Affects users of the OpenAI **Generate Chat Completion** activity, especially workflows that relied on the previous default-model behavior.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* IXP in Maestro Flow is available in preview. You build, evaluate, and run an extraction model directly in the **Extract** node of a flow.\n* Anthropic Claude Sonnet 4.6 and Claude Sonnet 5 are available as extraction models in preview, and a redesigned model picker groups models into **Available**, **Preview**, and **Custom**.\n* GPT-5.1, GPT-5.4, and Gemini 3.5 Flash Lite are generally available as extraction models.\n* Gemini 3.6 Flash and Gemini 3.7 Flash are deprecated in favor of Gemini 3.8 Flash.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "IXP",
+            "summary": "IXP adds preview support in Maestro Flow, expands extraction model choices, and updates model availability status with new GA and deprecated options. The release strengthens in-flow extraction capabilities while continuing rapid model lineup changes.",
+            "overall_analysis": "These changes make IXP more embedded in process design and broaden available extraction models. At the same time, the deprecation notice signals ongoing model lifecycle management that users must track when selecting extraction models.",
+            "changes": [
+              {
+                "name": "IXP in Maestro Flow in preview",
+                "summary": "IXP in Maestro Flow is available in preview. Users can build, evaluate, and run an extraction model directly in the **Extract** node of a flow.",
+                "analysis": "This likely streamlines document or data extraction workflows by bringing model lifecycle tasks into the flow design experience.",
+                "impact": "Affects users building flows in Maestro Flow who want integrated extraction model creation and execution.",
+                "breaking_change": false
+              },
+              {
+                "name": "New preview extraction models and redesigned model picker",
+                "summary": "Anthropic Claude Sonnet 4.6 and Claude Sonnet 5 are available as extraction models in preview, and a redesigned model picker groups models into **Available**, **Preview**, and **Custom**.",
+                "analysis": "This expands model choice and improves model selection usability by clarifying availability state and categorization.",
+                "impact": "Affects users selecting extraction models in IXP.",
+                "breaking_change": false
+              },
+              {
+                "name": "Additional extraction models generally available",
+                "summary": "GPT-5.1, GPT-5.4, and Gemini 3.5 Flash Lite are generally available as extraction models.",
+                "analysis": "This indicates these models are ready for broader production use in extraction scenarios.",
+                "impact": "Affects IXP users choosing generally available extraction models for production workloads.",
+                "breaking_change": false
+              },
+              {
+                "name": "Gemini 3.6 Flash and 3.7 Flash deprecated",
+                "summary": "Gemini 3.6 Flash and Gemini 3.7 Flash are deprecated in favor of Gemini 3.8 Flash.",
+                "analysis": "This signals a recommended model transition and may be intended to consolidate users onto a newer preferred model version.",
+                "impact": "Affects IXP users currently using or considering Gemini 3.6 Flash or Gemini 3.7 Flash extraction models.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* In Maestro Flow, the **Extract** node can create an IXP model that you build, evaluate, and run without leaving Flow, and a new **Validate extraction** node sends extracted data to a person for review. Both are in preview.\n* In Maestro Flow, the **Quick Form** node supports error handling, so a run can continue on the node's error path.\n* In Maestro Flow, the `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).\n* In Maestro BPMN and Maestro Case, a required variable that is missing now blocks debugging as well as publishing. New element-level retry settings in Maestro BPMN are validated against supported ranges.\n* In Maestro Case, task links on a case instance now open the task in the Case app instead of Action Center.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Maestro",
+            "summary": "Maestro adds preview extraction and validation nodes in Flow, improves Quick Form error handling, changes call-related outputs and connections, tightens validation in BPMN and Case, and updates case task link behavior. The release combines new human-in-the-loop extraction workflows with runtime and authoring safeguards.",
+            "overall_analysis": "The update deepens end-to-end orchestration capabilities, especially around extraction and review, while also making debugging, validation, and case navigation more controlled. Some behavior changes may require process authors to adapt existing flow or debugging expectations.",
+            "changes": [
+              {
+                "name": "Extract and Validate extraction nodes in Maestro Flow",
+                "summary": "In Maestro Flow, the **Extract** node can create an IXP model that users build, evaluate, and run without leaving Flow, and a new **Validate extraction** node sends extracted data to a person for review. Both are in preview.",
+                "analysis": "This likely enables more complete extraction workflows inside Flow, including built-in human review for quality control.",
+                "impact": "Affects users designing extraction-centric flows in Maestro Flow.",
+                "breaking_change": false
+              },
+              {
+                "name": "Quick Form error handling in Maestro Flow",
+                "summary": "In Maestro Flow, the **Quick Form** node supports error handling, so a run can continue on the node's error path.",
+                "analysis": "This improves resilience by allowing flows to handle form-node failures without stopping the entire run.",
+                "impact": "Affects users building flows that include **Quick Form** nodes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Call node callContext changes and Voice agent Escalations removal",
+                "summary": "In Maestro Flow, the `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).",
+                "analysis": "The added phone metadata improves downstream handling of call details, while the removed connection changes how voice-agent interactions are modeled.",
+                "impact": "Affects users building telephony-related flows with call nodes and the **Voice agent** node in Maestro Flow.",
+                "breaking_change": true
+              },
+              {
+                "name": "Missing required variable now blocks debugging and retry settings are validated",
+                "summary": "In Maestro BPMN and Maestro Case, a required variable that is missing now blocks debugging as well as publishing. New element-level retry settings in Maestro BPMN are validated against supported ranges.",
+                "analysis": "These checks likely prevent invalid process configurations from being tested or deployed and enforce supported retry behavior earlier in authoring.",
+                "impact": "Affects users authoring and debugging processes in Maestro BPMN and Maestro Case.",
+                "breaking_change": false
+              },
+              {
+                "name": "Case task links open in Case app",
+                "summary": "In Maestro Case, task links on a case instance now open the task in the Case app instead of Action Center.",
+                "analysis": "This appears intended to keep case work in the case-specific experience rather than redirecting users to a separate app.",
+                "impact": "Affects users navigating tasks from case instances in Maestro Case.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Maestro Automate",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The **Extract** node can create an IXP model built in the node, and the new **Validate extraction** node sends extracted data to a person for review (preview).\n* The **Quick Form** node supports error handling, so a run can continue on the node's error path.\n* The `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Maestro Automate",
+            "summary": "Maestro Automate adds preview extraction and validation support, Quick Form error handling, and telephony-related node changes. The release mirrors key orchestration improvements for extraction workflows and flow resilience.",
+            "overall_analysis": "The changes make Maestro Automate more capable for extraction scenarios and more robust in handling node failures. The telephony update also alters node behavior and available connections, which may require design updates.",
+            "changes": [
+              {
+                "name": "Extract and Validate extraction nodes",
+                "summary": "The **Extract** node can create an IXP model built in the node, and the new **Validate extraction** node sends extracted data to a person for review (preview).",
+                "analysis": "This likely supports end-to-end extraction workflows with integrated model creation and human validation.",
+                "impact": "Affects users building extraction workflows in Maestro Automate.",
+                "breaking_change": false
+              },
+              {
+                "name": "Quick Form error handling",
+                "summary": "The **Quick Form** node supports error handling, so a run can continue on the node's error path.",
+                "analysis": "This improves workflow robustness by allowing processing to continue when the form node encounters an error.",
+                "impact": "Affects users building workflows with **Quick Form** nodes in Maestro Automate.",
+                "breaking_change": false
+              },
+              {
+                "name": "Call node callContext changes and Voice agent Escalations removal",
+                "summary": "The `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).",
+                "analysis": "The additional phone fields improve call context handling, while the removal of the **Escalations** connection may require workflow redesign for voice-agent scenarios.",
+                "impact": "Affects users building call-related and voice-agent workflows in Maestro Automate.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Autopilot Chat is back in Orchestrator with expanded capabilities. Autopilot now works directly with your Orchestrator tenant to manage processes, jobs, queues, assets, triggers, machines, and folders, and you choose how much it does without approval.\n* The official UiPath package feed behind the host **Libraries** feed is moving to `https://pkgs.uipath.com/official/index.json`. The Azure DevOps-hosted address is deprecated and planned for removal by April 2027. If your network restricts outbound traffic, add `pkgs.uipath.com` to your allowlist.\n* Jobs that use attachment-based input arguments are now allocated only to robots running version 2025.10 or later, and stay **Pending** until a compatible robot is available.\n* You can now record both failed jobs and failed queue transactions for the same process.\n* Jobs that another job starts without an explicit source now take the source of the parent job's process type, instead of **Manual**.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator restores Autopilot Chat with broader tenant-management capabilities, updates the official package feed endpoint, and changes several job and queue behaviors. The release is significant for both administrative automation and execution/runtime behavior.",
+            "overall_analysis": "These changes expand administrative automation through Autopilot while also introducing infrastructure and scheduling behavior that organizations may need to operationalize. The package feed migration and robot-version gating for attachment-based inputs are especially important for environment readiness and compatibility planning.",
+            "changes": [
+              {
+                "name": "Autopilot Chat returns with expanded capabilities",
+                "summary": "Autopilot Chat is back in Orchestrator with expanded capabilities. It now works directly with the Orchestrator tenant to manage processes, jobs, queues, assets, triggers, machines, and folders, and users choose how much it does without approval.",
+                "analysis": "This likely increases administrative productivity by enabling broader conversational management of tenant resources with adjustable autonomy.",
+                "impact": "Affects Orchestrator users and administrators managing tenant resources.",
+                "breaking_change": false
+              },
+              {
+                "name": "Official package feed endpoint change",
+                "summary": "The official UiPath package feed behind the host **Libraries** feed is moving to `https://pkgs.uipath.com/official/index.json`. The Azure DevOps-hosted address is deprecated and planned for removal by April 2027. If outbound traffic is restricted, `pkgs.uipath.com` must be added to the allowlist.",
+                "analysis": "This requires infrastructure and network preparation to avoid future package access disruption as the old endpoint is retired.",
+                "impact": "Affects administrators responsible for package feed configuration and network allowlists in Orchestrator environments.",
+                "breaking_change": false
+              },
+              {
+                "name": "Attachment-based input arguments require robots 2025.10 or later",
+                "summary": "Jobs that use attachment-based input arguments are now allocated only to robots running version 2025.10 or later, and remain **Pending** until a compatible robot is available.",
+                "analysis": "This enforces compatibility for attachment-based inputs and may expose version gaps in robot fleets.",
+                "impact": "Affects jobs using attachment-based input arguments and the teams managing robot versions and job allocation.",
+                "breaking_change": false
+              },
+              {
+                "name": "Record failed jobs and failed queue transactions for the same process",
+                "summary": "Users can now record both failed jobs and failed queue transactions for the same process.",
+                "analysis": "This likely improves failure tracking and observability for processes that combine job execution and queue transaction handling.",
+                "impact": "Affects users monitoring process failures in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Child job source inherits parent process type",
+                "summary": "Jobs that another job starts without an explicit source now take the source of the parent job's process type instead of **Manual**.",
+                "analysis": "This change improves attribution accuracy for job origin and may affect reporting or downstream logic that relies on source values.",
+                "impact": "Affects users and systems that inspect or depend on the source assigned to jobs started by other jobs.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 20, 2026",
+            "October 28, 2026",
+            "October 29, 2026"
+          ],
+          "notes": [
+            "Automation Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 20, 2026",
+            "October 28, 2026",
+            "October 29, 2026"
+          ],
+          "notes": [
+            "Test Cloud platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 20, 2026",
+            "October 29, 2026"
+          ],
+          "notes": [
+            "Agents release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "AI Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Assistant Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - Serverless",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 29, 2026"
+          ],
+          "notes": [
+            "Automation Ops release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Commercial Pricing",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Fabric",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Financial Crime Compliance",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Functions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Healthcare",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 28, 2026"
+          ],
+          "notes": [
+            "Insights release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 19, 2026",
+            "October 23, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Inventory Management",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "IXP",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 23, 2026",
+            "October 30, 2026"
+          ],
+          "notes": [
+            "IXP release notes (IXP in Maestro Flow)IXP release notes (Unstructured and Complex Documents)",
+            "IXP release notes (Unstructured and Complex Documents)"
+          ],
+          "links": []
+        },
+        {
+          "product": "Loan Origination",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 30, 2026"
+          ],
+          "notes": [
+            "Maestro release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Maestro Automate",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 30, 2026"
+          ],
+          "notes": [
+            "Maestro Automate release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Merchandising",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 19, 2026",
+            "October 21, 2026",
+            "October 28, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Rebuy & Replenishment",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 20, 2026"
+          ],
+          "notes": [
+            "Solutions Management release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 21, 2026"
+          ],
+          "notes": [
+            "Studio Web release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        }
+      ]
+    },
     {
       "id": "automation-cloud-and-test-cloud--early-october-2026",
       "environment": "Automation Cloud and Test Cloud",
@@ -1008,6 +1655,306 @@
       ]
     },
     {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-october-2026",
+      "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
+      "timeframe": "Late October 2026",
+      "publishingDate": "October 31, 2026",
+      "range": "October 16, 2026 – October 31, 2026",
+      "note": "",
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The new Audit experience (Unified logs) is now available. Organization and tenant administrators get a centralized, filterable view of audit events, with CSV export for up to 100,000 logs from the last 90 days, and long-term export through the Audit Logs APIs or an export script.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+            "summary": "A new Unified logs Audit experience is now available for organization and tenant administrators. It centralizes audit-event viewing and filtering and adds export options for recent and long-term audit data.",
+            "overall_analysis": "This update improves audit visibility and exportability for administrative users, which likely supports monitoring, compliance, and investigation workflows across the organization.",
+            "changes": [
+              {
+                "name": "New Audit experience (Unified logs)",
+                "summary": "The new Audit experience (Unified logs) is now available, giving organization and tenant administrators a centralized, filterable view of audit events, CSV export for up to 100,000 logs from the last 90 days, and long-term export through the Audit Logs APIs or an export script.",
+                "analysis": "This likely streamlines audit review and evidence export by consolidating audit records in one place and supporting both short-term and long-term extraction methods.",
+                "impact": "Organization administrators and tenant administrators who review, filter, and export audit logs are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.\n* The **Generate Text Completion** activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Use **Generate Chat Completion** instead.\n* In the OpenAI **Generate Chat Completion** activity, an empty **Model name** now fails instead of using a default model.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Integration Service",
+            "summary": "Integration Service updates add PKCE-based authentication to the Microsoft OneDrive and SharePoint connector and change behavior in OpenAI-related activities. The release also removes one activity for new workflows and introduces explicit failure behavior when no model name is provided.",
+            "overall_analysis": "These changes strengthen authentication options and push users toward newer OpenAI workflow patterns, while also introducing behavior that can stop workflows if deprecated models or invalid configuration are used.",
+            "changes": [
+              {
+                "name": "PKCE authentication for Microsoft OneDrive and SharePoint connector",
+                "summary": "The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This likely simplifies and modernizes authentication setup, especially for scenarios where storing or using a client secret is undesirable or impractical.",
+                "impact": "Users configuring the Microsoft OneDrive and SharePoint connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Generate Text Completion removed for new workflows",
+                "summary": "The Generate Text Completion activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Users are instructed to use Generate Chat Completion instead.",
+                "analysis": "This change pushes users away from an older text-completion pattern toward chat-completion-based workflows and creates a concrete migration need for existing OpenAI automations that depend on the retired model.",
+                "impact": "Users creating new workflows in the OpenAI and Microsoft Azure OpenAI connectors and users maintaining existing OpenAI workflows that use Generate Text Completion are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Empty Model name now fails in Generate Chat Completion",
+                "summary": "In the OpenAI Generate Chat Completion activity, an empty Model name now fails instead of using a default model.",
+                "analysis": "This likely enforces more explicit configuration and reduces ambiguity, but it can also cause workflows with missing model configuration to fail rather than proceeding with an implicit default.",
+                "impact": "Users of the OpenAI Generate Chat Completion activity are affected, particularly those relying on omitted model-name values.",
+                "breaking_change": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. You can switch back to the classic layout at any time.\n* Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.\n* Deleting a video recording now requires **View** permission on the job or queue instead of **Delete**. Custom roles that have **Delete** but not **View** can no longer delete recordings (breaking change).\n* The asset form is redesigned, and the **Expose value to API** toggle replaces the **Access scope** options.",
+          "sourceMentionsBreaking": true,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Orchestrator",
+            "summary": "Orchestrator receives an opt-in layout redesign, improved bulk-action behavior, a permission change for deleting video recordings, and a redesigned asset form. The updates affect both usability and authorization behavior.",
+            "overall_analysis": "The release focuses on interface simplification and more flexible operations, while also tightening permission requirements in one area that may require role review for some organizations.",
+            "changes": [
+              {
+                "name": "Redesigned opt-in Orchestrator layout",
+                "summary": "A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. Users can switch back to the classic layout at any time.",
+                "analysis": "This likely improves navigation efficiency and contextual awareness in Orchestrator while minimizing adoption risk by keeping the redesign optional.",
+                "impact": "Orchestrator users navigating pages and folder resources are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk actions run on eligible rows in mixed selections",
+                "summary": "Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.",
+                "analysis": "This likely reduces friction in list management by allowing partial execution instead of forcing users to refine selections manually.",
+                "impact": "Users performing bulk actions on mixed-eligibility row selections are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "View permission required to delete video recordings",
+                "summary": "Deleting a video recording now requires View permission on the job or queue instead of Delete. Custom roles that have Delete but not View can no longer delete recordings.",
+                "analysis": "This changes authorization rules for deletion and may require administrators to update custom roles to preserve expected access.",
+                "impact": "Administrators managing custom roles and users who delete video recordings tied to jobs or queues are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Redesigned asset form and Expose value to API toggle",
+                "summary": "The asset form is redesigned, and the Expose value to API toggle replaces the Access scope options.",
+                "analysis": "This likely simplifies asset configuration and clarifies how API exposure is controlled, though users may need to adapt to the new form and setting model.",
+                "impact": "Users creating or editing assets in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null,
+          "releaseDates": [],
+          "source": "* Testing Process Governance is generally available (Test Cloud delivery only). It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.\n* Custom fields of type **Rich Text** are available (Test Cloud delivery only).\n* Test executions and test case logs now carry over the labels of the test sets and test cases you run.",
+          "sourceMentionsBreaking": false,
+          "analysisStatus": "ok",
+          "analysis": {
+            "name": "Test Manager",
+            "summary": "Test Manager adds generally available Testing Process Governance for Test Cloud delivery, introduces Rich Text custom fields, and now carries labels into test executions and test case logs. The updates expand governance and metadata handling for testing workflows.",
+            "overall_analysis": "These changes strengthen control, reporting, and data richness in testing processes, particularly for Test Cloud users, and likely improve traceability and documentation quality.",
+            "changes": [
+              {
+                "name": "Testing Process Governance generally available",
+                "summary": "Testing Process Governance is generally available for Test Cloud delivery only. It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.",
+                "analysis": "This likely improves control, compliance, and auditability of testing processes by extending governance coverage and making governance information visible in outputs and exports.",
+                "impact": "Test Cloud delivery users managing governed testing processes, reports, and project exports are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Rich Text custom fields available",
+                "summary": "Custom fields of type Rich Text are available for Test Cloud delivery only.",
+                "analysis": "This likely allows richer formatting and more expressive documentation in custom metadata fields.",
+                "impact": "Test Cloud delivery users configuring and using custom fields are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Labels carried over to test executions and test case logs",
+                "summary": "Test executions and test case logs now carry over the labels of the test sets and test cases you run.",
+                "analysis": "This likely improves traceability, filtering, and reporting consistency by preserving label metadata in downstream execution records.",
+                "impact": "Users reviewing or reporting on test executions and test case logs are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      ],
+      "catalog": [
+        {
+          "product": "Automation Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 23, 2026"
+          ],
+          "notes": [
+            "Automation Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Public Sector Admin",
+          "layer": "Platform",
+          "available": true,
+          "dates": [
+            "October 16, 2026",
+            "October 23, 2026"
+          ],
+          "notes": [
+            "Test Cloud Public Sector platform release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Cloud Robots - VM",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Hub",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 22, 2026",
+            "October 23, 2026"
+          ],
+          "notes": [
+            "Integration Service release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 28, 2026"
+          ],
+          "notes": [
+            "Orchestrator release notes"
+          ],
+          "links": []
+        },
+        {
+          "product": "Process Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Task Mining",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": true,
+          "dates": [
+            "October 16, 2026"
+          ],
+          "notes": [
+            "Test Manager release notes"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
       "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026",
       "environment": "Automation Cloud Public Sector and Test Cloud Public Sector",
       "timeframe": "Early October 2026",
@@ -1317,6 +2264,169 @@
           "notes": [
             "Test Manager release notes"
           ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--late-october-2026",
+      "environment": "Automation Cloud Dedicated and Test Cloud Dedicated",
+      "timeframe": "Late October 2026",
+      "publishingDate": "October 31, 2026",
+      "range": "N/A",
+      "note": "",
+      "products": [],
+      "catalog": [
+        {
+          "product": "Automation Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Cloud Dedicated Admin",
+          "layer": "Platform",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Action Center",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Agents",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "AI Computer Vision",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Apps",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Suite Robots",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Automation Ops",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Autopilot",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Data Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Document Understanding",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Healing Agent",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Insights",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Integration Service",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Maestro",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Orchestrator",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Solutions",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Studio Web",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
+          "links": []
+        },
+        {
+          "product": "Test Manager",
+          "layer": "Product",
+          "available": false,
+          "dates": [],
+          "notes": [],
           "links": []
         }
       ]
@@ -1632,21 +2742,307 @@
     }
   ],
   "counts": {
-    "sections": 3,
-    "products": 25,
-    "analysedProducts": 25,
-    "changes": 66,
-    "breakingChanges": 8,
+    "sections": 6,
+    "products": 37,
+    "analysedProducts": 37,
+    "changes": 104,
+    "breakingChanges": 16,
     "chunks": {
-      "total": 4,
-      "ok": 4,
+      "total": 6,
+      "ok": 6,
       "failed": 0,
       "pending": 0
     }
   },
   "chunks": [
     {
-      "id": "automation-cloud-and-test-cloud--early-october-2026#01",
+      "id": "automation-cloud-and-test-cloud--late-october-2026#01",
+      "sectionId": "automation-cloud-and-test-cloud--late-october-2026",
+      "sha256": "e94538bd3112b94c5ade388b63073848e644b057cb8f7f4ec7c43d76792f6f82",
+      "chars": 4910,
+      "payloadChars": 5026,
+      "products": [
+        {
+          "name": "Automation Cloud Administration and Test Cloud Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Agents",
+          "releaseDate": null
+        },
+        {
+          "name": "Automation Ops",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "IXP",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro",
+          "releaseDate": null
+        },
+        {
+          "name": "Maestro Automate",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Administration and Test Cloud Administration": {
+            "summary": "Administration updates change AI Trust Layer audit defaults and expand regional availability for Solutions and Insights. The release focuses on data-handling policy behavior and broader service availability across regions.",
+            "overall_analysis": "These changes primarily affect governance and deployment planning. Organizations using AI Trust Layer policies must review audit expectations, while customers in India and the EU delayed region gain access to additional cloud services with region-specific availability.",
+            "changes": [
+              {
+                "name": "AI Trust Layer audit saving disabled by default for new policies",
+                "summary": "New AI Trust Layer policies no longer save prompt inputs and LLM-generated outputs for audit by default. For LLM calls governed by a new policy, audit logs show inputs and outputs as **Blocked by Policy** until input/output saving is enabled. Existing policies keep their current setting.",
+                "analysis": "This likely reflects a stronger default privacy posture for AI interactions while preserving the ability to opt in to more detailed auditing when needed.",
+                "impact": "Affects administrators managing AI Trust Layer policies and audit practices in Automation Cloud and Test Cloud Administration.",
+                "breaking_change": false
+              },
+              {
+                "name": "Solutions available in India region",
+                "summary": "Solutions is now available in the India region with full data residency.",
+                "analysis": "This expands regional access and supports customers that require workloads and data to remain in India.",
+                "impact": "Affects customers deploying Solutions in the India region, especially those with data residency requirements.",
+                "breaking_change": false
+              },
+              {
+                "name": "Insights available in EU delayed region",
+                "summary": "Insights is now available in the European Union delayed region.",
+                "analysis": "This broadens regional product availability and may help organizations align analytics usage with regional deployment preferences.",
+                "impact": "Affects customers using or planning to use Insights in the European Union delayed region.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Agents": {
+            "summary": "Agents adds preview runtime evaluations and announces a December 2, 2026 settings change for coded agents. The release introduces evaluation tooling while aligning coded agents with the AI Trust Layer and low-code agent configuration model.",
+            "overall_analysis": "The update strengthens agent quality assessment and standardizes configuration behavior across agent types. However, the December change may require review and remediation for coded agents that currently rely on separate settings.",
+            "changes": [
+              {
+                "name": "Runtime evaluations in preview",
+                "summary": "Runtime evaluations, in preview, score a deployed agent against datasets of inputs and expected outputs, either on demand or on a recurring schedule.",
+                "analysis": "This likely helps teams measure agent quality, detect regressions, and monitor performance over time in production-like scenarios.",
+                "impact": "Affects teams deploying and maintaining agents who need systematic evaluation and monitoring.",
+                "breaking_change": false
+              },
+              {
+                "name": "Coded agents move to AI Trust Layer and low-code LLM settings",
+                "summary": "Starting December 2, 2026, coded agents use the AI Trust Layer agents settings and the LLM configurations of low-code agents. This can be a breaking change for coded agents whose settings differ, and coded-agent-only settings and configurations are no longer used.",
+                "analysis": "This standardizes agent configuration across coded and low-code experiences, but it may alter runtime behavior for existing coded agents that depend on distinct settings.",
+                "impact": "Affects developers and administrators of coded agents, particularly where coded-agent settings differ from low-code or AI Trust Layer settings.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Automation Ops": {
+            "summary": "Automation Ops updates AI Trust Layer policy defaults so audit input/output saving is turned off by default for new policies. The change emphasizes configurable governance through the Feature Toggles tab.",
+            "overall_analysis": "The release appears focused on privacy-oriented default behavior for AI policy management. Administrators may need to explicitly enable logging where audit detail is required.",
+            "changes": [
+              {
+                "name": "Default audit input/output saving turned off for new AI Trust Layer policies",
+                "summary": "New AI Trust Layer policies have input/output saving for audit turned off by default. Administrators can enable it in the **Feature Toggles** tab.",
+                "analysis": "This likely reduces default retention of AI interaction data and gives administrators explicit control over when detailed audit logging is collected.",
+                "impact": "Affects administrators configuring AI Trust Layer policies in Automation Ops.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service introduces the preview TypeSafe connector, adds PKCE authentication to the Microsoft OneDrive and SharePoint connector, and changes OpenAI connector behavior through one removal and one stricter validation. The release mixes new integration options with connector behavior changes that may require workflow updates.",
+            "overall_analysis": "The update expands AI-related connector capabilities and modernizes authentication, while also enforcing a transition away from older OpenAI patterns. The OpenAI changes have the highest operational significance because they can break or invalidate workflow behavior.",
+            "changes": [
+              {
+                "name": "TypeSafe connector in preview",
+                "summary": "The TypeSafe connector is available in preview. It calls the TypeSafe System One API to make choice, score, and yes/no decisions about text or JSON content in RPA workflows, API workflows, and Maestro agentic processes.",
+                "analysis": "This likely adds decisioning capabilities that can be embedded into workflows and agentic processes without custom API implementation.",
+                "impact": "Affects builders of RPA workflows, API workflows, and Maestro agentic processes who want to use TypeSafe System One API decisions.",
+                "breaking_change": false
+              },
+              {
+                "name": "PKCE authentication for Microsoft OneDrive and SharePoint connector",
+                "summary": "The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This improves authentication flexibility and may simplify or strengthen setups where a client secret is undesirable or unavailable.",
+                "impact": "Affects users configuring authentication for the Microsoft OneDrive and SharePoint connector.",
+                "breaking_change": false
+              },
+              {
+                "name": "Generate Text Completion removed for new workflows",
+                "summary": "The **Generate Text Completion** activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Users should use **Generate Chat Completion** instead.",
+                "analysis": "This forces migration away from a retiring model and older completion pattern toward chat-based completion, reducing reliance on unsupported OpenAI functionality.",
+                "impact": "Affects users creating new workflows with OpenAI or Microsoft Azure OpenAI connectors and existing OpenAI workflows that still use **Generate Text Completion**.",
+                "breaking_change": true
+              },
+              {
+                "name": "Empty model name now fails in Generate Chat Completion",
+                "summary": "In the OpenAI **Generate Chat Completion** activity, an empty **Model name** now fails instead of using a default model.",
+                "analysis": "This enforces explicit configuration and prevents implicit fallback behavior that could hide setup errors or produce unexpected model selection.",
+                "impact": "Affects users of the OpenAI **Generate Chat Completion** activity, especially workflows that relied on the previous default-model behavior.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "IXP": {
+            "summary": "IXP adds preview support in Maestro Flow, expands extraction model choices, and updates model availability status with new GA and deprecated options. The release strengthens in-flow extraction capabilities while continuing rapid model lineup changes.",
+            "overall_analysis": "These changes make IXP more embedded in process design and broaden available extraction models. At the same time, the deprecation notice signals ongoing model lifecycle management that users must track when selecting extraction models.",
+            "changes": [
+              {
+                "name": "IXP in Maestro Flow in preview",
+                "summary": "IXP in Maestro Flow is available in preview. Users can build, evaluate, and run an extraction model directly in the **Extract** node of a flow.",
+                "analysis": "This likely streamlines document or data extraction workflows by bringing model lifecycle tasks into the flow design experience.",
+                "impact": "Affects users building flows in Maestro Flow who want integrated extraction model creation and execution.",
+                "breaking_change": false
+              },
+              {
+                "name": "New preview extraction models and redesigned model picker",
+                "summary": "Anthropic Claude Sonnet 4.6 and Claude Sonnet 5 are available as extraction models in preview, and a redesigned model picker groups models into **Available**, **Preview**, and **Custom**.",
+                "analysis": "This expands model choice and improves model selection usability by clarifying availability state and categorization.",
+                "impact": "Affects users selecting extraction models in IXP.",
+                "breaking_change": false
+              },
+              {
+                "name": "Additional extraction models generally available",
+                "summary": "GPT-5.1, GPT-5.4, and Gemini 3.5 Flash Lite are generally available as extraction models.",
+                "analysis": "This indicates these models are ready for broader production use in extraction scenarios.",
+                "impact": "Affects IXP users choosing generally available extraction models for production workloads.",
+                "breaking_change": false
+              },
+              {
+                "name": "Gemini 3.6 Flash and 3.7 Flash deprecated",
+                "summary": "Gemini 3.6 Flash and Gemini 3.7 Flash are deprecated in favor of Gemini 3.8 Flash.",
+                "analysis": "This signals a recommended model transition and may be intended to consolidate users onto a newer preferred model version.",
+                "impact": "Affects IXP users currently using or considering Gemini 3.6 Flash or Gemini 3.7 Flash extraction models.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro": {
+            "summary": "Maestro adds preview extraction and validation nodes in Flow, improves Quick Form error handling, changes call-related outputs and connections, tightens validation in BPMN and Case, and updates case task link behavior. The release combines new human-in-the-loop extraction workflows with runtime and authoring safeguards.",
+            "overall_analysis": "The update deepens end-to-end orchestration capabilities, especially around extraction and review, while also making debugging, validation, and case navigation more controlled. Some behavior changes may require process authors to adapt existing flow or debugging expectations.",
+            "changes": [
+              {
+                "name": "Extract and Validate extraction nodes in Maestro Flow",
+                "summary": "In Maestro Flow, the **Extract** node can create an IXP model that users build, evaluate, and run without leaving Flow, and a new **Validate extraction** node sends extracted data to a person for review. Both are in preview.",
+                "analysis": "This likely enables more complete extraction workflows inside Flow, including built-in human review for quality control.",
+                "impact": "Affects users designing extraction-centric flows in Maestro Flow.",
+                "breaking_change": false
+              },
+              {
+                "name": "Quick Form error handling in Maestro Flow",
+                "summary": "In Maestro Flow, the **Quick Form** node supports error handling, so a run can continue on the node's error path.",
+                "analysis": "This improves resilience by allowing flows to handle form-node failures without stopping the entire run.",
+                "impact": "Affects users building flows that include **Quick Form** nodes.",
+                "breaking_change": false
+              },
+              {
+                "name": "Call node callContext changes and Voice agent Escalations removal",
+                "summary": "In Maestro Flow, the `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).",
+                "analysis": "The added phone metadata improves downstream handling of call details, while the removed connection changes how voice-agent interactions are modeled.",
+                "impact": "Affects users building telephony-related flows with call nodes and the **Voice agent** node in Maestro Flow.",
+                "breaking_change": true
+              },
+              {
+                "name": "Missing required variable now blocks debugging and retry settings are validated",
+                "summary": "In Maestro BPMN and Maestro Case, a required variable that is missing now blocks debugging as well as publishing. New element-level retry settings in Maestro BPMN are validated against supported ranges.",
+                "analysis": "These checks likely prevent invalid process configurations from being tested or deployed and enforce supported retry behavior earlier in authoring.",
+                "impact": "Affects users authoring and debugging processes in Maestro BPMN and Maestro Case.",
+                "breaking_change": false
+              },
+              {
+                "name": "Case task links open in Case app",
+                "summary": "In Maestro Case, task links on a case instance now open the task in the Case app instead of Action Center.",
+                "analysis": "This appears intended to keep case work in the case-specific experience rather than redirecting users to a separate app.",
+                "impact": "Affects users navigating tasks from case instances in Maestro Case.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Maestro Automate": {
+            "summary": "Maestro Automate adds preview extraction and validation support, Quick Form error handling, and telephony-related node changes. The release mirrors key orchestration improvements for extraction workflows and flow resilience.",
+            "overall_analysis": "The changes make Maestro Automate more capable for extraction scenarios and more robust in handling node failures. The telephony update also alters node behavior and available connections, which may require design updates.",
+            "changes": [
+              {
+                "name": "Extract and Validate extraction nodes",
+                "summary": "The **Extract** node can create an IXP model built in the node, and the new **Validate extraction** node sends extracted data to a person for review (preview).",
+                "analysis": "This likely supports end-to-end extraction workflows with integrated model creation and human validation.",
+                "impact": "Affects users building extraction workflows in Maestro Automate.",
+                "breaking_change": false
+              },
+              {
+                "name": "Quick Form error handling",
+                "summary": "The **Quick Form** node supports error handling, so a run can continue on the node's error path.",
+                "analysis": "This improves workflow robustness by allowing processing to continue when the form node encounters an error.",
+                "impact": "Affects users building workflows with **Quick Form** nodes in Maestro Automate.",
+                "breaking_change": false
+              },
+              {
+                "name": "Call node callContext changes and Voice agent Escalations removal",
+                "summary": "The `callContext` output of call nodes now includes the `from` and `to` phone numbers, and the **Voice agent** node no longer has an **Escalations** connection (preview).",
+                "analysis": "The additional phone fields improve call context handling, while the removal of the **Escalations** connection may require workflow redesign for voice-agent scenarios.",
+                "impact": "Affects users building call-related and voice-agent workflows in Maestro Automate.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator restores Autopilot Chat with broader tenant-management capabilities, updates the official package feed endpoint, and changes several job and queue behaviors. The release is significant for both administrative automation and execution/runtime behavior.",
+            "overall_analysis": "These changes expand administrative automation through Autopilot while also introducing infrastructure and scheduling behavior that organizations may need to operationalize. The package feed migration and robot-version gating for attachment-based inputs are especially important for environment readiness and compatibility planning.",
+            "changes": [
+              {
+                "name": "Autopilot Chat returns with expanded capabilities",
+                "summary": "Autopilot Chat is back in Orchestrator with expanded capabilities. It now works directly with the Orchestrator tenant to manage processes, jobs, queues, assets, triggers, machines, and folders, and users choose how much it does without approval.",
+                "analysis": "This likely increases administrative productivity by enabling broader conversational management of tenant resources with adjustable autonomy.",
+                "impact": "Affects Orchestrator users and administrators managing tenant resources.",
+                "breaking_change": false
+              },
+              {
+                "name": "Official package feed endpoint change",
+                "summary": "The official UiPath package feed behind the host **Libraries** feed is moving to `https://pkgs.uipath.com/official/index.json`. The Azure DevOps-hosted address is deprecated and planned for removal by April 2027. If outbound traffic is restricted, `pkgs.uipath.com` must be added to the allowlist.",
+                "analysis": "This requires infrastructure and network preparation to avoid future package access disruption as the old endpoint is retired.",
+                "impact": "Affects administrators responsible for package feed configuration and network allowlists in Orchestrator environments.",
+                "breaking_change": false
+              },
+              {
+                "name": "Attachment-based input arguments require robots 2025.10 or later",
+                "summary": "Jobs that use attachment-based input arguments are now allocated only to robots running version 2025.10 or later, and remain **Pending** until a compatible robot is available.",
+                "analysis": "This enforces compatibility for attachment-based inputs and may expose version gaps in robot fleets.",
+                "impact": "Affects jobs using attachment-based input arguments and the teams managing robot versions and job allocation.",
+                "breaking_change": false
+              },
+              {
+                "name": "Record failed jobs and failed queue transactions for the same process",
+                "summary": "Users can now record both failed jobs and failed queue transactions for the same process.",
+                "analysis": "This likely improves failure tracking and observability for processes that combine job execution and queue transaction handling.",
+                "impact": "Affects users monitoring process failures in Orchestrator.",
+                "breaking_change": false
+              },
+              {
+                "name": "Child job source inherits parent process type",
+                "summary": "Jobs that another job starts without an explicit source now take the source of the parent job's process type instead of **Manual**.",
+                "analysis": "This change improves attribution accuracy for job origin and may affect reporting or downstream logic that relies on source values.",
+                "impact": "Affects users and systems that inspect or depend on the source assigned to jobs started by other jobs.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 56956
+    },
+    {
+      "id": "automation-cloud-and-test-cloud--early-october-2026#02",
       "sectionId": "automation-cloud-and-test-cloud--early-october-2026",
       "sha256": "a1166a4e941e9c20e78ca3d390eaa20f911382e8d09c9b6c22df5824a9d74580",
       "chars": 7588,
@@ -1718,7 +3114,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -2121,10 +3517,10 @@
           }
         }
       },
-      "durationMs": 70765
+      "durationMs": null
     },
     {
-      "id": "automation-cloud-and-test-cloud--early-october-2026#02",
+      "id": "automation-cloud-and-test-cloud--early-october-2026#03",
       "sectionId": "automation-cloud-and-test-cloud--early-october-2026",
       "sha256": "d5ecd6a531db2273fde1b23a26ed7a22565ed2d53cb048dba701fae515befb5a",
       "chars": 880,
@@ -2136,7 +3532,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -2183,10 +3579,144 @@
           }
         }
       },
-      "durationMs": 14792
+      "durationMs": null
     },
     {
-      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026#03",
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--late-october-2026#04",
+      "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--late-october-2026",
+      "sha256": "7eaf370b9f24394d7bd3e65813db67b4d13d496ed9df388aa15c61335b6cd16d",
+      "chars": 2219,
+      "payloadChars": 2307,
+      "products": [
+        {
+          "name": "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration",
+          "releaseDate": null
+        },
+        {
+          "name": "Integration Service",
+          "releaseDate": null
+        },
+        {
+          "name": "Orchestrator",
+          "releaseDate": null
+        },
+        {
+          "name": "Test Manager",
+          "releaseDate": null
+        }
+      ],
+      "status": "ok",
+      "reused": false,
+      "error": null,
+      "result": {
+        "products": {
+          "Automation Cloud Public Sector Administration and Test Cloud Public Sector Administration": {
+            "summary": "A new Unified logs Audit experience is now available for organization and tenant administrators. It centralizes audit-event viewing and filtering and adds export options for recent and long-term audit data.",
+            "overall_analysis": "This update improves audit visibility and exportability for administrative users, which likely supports monitoring, compliance, and investigation workflows across the organization.",
+            "changes": [
+              {
+                "name": "New Audit experience (Unified logs)",
+                "summary": "The new Audit experience (Unified logs) is now available, giving organization and tenant administrators a centralized, filterable view of audit events, CSV export for up to 100,000 logs from the last 90 days, and long-term export through the Audit Logs APIs or an export script.",
+                "analysis": "This likely streamlines audit review and evidence export by consolidating audit records in one place and supporting both short-term and long-term extraction methods.",
+                "impact": "Organization administrators and tenant administrators who review, filter, and export audit logs are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Integration Service": {
+            "summary": "Integration Service updates add PKCE-based authentication to the Microsoft OneDrive and SharePoint connector and change behavior in OpenAI-related activities. The release also removes one activity for new workflows and introduces explicit failure behavior when no model name is provided.",
+            "overall_analysis": "These changes strengthen authentication options and push users toward newer OpenAI workflow patterns, while also introducing behavior that can stop workflows if deprecated models or invalid configuration are used.",
+            "changes": [
+              {
+                "name": "PKCE authentication for Microsoft OneDrive and SharePoint connector",
+                "summary": "The Microsoft OneDrive and SharePoint connector adds OAuth 2.0 Authorization Code with Proof Key for Code Exchange (PKCE) authentication, which works without a client secret.",
+                "analysis": "This likely simplifies and modernizes authentication setup, especially for scenarios where storing or using a client secret is undesirable or impractical.",
+                "impact": "Users configuring the Microsoft OneDrive and SharePoint connector are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Generate Text Completion removed for new workflows",
+                "summary": "The Generate Text Completion activity is removed for new workflows in the OpenAI and Microsoft Azure OpenAI connectors. Existing OpenAI workflows that use it fail after OpenAI retires `davinci-002` on October 23, 2026. Users are instructed to use Generate Chat Completion instead.",
+                "analysis": "This change pushes users away from an older text-completion pattern toward chat-completion-based workflows and creates a concrete migration need for existing OpenAI automations that depend on the retired model.",
+                "impact": "Users creating new workflows in the OpenAI and Microsoft Azure OpenAI connectors and users maintaining existing OpenAI workflows that use Generate Text Completion are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Empty Model name now fails in Generate Chat Completion",
+                "summary": "In the OpenAI Generate Chat Completion activity, an empty Model name now fails instead of using a default model.",
+                "analysis": "This likely enforces more explicit configuration and reduces ambiguity, but it can also cause workflows with missing model configuration to fail rather than proceeding with an implicit default.",
+                "impact": "Users of the OpenAI Generate Chat Completion activity are affected, particularly those relying on omitted model-name values.",
+                "breaking_change": true
+              }
+            ]
+          },
+          "Orchestrator": {
+            "summary": "Orchestrator receives an opt-in layout redesign, improved bulk-action behavior, a permission change for deleting video recordings, and a redesigned asset form. The updates affect both usability and authorization behavior.",
+            "overall_analysis": "The release focuses on interface simplification and more flexible operations, while also tightening permission requirements in one area that may require role review for some organizations.",
+            "changes": [
+              {
+                "name": "Redesigned opt-in Orchestrator layout",
+                "summary": "A redesigned, opt-in Orchestrator layout groups pages by task, keeps the current folder in view, and brings all folder resources together on one page. Users can switch back to the classic layout at any time.",
+                "analysis": "This likely improves navigation efficiency and contextual awareness in Orchestrator while minimizing adoption risk by keeping the redesign optional.",
+                "impact": "Orchestrator users navigating pages and folder resources are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Bulk actions run on eligible rows in mixed selections",
+                "summary": "Bulk actions now run on the eligible rows of a mixed selection instead of being disabled.",
+                "analysis": "This likely reduces friction in list management by allowing partial execution instead of forcing users to refine selections manually.",
+                "impact": "Users performing bulk actions on mixed-eligibility row selections are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "View permission required to delete video recordings",
+                "summary": "Deleting a video recording now requires View permission on the job or queue instead of Delete. Custom roles that have Delete but not View can no longer delete recordings.",
+                "analysis": "This changes authorization rules for deletion and may require administrators to update custom roles to preserve expected access.",
+                "impact": "Administrators managing custom roles and users who delete video recordings tied to jobs or queues are affected.",
+                "breaking_change": true
+              },
+              {
+                "name": "Redesigned asset form and Expose value to API toggle",
+                "summary": "The asset form is redesigned, and the Expose value to API toggle replaces the Access scope options.",
+                "analysis": "This likely simplifies asset configuration and clarifies how API exposure is controlled, though users may need to adapt to the new form and setting model.",
+                "impact": "Users creating or editing assets in Orchestrator are affected.",
+                "breaking_change": false
+              }
+            ]
+          },
+          "Test Manager": {
+            "summary": "Test Manager adds generally available Testing Process Governance for Test Cloud delivery, introduces Rich Text custom fields, and now carries labels into test executions and test case logs. The updates expand governance and metadata handling for testing workflows.",
+            "overall_analysis": "These changes strengthen control, reporting, and data richness in testing processes, particularly for Test Cloud users, and likely improve traceability and documentation quality.",
+            "changes": [
+              {
+                "name": "Testing Process Governance generally available",
+                "summary": "Testing Process Governance is generally available for Test Cloud delivery only. It extends to test case logs, supports bulk governance and enforced signing order, and includes governance data in reports and project exports.",
+                "analysis": "This likely improves control, compliance, and auditability of testing processes by extending governance coverage and making governance information visible in outputs and exports.",
+                "impact": "Test Cloud delivery users managing governed testing processes, reports, and project exports are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Rich Text custom fields available",
+                "summary": "Custom fields of type Rich Text are available for Test Cloud delivery only.",
+                "analysis": "This likely allows richer formatting and more expressive documentation in custom metadata fields.",
+                "impact": "Test Cloud delivery users configuring and using custom fields are affected.",
+                "breaking_change": false
+              },
+              {
+                "name": "Labels carried over to test executions and test case logs",
+                "summary": "Test executions and test case logs now carry over the labels of the test sets and test cases you run.",
+                "analysis": "This likely improves traceability, filtering, and reporting consistency by preserving label metadata in downstream execution records.",
+                "impact": "Users reviewing or reporting on test executions and test case logs are affected.",
+                "breaking_change": false
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 41704
+    },
+    {
+      "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026#05",
       "sectionId": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026",
       "sha256": "ec31c2d03dee5e4a09ce0b6582e04ddce10e8e861cd42702d8418b69f64aed69",
       "chars": 1741,
@@ -2214,7 +3744,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -2327,10 +3857,10 @@
           }
         }
       },
-      "durationMs": 24980
+      "durationMs": null
     },
     {
-      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026#04",
+      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026#06",
       "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026",
       "sha256": "d12a0bb15761e8b999fb81a48ab623d315a20d2443090104686ebb9c36c94d3b",
       "chars": 1366,
@@ -2350,7 +3880,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -2423,7 +3953,7 @@
           }
         }
       },
-      "durationMs": 24368
+      "durationMs": null
     }
   ],
   "warnings": []
