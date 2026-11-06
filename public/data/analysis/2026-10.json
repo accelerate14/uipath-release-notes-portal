@@ -4,12 +4,12 @@
   "label": "October 2026",
   "title": "October 2026",
   "cacheKey": "v1",
-  "generatedAt": "2026-11-03T08:07:14.176Z",
+  "generatedAt": "2026-11-06T08:05:26.679Z",
   "source": {
     "pageUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026",
     "markdownUrl": "https://docs.uipath.com/release-notes/other/latest/release-notes/cloud-platform-october-2026.md",
-    "sha256": "4679d280dca84b2cbaf29d56b27ed2af4565ac35d856ef9cb033f21a9f6a13c0",
-    "chars": 37716
+    "sha256": "03b348bf23a492210f055ee4f68684e7d60f2b369b8a2e3ecc5d66f8fe7b6a4f",
+    "chars": 37797
   },
   "status": "complete",
   "sections": [
@@ -2438,108 +2438,7 @@
       "publishingDate": "October 15, 2026",
       "range": "October 9, 2026",
       "note": "",
-      "products": [
-        {
-          "name": "Orchestrator",
-          "releaseDate": "October 9, 2026",
-          "releaseDates": [
-            "October 9, 2026"
-          ],
-          "source": "* The Automation Registry is now available, with a cross-folder view of solution deployments, processes, and resources across all automation types.\n* You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.\n* Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.\n* Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
-          "sourceMentionsBreaking": false,
-          "analysisStatus": "ok",
-          "analysis": {
-            "name": "Orchestrator",
-            "summary": "Orchestrator introduces the Automation Registry, adds environment variable support when deploying or editing RPA processes, changes webhook behavior for bulk queue uploads, and adds distinct icons for Maestro process and resource types.",
-            "overall_analysis": "These updates expand visibility across automations, improve deployment configuration for RPA processes, and refine how Orchestrator represents and reports operational events and Maestro assets.",
-            "changes": [
-              {
-                "name": "Automation Registry availability",
-                "summary": "The Automation Registry is now available, providing a cross-folder view of solution deployments, processes, and resources across all automation types.",
-                "analysis": "This likely helps users centrally inspect automation assets across folders instead of checking each folder separately, improving visibility and governance.",
-                "impact": "Administrators and users managing solution deployments, processes, and resources across multiple folders and automation types.",
-                "breaking_change": false
-              },
-              {
-                "name": "Environment variables for RPA process deployment and editing",
-                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
-                "analysis": "This likely makes RPA process configuration more flexible and secure by allowing environment-specific settings and secret references during deployment and updates.",
-                "impact": "Users deploying or editing RPA processes; environments using Robot 25.10 or later; teams managing secrets through assets.",
-                "breaking_change": false
-              },
-              {
-                "name": "Bulk queue upload webhook behavior update",
-                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
-                "analysis": "This changes how downstream consumers may receive notifications for bulk uploads, which may improve event handling scalability but requires attention from integrations that assume a single event per bulk upload.",
-                "impact": "Integrations, webhook consumers, and developers processing `queueItem.added` events for bulk queue item uploads.",
-                "breaking_change": false
-              },
-              {
-                "name": "Distinct icons for Maestro process and resource types",
-                "summary": "Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
-                "analysis": "This likely improves visual differentiation and usability when working with different Maestro artifact types.",
-                "impact": "Users viewing or managing Maestro BPMN, Maestro Case, and Maestro Flow processes and resources in Orchestrator.",
-                "breaking_change": false
-              }
-            ]
-          }
-        },
-        {
-          "name": "Studio Web",
-          "releaseDate": "October 9, 2026",
-          "releaseDates": [
-            "October 9, 2026"
-          ],
-          "source": "* Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.\n* API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
-          "sourceMentionsBreaking": false,
-          "analysisStatus": "ok",
-          "analysis": {
-            "name": "Studio Web",
-            "summary": "Studio Web adds Autopilot as a coding agent in public preview and changes API workflow licensing to a flat fee per workflow execution with Integration Service usage no longer metered separately inside those workflows.",
-            "overall_analysis": "The release expands AI-assisted development capabilities in Studio Web while simplifying the commercial model for API workflows.",
-            "changes": [
-              {
-                "name": "Autopilot coding agent in public preview",
-                "summary": "Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.",
-                "analysis": "This likely accelerates development and review tasks by adding AI assistance across several Studio Web project types, though availability is still limited by its public preview status.",
-                "impact": "Developers and makers using Studio Web for API workflows, RPA workflows, coded apps, and Functions.",
-                "breaking_change": false
-              },
-              {
-                "name": "API workflow licensing model update",
-                "summary": "API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
-                "analysis": "This likely makes API workflow cost calculation more predictable and may reduce billing complexity for workflows that use Integration Service within the execution path.",
-                "impact": "Customers running API workflows in Studio Web, especially those using Integration Service within those workflows.",
-                "breaking_change": false
-              }
-            ]
-          }
-        },
-        {
-          "name": "Test Manager",
-          "releaseDate": "October 9, 2026",
-          "releaseDates": [
-            "October 9, 2026"
-          ],
-          "source": "* The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
-          "sourceMentionsBreaking": false,
-          "analysisStatus": "ok",
-          "analysis": {
-            "name": "Test Manager",
-            "summary": "Test Manager enhances the Override Parameters panel by showing which overridden parameters are actually used by the linked automation.",
-            "overall_analysis": "This update improves parameter visibility between tests and linked automations, helping users better understand relevance and usage of overrides.",
-            "changes": [
-              {
-                "name": "In automation column for overridden parameters",
-                "summary": "The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
-                "analysis": "This likely helps users identify effective versus unused parameter overrides, reducing confusion and improving test configuration accuracy.",
-                "impact": "Test Manager users configuring override parameters for linked automations.",
-                "breaking_change": false
-              }
-            ]
-          }
-        }
-      ],
+      "products": [],
       "catalog": [
         {
           "product": "Automation Cloud Dedicated Admin",
@@ -2743,13 +2642,13 @@
   ],
   "counts": {
     "sections": 6,
-    "products": 37,
-    "analysedProducts": 37,
-    "changes": 104,
+    "products": 34,
+    "analysedProducts": 34,
+    "changes": 97,
     "breakingChanges": 16,
     "chunks": {
-      "total": 6,
-      "ok": 6,
+      "total": 5,
+      "ok": 5,
       "failed": 0,
       "pending": 0
     }
@@ -2796,7 +2695,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -3039,7 +2938,7 @@
           }
         }
       },
-      "durationMs": 56956
+      "durationMs": null
     },
     {
       "id": "automation-cloud-and-test-cloud--early-october-2026#02",
@@ -3606,7 +3505,7 @@
         }
       ],
       "status": "ok",
-      "reused": false,
+      "reused": true,
       "error": null,
       "result": {
         "products": {
@@ -3713,7 +3612,7 @@
           }
         }
       },
-      "durationMs": 41704
+      "durationMs": null
     },
     {
       "id": "automation-cloud-public-sector-and-test-cloud-public-sector--early-october-2026#05",
@@ -3851,102 +3750,6 @@
                 "summary": "The Override Parameters panel now includes an In automation column that shows which overridden parameters the linked automation actually uses.",
                 "analysis": "The likely purpose is to make parameter overrides easier to validate by showing whether each override is relevant to the linked automation. This can help users avoid unnecessary or ineffective overrides.",
                 "impact": "Affects Test Manager users who configure or review overridden parameters for linked automations.",
-                "breaking_change": false
-              }
-            ]
-          }
-        }
-      },
-      "durationMs": null
-    },
-    {
-      "id": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026#06",
-      "sectionId": "automation-cloud-dedicated-and-test-cloud-dedicated--early-october-2026",
-      "sha256": "d12a0bb15761e8b999fb81a48ab623d315a20d2443090104686ebb9c36c94d3b",
-      "chars": 1366,
-      "payloadChars": 1447,
-      "products": [
-        {
-          "name": "Orchestrator",
-          "releaseDate": "October 9, 2026"
-        },
-        {
-          "name": "Studio Web",
-          "releaseDate": "October 9, 2026"
-        },
-        {
-          "name": "Test Manager",
-          "releaseDate": "October 9, 2026"
-        }
-      ],
-      "status": "ok",
-      "reused": true,
-      "error": null,
-      "result": {
-        "products": {
-          "Orchestrator": {
-            "summary": "Orchestrator introduces the Automation Registry, adds environment variable support when deploying or editing RPA processes, changes webhook behavior for bulk queue uploads, and adds distinct icons for Maestro process and resource types.",
-            "overall_analysis": "These updates expand visibility across automations, improve deployment configuration for RPA processes, and refine how Orchestrator represents and reports operational events and Maestro assets.",
-            "changes": [
-              {
-                "name": "Automation Registry availability",
-                "summary": "The Automation Registry is now available, providing a cross-folder view of solution deployments, processes, and resources across all automation types.",
-                "analysis": "This likely helps users centrally inspect automation assets across folders instead of checking each folder separately, improving visibility and governance.",
-                "impact": "Administrators and users managing solution deployments, processes, and resources across multiple folders and automation types.",
-                "breaking_change": false
-              },
-              {
-                "name": "Environment variables for RPA process deployment and editing",
-                "summary": "You can now specify environment variables when you deploy or edit an RPA process, including references to secret-type assets. This requires Robot 25.10 or later.",
-                "analysis": "This likely makes RPA process configuration more flexible and secure by allowing environment-specific settings and secret references during deployment and updates.",
-                "impact": "Users deploying or editing RPA processes; environments using Robot 25.10 or later; teams managing secrets through assets.",
-                "breaking_change": false
-              },
-              {
-                "name": "Bulk queue upload webhook behavior update",
-                "summary": "Bulk queue item uploads may now emit multiple `queueItem.added` webhook events, each covering a subset of the items.",
-                "analysis": "This changes how downstream consumers may receive notifications for bulk uploads, which may improve event handling scalability but requires attention from integrations that assume a single event per bulk upload.",
-                "impact": "Integrations, webhook consumers, and developers processing `queueItem.added` events for bulk queue item uploads.",
-                "breaking_change": false
-              },
-              {
-                "name": "Distinct icons for Maestro process and resource types",
-                "summary": "Maestro BPMN, Maestro Case, and Maestro Flow processes and resources now show their own icons.",
-                "analysis": "This likely improves visual differentiation and usability when working with different Maestro artifact types.",
-                "impact": "Users viewing or managing Maestro BPMN, Maestro Case, and Maestro Flow processes and resources in Orchestrator.",
-                "breaking_change": false
-              }
-            ]
-          },
-          "Studio Web": {
-            "summary": "Studio Web adds Autopilot as a coding agent in public preview and changes API workflow licensing to a flat fee per workflow execution with Integration Service usage no longer metered separately inside those workflows.",
-            "overall_analysis": "The release expands AI-assisted development capabilities in Studio Web while simplifying the commercial model for API workflows.",
-            "changes": [
-              {
-                "name": "Autopilot coding agent in public preview",
-                "summary": "Autopilot is now available as a coding agent in Studio Web, in public preview. For API workflows, it builds, validates, runs, and publishes workflows. For RPA workflows, coded apps, and Functions, it reads, explains, and reviews project files.",
-                "analysis": "This likely accelerates development and review tasks by adding AI assistance across several Studio Web project types, though availability is still limited by its public preview status.",
-                "impact": "Developers and makers using Studio Web for API workflows, RPA workflows, coded apps, and Functions.",
-                "breaking_change": false
-              },
-              {
-                "name": "API workflow licensing model update",
-                "summary": "API workflows are now licensed as a flat fee per workflow execution, and Integration Service usage inside the workflow is no longer metered separately.",
-                "analysis": "This likely makes API workflow cost calculation more predictable and may reduce billing complexity for workflows that use Integration Service within the execution path.",
-                "impact": "Customers running API workflows in Studio Web, especially those using Integration Service within those workflows.",
-                "breaking_change": false
-              }
-            ]
-          },
-          "Test Manager": {
-            "summary": "Test Manager enhances the Override Parameters panel by showing which overridden parameters are actually used by the linked automation.",
-            "overall_analysis": "This update improves parameter visibility between tests and linked automations, helping users better understand relevance and usage of overrides.",
-            "changes": [
-              {
-                "name": "In automation column for overridden parameters",
-                "summary": "The **Override Parameters** panel adds an **In automation** column that shows which overridden parameters the linked automation actually uses.",
-                "analysis": "This likely helps users identify effective versus unused parameter overrides, reducing confusion and improving test configuration accuracy.",
-                "impact": "Test Manager users configuring override parameters for linked automations.",
                 "breaking_change": false
               }
             ]
